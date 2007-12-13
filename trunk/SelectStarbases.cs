@@ -9,6 +9,7 @@ using System.Text;
 using System.Xml;
 using System.Windows.Forms;
 using EVEMon.Common;
+using System.Threading;
 
 namespace EVEPOSMon
 {
@@ -31,7 +32,10 @@ namespace EVEPOSMon
         {
             //deactivate the button on first click (is reactivated at end of function)
             //prevents loading data multiple times
-            btnLoadStations.Enabled = false;
+            btnLoadStations.Enabled = false; 
+
+            // clear the current station list
+            lbStations.Items.Clear();
 
             XmlDocument xdoc = EVEMonWebRequest.LoadXml(@"http://www.exa-nation.com/corp/StarbaseList.xml.aspx");
 
@@ -61,16 +65,24 @@ namespace EVEPOSMon
                     starbase.onlineTimeStamp = EveSession.ConvertCCPTimeStringToDateTime(atts["onlineTimestamp"].InnerText);
                     m_starbasesList.Add(starbase);
                 }
-            }
-
-            // Clear the current list and then add in new stations into the list.
-            
+            }       
             //load new list items
             foreach (Starbase s in m_starbasesList)
             {
                 lbStations.Items.Add(s);
             }
 
+            // Clear the current list so it wont effect the next update.
+            m_starbasesList.Clear();
+
+            Refresh();
+            
+            // Dirty delay on button reactivation
+            for (int i = 0; i < 500; i++)
+            {
+                System.Threading.Thread.Sleep(10);
+                Application.DoEvents();
+            }
             // Reactivate the button
             btnLoadStations.Enabled = true;
         }
