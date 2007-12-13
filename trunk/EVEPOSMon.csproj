@@ -41,22 +41,26 @@
     <Compile Include="EVEMonWebRequest.cs" />
     <Compile Include="EveSession.cs" />
     <Compile Include="ExceptionHandler.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="SelectStarbases.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="SelectStarbases.Designer.cs">
+      <DependentUpon>SelectStarbases.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
+    <EmbeddedResource Include="SelectStarbases.resx">
       <SubType>Designer</SubType>
-      <DependentUpon>Form1.cs</DependentUpon>
+      <DependentUpon>SelectStarbases.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StarbaseInfo.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>StarbaseInfo.cs</DependentUpon>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -73,6 +77,12 @@
     </Compile>
     <Compile Include="Settings.cs">
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StarbaseInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StarbaseInfo.Designer.cs">
+      <DependentUpon>StarbaseInfo.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
