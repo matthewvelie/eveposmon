@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Text;
 using System.Windows.Forms;
 
@@ -92,6 +93,18 @@ namespace EVEPOSMon
             dgFuelList.Columns[1].DisplayIndex = 1;
             lblXmlLastDownloaded.Text = "XML Last Downloaded At: " + m_starbase.lastDownloaded.ToString();
             lblDataCachedUntil.Text = "Data Cached Until: " + m_starbase.cachedUntil.ToString();
+            loadStationImage(m_starbase.typeId);
+        }
+
+        public void loadStationImage(string typeId)
+        {
+            string basePath = Path.Combine(Application.StartupPath, "images");
+            switch (typeId)
+            {
+                case "12236":
+                    pbStationImage.Image = Image.FromFile(Path.Combine(basePath, "12236.png"));
+                    break;
+            }
         }
     }
 }

@@ -93,4 +93,8 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <PropertyGroup>
+    <PostBuildEvent>mkdir $(TargetDir)images
+copy $(ProjectDir)images\* $(TargetDir)images</PostBuildEvent>
+  </PropertyGroup>
 </Project>
