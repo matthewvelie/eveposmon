@@ -28,7 +28,10 @@ namespace EVEPOSMon
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.lblXmlLastDownloaded = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblDataCachedUntil = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblStarbaseName = new System.Windows.Forms.Label();
             this.lblCombatSettings = new System.Windows.Forms.Label();
             this.lblOnStandingDrop = new System.Windows.Forms.Label();
@@ -42,14 +45,13 @@ namespace EVEPOSMon
             this.lblAllowCorporationMembers = new System.Windows.Forms.Label();
             this.lblAllowAllianceMembers = new System.Windows.Forms.Label();
             this.lblClaimingSovereignty = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbStationImage = new System.Windows.Forms.PictureBox();
             this.dgFuelList = new System.Windows.Forms.DataGridView();
             this.FuelName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblXmlLastDownloaded = new System.Windows.Forms.ToolStripStatusLabel();
-            this.lblDataCachedUntil = new System.Windows.Forms.ToolStripStatusLabel();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.statusStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStationImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgFuelList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,6 +65,18 @@ namespace EVEPOSMon
             this.statusStrip.Size = new System.Drawing.Size(490, 22);
             this.statusStrip.TabIndex = 0;
             this.statusStrip.Text = "statusStrip1";
+            // 
+            // lblXmlLastDownloaded
+            // 
+            this.lblXmlLastDownloaded.Name = "lblXmlLastDownloaded";
+            this.lblXmlLastDownloaded.Size = new System.Drawing.Size(109, 17);
+            this.lblXmlLastDownloaded.Text = "toolStripStatusLabel1";
+            // 
+            // lblDataCachedUntil
+            // 
+            this.lblDataCachedUntil.Name = "lblDataCachedUntil";
+            this.lblDataCachedUntil.Size = new System.Drawing.Size(109, 17);
+            this.lblDataCachedUntil.Text = "toolStripStatusLabel2";
             // 
             // lblStarbaseName
             // 
@@ -168,13 +182,13 @@ namespace EVEPOSMon
             this.lblClaimingSovereignty.TabIndex = 2;
             this.lblClaimingSovereignty.Text = "On Corporation War";
             // 
-            // pictureBox1
+            // pbStationImage
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(15, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(149, 124);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.pbStationImage.Location = new System.Drawing.Point(15, 6);
+            this.pbStationImage.Name = "pbStationImage";
+            this.pbStationImage.Size = new System.Drawing.Size(149, 124);
+            this.pbStationImage.TabIndex = 3;
+            this.pbStationImage.TabStop = false;
             // 
             // dgFuelList
             // 
@@ -202,17 +216,11 @@ namespace EVEPOSMon
             this.Quantity.Name = "Quantity";
             this.Quantity.ReadOnly = true;
             // 
-            // lblXmlLastDownloaded
+            // imageList1
             // 
-            this.lblXmlLastDownloaded.Name = "lblXmlLastDownloaded";
-            this.lblXmlLastDownloaded.Size = new System.Drawing.Size(109, 17);
-            this.lblXmlLastDownloaded.Text = "toolStripStatusLabel1";
-            // 
-            // lblDataCachedUntil
-            // 
-            this.lblDataCachedUntil.Name = "lblDataCachedUntil";
-            this.lblDataCachedUntil.Size = new System.Drawing.Size(109, 17);
-            this.lblDataCachedUntil.Text = "toolStripStatusLabel2";
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // StarbaseInfo
             // 
@@ -220,7 +228,7 @@ namespace EVEPOSMon
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(490, 573);
             this.Controls.Add(this.dgFuelList);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbStationImage);
             this.Controls.Add(this.lblClaimingSovereignty);
             this.Controls.Add(this.lblAllowAllianceMembers);
             this.Controls.Add(this.lblAllowCorporationMembers);
@@ -240,7 +248,7 @@ namespace EVEPOSMon
             this.Load += new System.EventHandler(this.StarbaseInfo_Load);
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStationImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgFuelList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -263,11 +271,12 @@ namespace EVEPOSMon
         private System.Windows.Forms.Label lblAllowCorporationMembers;
         private System.Windows.Forms.Label lblAllowAllianceMembers;
         private System.Windows.Forms.Label lblClaimingSovereignty;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbStationImage;
         private System.Windows.Forms.DataGridView dgFuelList;
         private System.Windows.Forms.DataGridViewTextBoxColumn FuelName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
         private System.Windows.Forms.ToolStripStatusLabel lblXmlLastDownloaded;
         private System.Windows.Forms.ToolStripStatusLabel lblDataCachedUntil;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }
