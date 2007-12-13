@@ -4,6 +4,9 @@
 
 This document has data gathered from: http://wiki.eve-dev.net/API_Coming_Features
 
+This page also contains documentation on all of the other api sources: http://wiki.eve-dev.net/APIv2_Page_Index
+
+Full database downloads from trinity can be found here: http://myeve.eve-online.com/ingameboard.asp?a=topic&threadID=650828
 
 = Details =
 
