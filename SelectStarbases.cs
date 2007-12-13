@@ -29,7 +29,7 @@ namespace EVEPOSMon
 
         private void btnLoadStations_Click(object sender, EventArgs e)
         {
-            XmlDocument xdoc = EVEMonWebRequest.LoadXml(@"http://www.exa-nation.com/api/starbaselist.php");
+            XmlDocument xdoc = EVEMonWebRequest.LoadXml(@"http://www.exa-nation.com/corp/StarbaseList.xml.aspx");
 
             string starbaseListError;
             DateTime cachedUntil;
