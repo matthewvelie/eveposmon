@@ -71,6 +71,7 @@ namespace EVEPOSMon
             this.Controls.Add(this.lbStations);
             this.Name = "SelectStarbases";
             this.Text = "EVEPOSMon Station Selection";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SelectStarbases_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
