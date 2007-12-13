@@ -24,8 +24,8 @@ namespace EVEPOSMon
         }
 
         private void Form1_Load(object sender, EventArgs e)
-        {
-
+        {   
+            
         }
 
         private void btnLoadStations_Click(object sender, EventArgs e)
@@ -34,9 +34,11 @@ namespace EVEPOSMon
             //prevents loading data multiple times
             btnLoadStations.Enabled = false; 
 
-            // clear the current station list
+            // clear the station list
             lbStations.Items.Clear();
-
+            // Clear the master list so it wont affect updates
+            m_starbasesList.Clear();
+            
             XmlDocument xdoc = EVEMonWebRequest.LoadXml(@"http://www.exa-nation.com/corp/StarbaseList.xml.aspx");
 
             string starbaseListError;
@@ -45,6 +47,7 @@ namespace EVEPOSMon
             XmlNode error = xdoc.DocumentElement.SelectSingleNode("descendant::error");
             if (error != null)
             {
+                // If a read error occured, exit
                 starbaseListError = error.InnerText;
                 throw new InvalidDataException(starbaseListError);
             }
@@ -52,6 +55,7 @@ namespace EVEPOSMon
             {
                 cachedUntil = EveSession.GetCacheExpiryUTC(xdoc);
                 XmlNodeList starbases = xdoc.DocumentElement.SelectNodes("descendant::rowset/row");
+                // For each starbase in the list create an object and place it on the master (m) starbase list
                 foreach (XmlNode starbaseNode in starbases)
                 {
                     XmlAttributeCollection atts = starbaseNode.Attributes;
@@ -72,11 +76,7 @@ namespace EVEPOSMon
                 lbStations.Items.Add(s);
             }
 
-            // Clear the current list so it wont effect the next update.
-            m_starbasesList.Clear();
-
             Refresh();
-            
             // Dirty delay on button reactivation
             for (int i = 0; i < 500; i++)
             {

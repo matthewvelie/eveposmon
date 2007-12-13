@@ -70,7 +70,7 @@ namespace EVEPOSMon
             this.Controls.Add(this.btnLoadStations);
             this.Controls.Add(this.lbStations);
             this.Name = "SelectStarbases";
-            this.Text = "Form1";
+            this.Text = "EVEPOSMon Station Selection";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
