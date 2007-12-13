@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using EVEMon.Common;
 
 namespace EVEPOSMon
 {
@@ -68,6 +69,23 @@ namespace EVEPOSMon
         public override string ToString()
         {
             return itemId;
+        }
+
+        internal object getStationDetails()
+        {
+            return null;
+        }
+
+        internal void setValues(System.Xml.XmlAttributeCollection atts)
+        {
+            // Taken from SelectStarbases.cs->btnLoadStations_Click() to internalize starbase functions
+            itemId = atts["itemID"].InnerText;
+            typeId = atts["typeID"].InnerText;
+            locationId = atts["locationID"].InnerText;
+            moonId = atts["moonID"].InnerText;
+            state = atts["state"].InnerText;
+            stateTimestamp = EveSession.ConvertCCPTimeStringToDateTime(atts["stateTimestamp"].InnerText);
+            onlineTimeStamp = EveSession.ConvertCCPTimeStringToDateTime(atts["onlineTimestamp"].InnerText);
         }
     }
 }

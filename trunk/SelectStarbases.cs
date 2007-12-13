@@ -55,18 +55,20 @@ namespace EVEPOSMon
             {
                 cachedUntil = EveSession.GetCacheExpiryUTC(xdoc);
                 XmlNodeList starbases = xdoc.DocumentElement.SelectNodes("descendant::rowset/row");
-                // For each starbase in the list create an object and place it on the master (m) starbase list
+                // For each starbase in the list create an object and place it on the master(m) starbase list
                 foreach (XmlNode starbaseNode in starbases)
                 {
                     XmlAttributeCollection atts = starbaseNode.Attributes;
                     Starbase starbase = new Starbase();
+                    starbase.setValues(atts);
+                    /************ Moved to starbase.setValues ********* REMOVE ON REVIEW
                     starbase.itemId = atts["itemID"].InnerText;
                     starbase.typeId = atts["typeID"].InnerText;
                     starbase.locationId = atts["locationID"].InnerText;
                     starbase.moonId = atts["moonID"].InnerText;
                     starbase.state = atts["state"].InnerText;
                     starbase.stateTimestamp = EveSession.ConvertCCPTimeStringToDateTime(atts["stateTimestamp"].InnerText);
-                    starbase.onlineTimeStamp = EveSession.ConvertCCPTimeStringToDateTime(atts["onlineTimestamp"].InnerText);
+                    starbase.onlineTimeStamp = EveSession.ConvertCCPTimeStringToDateTime(atts["onlineTimestamp"].InnerText);*/
                     m_starbasesList.Add(starbase);
                 }
             }       
@@ -141,6 +143,19 @@ namespace EVEPOSMon
 
             StarbaseInfo starbaseInfo = new StarbaseInfo(starbase);
             starbaseInfo.Show();
+        }
+
+        // Prompt the user to confirm closing the program and all other windows
+        private void SelectStarbases_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = DialogResult.No;
+            result = MessageBox.Show("Closing this window will close all others", "Are you sure you want to close", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (result == DialogResult.Yes)
+            {
+                return;
+            }
+            else
+                e.Cancel = true;
         }
     }
 }
