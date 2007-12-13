@@ -28,7 +28,7 @@ namespace EVEPOSMon
         /// </summary>
         private void InitializeComponent()
         {
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.lblStarbaseName = new System.Windows.Forms.Label();
             this.lblCombatSettings = new System.Windows.Forms.Label();
             this.lblOnStandingDrop = new System.Windows.Forms.Label();
@@ -46,17 +46,23 @@ namespace EVEPOSMon
             this.dgFuelList = new System.Windows.Forms.DataGridView();
             this.FuelName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblXmlLastDownloaded = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblDataCachedUntil = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgFuelList)).BeginInit();
             this.SuspendLayout();
             // 
-            // statusStrip1
+            // statusStrip
             // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 551);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(490, 22);
-            this.statusStrip1.TabIndex = 0;
-            this.statusStrip1.Text = "statusStrip1";
+            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblXmlLastDownloaded,
+            this.lblDataCachedUntil});
+            this.statusStrip.Location = new System.Drawing.Point(0, 551);
+            this.statusStrip.Name = "statusStrip";
+            this.statusStrip.Size = new System.Drawing.Size(490, 22);
+            this.statusStrip.TabIndex = 0;
+            this.statusStrip.Text = "statusStrip1";
             // 
             // lblStarbaseName
             // 
@@ -196,6 +202,18 @@ namespace EVEPOSMon
             this.Quantity.Name = "Quantity";
             this.Quantity.ReadOnly = true;
             // 
+            // lblXmlLastDownloaded
+            // 
+            this.lblXmlLastDownloaded.Name = "lblXmlLastDownloaded";
+            this.lblXmlLastDownloaded.Size = new System.Drawing.Size(109, 17);
+            this.lblXmlLastDownloaded.Text = "toolStripStatusLabel1";
+            // 
+            // lblDataCachedUntil
+            // 
+            this.lblDataCachedUntil.Name = "lblDataCachedUntil";
+            this.lblDataCachedUntil.Size = new System.Drawing.Size(109, 17);
+            this.lblDataCachedUntil.Text = "toolStripStatusLabel2";
+            // 
             // StarbaseInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -216,10 +234,12 @@ namespace EVEPOSMon
             this.Controls.Add(this.lblOnStandingDropValue);
             this.Controls.Add(this.lblCombatSettings);
             this.Controls.Add(this.lblStarbaseName);
-            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.statusStrip);
             this.Name = "StarbaseInfo";
             this.Text = "StationInfo";
             this.Load += new System.EventHandler(this.StarbaseInfo_Load);
+            this.statusStrip.ResumeLayout(false);
+            this.statusStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgFuelList)).EndInit();
             this.ResumeLayout(false);
@@ -229,7 +249,7 @@ namespace EVEPOSMon
 
         #endregion
 
-        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.Label lblStarbaseName;
         private System.Windows.Forms.Label lblCombatSettings;
         private System.Windows.Forms.Label lblOnStandingDrop;
@@ -247,5 +267,7 @@ namespace EVEPOSMon
         private System.Windows.Forms.DataGridView dgFuelList;
         private System.Windows.Forms.DataGridViewTextBoxColumn FuelName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
+        private System.Windows.Forms.ToolStripStatusLabel lblXmlLastDownloaded;
+        private System.Windows.Forms.ToolStripStatusLabel lblDataCachedUntil;
     }
 }
