@@ -84,6 +84,7 @@ namespace EVEPOSMon
                 cachedUntil = EveSession.GetCacheExpiryUTC(xdoc);
                 starbase.usageFlags = xdoc.GetElementsByTagName("usageFlags")[0].InnerText;
                 starbase.deployFlags = xdoc.GetElementsByTagName("deployFlags")[0].InnerText;
+                starbase.allowAllianceMembers = xdoc.GetElementsByTagName("allowAllianceMembers")[0].InnerText;
                 starbase.allowCorporationMembers = xdoc.GetElementsByTagName("allowCorporationMembers")[0].InnerText;
                 starbase.claimSovereignty = xdoc.GetElementsByTagName("claimSovereignty")[0].InnerText;
 
