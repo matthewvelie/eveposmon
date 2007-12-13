@@ -29,6 +29,10 @@ namespace EVEPOSMon
 
         private void btnLoadStations_Click(object sender, EventArgs e)
         {
+            //deactivate the button on first click (is reactivated at end of function)
+            //prevents loading data multiple times
+            btnLoadStations.Enabled = false;
+
             XmlDocument xdoc = EVEMonWebRequest.LoadXml(@"http://www.exa-nation.com/corp/StarbaseList.xml.aspx");
 
             string starbaseListError;
@@ -59,10 +63,16 @@ namespace EVEPOSMon
                 }
             }
 
+            // Clear the current list and then add in new stations into the list.
+            
+            //load new list items
             foreach (Starbase s in m_starbasesList)
             {
                 lbStations.Items.Add(s);
             }
+
+            // Reactivate the button
+            btnLoadStations.Enabled = true;
         }
 
         private void btnGetStationInfo_Click(object sender, EventArgs e)
