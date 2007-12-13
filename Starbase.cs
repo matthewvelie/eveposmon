@@ -20,6 +20,7 @@ namespace EVEPOSMon
         public DateTime stateTimestamp;
         public DateTime onlineTimeStamp;
         public DateTime cachedUntil;
+        public DateTime lastDownloaded;
 
         #region General Settings
 

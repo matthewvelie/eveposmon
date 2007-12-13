@@ -90,6 +90,8 @@ namespace EVEPOSMon
 
             dgFuelList.Columns[0].DisplayIndex = 0;
             dgFuelList.Columns[1].DisplayIndex = 1;
+            lblXmlLastDownloaded.Text = "XML Last Downloaded At: " + m_starbase.lastDownloaded.ToString();
+            lblDataCachedUntil.Text = "Data Cached Until: " + m_starbase.cachedUntil.ToString();
         }
     }
 }

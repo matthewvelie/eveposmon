@@ -82,6 +82,7 @@ namespace EVEPOSMon
             else
             {
                 cachedUntil = EveSession.GetCacheExpiryUTC(xdoc);
+                starbase.lastDownloaded = DateTime.Now;
                 starbase.usageFlags = xdoc.GetElementsByTagName("usageFlags")[0].InnerText;
                 starbase.deployFlags = xdoc.GetElementsByTagName("deployFlags")[0].InnerText;
                 starbase.allowAllianceMembers = xdoc.GetElementsByTagName("allowAllianceMembers")[0].InnerText;
