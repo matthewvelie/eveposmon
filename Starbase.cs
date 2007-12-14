@@ -25,6 +25,15 @@ namespace EVEPOSMon
         public DateTime cachedUntil;
         public DateTime lastDownloaded;
 
+        #region map data
+
+        private String solarsystem;
+        private String constellation;
+        private String region;
+        private String security;
+
+        #endregion
+
         #region General Settings
 
         public string usageFlags;
@@ -86,6 +95,7 @@ namespace EVEPOSMon
             state = atts["state"].InnerText;
             stateTimestamp = EveSession.ConvertCCPTimeStringToDateTime(atts["stateTimestamp"].InnerText);
             onlineTimeStamp = EveSession.ConvertCCPTimeStringToDateTime(atts["onlineTimestamp"].InnerText);
+            setMapInformation();
         }
 
         internal void setDetails(String loc)
@@ -147,9 +157,67 @@ namespace EVEPOSMon
             onCorporationWar.enabled = attrs["enabled"].InnerText;
         }
 
-        private void getTowerInformation()
+        private void setMapInformation()
         {
-            return;
+            try
+            {
+                // Load the file into memory
+                XmlDocument xdoc = new XmlDocument();
+                xdoc.Load(@"./data/mapData.xml");
+
+                string starbaseError;
+                DateTime cachedUntil;
+
+                XmlNode error = xdoc.DocumentElement.SelectSingleNode("descendant::error");
+                // If a read error occured, exit
+                if (error != null)
+                {
+                    starbaseError = error.InnerText;
+                    throw new InvalidDataException(starbaseError);
+                }
+                else
+                {
+                    cachedUntil = EveSession.GetCacheExpiryUTC(xdoc);
+                    
+                    XmlNodeList systemNodeList = xdoc.GetElementsByTagName("system");
+
+                    foreach (XmlNode systemNode in systemNodeList)
+                    {
+                        if (systemNode.FirstChild.InnerText == (this.locationId))
+                        {
+                            this.solarsystem = systemNode.ChildNodes.Item(1).InnerText;
+                            this.region = systemNode.ChildNodes.Item(4).InnerText;
+                            this.constellation = systemNode.ChildNodes.Item(3).InnerText;
+                            this.security = systemNode.ChildNodes.Item(2).InnerText;
+                            return; // once you've found the node with the information there is noneed to go any further in the search.
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Exception: {0}", e.ToString());
+            }
+        }
+        public String getSolarSystem()
+        {
+            return this.solarsystem;
+        }
+        public String getRegion()
+        {
+            return this.region;
+        }
+        public String getSecurity()
+        {
+            return this.security;
+        }
+        public String getConstellation()
+        {
+            return this.constellation;
+        }
+        public String getLocationID()
+        {
+            return this.locationId;
         }
     }
 }
