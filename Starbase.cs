@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using EVEMon.Common;
+using System.Xml;
+using System.IO;
 
 namespace EVEPOSMon
 {
@@ -71,11 +73,6 @@ namespace EVEPOSMon
             return itemId;
         }
 
-        internal object getStationDetails()
-        {
-            return null;
-        }
-
         internal void setValues(System.Xml.XmlAttributeCollection atts)
         {
             // Taken from SelectStarbases.cs->btnLoadStations_Click() to internalize starbase functions
@@ -86,6 +83,71 @@ namespace EVEPOSMon
             state = atts["state"].InnerText;
             stateTimestamp = EveSession.ConvertCCPTimeStringToDateTime(atts["stateTimestamp"].InnerText);
             onlineTimeStamp = EveSession.ConvertCCPTimeStringToDateTime(atts["onlineTimestamp"].InnerText);
+        }
+
+        internal void setDetails(String loc)
+        {
+            XmlDocument xdoc = EVEMonWebRequest.LoadXml(@loc + this.itemId);
+
+            string starbaseError;
+            DateTime cachedUntil;
+
+            XmlNode error = xdoc.DocumentElement.SelectSingleNode("descendant::error");
+            // If a read error occured, exit
+            if (error != null)
+            {
+                starbaseError = error.InnerText;
+                throw new InvalidDataException(starbaseError);
+            }
+            else
+            {
+                cachedUntil = EveSession.GetCacheExpiryUTC(xdoc);
+                /*  ****** Code moved to setDetails() ******   */
+                setDetails(xdoc);
+
+                XmlNodeList fuelNodeList = xdoc.DocumentElement.SelectNodes("descendant::rowset/row");
+                // Clear any old data from the list before adding new information
+                FuelList.Clear();
+                foreach (XmlNode fuelNode in fuelNodeList)
+                {
+                    XmlAttributeCollection atts = fuelNode.Attributes;
+                    Fuel fuel = new Fuel();
+                    fuel.typeId = atts["typeID"].InnerText;
+                    fuel.quantity = atts["quantity"].InnerText;
+                    this.FuelList.Add(fuel);
+                }
+            }
+        }
+        internal void setDetails(System.Xml.XmlDocument xdoc)
+        {
+            lastDownloaded = DateTime.Now;
+            usageFlags = xdoc.GetElementsByTagName("usageFlags")[0].InnerText;
+            deployFlags = xdoc.GetElementsByTagName("deployFlags")[0].InnerText;
+            allowAllianceMembers = xdoc.GetElementsByTagName("allowAllianceMembers")[0].InnerText;
+            allowCorporationMembers = xdoc.GetElementsByTagName("allowCorporationMembers")[0].InnerText;
+            claimSovereignty = xdoc.GetElementsByTagName("claimSovereignty")[0].InnerText;
+
+            XmlAttributeCollection attrs;
+
+            attrs = xdoc.GetElementsByTagName("onStandingDrop")[0].Attributes;
+            onStandingDrop.enabled = attrs["enabled"].InnerText;
+            onStandingDrop.standing = attrs["standing"].InnerText;
+
+            attrs = xdoc.GetElementsByTagName("onStatusDrop")[0].Attributes;
+            onStatusDrop.enabled = attrs["enabled"].InnerText;
+            onStatusDrop.standing = attrs["standing"].InnerText;
+
+            attrs = xdoc.GetElementsByTagName("onAggression")[0].Attributes;
+            onAgression.enabled = attrs["enabled"].InnerText;
+
+
+            attrs = xdoc.GetElementsByTagName("onCorporationWar")[0].Attributes;
+            onCorporationWar.enabled = attrs["enabled"].InnerText;
+        }
+
+        private void getTowerInformation()
+        {
+            return;
         }
     }
 }

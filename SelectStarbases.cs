@@ -31,12 +31,11 @@ namespace EVEPOSMon
         private void btnLoadStations_Click(object sender, EventArgs e)
         {
             //deactivate the button on first click (is reactivated at end of function)
-            //prevents loading data multiple times
+            //prevents loading data multiple times to the UI
             btnLoadStations.Enabled = false; 
-
-            // clear the station list
+            
+            // Clear the master list and station list so it wont affect updates
             lbStations.Items.Clear();
-            // Clear the master list so it wont affect updates
             m_starbasesList.Clear();
             
             XmlDocument xdoc = EVEMonWebRequest.LoadXml(@"http://www.exa-nation.com/corp/StarbaseList.xml.aspx");
@@ -45,12 +44,14 @@ namespace EVEPOSMon
             DateTime cachedUntil;
 
             XmlNode error = xdoc.DocumentElement.SelectSingleNode("descendant::error");
+            // If a read error occured, exit
             if (error != null)
             {
-                // If a read error occured, exit
+                
                 starbaseListError = error.InnerText;
                 throw new InvalidDataException(starbaseListError);
             }
+            // Process xml file 
             else
             {
                 cachedUntil = EveSession.GetCacheExpiryUTC(xdoc);
@@ -61,14 +62,7 @@ namespace EVEPOSMon
                     XmlAttributeCollection atts = starbaseNode.Attributes;
                     Starbase starbase = new Starbase();
                     starbase.setValues(atts);
-                    /************ Moved to starbase.setValues ********* REMOVE ON REVIEW
-                    starbase.itemId = atts["itemID"].InnerText;
-                    starbase.typeId = atts["typeID"].InnerText;
-                    starbase.locationId = atts["locationID"].InnerText;
-                    starbase.moonId = atts["moonID"].InnerText;
-                    starbase.state = atts["state"].InnerText;
-                    starbase.stateTimestamp = EveSession.ConvertCCPTimeStringToDateTime(atts["stateTimestamp"].InnerText);
-                    starbase.onlineTimeStamp = EveSession.ConvertCCPTimeStringToDateTime(atts["onlineTimestamp"].InnerText);*/
+                    /************ Code moved to starbase.setValues() ********* */
                     m_starbasesList.Add(starbase);
                 }
             }       
@@ -78,7 +72,6 @@ namespace EVEPOSMon
                 lbStations.Items.Add(s);
             }
 
-            Refresh();
             // Dirty delay on button reactivation
             for (int i = 0; i < 500; i++)
             {
@@ -91,55 +84,13 @@ namespace EVEPOSMon
 
         private void btnGetStationInfo_Click(object sender, EventArgs e)
         {
+
+            // get the selected station, use its object method to get the detailed information.
+            // Get current seleted station detailed information
             Starbase starbase = lbStations.SelectedItem as Starbase;
-            XmlDocument xdoc = EVEMonWebRequest.LoadXml(@"http://www.exa-nation.com/corp/StarbaseDetail.xml.aspx?itemId=" + starbase.itemId);
-
-            string starbaseError;
-            DateTime cachedUntil;
-
-            XmlNode error = xdoc.DocumentElement.SelectSingleNode("descendant::error");
-            if (error != null)
-            {
-                starbaseError = error.InnerText;
-                throw new InvalidDataException(starbaseError);
-            }
-            else
-            {
-                cachedUntil = EveSession.GetCacheExpiryUTC(xdoc);
-                starbase.lastDownloaded = DateTime.Now;
-                starbase.usageFlags = xdoc.GetElementsByTagName("usageFlags")[0].InnerText;
-                starbase.deployFlags = xdoc.GetElementsByTagName("deployFlags")[0].InnerText;
-                starbase.allowAllianceMembers = xdoc.GetElementsByTagName("allowAllianceMembers")[0].InnerText;
-                starbase.allowCorporationMembers = xdoc.GetElementsByTagName("allowCorporationMembers")[0].InnerText;
-                starbase.claimSovereignty = xdoc.GetElementsByTagName("claimSovereignty")[0].InnerText;
-
-                XmlAttributeCollection attrs;
-
-                attrs = xdoc.GetElementsByTagName("onStandingDrop")[0].Attributes;
-                starbase.onStandingDrop.enabled = attrs["enabled"].InnerText;
-                starbase.onStandingDrop.standing = attrs["standing"].InnerText;
-
-                attrs = xdoc.GetElementsByTagName("onStatusDrop")[0].Attributes;
-                starbase.onStatusDrop.enabled = attrs["enabled"].InnerText;
-                starbase.onStatusDrop.standing = attrs["standing"].InnerText;
-
-                attrs = xdoc.GetElementsByTagName("onAggression")[0].Attributes;
-                starbase.onAgression.enabled = attrs["enabled"].InnerText;
-
-
-                attrs = xdoc.GetElementsByTagName("onCorporationWar")[0].Attributes;
-                starbase.onCorporationWar.enabled = attrs["enabled"].InnerText;
-
-                XmlNodeList fuelNodeList = xdoc.DocumentElement.SelectNodes("descendant::rowset/row");
-                foreach (XmlNode fuelNode in fuelNodeList)
-                {
-                    XmlAttributeCollection atts = fuelNode.Attributes;
-                    Fuel fuel = new Fuel();
-                    fuel.typeId = atts["typeID"].InnerText;
-                    fuel.quantity = atts["quantity"].InnerText;
-                    starbase.FuelList.Add(fuel);
-                }
-            }
+            
+            starbase.setDetails("http://www.exa-nation.com/corp/StarbaseDetail.xml.aspx?itemId=");
+            /* moved to starbase.setDetails() *************************************************************/
 
             StarbaseInfo starbaseInfo = new StarbaseInfo(starbase);
             starbaseInfo.Show();
