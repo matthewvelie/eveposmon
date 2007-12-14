@@ -148,10 +148,10 @@ namespace EVEPOSMon
             this.label86 = new System.Windows.Forms.Label();
             this.label87 = new System.Windows.Forms.Label();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.textBox41 = new System.Windows.Forms.TextBox();
-            this.textBox42 = new System.Windows.Forms.TextBox();
+            this.txtOxygenSubtotal = new System.Windows.Forms.TextBox();
+            this.txtOxygenVolume = new System.Windows.Forms.TextBox();
             this.txtOxygenQuantity = new System.Windows.Forms.TextBox();
-            this.textBox44 = new System.Windows.Forms.TextBox();
+            this.txtOxygenPricePer = new System.Windows.Forms.TextBox();
             this.label88 = new System.Windows.Forms.Label();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.label89 = new System.Windows.Forms.Label();
@@ -172,20 +172,20 @@ namespace EVEPOSMon
             this.label78 = new System.Windows.Forms.Label();
             this.label79 = new System.Windows.Forms.Label();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.textBox37 = new System.Windows.Forms.TextBox();
-            this.textBox38 = new System.Windows.Forms.TextBox();
+            this.txtMechanicalPartsSubtotal = new System.Windows.Forms.TextBox();
+            this.txtMechanicalPartsVolume = new System.Windows.Forms.TextBox();
             this.txtMechanicalPartsQuantity = new System.Windows.Forms.TextBox();
-            this.textBox40 = new System.Windows.Forms.TextBox();
+            this.txtMechanicalPartsPricePer = new System.Windows.Forms.TextBox();
             this.label66 = new System.Windows.Forms.Label();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.label67 = new System.Windows.Forms.Label();
-            this.textBox36 = new System.Windows.Forms.TextBox();
+            this.txtRoboticsPricePer = new System.Windows.Forms.TextBox();
             this.label68 = new System.Windows.Forms.Label();
             this.txtRoboticsQuantity = new System.Windows.Forms.TextBox();
             this.label69 = new System.Windows.Forms.Label();
-            this.textBox34 = new System.Windows.Forms.TextBox();
+            this.txtRoboticsVolume = new System.Windows.Forms.TextBox();
             this.label70 = new System.Windows.Forms.Label();
-            this.textBox33 = new System.Windows.Forms.TextBox();
+            this.txtRoboticsSubtotal = new System.Windows.Forms.TextBox();
             this.label71 = new System.Windows.Forms.Label();
             this.label72 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
@@ -195,15 +195,15 @@ namespace EVEPOSMon
             this.label33 = new System.Windows.Forms.Label();
             this.label97 = new System.Windows.Forms.Label();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
-            this.textBox49 = new System.Windows.Forms.TextBox();
+            this.txtCoolantPricePer = new System.Windows.Forms.TextBox();
             this.label102 = new System.Windows.Forms.Label();
             this.label98 = new System.Windows.Forms.Label();
             this.label101 = new System.Windows.Forms.Label();
             this.txtCoolantQuantity = new System.Windows.Forms.TextBox();
-            this.textBox52 = new System.Windows.Forms.TextBox();
+            this.txtCoolantSubtotal = new System.Windows.Forms.TextBox();
             this.label99 = new System.Windows.Forms.Label();
             this.label100 = new System.Windows.Forms.Label();
-            this.textBox51 = new System.Windows.Forms.TextBox();
+            this.txtCoolantVolume = new System.Windows.Forms.TextBox();
             this.rbManualCalc = new System.Windows.Forms.RadioButton();
             this.rbTimeCalc = new System.Windows.Forms.RadioButton();
             this.rbCargoCalc = new System.Windows.Forms.RadioButton();
@@ -236,6 +236,10 @@ namespace EVEPOSMon
             this.lblAmtToSpendIsk = new System.Windows.Forms.Label();
             this.UseStarbase = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Moon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label108 = new System.Windows.Forms.Label();
+            this.label109 = new System.Windows.Forms.Label();
+            this.label110 = new System.Windows.Forms.Label();
+            this.label111 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -1392,6 +1396,10 @@ namespace EVEPOSMon
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.label111);
+            this.groupBox5.Controls.Add(this.label110);
+            this.groupBox5.Controls.Add(this.label109);
+            this.groupBox5.Controls.Add(this.label108);
             this.groupBox5.Controls.Add(this.label81);
             this.groupBox5.Controls.Add(this.label82);
             this.groupBox5.Controls.Add(this.label83);
@@ -1400,10 +1408,10 @@ namespace EVEPOSMon
             this.groupBox5.Controls.Add(this.label86);
             this.groupBox5.Controls.Add(this.label87);
             this.groupBox5.Controls.Add(this.pictureBox11);
-            this.groupBox5.Controls.Add(this.textBox41);
-            this.groupBox5.Controls.Add(this.textBox42);
+            this.groupBox5.Controls.Add(this.txtOxygenSubtotal);
+            this.groupBox5.Controls.Add(this.txtOxygenVolume);
             this.groupBox5.Controls.Add(this.txtOxygenQuantity);
-            this.groupBox5.Controls.Add(this.textBox44);
+            this.groupBox5.Controls.Add(this.txtOxygenPricePer);
             this.groupBox5.Controls.Add(this.label88);
             this.groupBox5.Controls.Add(this.pictureBox12);
             this.groupBox5.Controls.Add(this.label89);
@@ -1424,20 +1432,20 @@ namespace EVEPOSMon
             this.groupBox5.Controls.Add(this.label78);
             this.groupBox5.Controls.Add(this.label79);
             this.groupBox5.Controls.Add(this.pictureBox10);
-            this.groupBox5.Controls.Add(this.textBox37);
-            this.groupBox5.Controls.Add(this.textBox38);
+            this.groupBox5.Controls.Add(this.txtMechanicalPartsSubtotal);
+            this.groupBox5.Controls.Add(this.txtMechanicalPartsVolume);
             this.groupBox5.Controls.Add(this.txtMechanicalPartsQuantity);
-            this.groupBox5.Controls.Add(this.textBox40);
+            this.groupBox5.Controls.Add(this.txtMechanicalPartsPricePer);
             this.groupBox5.Controls.Add(this.label66);
             this.groupBox5.Controls.Add(this.pictureBox9);
             this.groupBox5.Controls.Add(this.label67);
-            this.groupBox5.Controls.Add(this.textBox36);
+            this.groupBox5.Controls.Add(this.txtRoboticsPricePer);
             this.groupBox5.Controls.Add(this.label68);
             this.groupBox5.Controls.Add(this.txtRoboticsQuantity);
             this.groupBox5.Controls.Add(this.label69);
-            this.groupBox5.Controls.Add(this.textBox34);
+            this.groupBox5.Controls.Add(this.txtRoboticsVolume);
             this.groupBox5.Controls.Add(this.label70);
-            this.groupBox5.Controls.Add(this.textBox33);
+            this.groupBox5.Controls.Add(this.txtRoboticsSubtotal);
             this.groupBox5.Controls.Add(this.label71);
             this.groupBox5.Controls.Add(this.label72);
             this.groupBox5.Location = new System.Drawing.Point(10, 12);
@@ -1520,25 +1528,25 @@ namespace EVEPOSMon
             this.pictureBox11.TabIndex = 66;
             this.pictureBox11.TabStop = false;
             // 
-            // textBox41
+            // txtOxygenSubtotal
             // 
-            this.textBox41.Enabled = false;
-            this.textBox41.Location = new System.Drawing.Point(384, 91);
-            this.textBox41.Name = "textBox41";
-            this.textBox41.Size = new System.Drawing.Size(60, 20);
-            this.textBox41.TabIndex = 65;
-            this.textBox41.Text = "0";
-            this.textBox41.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtOxygenSubtotal.Enabled = false;
+            this.txtOxygenSubtotal.Location = new System.Drawing.Point(384, 91);
+            this.txtOxygenSubtotal.Name = "txtOxygenSubtotal";
+            this.txtOxygenSubtotal.Size = new System.Drawing.Size(60, 20);
+            this.txtOxygenSubtotal.TabIndex = 65;
+            this.txtOxygenSubtotal.Text = "0";
+            this.txtOxygenSubtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // textBox42
+            // txtOxygenVolume
             // 
-            this.textBox42.Enabled = false;
-            this.textBox42.Location = new System.Drawing.Point(384, 65);
-            this.textBox42.Name = "textBox42";
-            this.textBox42.Size = new System.Drawing.Size(60, 20);
-            this.textBox42.TabIndex = 64;
-            this.textBox42.Text = "0";
-            this.textBox42.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtOxygenVolume.Enabled = false;
+            this.txtOxygenVolume.Location = new System.Drawing.Point(384, 65);
+            this.txtOxygenVolume.Name = "txtOxygenVolume";
+            this.txtOxygenVolume.Size = new System.Drawing.Size(60, 20);
+            this.txtOxygenVolume.TabIndex = 64;
+            this.txtOxygenVolume.Text = "0";
+            this.txtOxygenVolume.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtOxygenQuantity
             // 
@@ -1548,15 +1556,17 @@ namespace EVEPOSMon
             this.txtOxygenQuantity.TabIndex = 63;
             this.txtOxygenQuantity.Text = "0";
             this.txtOxygenQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtOxygenQuantity.TextChanged += new System.EventHandler(this.txtOxygenQuantity_TextChanged);
             // 
-            // textBox44
+            // txtOxygenPricePer
             // 
-            this.textBox44.Location = new System.Drawing.Point(384, 13);
-            this.textBox44.Name = "textBox44";
-            this.textBox44.Size = new System.Drawing.Size(60, 20);
-            this.textBox44.TabIndex = 62;
-            this.textBox44.Text = "0";
-            this.textBox44.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtOxygenPricePer.Location = new System.Drawing.Point(384, 13);
+            this.txtOxygenPricePer.Name = "txtOxygenPricePer";
+            this.txtOxygenPricePer.Size = new System.Drawing.Size(60, 20);
+            this.txtOxygenPricePer.TabIndex = 62;
+            this.txtOxygenPricePer.Text = "0";
+            this.txtOxygenPricePer.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtOxygenPricePer.TextChanged += new System.EventHandler(this.txtOxygenPricePer_TextChanged);
             // 
             // label88
             // 
@@ -1746,25 +1756,25 @@ namespace EVEPOSMon
             this.pictureBox10.TabIndex = 42;
             this.pictureBox10.TabStop = false;
             // 
-            // textBox37
+            // txtMechanicalPartsSubtotal
             // 
-            this.textBox37.Enabled = false;
-            this.textBox37.Location = new System.Drawing.Point(384, 210);
-            this.textBox37.Name = "textBox37";
-            this.textBox37.Size = new System.Drawing.Size(60, 20);
-            this.textBox37.TabIndex = 41;
-            this.textBox37.Text = "0";
-            this.textBox37.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtMechanicalPartsSubtotal.Enabled = false;
+            this.txtMechanicalPartsSubtotal.Location = new System.Drawing.Point(384, 210);
+            this.txtMechanicalPartsSubtotal.Name = "txtMechanicalPartsSubtotal";
+            this.txtMechanicalPartsSubtotal.Size = new System.Drawing.Size(60, 20);
+            this.txtMechanicalPartsSubtotal.TabIndex = 41;
+            this.txtMechanicalPartsSubtotal.Text = "0";
+            this.txtMechanicalPartsSubtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // textBox38
+            // txtMechanicalPartsVolume
             // 
-            this.textBox38.Enabled = false;
-            this.textBox38.Location = new System.Drawing.Point(384, 184);
-            this.textBox38.Name = "textBox38";
-            this.textBox38.Size = new System.Drawing.Size(60, 20);
-            this.textBox38.TabIndex = 40;
-            this.textBox38.Text = "0";
-            this.textBox38.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtMechanicalPartsVolume.Enabled = false;
+            this.txtMechanicalPartsVolume.Location = new System.Drawing.Point(384, 184);
+            this.txtMechanicalPartsVolume.Name = "txtMechanicalPartsVolume";
+            this.txtMechanicalPartsVolume.Size = new System.Drawing.Size(60, 20);
+            this.txtMechanicalPartsVolume.TabIndex = 40;
+            this.txtMechanicalPartsVolume.Text = "0";
+            this.txtMechanicalPartsVolume.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtMechanicalPartsQuantity
             // 
@@ -1775,14 +1785,14 @@ namespace EVEPOSMon
             this.txtMechanicalPartsQuantity.Text = "0";
             this.txtMechanicalPartsQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // textBox40
+            // txtMechanicalPartsPricePer
             // 
-            this.textBox40.Location = new System.Drawing.Point(384, 132);
-            this.textBox40.Name = "textBox40";
-            this.textBox40.Size = new System.Drawing.Size(60, 20);
-            this.textBox40.TabIndex = 38;
-            this.textBox40.Text = "0";
-            this.textBox40.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtMechanicalPartsPricePer.Location = new System.Drawing.Point(384, 132);
+            this.txtMechanicalPartsPricePer.Name = "txtMechanicalPartsPricePer";
+            this.txtMechanicalPartsPricePer.Size = new System.Drawing.Size(60, 20);
+            this.txtMechanicalPartsPricePer.TabIndex = 38;
+            this.txtMechanicalPartsPricePer.Text = "0";
+            this.txtMechanicalPartsPricePer.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label66
             // 
@@ -1811,14 +1821,14 @@ namespace EVEPOSMon
             this.label67.TabIndex = 36;
             this.label67.Text = "ISK";
             // 
-            // textBox36
+            // txtRoboticsPricePer
             // 
-            this.textBox36.Location = new System.Drawing.Point(143, 132);
-            this.textBox36.Name = "textBox36";
-            this.textBox36.Size = new System.Drawing.Size(60, 20);
-            this.textBox36.TabIndex = 26;
-            this.textBox36.Text = "0";
-            this.textBox36.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtRoboticsPricePer.Location = new System.Drawing.Point(143, 132);
+            this.txtRoboticsPricePer.Name = "txtRoboticsPricePer";
+            this.txtRoboticsPricePer.Size = new System.Drawing.Size(60, 20);
+            this.txtRoboticsPricePer.TabIndex = 26;
+            this.txtRoboticsPricePer.Text = "0";
+            this.txtRoboticsPricePer.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label68
             // 
@@ -1847,15 +1857,15 @@ namespace EVEPOSMon
             this.label69.TabIndex = 34;
             this.label69.Text = "Volume";
             // 
-            // textBox34
+            // txtRoboticsVolume
             // 
-            this.textBox34.Enabled = false;
-            this.textBox34.Location = new System.Drawing.Point(143, 184);
-            this.textBox34.Name = "textBox34";
-            this.textBox34.Size = new System.Drawing.Size(60, 20);
-            this.textBox34.TabIndex = 28;
-            this.textBox34.Text = "0";
-            this.textBox34.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtRoboticsVolume.Enabled = false;
+            this.txtRoboticsVolume.Location = new System.Drawing.Point(143, 184);
+            this.txtRoboticsVolume.Name = "txtRoboticsVolume";
+            this.txtRoboticsVolume.Size = new System.Drawing.Size(60, 20);
+            this.txtRoboticsVolume.TabIndex = 28;
+            this.txtRoboticsVolume.Text = "0";
+            this.txtRoboticsVolume.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label70
             // 
@@ -1866,15 +1876,15 @@ namespace EVEPOSMon
             this.label70.TabIndex = 33;
             this.label70.Text = "Quanitity";
             // 
-            // textBox33
+            // txtRoboticsSubtotal
             // 
-            this.textBox33.Enabled = false;
-            this.textBox33.Location = new System.Drawing.Point(143, 210);
-            this.textBox33.Name = "textBox33";
-            this.textBox33.Size = new System.Drawing.Size(60, 20);
-            this.textBox33.TabIndex = 29;
-            this.textBox33.Text = "0";
-            this.textBox33.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtRoboticsSubtotal.Enabled = false;
+            this.txtRoboticsSubtotal.Location = new System.Drawing.Point(143, 210);
+            this.txtRoboticsSubtotal.Name = "txtRoboticsSubtotal";
+            this.txtRoboticsSubtotal.Size = new System.Drawing.Size(60, 20);
+            this.txtRoboticsSubtotal.TabIndex = 29;
+            this.txtRoboticsSubtotal.Text = "0";
+            this.txtRoboticsSubtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label71
             // 
@@ -1903,15 +1913,15 @@ namespace EVEPOSMon
             this.groupBox6.Controls.Add(this.label33);
             this.groupBox6.Controls.Add(this.label97);
             this.groupBox6.Controls.Add(this.pictureBox13);
-            this.groupBox6.Controls.Add(this.textBox49);
+            this.groupBox6.Controls.Add(this.txtCoolantPricePer);
             this.groupBox6.Controls.Add(this.label102);
             this.groupBox6.Controls.Add(this.label98);
             this.groupBox6.Controls.Add(this.label101);
             this.groupBox6.Controls.Add(this.txtCoolantQuantity);
-            this.groupBox6.Controls.Add(this.textBox52);
+            this.groupBox6.Controls.Add(this.txtCoolantSubtotal);
             this.groupBox6.Controls.Add(this.label99);
             this.groupBox6.Controls.Add(this.label100);
-            this.groupBox6.Controls.Add(this.textBox51);
+            this.groupBox6.Controls.Add(this.txtCoolantVolume);
             this.groupBox6.Location = new System.Drawing.Point(490, 12);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(270, 118);
@@ -1973,14 +1983,15 @@ namespace EVEPOSMon
             this.pictureBox13.TabIndex = 30;
             this.pictureBox13.TabStop = false;
             // 
-            // textBox49
+            // txtCoolantPricePer
             // 
-            this.textBox49.Location = new System.Drawing.Point(159, 13);
-            this.textBox49.Name = "textBox49";
-            this.textBox49.Size = new System.Drawing.Size(60, 20);
-            this.textBox49.TabIndex = 26;
-            this.textBox49.Text = "0";
-            this.textBox49.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtCoolantPricePer.Location = new System.Drawing.Point(159, 13);
+            this.txtCoolantPricePer.Name = "txtCoolantPricePer";
+            this.txtCoolantPricePer.Size = new System.Drawing.Size(60, 20);
+            this.txtCoolantPricePer.TabIndex = 26;
+            this.txtCoolantPricePer.Text = "0";
+            this.txtCoolantPricePer.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtCoolantPricePer.TextChanged += new System.EventHandler(this.txtCoolantPricePer_TextChanged);
             // 
             // label102
             // 
@@ -2017,16 +2028,17 @@ namespace EVEPOSMon
             this.txtCoolantQuantity.TabIndex = 27;
             this.txtCoolantQuantity.Text = "0";
             this.txtCoolantQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtCoolantQuantity.TextChanged += new System.EventHandler(this.txtCoolantQuantity_TextChanged);
             // 
-            // textBox52
+            // txtCoolantSubtotal
             // 
-            this.textBox52.Enabled = false;
-            this.textBox52.Location = new System.Drawing.Point(159, 91);
-            this.textBox52.Name = "textBox52";
-            this.textBox52.Size = new System.Drawing.Size(60, 20);
-            this.textBox52.TabIndex = 29;
-            this.textBox52.Text = "0";
-            this.textBox52.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtCoolantSubtotal.Enabled = false;
+            this.txtCoolantSubtotal.Location = new System.Drawing.Point(159, 91);
+            this.txtCoolantSubtotal.Name = "txtCoolantSubtotal";
+            this.txtCoolantSubtotal.Size = new System.Drawing.Size(60, 20);
+            this.txtCoolantSubtotal.TabIndex = 29;
+            this.txtCoolantSubtotal.Text = "0";
+            this.txtCoolantSubtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label99
             // 
@@ -2046,15 +2058,15 @@ namespace EVEPOSMon
             this.label100.TabIndex = 34;
             this.label100.Text = "Volume";
             // 
-            // textBox51
+            // txtCoolantVolume
             // 
-            this.textBox51.Enabled = false;
-            this.textBox51.Location = new System.Drawing.Point(159, 65);
-            this.textBox51.Name = "textBox51";
-            this.textBox51.Size = new System.Drawing.Size(60, 20);
-            this.textBox51.TabIndex = 28;
-            this.textBox51.Text = "0";
-            this.textBox51.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtCoolantVolume.Enabled = false;
+            this.txtCoolantVolume.Location = new System.Drawing.Point(159, 65);
+            this.txtCoolantVolume.Name = "txtCoolantVolume";
+            this.txtCoolantVolume.Size = new System.Drawing.Size(60, 20);
+            this.txtCoolantVolume.TabIndex = 28;
+            this.txtCoolantVolume.Text = "0";
+            this.txtCoolantVolume.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // rbManualCalc
             // 
@@ -2365,6 +2377,42 @@ namespace EVEPOSMon
             this.Moon.Name = "Moon";
             this.Moon.ReadOnly = true;
             // 
+            // label108
+            // 
+            this.label108.AutoSize = true;
+            this.label108.Location = new System.Drawing.Point(447, 94);
+            this.label108.Name = "label108";
+            this.label108.Size = new System.Drawing.Size(24, 13);
+            this.label108.TabIndex = 39;
+            this.label108.Text = "ISK";
+            // 
+            // label109
+            // 
+            this.label109.AutoSize = true;
+            this.label109.Location = new System.Drawing.Point(205, 94);
+            this.label109.Name = "label109";
+            this.label109.Size = new System.Drawing.Size(24, 13);
+            this.label109.TabIndex = 74;
+            this.label109.Text = "ISK";
+            // 
+            // label110
+            // 
+            this.label110.AutoSize = true;
+            this.label110.Location = new System.Drawing.Point(205, 213);
+            this.label110.Name = "label110";
+            this.label110.Size = new System.Drawing.Size(24, 13);
+            this.label110.TabIndex = 75;
+            this.label110.Text = "ISK";
+            // 
+            // label111
+            // 
+            this.label111.AutoSize = true;
+            this.label111.Location = new System.Drawing.Point(446, 214);
+            this.label111.Name = "label111";
+            this.label111.Size = new System.Drawing.Size(24, 13);
+            this.label111.TabIndex = 76;
+            this.label111.Text = "ISK";
+            // 
             // FuelCalculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2558,10 +2606,10 @@ namespace EVEPOSMon
         private System.Windows.Forms.Label label86;
         private System.Windows.Forms.Label label87;
         private System.Windows.Forms.PictureBox pictureBox11;
-        private System.Windows.Forms.TextBox textBox41;
-        private System.Windows.Forms.TextBox textBox42;
+        private System.Windows.Forms.TextBox txtOxygenSubtotal;
+        private System.Windows.Forms.TextBox txtOxygenVolume;
         private System.Windows.Forms.TextBox txtOxygenQuantity;
-        private System.Windows.Forms.TextBox textBox44;
+        private System.Windows.Forms.TextBox txtOxygenPricePer;
         private System.Windows.Forms.Label label88;
         private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.Label label89;
@@ -2582,20 +2630,20 @@ namespace EVEPOSMon
         private System.Windows.Forms.Label label78;
         private System.Windows.Forms.Label label79;
         private System.Windows.Forms.PictureBox pictureBox10;
-        private System.Windows.Forms.TextBox textBox37;
-        private System.Windows.Forms.TextBox textBox38;
+        private System.Windows.Forms.TextBox txtMechanicalPartsSubtotal;
+        private System.Windows.Forms.TextBox txtMechanicalPartsVolume;
         private System.Windows.Forms.TextBox txtMechanicalPartsQuantity;
-        private System.Windows.Forms.TextBox textBox40;
+        private System.Windows.Forms.TextBox txtMechanicalPartsPricePer;
         private System.Windows.Forms.Label label66;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.Label label67;
-        private System.Windows.Forms.TextBox textBox36;
+        private System.Windows.Forms.TextBox txtRoboticsPricePer;
         private System.Windows.Forms.Label label68;
         private System.Windows.Forms.TextBox txtRoboticsQuantity;
         private System.Windows.Forms.Label label69;
-        private System.Windows.Forms.TextBox textBox34;
+        private System.Windows.Forms.TextBox txtRoboticsVolume;
         private System.Windows.Forms.Label label70;
-        private System.Windows.Forms.TextBox textBox33;
+        private System.Windows.Forms.TextBox txtRoboticsSubtotal;
         private System.Windows.Forms.Label label71;
         private System.Windows.Forms.Label label72;
         private System.Windows.Forms.Label label95;
@@ -2603,15 +2651,15 @@ namespace EVEPOSMon
         private System.Windows.Forms.Label label96;
         private System.Windows.Forms.Label label97;
         private System.Windows.Forms.PictureBox pictureBox13;
-        private System.Windows.Forms.TextBox textBox49;
+        private System.Windows.Forms.TextBox txtCoolantPricePer;
         private System.Windows.Forms.Label label102;
         private System.Windows.Forms.Label label98;
         private System.Windows.Forms.Label label101;
         private System.Windows.Forms.TextBox txtCoolantQuantity;
-        private System.Windows.Forms.TextBox textBox52;
+        private System.Windows.Forms.TextBox txtCoolantSubtotal;
         private System.Windows.Forms.Label label99;
         private System.Windows.Forms.Label label100;
-        private System.Windows.Forms.TextBox textBox51;
+        private System.Windows.Forms.TextBox txtCoolantVolume;
         private System.Windows.Forms.TextBox textBox55;
         private System.Windows.Forms.TextBox textBox54;
         private System.Windows.Forms.TextBox textBox53;
@@ -2642,5 +2690,9 @@ namespace EVEPOSMon
         private System.Windows.Forms.Label label115;
         private System.Windows.Forms.DataGridViewCheckBoxColumn UseStarbase;
         private System.Windows.Forms.DataGridViewTextBoxColumn Moon;
+        private System.Windows.Forms.Label label111;
+        private System.Windows.Forms.Label label110;
+        private System.Windows.Forms.Label label109;
+        private System.Windows.Forms.Label label108;
     }
 }
