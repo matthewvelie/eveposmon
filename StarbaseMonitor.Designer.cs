@@ -97,7 +97,7 @@ namespace EVEPOSMon
             this.lblStarbaseName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStarbaseName.Location = new System.Drawing.Point(164, 5);
             this.lblStarbaseName.Name = "lblStarbaseName";
-            this.lblStarbaseName.Size = new System.Drawing.Size(115, 23);
+            this.lblStarbaseName.Size = new System.Drawing.Size(343, 23);
             this.lblStarbaseName.TabIndex = 3;
             this.lblStarbaseName.Text = "starbase name";
             this.lblStarbaseName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

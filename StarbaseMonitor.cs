@@ -24,8 +24,7 @@ namespace EVEPOSMon
 
         private void StarbaseMonitor_Load(object sender, EventArgs e)
         {
-            ControlTower controlTower = m_settings.controlTowerTypes.GetTowerInfo(m_starbase.typeId);
-            lblStarbaseName.Text = controlTower.typeName;
+            lblStarbaseName.Text = m_starbase.StarbaseControlTower.typeName;
 
             if (m_starbase.onStandingDrop.enabled == "1")
             {
@@ -139,29 +138,15 @@ namespace EVEPOSMon
                 dgFuelList.Rows.Add(new string[] { name, quantity, perHour + "/hr", strTimeRemaining});
             }
 
-            pgFuelBay.Maximum = Convert.ToInt32(controlTower.capacity);
+            pgFuelBay.Maximum = Convert.ToInt32(m_starbase.StarbaseControlTower.capacity);
             pgFuelBay.Minimum = 0;
             pgFuelBay.Value = (int)totalFuelVolume;
-            lblFuelBayValue.Text = totalFuelVolume.ToString() + "/" + controlTower.capacity;
+            lblFuelBayValue.Text = totalFuelVolume.ToString() + "/" + m_starbase.StarbaseControlTower.capacity;
 
-            int strontiumCapacity = 0;
-            if (controlTower.volume == "2000")
-            {
-                strontiumCapacity = 12500;
-            }
-            else if (controlTower.volume == "4000")
-            {
-                strontiumCapacity = 25000;
-            }
-            else if (controlTower.volume == "8000")
-            {
-                strontiumCapacity = 50000;
-            }
-
-            pgStrontiumBay.Maximum = strontiumCapacity;
+            pgStrontiumBay.Maximum = Convert.ToInt32(m_starbase.StarbaseControlTower.strontiumCapacity);
             pgStrontiumBay.Minimum = 0;
             pgStrontiumBay.Value = (int)totalStrontiumVolume;
-            lblStrontiumBayValue.Text = totalStrontiumVolume.ToString() + "/" + strontiumCapacity.ToString();
+            lblStrontiumBayValue.Text = totalStrontiumVolume.ToString() + "/" + m_starbase.StarbaseControlTower.strontiumCapacity;
 
             dgFuelList.Columns[0].DisplayIndex = 0;
             dgFuelList.Columns[1].DisplayIndex = 1;
