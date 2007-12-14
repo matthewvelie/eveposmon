@@ -91,9 +91,11 @@ namespace EVEPOSMon
 
             foreach (Fuel f in m_starbase.FuelList)
             {
-                string requiredQuantity = m_settings.towerResources.GetFuelQuantity(m_starbase.typeId, f.typeId);
-
-                dgFuelList.Rows.Add(new string[] { f.typeId.ToString(), f.quantity.ToString(), requiredQuantity + "/hr" });
+                ResourceEntry fuelInfo = m_settings.towerResources.GetFuelInfo(m_starbase.typeId, f.typeId);
+                string name = fuelInfo == null ? f.typeId.ToString() : fuelInfo.name;
+                string quantity = f.quantity.ToString();
+                string perHour = fuelInfo == null ? "-1" : fuelInfo.quantity + "/hr";
+                dgFuelList.Rows.Add(new string[] { name, quantity, perHour});
             }
 
             dgFuelList.Columns[0].DisplayIndex = 0;

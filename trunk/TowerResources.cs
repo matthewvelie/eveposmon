@@ -7,21 +7,21 @@ using System.Xml;
 
 namespace EVEPOSMon
 {
+    public class ResourceEntry
+    {
+        public string towerTypeId;
+        public string typeId;
+        public string quantity;
+        public string purposeText;
+        public string name;
+        public string description;
+        public string volume;
+    }
+
     public class TowerResources
     {
         public List<ResourceEntry> resourceEntries = new List<ResourceEntry>();
         public Hashtable towerTypeIds = new Hashtable();
-
-        public class ResourceEntry
-        {
-            public string towerTypeId;
-            public string typeId;
-            public string quantity;
-            public string purposeText;
-            public string name;
-            public string description;
-            public string volume;
-        }
 
         public static TowerResources Load(string filename)
         {
@@ -58,18 +58,18 @@ namespace EVEPOSMon
             return tr;
         }
 
-        public string GetFuelQuantity(string towerTypeId, string fuelTypeId)
+        public ResourceEntry GetFuelInfo(string towerTypeId, string fuelTypeId)
         {
             List<ResourceEntry> res = towerTypeIds[towerTypeId] as List<ResourceEntry>;
             foreach (ResourceEntry re in res)
             {
                 if (re.typeId == fuelTypeId)
                 {
-                    return re.quantity;
+                    return re;
                 }
             }
 
-            return "-1";
+            return null;
         }
     }
 }
