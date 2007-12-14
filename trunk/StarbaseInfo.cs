@@ -94,8 +94,28 @@ namespace EVEPOSMon
                 ResourceEntry fuelInfo = m_settings.towerResources.GetFuelInfo(m_starbase.typeId, f.typeId);
                 string name = fuelInfo == null ? f.typeId.ToString() : fuelInfo.name;
                 string quantity = f.quantity.ToString();
-                string perHour = fuelInfo == null ? "-1" : fuelInfo.quantity + "/hr";
-                dgFuelList.Rows.Add(new string[] { name, quantity, perHour});
+                string perHour = fuelInfo == null ? "-1" : fuelInfo.quantity;
+
+                TimeSpan timeRemaining = TimeSpan.MinValue;
+                string strTimeRemaining = string.Empty;
+
+                if (fuelInfo != null)
+                {
+                    timeRemaining = TimeSpan.FromHours(Convert.ToInt32(quantity) / Convert.ToInt32(perHour));
+                    int days = timeRemaining.Days;
+                    int hours = timeRemaining.Hours;
+
+                    if (days > 0)
+                    {
+                        strTimeRemaining = days.ToString() + " Days " + hours.ToString() + " Hours";
+                    }
+                    else
+                    {
+                        strTimeRemaining = hours.ToString() + "Hours";
+                    }
+                }
+
+                dgFuelList.Rows.Add(new string[] { name, quantity, perHour + "/hr", strTimeRemaining});
             }
 
             dgFuelList.Columns[0].DisplayIndex = 0;

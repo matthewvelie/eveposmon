@@ -51,6 +51,7 @@ namespace EVEPOSMon
             this.FuelName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FuelRequiredQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TimeRemaining = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbStationImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgFuelList)).BeginInit();
@@ -199,7 +200,8 @@ namespace EVEPOSMon
             this.dgFuelList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.FuelName,
             this.Quantity,
-            this.FuelRequiredQuantity});
+            this.FuelRequiredQuantity,
+            this.TimeRemaining});
             this.dgFuelList.Location = new System.Drawing.Point(15, 209);
             this.dgFuelList.Name = "dgFuelList";
             this.dgFuelList.ReadOnly = true;
@@ -229,6 +231,12 @@ namespace EVEPOSMon
             this.FuelRequiredQuantity.HeaderText = "Required Quantity";
             this.FuelRequiredQuantity.Name = "FuelRequiredQuantity";
             this.FuelRequiredQuantity.ReadOnly = true;
+            // 
+            // TimeRemaining
+            // 
+            this.TimeRemaining.HeaderText = "Time Remaining";
+            this.TimeRemaining.Name = "TimeRemaining";
+            this.TimeRemaining.ReadOnly = true;
             // 
             // StarbaseInfo
             // 
@@ -287,5 +295,6 @@ namespace EVEPOSMon
         private System.Windows.Forms.DataGridViewTextBoxColumn FuelName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn FuelRequiredQuantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TimeRemaining;
     }
 }
