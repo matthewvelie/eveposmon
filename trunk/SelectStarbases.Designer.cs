@@ -77,7 +77,8 @@ namespace EVEPOSMon
             this.hidden_object});
             this.lbStations.Location = new System.Drawing.Point(9, 86);
             this.lbStations.Name = "lbStations";
-            this.lbStations.Size = new System.Drawing.Size(444, 249);
+            this.lbStations.RowHeadersVisible = false;
+            this.lbStations.Size = new System.Drawing.Size(404, 249);
             this.lbStations.TabIndex = 3;
             // 
             // Column0
@@ -129,7 +130,7 @@ namespace EVEPOSMon
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(463, 375);
+            this.ClientSize = new System.Drawing.Size(423, 375);
             this.Controls.Add(this.btnSaveAutoload);
             this.Controls.Add(this.lbStations);
             this.Controls.Add(this.btnGetStationInfo);
