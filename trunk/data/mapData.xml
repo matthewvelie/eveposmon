@@ -37332,13 +37332,6 @@
         <regionName>Verge Vendor</regionName>
     </system>
     <system>
-        <locationID>30005334</locationID>
-        <systemName>Tierijev</systemName>
-        <security>0.84</security>
-        <constellationName>Aideron</constellationName>
-        <regionName>Verge Vendor</regionName>
-    </system>
-    <system>
         <locationID>30010141</locationID>
         <systemName>Sakenta</systemName>
         <security>0.98</security>
