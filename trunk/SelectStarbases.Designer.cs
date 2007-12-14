@@ -37,7 +37,11 @@ namespace EVEPOSMon
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hidden_object = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSaveAutoload = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.characterInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.lbStations)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnLoadStations
@@ -125,6 +129,31 @@ namespace EVEPOSMon
             this.btnSaveAutoload.UseVisualStyleBackColor = true;
             this.btnSaveAutoload.Click += new System.EventHandler(this.btnSaveAutoload_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(423, 24);
+            this.menuStrip1.TabIndex = 5;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.characterInformationToolStripMenuItem});
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.editToolStripMenuItem.Text = "Edit";
+            // 
+            // characterInformationToolStripMenuItem
+            // 
+            this.characterInformationToolStripMenuItem.Name = "characterInformationToolStripMenuItem";
+            this.characterInformationToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.characterInformationToolStripMenuItem.Text = "Character Information";
+            this.characterInformationToolStripMenuItem.Click += new System.EventHandler(this.characterInformationToolStripMenuItem_Click);
+            // 
             // SelectStarbases
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -135,12 +164,17 @@ namespace EVEPOSMon
             this.Controls.Add(this.lbStations);
             this.Controls.Add(this.btnGetStationInfo);
             this.Controls.Add(this.btnLoadStations);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "SelectStarbases";
             this.Text = "EVEPOSMon Station Selection";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SelectStarbases_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.lbStations)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -155,6 +189,9 @@ namespace EVEPOSMon
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn hidden_object;
         private System.Windows.Forms.Button btnSaveAutoload;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem characterInformationToolStripMenuItem;
     }
 }
 
