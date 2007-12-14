@@ -85,7 +85,16 @@
     <Compile Include="StarbaseInfo.Designer.cs">
       <DependentUpon>StarbaseInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Throbber.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Throbber.designer.cs">
+      <DependentUpon>Throbber.cs</DependentUpon>
+    </Compile>
     <Compile Include="TowerResources.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="throbber.png" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
