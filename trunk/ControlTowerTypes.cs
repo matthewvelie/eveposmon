@@ -13,6 +13,30 @@ namespace EVEPOSMon
         public string description;
         public string volume;
         public string capacity;
+
+        public string strontiumCapacity
+        {
+            get
+            {
+                if (volume == "2000")
+                {
+                    return "12500";
+                }
+                else if (volume == "4000")
+                {
+                    return "25000";
+                }
+                else if (volume == "8000")
+                {
+                    return "50000";
+                }
+                else
+                {
+                    return "-1";
+                }
+            }
+        }
+
     }
 
     public class ControlTowerTypes

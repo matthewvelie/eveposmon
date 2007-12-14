@@ -39,7 +39,21 @@ namespace EVEPOSMon
                 return this.starbaseSystem;
             }
         }
-        
+
+        private ControlTower starbaseControlTower;
+        public ControlTower StarbaseControlTower
+        {
+            get
+            {
+                if (starbaseControlTower == null)
+                {
+                    starbaseControlTower = m_settings.controlTowerTypes.GetTowerInfo(this.typeId);
+                }
+                return starbaseControlTower;
+            }
+        }
+
+
         #endregion
 
         #region General Settings
