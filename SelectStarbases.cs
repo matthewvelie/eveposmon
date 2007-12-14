@@ -72,7 +72,7 @@ namespace EVEPOSMon
             //load new list items
             foreach (Starbase s in m_starbasesList)
             {
-                lbStations.Rows.Add(new object[] { false, s.StarbaseSystem.regionName, s.StarbaseSystem.systemName, s.Moon.moonName, s });
+                lbStations.Rows.Add(new object[] { false, s.StarbaseSystem.regionName, s.StarbaseSystem.constellationName, s.Moon.moonName, s });
             }
 
             // Dirty delay on button reactivation
@@ -87,6 +87,7 @@ namespace EVEPOSMon
 
         private void btnGetStationInfo_Click(object sender, EventArgs e)
         {
+            bool wasSelection = false;
             mainScreen.clearTabs();
             mainScreen.Visible = false;
             StarbaseMonitor sm;
@@ -95,6 +96,7 @@ namespace EVEPOSMon
             {
                 if (lbStations.Rows[i].Cells[0].Value.ToString() == "true")
                 {
+                    wasSelection = true;
                     // cell 4 is a hidden field with the starbase object
                     Starbase starbase = lbStations.Rows[i].Cells[4].Value as Starbase;
 
@@ -110,11 +112,13 @@ namespace EVEPOSMon
                     sm = new StarbaseMonitor(starbase);
                     sm.Parent = tp;
                     sm.Dock = DockStyle.Fill;
-                    mainScreen.Visible = true;
                 }
             }
-            mainScreen.Visible = true;
-            
+            // Only display the mainScreen if any of the stations we're checked.
+            if (wasSelection)
+                mainScreen.Visible = true;
+            else
+                MessageBox.Show("You must select a starbase in order to have information displayed", "No Starbases Selected", MessageBoxButtons.OK, MessageBoxIcon.Hand );
         }
 
         // Prompt the user to confirm closing the program and all other windows
