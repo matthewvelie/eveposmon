@@ -64,7 +64,6 @@ namespace EVEPOSMon
             this.statusStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbStationImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgFuelList)).BeginInit();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.throbber1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,13 +81,13 @@ namespace EVEPOSMon
             // lblXmlLastDownloaded
             // 
             this.lblXmlLastDownloaded.Name = "lblXmlLastDownloaded";
-            this.lblXmlLastDownloaded.Size = new System.Drawing.Size(109, 17);
+            this.lblXmlLastDownloaded.Size = new System.Drawing.Size(118, 17);
             this.lblXmlLastDownloaded.Text = "toolStripStatusLabel1";
             // 
             // lblDataCachedUntil
             // 
             this.lblDataCachedUntil.Name = "lblDataCachedUntil";
-            this.lblDataCachedUntil.Size = new System.Drawing.Size(109, 17);
+            this.lblDataCachedUntil.Size = new System.Drawing.Size(118, 17);
             this.lblDataCachedUntil.Text = "toolStripStatusLabel2";
             // 
             // lblStarbaseName
@@ -96,7 +95,7 @@ namespace EVEPOSMon
             this.lblStarbaseName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStarbaseName.Location = new System.Drawing.Point(171, 6);
             this.lblStarbaseName.Name = "lblStarbaseName";
-            this.lblStarbaseName.Size = new System.Drawing.Size(211, 23);
+            this.lblStarbaseName.Size = new System.Drawing.Size(115, 23);
             this.lblStarbaseName.TabIndex = 1;
             this.lblStarbaseName.Text = "starbase name";
             this.lblStarbaseName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -221,7 +220,7 @@ namespace EVEPOSMon
             this.dgFuelList.Name = "dgFuelList";
             this.dgFuelList.ReadOnly = true;
             this.dgFuelList.RowHeadersVisible = false;
-            this.dgFuelList.Size = new System.Drawing.Size(489, 355);
+            this.dgFuelList.Size = new System.Drawing.Size(670, 551);
             this.dgFuelList.TabIndex = 4;
             // 
             // FuelName
@@ -256,7 +255,6 @@ namespace EVEPOSMon
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dgFuelList);
             this.panel1.Location = new System.Drawing.Point(0, 196);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(489, 355);
@@ -337,6 +335,7 @@ namespace EVEPOSMon
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(670, 573);
+            this.Controls.Add(this.dgFuelList);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.throbber1);
             this.Controls.Add(this.lblStrontiumBayValue);
@@ -369,7 +368,6 @@ namespace EVEPOSMon
             this.statusStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbStationImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgFuelList)).EndInit();
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.throbber1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -397,6 +395,7 @@ namespace EVEPOSMon
         private System.Windows.Forms.ToolStripStatusLabel lblXmlLastDownloaded;
         private System.Windows.Forms.ToolStripStatusLabel lblDataCachedUntil;
         private System.Windows.Forms.ImageList imageList1;
+
         private System.Windows.Forms.DataGridViewTextBoxColumn FuelName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn FuelRequiredQuantity;
@@ -410,5 +409,6 @@ namespace EVEPOSMon
         private System.Windows.Forms.Label lblStrontiumBayValue;
         private EVEMon.Throbber throbber1;
         private System.Windows.Forms.Label label1;
+
     }
 }
