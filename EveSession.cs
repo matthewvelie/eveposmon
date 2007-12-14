@@ -44,7 +44,7 @@ namespace EVEMon.Common
             }
 
             // Now suck out the cachedUntil time - assume 3 hours from now in case the parse fails
-            DateTime cacheExpires = DateTime.Now + new TimeSpan(3, 0, 0);
+            DateTime cacheExpires = DateTime.Now.ToUniversalTime() + new TimeSpan(3, 0, 0);
             try
             {
                 XmlNode cachedTimeNode = xdoc.SelectSingleNode("/eveapi/cachedUntil");
