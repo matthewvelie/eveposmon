@@ -16,6 +16,7 @@ namespace EVEPOSMon
     public partial class SelectStarbases : Form
     {
         List<Starbase> m_starbasesList = new List<Starbase>();
+        private MainScreen mainScreen = new MainScreen();
 
         public SelectStarbases()
         {
@@ -35,7 +36,7 @@ namespace EVEPOSMon
             btnLoadStations.Enabled = false; 
             
             // Clear the master list and station list so it wont affect updates
-            lbStations.Items.Clear();
+            lbStations.Rows.Clear();
             m_starbasesList.Clear();
             
             XmlDocument xdoc = EVEMonWebRequest.LoadXml(@"http://www.exa-nation.com/corp/StarbaseList.xml.aspx");
@@ -65,17 +66,19 @@ namespace EVEPOSMon
                     /************ Code moved to starbase.setValues() ********* */
                     m_starbasesList.Add(starbase);
                 }
-            }       
+            }
+
+            
             //load new list items
             foreach (Starbase s in m_starbasesList)
             {
-                lbStations.Items.Add(s);
+                lbStations.Rows.Add(new object[] { false, s.StarbaseSystem.regionName, s.StarbaseSystem.systemName, s.Moon.moonName, s });
             }
 
             // Dirty delay on button reactivation
-            for (int i = 0; i < 500; i++)
+            for (int i = 0; i < 5000; i++)
             {
-                System.Threading.Thread.Sleep(10);
+                System.Threading.Thread.Sleep(1);
                 Application.DoEvents();
             }
             // Reactivate the button
@@ -84,30 +87,30 @@ namespace EVEPOSMon
 
         private void btnGetStationInfo_Click(object sender, EventArgs e)
         {
-
-            // get the selected station, use its object method to get the detailed information.
-            // Get current seleted station detailed information
-            if (lbStations.SelectedItem == null)
-            {
-                return;
-            }
-
-            Starbase starbase = lbStations.SelectedItem as Starbase;
             
-            starbase.setDetails("http://www.exa-nation.com/corp/StarbaseDetail.xml.aspx?itemId=");
-            /* moved to starbase.setDetails() *************************************************************/
+            StarbaseMonitor sm;
+            TabPage tp;
+            for (int i = 0; i < lbStations.RowCount; i++)
+            {
+                if (lbStations.Rows[i].Cells[0].Value.ToString() == "true")
+                {
+                    Starbase starbase = lbStations.Rows[i].Cells[4].Value as Starbase;
 
-            StarbaseInfo starbaseInfo = new StarbaseInfo(starbase);
-            starbaseInfo.Show();
+                    starbase.setDetails("http://www.exa-nation.com/corp/StarbaseDetail.xml.aspx?itemId=");
 
-            MainScreen mainScreen = new MainScreen();
-            StarbaseMonitor sm = new StarbaseMonitor(starbase);
-            TabPage tp = new TabPage("test");
-            sm.Parent = tp;
-            sm.Dock = DockStyle.Fill;
-            mainScreen.AddTab(tp);
-            mainScreen.Visible = true;
-
+                    /*  because tabs work so well this old display is commented out.
+                    StarbaseInfo starbaseInfo = new StarbaseInfo(starbase);
+                    starbaseInfo.Show();
+                    */
+                     
+                    tp = new TabPage(starbase.StarbaseSystem.locationID);
+                    mainScreen.AddTab(tp);
+                    sm = new StarbaseMonitor(starbase);
+                    sm.Parent = tp;
+                    sm.Dock = DockStyle.Fill;
+                    mainScreen.Visible = true;
+                }
+            }
             
         }
 
