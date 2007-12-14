@@ -133,5 +133,10 @@ namespace EVEPOSMon
             else
                 e.Cancel = true;
         }
+
+        private void btnSaveAutoload_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Temp box", "Alert", MessageBoxButtons.OK);
+        }
     }
 }

@@ -36,14 +36,16 @@ namespace EVEPOSMon
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hidden_object = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSaveAutoload = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.lbStations)).BeginInit();
             this.SuspendLayout();
             // 
             // btnLoadStations
             // 
-            this.btnLoadStations.Location = new System.Drawing.Point(12, 54);
+            this.btnLoadStations.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoadStations.Location = new System.Drawing.Point(12, 55);
             this.btnLoadStations.Name = "btnLoadStations";
-            this.btnLoadStations.Size = new System.Drawing.Size(106, 23);
+            this.btnLoadStations.Size = new System.Drawing.Size(104, 22);
             this.btnLoadStations.TabIndex = 1;
             this.btnLoadStations.Text = "Get Station List";
             this.btnLoadStations.UseVisualStyleBackColor = true;
@@ -51,9 +53,10 @@ namespace EVEPOSMon
             // 
             // btnGetStationInfo
             // 
+            this.btnGetStationInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGetStationInfo.Location = new System.Drawing.Point(13, 341);
             this.btnGetStationInfo.Name = "btnGetStationInfo";
-            this.btnGetStationInfo.Size = new System.Drawing.Size(105, 23);
+            this.btnGetStationInfo.Size = new System.Drawing.Size(111, 23);
             this.btnGetStationInfo.TabIndex = 2;
             this.btnGetStationInfo.Text = "Get Station Info";
             this.btnGetStationInfo.UseVisualStyleBackColor = true;
@@ -94,13 +97,13 @@ namespace EVEPOSMon
             // 
             // Column2
             // 
-            this.Column2.HeaderText = "System";
+            this.Column2.HeaderText = "Constellation";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             // 
             // Column3
             // 
-            this.Column3.HeaderText = "Moon";
+            this.Column3.HeaderText = "System/Planet/Moon";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
             this.Column3.Width = 150;
@@ -111,12 +114,23 @@ namespace EVEPOSMon
             this.hidden_object.Name = "hidden_object";
             this.hidden_object.Visible = false;
             // 
+            // btnSaveAutoload
+            // 
+            this.btnSaveAutoload.Location = new System.Drawing.Point(130, 341);
+            this.btnSaveAutoload.Name = "btnSaveAutoload";
+            this.btnSaveAutoload.Size = new System.Drawing.Size(150, 23);
+            this.btnSaveAutoload.TabIndex = 4;
+            this.btnSaveAutoload.Text = "Save Selection for Auto-load";
+            this.btnSaveAutoload.UseVisualStyleBackColor = true;
+            this.btnSaveAutoload.Click += new System.EventHandler(this.btnSaveAutoload_Click);
+            // 
             // SelectStarbases
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(463, 375);
+            this.Controls.Add(this.btnSaveAutoload);
             this.Controls.Add(this.lbStations);
             this.Controls.Add(this.btnGetStationInfo);
             this.Controls.Add(this.btnLoadStations);
@@ -139,6 +153,7 @@ namespace EVEPOSMon
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn hidden_object;
+        private System.Windows.Forms.Button btnSaveAutoload;
     }
 }
 
