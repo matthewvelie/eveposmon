@@ -414,7 +414,7 @@ namespace EVEMon.Common
         static WebRequestState()
         {
             Version currentVersion = Assembly.GetExecutingAssembly().GetName().Version;
-            sm_appVersion = "EVEMon/" + currentVersion.ToString();
+            sm_appVersion = "EVEPosMon/" + currentVersion.ToString();
             sm_userAgent = USER_AGENT_BASE + " " + sm_appVersion;
         }
 
