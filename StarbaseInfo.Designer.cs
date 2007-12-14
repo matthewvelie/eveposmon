@@ -47,9 +47,10 @@ namespace EVEPOSMon
             this.lblClaimingSovereignty = new System.Windows.Forms.Label();
             this.pbStationImage = new System.Windows.Forms.PictureBox();
             this.dgFuelList = new System.Windows.Forms.DataGridView();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.FuelName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.FuelRequiredQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbStationImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgFuelList)).BeginInit();
@@ -197,30 +198,37 @@ namespace EVEPOSMon
             this.dgFuelList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgFuelList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.FuelName,
-            this.Quantity});
+            this.Quantity,
+            this.FuelRequiredQuantity});
             this.dgFuelList.Location = new System.Drawing.Point(15, 209);
             this.dgFuelList.Name = "dgFuelList";
             this.dgFuelList.ReadOnly = true;
             this.dgFuelList.Size = new System.Drawing.Size(463, 321);
             this.dgFuelList.TabIndex = 4;
             // 
-            // FuelName
-            // 
-            this.FuelName.HeaderText = "";
-            this.FuelName.Name = "FuelName";
-            this.FuelName.ReadOnly = true;
-            // 
-            // Quantity
-            // 
-            this.Quantity.HeaderText = "";
-            this.Quantity.Name = "Quantity";
-            this.Quantity.ReadOnly = true;
-            // 
             // imageList1
             // 
             this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // FuelName
+            // 
+            this.FuelName.HeaderText = "Fuel Name";
+            this.FuelName.Name = "FuelName";
+            this.FuelName.ReadOnly = true;
+            // 
+            // Quantity
+            // 
+            this.Quantity.HeaderText = "Current Quantity";
+            this.Quantity.Name = "Quantity";
+            this.Quantity.ReadOnly = true;
+            // 
+            // FuelRequiredQuantity
+            // 
+            this.FuelRequiredQuantity.HeaderText = "Required Quantity";
+            this.FuelRequiredQuantity.Name = "FuelRequiredQuantity";
+            this.FuelRequiredQuantity.ReadOnly = true;
             // 
             // StarbaseInfo
             // 
@@ -273,10 +281,11 @@ namespace EVEPOSMon
         private System.Windows.Forms.Label lblClaimingSovereignty;
         private System.Windows.Forms.PictureBox pbStationImage;
         private System.Windows.Forms.DataGridView dgFuelList;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FuelName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
         private System.Windows.Forms.ToolStripStatusLabel lblXmlLastDownloaded;
         private System.Windows.Forms.ToolStripStatusLabel lblDataCachedUntil;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FuelName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FuelRequiredQuantity;
     }
 }

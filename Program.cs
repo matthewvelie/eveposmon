@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using EVEMon.Common;
 
 namespace EVEPOSMon
 {
@@ -12,6 +13,9 @@ namespace EVEPOSMon
         [STAThread]
         static void Main()
         {
+            Settings s = Settings.GetInstance();
+            s.towerResources = TowerResources.Load(Application.StartupPath + @"\data\invControlTowerResources.xml");
+            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new SelectStarbases());
