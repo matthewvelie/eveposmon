@@ -29,37 +29,45 @@ namespace EVEPOSMon
             if (m_starbase.onStandingDrop.enabled == "1")
             {
                 lblOnStandingDropValue.Text = "Enabled";
+                lblOnStandingDropValue.ForeColor = System.Drawing.Color.Green;
             }
             else
             {
                 lblOnStandingDropValue.Text = "Disabled";
+                lblOnStandingDropValue.ForeColor = System.Drawing.Color.Red;
             }
 
             if (m_starbase.onStatusDrop.enabled == "1")
             {
                 lblOnStatusDropValue.Text = "Enabled";
+                lblOnStatusDropValue.ForeColor = System.Drawing.Color.Green;
             }
             else
             {
                 lblOnStatusDropValue.Text = "Disabled";
+                lblOnStatusDropValue.ForeColor = System.Drawing.Color.Red;
             }
 
             if (m_starbase.onAgression.enabled == "1")
             {
                 lblOnAggressionValue.Text = "Enabled";
+                lblOnAggressionValue.ForeColor = System.Drawing.Color.Green;
             }
             else
             {
                 lblOnAggressionValue.Text = "Disabled";
+                lblOnAggressionValue.ForeColor = System.Drawing.Color.Red;
             }
 
             if (m_starbase.onCorporationWar.enabled == "1")
             {
                 lblOnCorporationWarValue.Text = "Enabled";
+                lblOnCorporationWarValue.ForeColor = System.Drawing.Color.Green;
             }
             else
             {
                 lblOnCorporationWarValue.Text = "Disabled";
+                lblOnCorporationWarValue.ForeColor = System.Drawing.Color.Red;
             }
 
             if (m_starbase.allowCorporationMembers == "1")
