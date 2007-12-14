@@ -38,6 +38,12 @@
   <ItemGroup>
     <Compile Include="AutoShrink.cs" />
     <Compile Include="ControlTowerTypes.cs" />
+    <Compile Include="FuelCalculator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FuelCalculator.Designer.cs">
+      <DependentUpon>FuelCalculator.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -109,6 +116,10 @@
     <Compile Include="TowerResources.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FuelCalculator.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FuelCalculator.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainScreen.resx">
       <SubType>Designer</SubType>
       <DependentUpon>MainScreen.cs</DependentUpon>
@@ -118,6 +129,201 @@
       <DependentUpon>StarbaseMonitor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="throbber.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon74_14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon06_06.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon07_12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon09_02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon09_08.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon10_07.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon10_10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon12_01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon12_07.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon24_06.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon24_14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon27_10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon33_02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon40_14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon47_01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon47_02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon47_03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon47_04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon47_05.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon47_06.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon47_07.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon47_08.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon47_09.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon47_10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon47_11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon47_12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon47_13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon47_14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon47_15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon47_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon49_08.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon49_09.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon49_10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon49_11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon49_12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon49_13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon49_14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon49_15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon49_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon50_01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon50_02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon50_04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon50_05.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon50_06.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon50_07.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon50_08.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon50_09.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon50_10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon51_01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon51_02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon51_03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon51_04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon51_05.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon51_06.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon51_07.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon51_09.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon51_10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon51_11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon51_12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon51_13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon51_14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon51_15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon51_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon55_12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon57_03.png" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
