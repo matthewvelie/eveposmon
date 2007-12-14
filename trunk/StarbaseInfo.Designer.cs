@@ -59,10 +59,13 @@ namespace EVEPOSMon
             this.pgStrontiumBay = new System.Windows.Forms.ProgressBar();
             this.lblFuelBayValue = new System.Windows.Forms.Label();
             this.lblStrontiumBayValue = new System.Windows.Forms.Label();
+            this.throbber1 = new EVEMon.Throbber();
+            this.label1 = new System.Windows.Forms.Label();
             this.statusStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbStationImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgFuelList)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.throbber1)).BeginInit();
             this.SuspendLayout();
             // 
             // statusStrip
@@ -309,11 +312,33 @@ namespace EVEPOSMon
             this.lblStrontiumBayValue.TabIndex = 8;
             this.lblStrontiumBayValue.Text = "label1";
             // 
+            // throbber1
+            // 
+            this.throbber1.Location = new System.Drawing.Point(614, 12);
+            this.throbber1.MaximumSize = new System.Drawing.Size(24, 24);
+            this.throbber1.MinimumSize = new System.Drawing.Size(24, 24);
+            this.throbber1.Name = "throbber1";
+            this.throbber1.Size = new System.Drawing.Size(24, 24);
+            this.throbber1.State = EVEMon.Throbber.ThrobberState.Stopped;
+            this.throbber1.TabIndex = 9;
+            this.throbber1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(596, 45);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(62, 23);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "00:00:00";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // StarbaseInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(670, 573);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.throbber1);
             this.Controls.Add(this.lblStrontiumBayValue);
             this.Controls.Add(this.lblFuelBayValue);
             this.Controls.Add(this.lblStrontiumBay);
@@ -345,6 +370,7 @@ namespace EVEPOSMon
             ((System.ComponentModel.ISupportInitialize)(this.pbStationImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgFuelList)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.throbber1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -382,5 +408,7 @@ namespace EVEPOSMon
         private System.Windows.Forms.ProgressBar pgStrontiumBay;
         private System.Windows.Forms.Label lblFuelBayValue;
         private System.Windows.Forms.Label lblStrontiumBayValue;
+        private EVEMon.Throbber throbber1;
+        private System.Windows.Forms.Label label1;
     }
 }
