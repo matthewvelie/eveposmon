@@ -336,6 +336,7 @@ namespace EVEPOSMon
             this.Controls.Add(this.lblCombatSettings);
             this.Controls.Add(this.lblStarbaseName);
             this.Controls.Add(this.statusStrip);
+            this.MaximizeBox = false;
             this.Name = "StarbaseInfo";
             this.Text = "StationInfo";
             this.Load += new System.EventHandler(this.StarbaseInfo_Load);
