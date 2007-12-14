@@ -87,6 +87,11 @@ namespace EVEPOSMon
 
             // get the selected station, use its object method to get the detailed information.
             // Get current seleted station detailed information
+            if (lbStations.SelectedItem == null)
+            {
+                return;
+            }
+
             Starbase starbase = lbStations.SelectedItem as Starbase;
             
             starbase.setDetails("http://www.exa-nation.com/corp/StarbaseDetail.xml.aspx?itemId=");
