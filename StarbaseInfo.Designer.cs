@@ -47,12 +47,18 @@ namespace EVEPOSMon
             this.lblClaimingSovereignty = new System.Windows.Forms.Label();
             this.pbStationImage = new System.Windows.Forms.PictureBox();
             this.dgFuelList = new System.Windows.Forms.DataGridView();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.FuelName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FuelRequiredQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TimeRemaining = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pgFuelBay = new System.Windows.Forms.ProgressBar();
+            this.lblFuelBay = new System.Windows.Forms.Label();
+            this.lblStrontiumBay = new System.Windows.Forms.Label();
+            this.pgStrontiumBay = new System.Windows.Forms.ProgressBar();
+            this.lblFuelBayValue = new System.Windows.Forms.Label();
+            this.lblStrontiumBayValue = new System.Windows.Forms.Label();
             this.statusStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbStationImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgFuelList)).BeginInit();
@@ -66,7 +72,7 @@ namespace EVEPOSMon
             this.lblDataCachedUntil});
             this.statusStrip.Location = new System.Drawing.Point(0, 551);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(490, 22);
+            this.statusStrip.Size = new System.Drawing.Size(670, 22);
             this.statusStrip.TabIndex = 0;
             this.statusStrip.Text = "statusStrip1";
             // 
@@ -84,11 +90,13 @@ namespace EVEPOSMon
             // 
             // lblStarbaseName
             // 
-            this.lblStarbaseName.Location = new System.Drawing.Point(170, 17);
+            this.lblStarbaseName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStarbaseName.Location = new System.Drawing.Point(171, 6);
             this.lblStarbaseName.Name = "lblStarbaseName";
             this.lblStarbaseName.Size = new System.Drawing.Size(211, 23);
             this.lblStarbaseName.TabIndex = 1;
             this.lblStarbaseName.Text = "starbase name";
+            this.lblStarbaseName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblCombatSettings
             // 
@@ -213,12 +221,6 @@ namespace EVEPOSMon
             this.dgFuelList.Size = new System.Drawing.Size(489, 355);
             this.dgFuelList.TabIndex = 4;
             // 
-            // imageList1
-            // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            // 
             // FuelName
             // 
             this.FuelName.HeaderText = "Fuel Name";
@@ -243,6 +245,12 @@ namespace EVEPOSMon
             this.TimeRemaining.Name = "TimeRemaining";
             this.TimeRemaining.ReadOnly = true;
             // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.dgFuelList);
@@ -251,11 +259,67 @@ namespace EVEPOSMon
             this.panel1.Size = new System.Drawing.Size(489, 355);
             this.panel1.TabIndex = 5;
             // 
+            // pgFuelBay
+            // 
+            this.pgFuelBay.Location = new System.Drawing.Point(413, 58);
+            this.pgFuelBay.Name = "pgFuelBay";
+            this.pgFuelBay.Size = new System.Drawing.Size(135, 18);
+            this.pgFuelBay.TabIndex = 6;
+            // 
+            // lblFuelBay
+            // 
+            this.lblFuelBay.AutoSize = true;
+            this.lblFuelBay.Location = new System.Drawing.Point(410, 40);
+            this.lblFuelBay.Name = "lblFuelBay";
+            this.lblFuelBay.Size = new System.Drawing.Size(48, 13);
+            this.lblFuelBay.TabIndex = 7;
+            this.lblFuelBay.Text = "Fuel Bay";
+            // 
+            // lblStrontiumBay
+            // 
+            this.lblStrontiumBay.AutoSize = true;
+            this.lblStrontiumBay.Location = new System.Drawing.Point(412, 94);
+            this.lblStrontiumBay.Name = "lblStrontiumBay";
+            this.lblStrontiumBay.Size = new System.Drawing.Size(72, 13);
+            this.lblStrontiumBay.TabIndex = 7;
+            this.lblStrontiumBay.Text = "Strontium Bay";
+            // 
+            // pgStrontiumBay
+            // 
+            this.pgStrontiumBay.Location = new System.Drawing.Point(415, 110);
+            this.pgStrontiumBay.Name = "pgStrontiumBay";
+            this.pgStrontiumBay.Size = new System.Drawing.Size(135, 18);
+            this.pgStrontiumBay.TabIndex = 6;
+            // 
+            // lblFuelBayValue
+            // 
+            this.lblFuelBayValue.AutoSize = true;
+            this.lblFuelBayValue.Location = new System.Drawing.Point(555, 58);
+            this.lblFuelBayValue.Name = "lblFuelBayValue";
+            this.lblFuelBayValue.Size = new System.Drawing.Size(35, 13);
+            this.lblFuelBayValue.TabIndex = 8;
+            this.lblFuelBayValue.Text = "label1";
+            // 
+            // lblStrontiumBayValue
+            // 
+            this.lblStrontiumBayValue.AutoSize = true;
+            this.lblStrontiumBayValue.Location = new System.Drawing.Point(556, 110);
+            this.lblStrontiumBayValue.Name = "lblStrontiumBayValue";
+            this.lblStrontiumBayValue.Size = new System.Drawing.Size(35, 13);
+            this.lblStrontiumBayValue.TabIndex = 8;
+            this.lblStrontiumBayValue.Text = "label1";
+            // 
             // StarbaseInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(490, 573);
+            this.ClientSize = new System.Drawing.Size(670, 573);
+            this.Controls.Add(this.lblStrontiumBayValue);
+            this.Controls.Add(this.lblFuelBayValue);
+            this.Controls.Add(this.lblStrontiumBay);
+            this.Controls.Add(this.lblFuelBay);
+            this.Controls.Add(this.pgStrontiumBay);
+            this.Controls.Add(this.pgFuelBay);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pbStationImage);
             this.Controls.Add(this.lblClaimingSovereignty);
@@ -311,5 +375,11 @@ namespace EVEPOSMon
         private System.Windows.Forms.DataGridViewTextBoxColumn FuelRequiredQuantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn TimeRemaining;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ProgressBar pgFuelBay;
+        private System.Windows.Forms.Label lblFuelBay;
+        private System.Windows.Forms.Label lblStrontiumBay;
+        private System.Windows.Forms.ProgressBar pgStrontiumBay;
+        private System.Windows.Forms.Label lblFuelBayValue;
+        private System.Windows.Forms.Label lblStrontiumBayValue;
     }
 }

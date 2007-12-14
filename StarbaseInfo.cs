@@ -89,6 +89,9 @@ namespace EVEPOSMon
                 lblClaimingSovereignty.Text = "Not Claiming Sovereignty";
             }
 
+            double totalFuelVolume = 0;
+            double totalStrontiumVolume = 0;
+
             foreach (Fuel f in m_starbase.FuelList)
             {
                 ResourceEntry fuelInfo = m_settings.towerResources.GetFuelInfo(m_starbase.typeId, f.typeId);
@@ -101,6 +104,15 @@ namespace EVEPOSMon
 
                 if (fuelInfo != null)
                 {
+                    if (fuelInfo.typeId != "16275")
+                    {
+                        totalFuelVolume += Convert.ToInt32(f.quantity) * Convert.ToDouble(fuelInfo.volume);
+                    }
+                    else
+                    {
+                        totalStrontiumVolume += Convert.ToInt32(f.quantity) * Convert.ToDouble(fuelInfo.volume);
+                    }
+                    
                     timeRemaining = TimeSpan.FromHours(Convert.ToInt32(quantity) / Convert.ToInt32(perHour));
                     int days = timeRemaining.Days;
                     int hours = timeRemaining.Hours;
@@ -117,6 +129,30 @@ namespace EVEPOSMon
 
                 dgFuelList.Rows.Add(new string[] { name, quantity, perHour + "/hr", strTimeRemaining});
             }
+
+            pgFuelBay.Maximum = Convert.ToInt32(controlTower.capacity);
+            pgFuelBay.Minimum = 0;
+            pgFuelBay.Value = (int)totalFuelVolume;
+            lblFuelBayValue.Text = totalFuelVolume.ToString() + "/" + controlTower.capacity;
+
+            int strontiumCapacity = 0;
+            if (controlTower.volume == "2000")
+            {
+                strontiumCapacity = 12500;
+            }
+            else if (controlTower.volume == "4000")
+            {
+                strontiumCapacity = 25000;
+            }
+            else if (controlTower.volume == "8000")
+            {
+                strontiumCapacity = 110000;
+            }
+
+            pgStrontiumBay.Maximum = strontiumCapacity;
+            pgStrontiumBay.Minimum = 0;
+            pgStrontiumBay.Value = (int)totalStrontiumVolume;
+            lblStrontiumBayValue.Text = totalStrontiumVolume.ToString() + "/" + strontiumCapacity.ToString();
 
             dgFuelList.Columns[0].DisplayIndex = 0;
             dgFuelList.Columns[1].DisplayIndex = 1;
