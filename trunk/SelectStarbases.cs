@@ -140,7 +140,8 @@ namespace EVEPOSMon
 
         private void characterInformationToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Temp box, need a new form and class for editing and storing character information aka: user api key, char name...", "Alert", MessageBoxButtons.OK);
+            LoginCharacterSelect lcs = new LoginCharacterSelect();
+            lcs.ShowDialog();
         }
 
         private void button1_Click(object sender, EventArgs e)
