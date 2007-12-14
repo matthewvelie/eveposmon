@@ -15,7 +15,7 @@ namespace EVEPOSMon
 {
     public partial class SelectStarbases : Form
     {
-        List<Starbase> m_starbasesList = new List<Starbase>();
+        Settings m_settings = Settings.GetInstance();
         private MainScreen mainScreen = new MainScreen();
         private FuelCalculator fuelCalculator = new FuelCalculator();
 
@@ -38,7 +38,7 @@ namespace EVEPOSMon
             
             // Clear the master list and station list so it wont affect updates
             lbStations.Rows.Clear();
-            m_starbasesList.Clear();
+            m_settings.availableStarBases.Clear();
             
             XmlDocument xdoc = EVEMonWebRequest.LoadXml(@"http://www.exa-nation.com/corp/StarbaseList.xml.aspx");
 
@@ -65,13 +65,13 @@ namespace EVEPOSMon
                     Starbase starbase = new Starbase();
                     starbase.setValues(atts);
                     /************ Code moved to starbase.setValues() ********* */
-                    m_starbasesList.Add(starbase);
+                    m_settings.availableStarBases.Add(starbase);
                 }
             }
 
             
             //load new list items
-            foreach (Starbase s in m_starbasesList)
+            foreach (Starbase s in m_settings.availableStarBases)
             {
                 lbStations.Rows.Add(new object[] { false, s.StarbaseSystem.regionName, s.StarbaseSystem.constellationName, s.Moon.moonName, s });
             }
