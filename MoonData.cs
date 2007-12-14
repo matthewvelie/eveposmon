@@ -30,7 +30,7 @@ namespace EVEPOSMon
                 {
                     MoonInfo moon = new MoonInfo();
                     XmlAttributeCollection attrs = r.Attributes;
-                    moon.moonId = attrs["moonID"].InnerText;
+                    moon.moonId = attrs["moonId"].InnerText;
                     moon.moonName = attrs["moonName"].InnerText;
                     moonData.Moons.Add(moon.moonId, moon);
                 }
