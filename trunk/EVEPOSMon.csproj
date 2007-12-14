@@ -85,12 +85,6 @@
     <Compile Include="StarbaseInfo.Designer.cs">
       <DependentUpon>StarbaseInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Throbber.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Throbber.designer.cs">
-      <DependentUpon>Throbber.cs</DependentUpon>
-    </Compile>
     <Compile Include="TowerResources.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
