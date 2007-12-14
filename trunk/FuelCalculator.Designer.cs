@@ -234,6 +234,8 @@ namespace EVEPOSMon
             this.lblFuelDays = new System.Windows.Forms.Label();
             this.lblHaulerM3 = new System.Windows.Forms.Label();
             this.lblAmtToSpendIsk = new System.Windows.Forms.Label();
+            this.UseStarbase = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Moon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -2106,6 +2108,9 @@ namespace EVEPOSMon
             // dgvStations
             // 
             this.dgvStations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStations.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.UseStarbase,
+            this.Moon});
             this.dgvStations.Location = new System.Drawing.Point(766, 51);
             this.dgvStations.Name = "dgvStations";
             this.dgvStations.Size = new System.Drawing.Size(227, 341);
@@ -2348,6 +2353,17 @@ namespace EVEPOSMon
             this.lblAmtToSpendIsk.Size = new System.Drawing.Size(24, 13);
             this.lblAmtToSpendIsk.TabIndex = 73;
             this.lblAmtToSpendIsk.Text = "ISK";
+            // 
+            // UseStarbase
+            // 
+            this.UseStarbase.HeaderText = "Use";
+            this.UseStarbase.Name = "UseStarbase";
+            // 
+            // Moon
+            // 
+            this.Moon.HeaderText = "Moon";
+            this.Moon.Name = "Moon";
+            this.Moon.ReadOnly = true;
             // 
             // FuelCalculator
             // 
@@ -2624,5 +2640,7 @@ namespace EVEPOSMon
         private System.Windows.Forms.Label label114;
         private System.Windows.Forms.TextBox textBox61;
         private System.Windows.Forms.Label label115;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn UseStarbase;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Moon;
     }
 }

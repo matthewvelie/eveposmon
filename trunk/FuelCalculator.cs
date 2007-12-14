@@ -5,24 +5,28 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using EVEMon.Common;
 
 namespace EVEPOSMon
 {
     public partial class FuelCalculator : Form
     {
-        List<Starbase> m_starbasesList = new List<Starbase>();
+        private Settings m_settings = Settings.GetInstance();
 
         public FuelCalculator()
         {
             InitializeComponent();
+            loadStarbase();
         }
 
         public void loadStarbase()
         {
-            foreach (Starbase s in m_starbasesList)
+            dgvStations.Rows.Clear();
+            foreach ( Starbase s in m_settings.availableStarBases )
             {
-                dgvStations.Rows.Add(new object[] { false, s.StarbaseSystem.regionName, s.StarbaseSystem.constellationName, s.Moon.moonName, s });
+                dgvStations.Rows.Add(new object[] { false, s.Moon.moonName, s });
             }
+             
         }
 
         private void changeQuantityFieldEnable(bool state)
