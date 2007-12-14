@@ -63,11 +63,11 @@ namespace EVEPOSMon
             this.lblLowestFuelTime1 = new System.Windows.Forms.Label();
             this.lblLowestFuelTitle2 = new System.Windows.Forms.Label();
             this.lblLowestFuelTime2 = new System.Windows.Forms.Label();
-            this.throbber1 = new EVEMon.Throbber();
             this.label2 = new System.Windows.Forms.Label();
             this.lblPosSustainabilityTime = new System.Windows.Forms.Label();
             this.lblPosSustainabilityFuels = new System.Windows.Forms.Label();
             this.lblPosSustainability = new System.Windows.Forms.Label();
+            this.throbber1 = new EVEMon.Throbber();
             ((System.ComponentModel.ISupportInitialize)(this.pbStationImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgFuelList)).BeginInit();
             this.panel1.SuspendLayout();
@@ -78,7 +78,7 @@ namespace EVEPOSMon
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(594, 32);
+            this.label1.Location = new System.Drawing.Point(514, 32);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 1;
@@ -105,7 +105,7 @@ namespace EVEPOSMon
             // lblStrontiumBayValue
             // 
             this.lblStrontiumBayValue.AutoSize = true;
-            this.lblStrontiumBayValue.Location = new System.Drawing.Point(570, 119);
+            this.lblStrontiumBayValue.Location = new System.Drawing.Point(515, 121);
             this.lblStrontiumBayValue.Name = "lblStrontiumBayValue";
             this.lblStrontiumBayValue.Size = new System.Drawing.Size(35, 13);
             this.lblStrontiumBayValue.TabIndex = 25;
@@ -114,7 +114,7 @@ namespace EVEPOSMon
             // lblFuelBayValue
             // 
             this.lblFuelBayValue.AutoSize = true;
-            this.lblFuelBayValue.Location = new System.Drawing.Point(569, 67);
+            this.lblFuelBayValue.Location = new System.Drawing.Point(514, 69);
             this.lblFuelBayValue.Name = "lblFuelBayValue";
             this.lblFuelBayValue.Size = new System.Drawing.Size(35, 13);
             this.lblFuelBayValue.TabIndex = 26;
@@ -123,7 +123,7 @@ namespace EVEPOSMon
             // lblStrontiumBay
             // 
             this.lblStrontiumBay.AutoSize = true;
-            this.lblStrontiumBay.Location = new System.Drawing.Point(424, 103);
+            this.lblStrontiumBay.Location = new System.Drawing.Point(369, 105);
             this.lblStrontiumBay.Name = "lblStrontiumBay";
             this.lblStrontiumBay.Size = new System.Drawing.Size(72, 13);
             this.lblStrontiumBay.TabIndex = 24;
@@ -131,21 +131,21 @@ namespace EVEPOSMon
             // 
             // pgStrontiumBay
             // 
-            this.pgStrontiumBay.Location = new System.Drawing.Point(429, 119);
+            this.pgStrontiumBay.Location = new System.Drawing.Point(374, 121);
             this.pgStrontiumBay.Name = "pgStrontiumBay";
             this.pgStrontiumBay.Size = new System.Drawing.Size(135, 18);
             this.pgStrontiumBay.TabIndex = 22;
             // 
             // pgFuelBay
             // 
-            this.pgFuelBay.Location = new System.Drawing.Point(427, 67);
+            this.pgFuelBay.Location = new System.Drawing.Point(372, 69);
             this.pgFuelBay.Name = "pgFuelBay";
             this.pgFuelBay.Size = new System.Drawing.Size(135, 18);
             this.pgFuelBay.TabIndex = 23;
             // 
             // lblClaimingSovereignty
             // 
-            this.lblClaimingSovereignty.Location = new System.Drawing.Point(6, 212);
+            this.lblClaimingSovereignty.Location = new System.Drawing.Point(3, 198);
             this.lblClaimingSovereignty.Name = "lblClaimingSovereignty";
             this.lblClaimingSovereignty.Size = new System.Drawing.Size(152, 18);
             this.lblClaimingSovereignty.TabIndex = 18;
@@ -153,7 +153,7 @@ namespace EVEPOSMon
             // 
             // lblAllowAllianceMembers
             // 
-            this.lblAllowAllianceMembers.Location = new System.Drawing.Point(6, 194);
+            this.lblAllowAllianceMembers.Location = new System.Drawing.Point(3, 180);
             this.lblAllowAllianceMembers.Name = "lblAllowAllianceMembers";
             this.lblAllowAllianceMembers.Size = new System.Drawing.Size(152, 18);
             this.lblAllowAllianceMembers.TabIndex = 19;
@@ -161,7 +161,7 @@ namespace EVEPOSMon
             // 
             // lblAllowCorporationMembers
             // 
-            this.lblAllowCorporationMembers.Location = new System.Drawing.Point(6, 176);
+            this.lblAllowCorporationMembers.Location = new System.Drawing.Point(3, 162);
             this.lblAllowCorporationMembers.Name = "lblAllowCorporationMembers";
             this.lblAllowCorporationMembers.Size = new System.Drawing.Size(152, 18);
             this.lblAllowCorporationMembers.TabIndex = 20;
@@ -169,7 +169,7 @@ namespace EVEPOSMon
             // 
             // lblOnCorporationWarValue
             // 
-            this.lblOnCorporationWarValue.Location = new System.Drawing.Point(286, 125);
+            this.lblOnCorporationWarValue.Location = new System.Drawing.Point(265, 125);
             this.lblOnCorporationWarValue.Name = "lblOnCorporationWarValue";
             this.lblOnCorporationWarValue.Size = new System.Drawing.Size(115, 18);
             this.lblOnCorporationWarValue.TabIndex = 17;
@@ -177,7 +177,7 @@ namespace EVEPOSMon
             // 
             // lblOnStatusDrop
             // 
-            this.lblOnStatusDrop.Location = new System.Drawing.Point(167, 89);
+            this.lblOnStatusDrop.Location = new System.Drawing.Point(164, 89);
             this.lblOnStatusDrop.Name = "lblOnStatusDrop";
             this.lblOnStatusDrop.Size = new System.Drawing.Size(113, 18);
             this.lblOnStatusDrop.TabIndex = 11;
@@ -185,7 +185,7 @@ namespace EVEPOSMon
             // 
             // lblOnStandingDrop
             // 
-            this.lblOnStandingDrop.Location = new System.Drawing.Point(165, 71);
+            this.lblOnStandingDrop.Location = new System.Drawing.Point(162, 71);
             this.lblOnStandingDrop.Name = "lblOnStandingDrop";
             this.lblOnStandingDrop.Size = new System.Drawing.Size(115, 18);
             this.lblOnStandingDrop.TabIndex = 12;
@@ -193,7 +193,7 @@ namespace EVEPOSMon
             // 
             // lblOnAggression
             // 
-            this.lblOnAggression.Location = new System.Drawing.Point(165, 107);
+            this.lblOnAggression.Location = new System.Drawing.Point(162, 107);
             this.lblOnAggression.Name = "lblOnAggression";
             this.lblOnAggression.Size = new System.Drawing.Size(115, 18);
             this.lblOnAggression.TabIndex = 9;
@@ -215,7 +215,7 @@ namespace EVEPOSMon
             this.dgFuelList.Name = "dgFuelList";
             this.dgFuelList.ReadOnly = true;
             this.dgFuelList.RowHeadersVisible = false;
-            this.dgFuelList.Size = new System.Drawing.Size(625, 311);
+            this.dgFuelList.Size = new System.Drawing.Size(546, 311);
             this.dgFuelList.TabIndex = 21;
             // 
             // FuelName
@@ -244,7 +244,7 @@ namespace EVEPOSMon
             // 
             // lblOnCorporationWar
             // 
-            this.lblOnCorporationWar.Location = new System.Drawing.Point(165, 125);
+            this.lblOnCorporationWar.Location = new System.Drawing.Point(162, 125);
             this.lblOnCorporationWar.Name = "lblOnCorporationWar";
             this.lblOnCorporationWar.Size = new System.Drawing.Size(115, 18);
             this.lblOnCorporationWar.TabIndex = 10;
@@ -252,7 +252,7 @@ namespace EVEPOSMon
             // 
             // lblOnAggressionValue
             // 
-            this.lblOnAggressionValue.Location = new System.Drawing.Point(286, 107);
+            this.lblOnAggressionValue.Location = new System.Drawing.Point(265, 107);
             this.lblOnAggressionValue.Name = "lblOnAggressionValue";
             this.lblOnAggressionValue.Size = new System.Drawing.Size(115, 18);
             this.lblOnAggressionValue.TabIndex = 15;
@@ -260,7 +260,7 @@ namespace EVEPOSMon
             // 
             // lblOnStatusDropValue
             // 
-            this.lblOnStatusDropValue.Location = new System.Drawing.Point(286, 89);
+            this.lblOnStatusDropValue.Location = new System.Drawing.Point(265, 89);
             this.lblOnStatusDropValue.Name = "lblOnStatusDropValue";
             this.lblOnStatusDropValue.Size = new System.Drawing.Size(115, 18);
             this.lblOnStatusDropValue.TabIndex = 16;
@@ -268,7 +268,7 @@ namespace EVEPOSMon
             // 
             // lblOnStandingDropValue
             // 
-            this.lblOnStandingDropValue.Location = new System.Drawing.Point(286, 71);
+            this.lblOnStandingDropValue.Location = new System.Drawing.Point(265, 71);
             this.lblOnStandingDropValue.Name = "lblOnStandingDropValue";
             this.lblOnStandingDropValue.Size = new System.Drawing.Size(115, 18);
             this.lblOnStandingDropValue.TabIndex = 13;
@@ -276,7 +276,7 @@ namespace EVEPOSMon
             // 
             // lblCombatSettings
             // 
-            this.lblCombatSettings.Location = new System.Drawing.Point(165, 53);
+            this.lblCombatSettings.Location = new System.Drawing.Point(162, 53);
             this.lblCombatSettings.Name = "lblCombatSettings";
             this.lblCombatSettings.Size = new System.Drawing.Size(115, 18);
             this.lblCombatSettings.TabIndex = 14;
@@ -287,13 +287,13 @@ namespace EVEPOSMon
             this.panel1.Controls.Add(this.dgFuelList);
             this.panel1.Location = new System.Drawing.Point(4, 274);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(625, 311);
+            this.panel1.Size = new System.Drawing.Size(546, 311);
             this.panel1.TabIndex = 27;
             // 
             // lblFuelBay
             // 
             this.lblFuelBay.AutoSize = true;
-            this.lblFuelBay.Location = new System.Drawing.Point(426, 51);
+            this.lblFuelBay.Location = new System.Drawing.Point(371, 53);
             this.lblFuelBay.Name = "lblFuelBay";
             this.lblFuelBay.Size = new System.Drawing.Size(48, 13);
             this.lblFuelBay.TabIndex = 28;
@@ -306,7 +306,7 @@ namespace EVEPOSMon
             this.lblDataCachedUntil});
             this.statusStrip.Location = new System.Drawing.Point(0, 673);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(632, 22);
+            this.statusStrip.Size = new System.Drawing.Size(556, 22);
             this.statusStrip.TabIndex = 29;
             this.statusStrip.Text = "statusStrip1";
             // 
@@ -335,7 +335,7 @@ namespace EVEPOSMon
             // 
             this.lblLowestFuelTitle1.Location = new System.Drawing.Point(114, 603);
             this.lblLowestFuelTitle1.Name = "lblLowestFuelTitle1";
-            this.lblLowestFuelTitle1.Size = new System.Drawing.Size(115, 18);
+            this.lblLowestFuelTitle1.Size = new System.Drawing.Size(102, 18);
             this.lblLowestFuelTitle1.TabIndex = 10;
             this.lblLowestFuelTitle1.Text = "On Corporation War";
             // 
@@ -343,7 +343,7 @@ namespace EVEPOSMon
             // 
             this.lblLowestFuelTime1.Location = new System.Drawing.Point(114, 621);
             this.lblLowestFuelTime1.Name = "lblLowestFuelTime1";
-            this.lblLowestFuelTime1.Size = new System.Drawing.Size(115, 18);
+            this.lblLowestFuelTime1.Size = new System.Drawing.Size(102, 18);
             this.lblLowestFuelTime1.TabIndex = 10;
             this.lblLowestFuelTime1.Text = "On Corporation War";
             // 
@@ -351,7 +351,7 @@ namespace EVEPOSMon
             // 
             this.lblLowestFuelTitle2.Location = new System.Drawing.Point(222, 603);
             this.lblLowestFuelTitle2.Name = "lblLowestFuelTitle2";
-            this.lblLowestFuelTitle2.Size = new System.Drawing.Size(115, 18);
+            this.lblLowestFuelTitle2.Size = new System.Drawing.Size(104, 18);
             this.lblLowestFuelTitle2.TabIndex = 10;
             this.lblLowestFuelTitle2.Text = "On Corporation War";
             // 
@@ -359,20 +359,9 @@ namespace EVEPOSMon
             // 
             this.lblLowestFuelTime2.Location = new System.Drawing.Point(222, 621);
             this.lblLowestFuelTime2.Name = "lblLowestFuelTime2";
-            this.lblLowestFuelTime2.Size = new System.Drawing.Size(115, 18);
+            this.lblLowestFuelTime2.Size = new System.Drawing.Size(104, 18);
             this.lblLowestFuelTime2.TabIndex = 10;
             this.lblLowestFuelTime2.Text = "On Corporation War";
-            // 
-            // throbber1
-            // 
-            this.throbber1.Location = new System.Drawing.Point(605, 5);
-            this.throbber1.MaximumSize = new System.Drawing.Size(24, 24);
-            this.throbber1.MinimumSize = new System.Drawing.Size(24, 24);
-            this.throbber1.Name = "throbber1";
-            this.throbber1.Size = new System.Drawing.Size(24, 24);
-            this.throbber1.State = EVEMon.Throbber.ThrobberState.Stopped;
-            this.throbber1.TabIndex = 0;
-            this.throbber1.TabStop = false;
             // 
             // label2
             // 
@@ -385,28 +374,39 @@ namespace EVEPOSMon
             // 
             // lblPosSustainabilityTime
             // 
-            this.lblPosSustainabilityTime.Location = new System.Drawing.Point(502, 603);
+            this.lblPosSustainabilityTime.Location = new System.Drawing.Point(440, 603);
             this.lblPosSustainabilityTime.Name = "lblPosSustainabilityTime";
-            this.lblPosSustainabilityTime.Size = new System.Drawing.Size(115, 18);
+            this.lblPosSustainabilityTime.Size = new System.Drawing.Size(109, 18);
             this.lblPosSustainabilityTime.TabIndex = 10;
             this.lblPosSustainabilityTime.Text = "On Corporation War";
             // 
             // lblPosSustainabilityFuels
             // 
-            this.lblPosSustainabilityFuels.Location = new System.Drawing.Point(502, 621);
+            this.lblPosSustainabilityFuels.Location = new System.Drawing.Point(440, 621);
             this.lblPosSustainabilityFuels.Name = "lblPosSustainabilityFuels";
-            this.lblPosSustainabilityFuels.Size = new System.Drawing.Size(115, 18);
+            this.lblPosSustainabilityFuels.Size = new System.Drawing.Size(110, 18);
             this.lblPosSustainabilityFuels.TabIndex = 10;
             this.lblPosSustainabilityFuels.Text = "On Corporation War";
             // 
             // lblPosSustainability
             // 
             this.lblPosSustainability.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPosSustainability.Location = new System.Drawing.Point(394, 601);
+            this.lblPosSustainability.Location = new System.Drawing.Point(332, 601);
             this.lblPosSustainability.Name = "lblPosSustainability";
             this.lblPosSustainability.Size = new System.Drawing.Size(102, 18);
             this.lblPosSustainability.TabIndex = 10;
             this.lblPosSustainability.Text = "Lowest Fuels";
+            // 
+            // throbber1
+            // 
+            this.throbber1.Location = new System.Drawing.Point(525, 5);
+            this.throbber1.MaximumSize = new System.Drawing.Size(24, 24);
+            this.throbber1.MinimumSize = new System.Drawing.Size(24, 24);
+            this.throbber1.Name = "throbber1";
+            this.throbber1.Size = new System.Drawing.Size(24, 24);
+            this.throbber1.State = EVEMon.Throbber.ThrobberState.Stopped;
+            this.throbber1.TabIndex = 0;
+            this.throbber1.TabStop = false;
             // 
             // StarbaseMonitor
             // 
@@ -446,7 +446,7 @@ namespace EVEPOSMon
             this.Controls.Add(this.label1);
             this.Controls.Add(this.throbber1);
             this.Name = "StarbaseMonitor";
-            this.Size = new System.Drawing.Size(632, 695);
+            this.Size = new System.Drawing.Size(556, 695);
             this.Load += new System.EventHandler(this.StarbaseMonitor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbStationImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgFuelList)).EndInit();
