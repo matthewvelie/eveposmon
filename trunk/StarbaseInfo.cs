@@ -131,7 +131,7 @@ namespace EVEPOSMon
                     }
                     else
                     {
-                        strTimeRemaining = hours.ToString() + "Hours";
+                        strTimeRemaining = hours.ToString() + " Hours";
                     }
                 }
 
