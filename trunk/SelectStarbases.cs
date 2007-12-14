@@ -95,6 +95,7 @@ namespace EVEPOSMon
             {
                 if (lbStations.Rows[i].Cells[0].Value.ToString() == "true")
                 {
+                    // cell 4 is a hidden field with the starbase object
                     Starbase starbase = lbStations.Rows[i].Cells[4].Value as Starbase;
 
                     starbase.setDetails("http://www.exa-nation.com/corp/StarbaseDetail.xml.aspx?itemId=");
