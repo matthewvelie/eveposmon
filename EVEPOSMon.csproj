@@ -36,13 +36,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountInfo.cs" />
     <Compile Include="AutoShrink.cs" />
+    <Compile Include="CharacterSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CharacterSelect.Designer.cs">
+      <DependentUpon>CharacterSelect.cs</DependentUpon>
+    </Compile>
     <Compile Include="ControlTowerTypes.cs" />
     <Compile Include="FuelCalculator.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FuelCalculator.Designer.cs">
       <DependentUpon>FuelCalculator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginCharacterSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginCharacterSelect.Designer.cs">
+      <DependentUpon>LoginCharacterSelect.cs</DependentUpon>
     </Compile>
     <Compile Include="MainScreen.cs">
       <SubType>Form</SubType>
@@ -116,9 +129,17 @@
     <Compile Include="TowerResources.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CharacterSelect.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CharacterSelect.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FuelCalculator.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FuelCalculator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginCharacterSelect.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>LoginCharacterSelect.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainScreen.resx">
       <SubType>Designer</SubType>
