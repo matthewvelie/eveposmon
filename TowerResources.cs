@@ -23,10 +23,10 @@ namespace EVEPOSMon
         public List<ResourceEntry> resourceEntries = new List<ResourceEntry>();
         public Hashtable towerTypeIds = new Hashtable();
 
-        public static TowerResources Load(string filename)
+        public static TowerResources Load(Stream s)
         {
             XmlDocument doc = new XmlDocument();
-            doc.Load(Path.Combine("data", "invControlTowerResources.xml"));
+            doc.Load(s);
             TowerResources tr = new TowerResources();
 
             XmlNodeList resourceEntryNodes = doc.GetElementsByTagName("invControlTowerResources");
