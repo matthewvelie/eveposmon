@@ -43,8 +43,8 @@ namespace EVEMon.Common
                 // do  nothing - default to "now";
             }
 
-            // Now suck out the cachedUntil time - assume 1 hour from now in case the parse fails
-            DateTime cacheExpires = DateTime.Now + new TimeSpan(1, 0, 0);
+            // Now suck out the cachedUntil time - assume 3 hours from now in case the parse fails
+            DateTime cacheExpires = DateTime.Now + new TimeSpan(3, 0, 0);
             try
             {
                 XmlNode cachedTimeNode = xdoc.SelectSingleNode("/eveapi/cachedUntil");
