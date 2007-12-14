@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using System.Xml;
+using System.IO;
 
 namespace EVEPOSMon
 {
@@ -44,10 +45,10 @@ namespace EVEPOSMon
         List<ControlTower> controlTowersList = new List<ControlTower>();
         Hashtable towersTypeIds = new Hashtable();
 
-        public static ControlTowerTypes Load(string filename)
+        public static ControlTowerTypes Load(Stream s)
         {
             XmlDocument doc = new XmlDocument();
-            doc.Load(filename);
+            doc.Load(s);
             ControlTowerTypes ctt = new ControlTowerTypes();
 
             XmlNodeList towerNodeList = doc.GetElementsByTagName("invTypes");
