@@ -24,7 +24,7 @@ namespace EVEPOSMon
 
         private void StarbaseMonitor_Load(object sender, EventArgs e)
         {
-            lblStarbaseName.Text = m_starbase.StarbaseControlTower.typeName;
+            lblStarbaseName.Text = m_starbase.Tower.typeName;
 
             if (m_starbase.onStandingDrop.enabled == "1")
             {
@@ -138,15 +138,15 @@ namespace EVEPOSMon
                 dgFuelList.Rows.Add(new string[] { name, quantity, perHour + "/hr", strTimeRemaining});
             }
 
-            pgFuelBay.Maximum = Convert.ToInt32(m_starbase.StarbaseControlTower.capacity);
+            pgFuelBay.Maximum = Convert.ToInt32(m_starbase.Tower.capacity);
             pgFuelBay.Minimum = 0;
             pgFuelBay.Value = (int)totalFuelVolume;
-            lblFuelBayValue.Text = totalFuelVolume.ToString() + "/" + m_starbase.StarbaseControlTower.capacity;
+            lblFuelBayValue.Text = totalFuelVolume.ToString() + "/" + m_starbase.Tower.capacity;
 
-            pgStrontiumBay.Maximum = Convert.ToInt32(m_starbase.StarbaseControlTower.strontiumCapacity);
+            pgStrontiumBay.Maximum = Convert.ToInt32(m_starbase.Tower.strontiumCapacity);
             pgStrontiumBay.Minimum = 0;
             pgStrontiumBay.Value = (int)totalStrontiumVolume;
-            lblStrontiumBayValue.Text = totalStrontiumVolume.ToString() + "/" + m_starbase.StarbaseControlTower.strontiumCapacity;
+            lblStrontiumBayValue.Text = totalStrontiumVolume.ToString() + "/" + m_starbase.Tower.strontiumCapacity;
 
             dgFuelList.Columns[0].DisplayIndex = 0;
             dgFuelList.Columns[1].DisplayIndex = 1;
