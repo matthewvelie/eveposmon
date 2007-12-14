@@ -109,6 +109,7 @@ namespace EVEPOSMon
                      
                     tp = new TabPage(starbase.StarbaseSystem.locationID);
                     mainScreen.AddTab(tp);
+                    tp.Text = starbase.Moon.moonName;
                     sm = new StarbaseMonitor(starbase);
                     sm.Parent = tp;
                     sm.Dock = DockStyle.Fill;
