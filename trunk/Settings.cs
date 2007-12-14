@@ -49,6 +49,7 @@ namespace EVEMon.Common
         public TowerResources towerResources;
         public ControlTowerTypes controlTowerTypes;
         public MapData mapData;
+        public MoonData moonData;
         public List<Starbase> monitoredStarBases = new List<Starbase>();
 
         private bool m_useCustomProxySettings = false;

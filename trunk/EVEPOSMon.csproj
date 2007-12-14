@@ -45,6 +45,7 @@
       <DependentUpon>MainScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="MapData.cs" />
+    <Compile Include="MoonData.cs" />
     <Compile Include="SerializableStarbase.cs" />
     <Compile Include="Starbase.cs" />
     <Compile Include="EVEMonWebRequest.cs" />
