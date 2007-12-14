@@ -90,7 +90,7 @@ namespace EVEPOSMon
             {
                 string requiredQuantity = m_settings.towerResources.GetFuelQuantity(m_starbase.typeId, f.typeId);
 
-                dgFuelList.Rows.Add(new string[] { f.typeId.ToString(), f.quantity.ToString(), requiredQuantity });
+                dgFuelList.Rows.Add(new string[] { f.typeId.ToString(), f.quantity.ToString(), requiredQuantity + "/hr" });
             }
 
             dgFuelList.Columns[0].DisplayIndex = 0;
