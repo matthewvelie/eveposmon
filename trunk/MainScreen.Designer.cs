@@ -48,6 +48,7 @@ namespace EVEPOSMon
             this.Controls.Add(this.tabControl1);
             this.Name = "MainScreen";
             this.Text = "MainScreen";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainScreen_FormClosing);
             this.ResumeLayout(false);
 
         }

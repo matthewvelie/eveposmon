@@ -19,5 +19,12 @@ namespace EVEPOSMon
         {
             tabControl1.TabPages.Add(tp);
         }
+
+        private void MainScreen_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
+            Visible = false;
+            tabControl1.TabPages.Clear();
+        }
     }
 }
