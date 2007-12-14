@@ -114,9 +114,9 @@ namespace EVEPOSMon
 
         public override string ToString()
         {
-            MapSystem ms = m_settings.mapData.GetSystemInfo(locationId);
+            //MapSystem ms = m_settings.mapData.GetSystemInfo(locationId);
             ControlTower ct = m_settings.controlTowerTypes.GetTowerInfo(typeId);
-            return ct.typeName + " -- " + ms.systemName;
+            return ct.typeName + " -- " + StarbaseSystem.systemName + " -- " + StarbaseSystem.security + " -- " + ct.description;
         }
 
         internal void setValues(System.Xml.XmlAttributeCollection atts)
