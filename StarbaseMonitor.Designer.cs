@@ -55,15 +55,24 @@ namespace EVEPOSMon
             this.lblCombatSettings = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblFuelBay = new System.Windows.Forms.Label();
-            this.throbber1 = new EVEMon.Throbber();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.lblXmlLastDownloaded = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblDataCachedUntil = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblLowestFuels = new System.Windows.Forms.Label();
+            this.lblLowestFuelTitle1 = new System.Windows.Forms.Label();
+            this.lblLowestFuelTime1 = new System.Windows.Forms.Label();
+            this.lblLowestFuelTitle2 = new System.Windows.Forms.Label();
+            this.lblLowestFuelTime2 = new System.Windows.Forms.Label();
+            this.throbber1 = new EVEMon.Throbber();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblPosSustainabilityTime = new System.Windows.Forms.Label();
+            this.lblPosSustainabilityFuels = new System.Windows.Forms.Label();
+            this.lblPosSustainability = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbStationImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgFuelList)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.throbber1)).BeginInit();
             this.statusStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.throbber1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -206,7 +215,7 @@ namespace EVEPOSMon
             this.dgFuelList.Name = "dgFuelList";
             this.dgFuelList.ReadOnly = true;
             this.dgFuelList.RowHeadersVisible = false;
-            this.dgFuelList.Size = new System.Drawing.Size(625, 399);
+            this.dgFuelList.Size = new System.Drawing.Size(625, 311);
             this.dgFuelList.TabIndex = 21;
             // 
             // FuelName
@@ -278,7 +287,7 @@ namespace EVEPOSMon
             this.panel1.Controls.Add(this.dgFuelList);
             this.panel1.Location = new System.Drawing.Point(4, 274);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(625, 399);
+            this.panel1.Size = new System.Drawing.Size(625, 311);
             this.panel1.TabIndex = 27;
             // 
             // lblFuelBay
@@ -289,17 +298,6 @@ namespace EVEPOSMon
             this.lblFuelBay.Size = new System.Drawing.Size(48, 13);
             this.lblFuelBay.TabIndex = 28;
             this.lblFuelBay.Text = "Fuel Bay";
-            // 
-            // throbber1
-            // 
-            this.throbber1.Location = new System.Drawing.Point(605, 5);
-            this.throbber1.MaximumSize = new System.Drawing.Size(24, 24);
-            this.throbber1.MinimumSize = new System.Drawing.Size(24, 24);
-            this.throbber1.Name = "throbber1";
-            this.throbber1.Size = new System.Drawing.Size(24, 24);
-            this.throbber1.State = EVEMon.Throbber.ThrobberState.Stopped;
-            this.throbber1.TabIndex = 0;
-            this.throbber1.TabStop = false;
             // 
             // statusStrip
             // 
@@ -324,6 +322,92 @@ namespace EVEPOSMon
             this.lblDataCachedUntil.Size = new System.Drawing.Size(109, 17);
             this.lblDataCachedUntil.Text = "toolStripStatusLabel2";
             // 
+            // lblLowestFuels
+            // 
+            this.lblLowestFuels.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLowestFuels.Location = new System.Drawing.Point(6, 601);
+            this.lblLowestFuels.Name = "lblLowestFuels";
+            this.lblLowestFuels.Size = new System.Drawing.Size(102, 18);
+            this.lblLowestFuels.TabIndex = 10;
+            this.lblLowestFuels.Text = "Lowest Fuels";
+            // 
+            // lblLowestFuelTitle1
+            // 
+            this.lblLowestFuelTitle1.Location = new System.Drawing.Point(114, 603);
+            this.lblLowestFuelTitle1.Name = "lblLowestFuelTitle1";
+            this.lblLowestFuelTitle1.Size = new System.Drawing.Size(115, 18);
+            this.lblLowestFuelTitle1.TabIndex = 10;
+            this.lblLowestFuelTitle1.Text = "On Corporation War";
+            // 
+            // lblLowestFuelTime1
+            // 
+            this.lblLowestFuelTime1.Location = new System.Drawing.Point(114, 621);
+            this.lblLowestFuelTime1.Name = "lblLowestFuelTime1";
+            this.lblLowestFuelTime1.Size = new System.Drawing.Size(115, 18);
+            this.lblLowestFuelTime1.TabIndex = 10;
+            this.lblLowestFuelTime1.Text = "On Corporation War";
+            // 
+            // lblLowestFuelTitle2
+            // 
+            this.lblLowestFuelTitle2.Location = new System.Drawing.Point(222, 603);
+            this.lblLowestFuelTitle2.Name = "lblLowestFuelTitle2";
+            this.lblLowestFuelTitle2.Size = new System.Drawing.Size(115, 18);
+            this.lblLowestFuelTitle2.TabIndex = 10;
+            this.lblLowestFuelTitle2.Text = "On Corporation War";
+            // 
+            // lblLowestFuelTime2
+            // 
+            this.lblLowestFuelTime2.Location = new System.Drawing.Point(222, 621);
+            this.lblLowestFuelTime2.Name = "lblLowestFuelTime2";
+            this.lblLowestFuelTime2.Size = new System.Drawing.Size(115, 18);
+            this.lblLowestFuelTime2.TabIndex = 10;
+            this.lblLowestFuelTime2.Text = "On Corporation War";
+            // 
+            // throbber1
+            // 
+            this.throbber1.Location = new System.Drawing.Point(605, 5);
+            this.throbber1.MaximumSize = new System.Drawing.Size(24, 24);
+            this.throbber1.MinimumSize = new System.Drawing.Size(24, 24);
+            this.throbber1.Name = "throbber1";
+            this.throbber1.Size = new System.Drawing.Size(24, 24);
+            this.throbber1.State = EVEMon.Throbber.ThrobberState.Stopped;
+            this.throbber1.TabIndex = 0;
+            this.throbber1.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(6, 601);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(102, 18);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Lowest Fuels";
+            // 
+            // lblPosSustainabilityTime
+            // 
+            this.lblPosSustainabilityTime.Location = new System.Drawing.Point(502, 603);
+            this.lblPosSustainabilityTime.Name = "lblPosSustainabilityTime";
+            this.lblPosSustainabilityTime.Size = new System.Drawing.Size(115, 18);
+            this.lblPosSustainabilityTime.TabIndex = 10;
+            this.lblPosSustainabilityTime.Text = "On Corporation War";
+            // 
+            // lblPosSustainabilityFuels
+            // 
+            this.lblPosSustainabilityFuels.Location = new System.Drawing.Point(502, 621);
+            this.lblPosSustainabilityFuels.Name = "lblPosSustainabilityFuels";
+            this.lblPosSustainabilityFuels.Size = new System.Drawing.Size(115, 18);
+            this.lblPosSustainabilityFuels.TabIndex = 10;
+            this.lblPosSustainabilityFuels.Text = "On Corporation War";
+            // 
+            // lblPosSustainability
+            // 
+            this.lblPosSustainability.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPosSustainability.Location = new System.Drawing.Point(394, 601);
+            this.lblPosSustainability.Name = "lblPosSustainability";
+            this.lblPosSustainability.Size = new System.Drawing.Size(102, 18);
+            this.lblPosSustainability.TabIndex = 10;
+            this.lblPosSustainability.Text = "Lowest Fuels";
+            // 
             // StarbaseMonitor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -343,6 +427,15 @@ namespace EVEPOSMon
             this.Controls.Add(this.lblOnStatusDrop);
             this.Controls.Add(this.lblOnStandingDrop);
             this.Controls.Add(this.lblOnAggression);
+            this.Controls.Add(this.lblPosSustainability);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblLowestFuels);
+            this.Controls.Add(this.lblLowestFuelTime2);
+            this.Controls.Add(this.lblPosSustainabilityFuels);
+            this.Controls.Add(this.lblLowestFuelTitle2);
+            this.Controls.Add(this.lblPosSustainabilityTime);
+            this.Controls.Add(this.lblLowestFuelTime1);
+            this.Controls.Add(this.lblLowestFuelTitle1);
             this.Controls.Add(this.lblOnCorporationWar);
             this.Controls.Add(this.lblOnAggressionValue);
             this.Controls.Add(this.lblOnStatusDropValue);
@@ -358,9 +451,9 @@ namespace EVEPOSMon
             ((System.ComponentModel.ISupportInitialize)(this.pbStationImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgFuelList)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.throbber1)).EndInit();
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.throbber1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -399,5 +492,14 @@ namespace EVEPOSMon
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.ToolStripStatusLabel lblXmlLastDownloaded;
         private System.Windows.Forms.ToolStripStatusLabel lblDataCachedUntil;
+        private System.Windows.Forms.Label lblLowestFuels;
+        private System.Windows.Forms.Label lblLowestFuelTitle1;
+        private System.Windows.Forms.Label lblLowestFuelTime1;
+        private System.Windows.Forms.Label lblLowestFuelTitle2;
+        private System.Windows.Forms.Label lblLowestFuelTime2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblPosSustainabilityTime;
+        private System.Windows.Forms.Label lblPosSustainabilityFuels;
+        private System.Windows.Forms.Label lblPosSustainability;
     }
 }
