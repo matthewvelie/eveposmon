@@ -53,6 +53,18 @@ namespace EVEPOSMon
             }
         }
 
+        private MoonInfo moon;
+        public MoonInfo Moon
+        {
+            get
+            {
+                if (moon == null)
+                {
+                    moon = m_settings.moonData.GetMoonInfo(this.moonId);
+                }
+                return moon;
+            }
+        }
 
         #endregion
 
