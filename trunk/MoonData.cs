@@ -25,12 +25,13 @@ namespace EVEPOSMon
                 XmlDocument doc = new XmlDocument();
                 doc.Load(s);
                 MoonData moonData = new MoonData();
-                XmlNodeList rowsNodeList = doc.GetElementsByTagName("row");
+                XmlNodeList rowsNodeList = doc.GetElementsByTagName("moon");
                 foreach (XmlNode r in rowsNodeList)
                 {
                     MoonInfo moon = new MoonInfo();
-                    moon.moonId = r.ChildNodes[0].InnerText;
-                    moon.moonName = r.ChildNodes[1].InnerText;
+                    XmlAttributeCollection attrs = r.Attributes;
+                    moon.moonId = attrs["moonID"].InnerText;
+                    moon.moonName = attrs["moonName"].InnerText;
                     moonData.Moons.Add(moon.moonId, moon);
                 }
 
