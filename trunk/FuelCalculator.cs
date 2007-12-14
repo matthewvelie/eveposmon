@@ -12,6 +12,17 @@ namespace EVEPOSMon
     public partial class FuelCalculator : Form
     {
         private Settings m_settings = Settings.GetInstance();
+        
+        const double volEnrichedUranium = 1;
+        const double volCoolant = 2;
+        const double volOxygen = 1;
+        const double volMechanicalParts = 1;
+        const double volRobotics = 2;
+        const double volHeavyWater = .4;
+        const double volLiquidOzone = .4;
+        const double volIsotopes = .15;
+        const double volCharter = .1;
+        const double volStrontium = 3;
 
         public FuelCalculator()
         {
@@ -122,18 +133,65 @@ namespace EVEPOSMon
                 this.txtFuelLastDays.Enabled = false;
 
                 changeQuantityFieldEnable(false);
-            }
+           } 
         }
 
         private void txtEnrichedUraniumPricePer_TextChanged(object sender, EventArgs e)
         {
-            txtEnrichedUraniumSubtotal.Text = Convert.ToString(Convert.ToInt32(txtEnrichedUraniumQuantity.Text) * Convert.ToInt32(txtEnrichedUraniumPricePer.Text));
+            try
+            {
+                txtEnrichedUraniumSubtotal.Text = Convert.ToString(Convert.ToInt32(txtEnrichedUraniumQuantity.Text) * Convert.ToDouble(txtEnrichedUraniumPricePer.Text));
+            }
+            catch (System.FormatException) { }
         }
 
         private void txtEnrichedUraniumQuantity_TextChanged(object sender, EventArgs e)
         {
-            txtEnrichedUraniumVolume.Text = Convert.ToString(Convert.ToInt32(txtEnrichedUraniumQuantity.Text) * 1 ); //one is fake volume for now
-            txtEnrichedUraniumSubtotal.Text = Convert.ToString(Convert.ToInt32(txtEnrichedUraniumQuantity.Text) * Convert.ToInt32(txtEnrichedUraniumPricePer.Text) );
+            try
+            {
+                txtEnrichedUraniumVolume.Text = Convert.ToString(Convert.ToInt32(txtEnrichedUraniumQuantity.Text) * volEnrichedUranium);
+                txtEnrichedUraniumSubtotal.Text = Convert.ToString(Convert.ToInt32(txtEnrichedUraniumQuantity.Text) * Convert.ToDouble(txtEnrichedUraniumPricePer.Text));
+            }
+            catch (System.FormatException) { }
+        }
+
+        private void txtOxygenPricePer_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                txtOxygenSubtotal.Text = Convert.ToString(Convert.ToInt32(txtOxygenQuantity.Text) * Convert.ToDouble(txtOxygenPricePer.Text));
+            }
+            catch (System.FormatException) { }
+        }
+
+        private void txtOxygenQuantity_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+
+                txtOxygenVolume.Text = Convert.ToString(Convert.ToInt32(txtOxygenQuantity.Text) * volOxygen);
+                txtOxygenSubtotal.Text = Convert.ToString(Convert.ToInt32(txtOxygenQuantity.Text) * Convert.ToDouble(txtOxygenPricePer.Text));
+            }
+            catch (System.FormatException) { }
+        }
+
+        private void txtCoolantPricePer_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                txtCoolantSubtotal.Text = Convert.ToString(Convert.ToInt32(txtCoolantQuantity.Text) * Convert.ToDouble(txtCoolantPricePer.Text));
+            }
+            catch (System.FormatException) { }
+        }
+
+        private void txtCoolantQuantity_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                txtCoolantVolume.Text = Convert.ToString(Convert.ToInt32(txtCoolantQuantity.Text) * volCoolant);
+                txtCoolantSubtotal.Text = Convert.ToString(Convert.ToInt32(txtCoolantQuantity.Text) * Convert.ToDouble(txtCoolantPricePer.Text));
+            }
+            catch (System.FormatException) { }
         }
 
     }
