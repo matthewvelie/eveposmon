@@ -17,7 +17,7 @@ namespace EVEPOSMon
             s.towerResources = TowerResources.Load(Application.StartupPath + @"\data\invControlTowerResources.xml");
             s.controlTowerTypes = ControlTowerTypes.Load(Application.StartupPath + @"\data\controlTowers.xml");
             s.mapData = MapData.Load(Application.StartupPath + @"\data\mapData.xml");
-
+            s.moonData = MoonData.Load(Application.StartupPath + @"\data\moonData.xml");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new SelectStarbases());
