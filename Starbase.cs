@@ -90,7 +90,6 @@ namespace EVEPOSMon
             XmlDocument xdoc = EVEMonWebRequest.LoadXml(@loc + this.itemId);
 
             string starbaseError;
-            DateTime cachedUntil;
 
             XmlNode error = xdoc.DocumentElement.SelectSingleNode("descendant::error");
             // If a read error occured, exit
