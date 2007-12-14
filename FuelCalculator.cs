@@ -121,5 +121,16 @@ namespace EVEPOSMon
             }
         }
 
+        private void txtEnrichedUraniumPricePer_TextChanged(object sender, EventArgs e)
+        {
+            txtEnrichedUraniumSubtotal.Text = Convert.ToString(Convert.ToInt32(txtEnrichedUraniumQuantity.Text) * Convert.ToInt32(txtEnrichedUraniumPricePer.Text));
+        }
+
+        private void txtEnrichedUraniumQuantity_TextChanged(object sender, EventArgs e)
+        {
+            txtEnrichedUraniumVolume.Text = Convert.ToString(Convert.ToInt32(txtEnrichedUraniumQuantity.Text) * 1 ); //one is fake volume for now
+            txtEnrichedUraniumSubtotal.Text = Convert.ToString(Convert.ToInt32(txtEnrichedUraniumQuantity.Text) * Convert.ToInt32(txtEnrichedUraniumPricePer.Text) );
+        }
+
     }
 }

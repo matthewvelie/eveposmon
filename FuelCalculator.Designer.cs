@@ -155,13 +155,13 @@ namespace EVEPOSMon
             this.label88 = new System.Windows.Forms.Label();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.label89 = new System.Windows.Forms.Label();
-            this.textBox45 = new System.Windows.Forms.TextBox();
+            this.txtEnrichedUraniumPricePer = new System.Windows.Forms.TextBox();
             this.label90 = new System.Windows.Forms.Label();
             this.txtEnrichedUraniumQuantity = new System.Windows.Forms.TextBox();
             this.label91 = new System.Windows.Forms.Label();
-            this.textBox47 = new System.Windows.Forms.TextBox();
+            this.txtEnrichedUraniumVolume = new System.Windows.Forms.TextBox();
             this.label92 = new System.Windows.Forms.Label();
-            this.textBox48 = new System.Windows.Forms.TextBox();
+            this.txtEnrichedUraniumSubtotal = new System.Windows.Forms.TextBox();
             this.label93 = new System.Windows.Forms.Label();
             this.label94 = new System.Windows.Forms.Label();
             this.label73 = new System.Windows.Forms.Label();
@@ -1405,13 +1405,13 @@ namespace EVEPOSMon
             this.groupBox5.Controls.Add(this.label88);
             this.groupBox5.Controls.Add(this.pictureBox12);
             this.groupBox5.Controls.Add(this.label89);
-            this.groupBox5.Controls.Add(this.textBox45);
+            this.groupBox5.Controls.Add(this.txtEnrichedUraniumPricePer);
             this.groupBox5.Controls.Add(this.label90);
             this.groupBox5.Controls.Add(this.txtEnrichedUraniumQuantity);
             this.groupBox5.Controls.Add(this.label91);
-            this.groupBox5.Controls.Add(this.textBox47);
+            this.groupBox5.Controls.Add(this.txtEnrichedUraniumVolume);
             this.groupBox5.Controls.Add(this.label92);
-            this.groupBox5.Controls.Add(this.textBox48);
+            this.groupBox5.Controls.Add(this.txtEnrichedUraniumSubtotal);
             this.groupBox5.Controls.Add(this.label93);
             this.groupBox5.Controls.Add(this.label94);
             this.groupBox5.Controls.Add(this.label73);
@@ -1583,14 +1583,15 @@ namespace EVEPOSMon
             this.label89.TabIndex = 60;
             this.label89.Text = "ISK";
             // 
-            // textBox45
+            // txtEnrichedUraniumPricePer
             // 
-            this.textBox45.Location = new System.Drawing.Point(143, 13);
-            this.textBox45.Name = "textBox45";
-            this.textBox45.Size = new System.Drawing.Size(60, 20);
-            this.textBox45.TabIndex = 50;
-            this.textBox45.Text = "0";
-            this.textBox45.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtEnrichedUraniumPricePer.Location = new System.Drawing.Point(143, 13);
+            this.txtEnrichedUraniumPricePer.Name = "txtEnrichedUraniumPricePer";
+            this.txtEnrichedUraniumPricePer.Size = new System.Drawing.Size(60, 20);
+            this.txtEnrichedUraniumPricePer.TabIndex = 50;
+            this.txtEnrichedUraniumPricePer.Text = "0";
+            this.txtEnrichedUraniumPricePer.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtEnrichedUraniumPricePer.TextChanged += new System.EventHandler(this.txtEnrichedUraniumPricePer_TextChanged);
             // 
             // label90
             // 
@@ -1609,6 +1610,7 @@ namespace EVEPOSMon
             this.txtEnrichedUraniumQuantity.TabIndex = 51;
             this.txtEnrichedUraniumQuantity.Text = "0";
             this.txtEnrichedUraniumQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtEnrichedUraniumQuantity.TextChanged += new System.EventHandler(this.txtEnrichedUraniumQuantity_TextChanged);
             // 
             // label91
             // 
@@ -1619,15 +1621,15 @@ namespace EVEPOSMon
             this.label91.TabIndex = 58;
             this.label91.Text = "Volume";
             // 
-            // textBox47
+            // txtEnrichedUraniumVolume
             // 
-            this.textBox47.Enabled = false;
-            this.textBox47.Location = new System.Drawing.Point(143, 65);
-            this.textBox47.Name = "textBox47";
-            this.textBox47.Size = new System.Drawing.Size(60, 20);
-            this.textBox47.TabIndex = 52;
-            this.textBox47.Text = "0";
-            this.textBox47.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtEnrichedUraniumVolume.Enabled = false;
+            this.txtEnrichedUraniumVolume.Location = new System.Drawing.Point(143, 65);
+            this.txtEnrichedUraniumVolume.Name = "txtEnrichedUraniumVolume";
+            this.txtEnrichedUraniumVolume.Size = new System.Drawing.Size(60, 20);
+            this.txtEnrichedUraniumVolume.TabIndex = 52;
+            this.txtEnrichedUraniumVolume.Text = "0";
+            this.txtEnrichedUraniumVolume.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label92
             // 
@@ -1638,15 +1640,15 @@ namespace EVEPOSMon
             this.label92.TabIndex = 57;
             this.label92.Text = "Quanitity";
             // 
-            // textBox48
+            // txtEnrichedUraniumSubtotal
             // 
-            this.textBox48.Enabled = false;
-            this.textBox48.Location = new System.Drawing.Point(143, 91);
-            this.textBox48.Name = "textBox48";
-            this.textBox48.Size = new System.Drawing.Size(60, 20);
-            this.textBox48.TabIndex = 53;
-            this.textBox48.Text = "0";
-            this.textBox48.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtEnrichedUraniumSubtotal.Enabled = false;
+            this.txtEnrichedUraniumSubtotal.Location = new System.Drawing.Point(143, 91);
+            this.txtEnrichedUraniumSubtotal.Name = "txtEnrichedUraniumSubtotal";
+            this.txtEnrichedUraniumSubtotal.Size = new System.Drawing.Size(60, 20);
+            this.txtEnrichedUraniumSubtotal.TabIndex = 53;
+            this.txtEnrichedUraniumSubtotal.Text = "0";
+            this.txtEnrichedUraniumSubtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label93
             // 
@@ -2547,13 +2549,13 @@ namespace EVEPOSMon
         private System.Windows.Forms.Label label88;
         private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.Label label89;
-        private System.Windows.Forms.TextBox textBox45;
+        private System.Windows.Forms.TextBox txtEnrichedUraniumPricePer;
         private System.Windows.Forms.Label label90;
         private System.Windows.Forms.TextBox txtEnrichedUraniumQuantity;
         private System.Windows.Forms.Label label91;
-        private System.Windows.Forms.TextBox textBox47;
+        private System.Windows.Forms.TextBox txtEnrichedUraniumVolume;
         private System.Windows.Forms.Label label92;
-        private System.Windows.Forms.TextBox textBox48;
+        private System.Windows.Forms.TextBox txtEnrichedUraniumSubtotal;
         private System.Windows.Forms.Label label93;
         private System.Windows.Forms.Label label94;
         private System.Windows.Forms.Label label73;
