@@ -11,6 +11,28 @@ namespace EVEPOSMon
     {
         private Settings m_settings = Settings.GetInstance();
 
+        public class OnStandingDrop
+        {
+            public string enabled;
+            public string standing;
+        }
+
+        public class OnStatusDrop
+        {
+            public string enabled;
+            public string standing;
+        }
+
+        public class OnAgression
+        {
+            public string enabled;
+        }
+
+        public class OnCorporationWar
+        {
+            public string enabled;
+        }
+
         [XmlElement]
         public string itemId;
 
@@ -58,28 +80,6 @@ namespace EVEPOSMon
         #endregion
 
         #region Combat Settings
-
-        public class OnStandingDrop
-        {
-            public string enabled;
-            public string standing;
-        }
-
-        public class OnStatusDrop
-        {
-            public string enabled;
-            public string standing;
-        }
-
-        public class OnAgression
-        {
-            public string enabled;
-        }
-
-        public class OnCorporationWar
-        {
-            public string enabled;
-        }
 
         [XmlElement]
         public OnStandingDrop onStandingDrop = new OnStandingDrop();
