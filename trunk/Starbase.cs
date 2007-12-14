@@ -164,26 +164,5 @@ namespace EVEPOSMon
             onCorporationWar.enabled = attrs["enabled"].InnerText;
         }
 
-        
-        public String getSolarSystem()
-        {
-            return starbaseSystem.systemName;
-        }
-        public String getRegion()
-        {
-            return starbaseSystem.regionName;
-        }
-        public String getSecurity()
-        {
-            return starbaseSystem.security;
-        }
-        public String getConstellation()
-        {
-            return starbaseSystem.constellationName;
-        }
-        public String getLocationID()
-        {
-            return starbaseSystem.locationID;
-        }
     }
 }
