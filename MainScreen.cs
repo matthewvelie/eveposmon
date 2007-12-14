@@ -14,5 +14,10 @@ namespace EVEPOSMon
         {
             InitializeComponent();
         }
+
+        public void AddTab(TabPage tp)
+        {
+            tabControl1.TabPages.Add(tp);
+        }
     }
 }
