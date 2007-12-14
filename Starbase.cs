@@ -67,10 +67,13 @@ namespace EVEPOSMon
         #endregion
 
         public List<Fuel> FuelList = new List<Fuel>();
+        private Settings m_settings = Settings.GetInstance();
 
         public override string ToString()
         {
-            return itemId;
+            MapSystem ms = m_settings.mapData.GetSystemInfo(locationId);
+            ControlTower ct = m_settings.controlTowerTypes.GetTowerInfo(typeId);
+            return ct.typeName + " -- " + ms.systemName;
         }
 
         internal void setValues(System.Xml.XmlAttributeCollection atts)

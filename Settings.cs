@@ -48,6 +48,7 @@ namespace EVEMon.Common
 
         public TowerResources towerResources;
         public ControlTowerTypes controlTowerTypes;
+        public MapData mapData;
 
         private bool m_useCustomProxySettings = false;
         public bool UseCustomProxySettings
