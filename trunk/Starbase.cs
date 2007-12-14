@@ -27,11 +27,19 @@ namespace EVEPOSMon
 
         #region map data
 
-        private String solarsystem;
-        private String constellation;
-        private String region;
-        private String security;
-
+        private MapSystem starbaseSystem;
+        public MapSystem StarbaseSystem
+        {
+            get
+            {
+                if (starbaseSystem == null)
+                {
+                    this.starbaseSystem = m_settings.mapData.GetSystemInfo(this.locationId);
+                }
+                return this.starbaseSystem;
+            }
+        }
+        
         #endregion
 
         #region General Settings
@@ -95,7 +103,6 @@ namespace EVEPOSMon
             state = atts["state"].InnerText;
             stateTimestamp = EveSession.ConvertCCPTimeStringToDateTime(atts["stateTimestamp"].InnerText);
             onlineTimeStamp = EveSession.ConvertCCPTimeStringToDateTime(atts["onlineTimestamp"].InnerText);
-            setMapInformation();
         }
 
         internal void setDetails(String loc)
@@ -157,67 +164,26 @@ namespace EVEPOSMon
             onCorporationWar.enabled = attrs["enabled"].InnerText;
         }
 
-        private void setMapInformation()
-        {
-            try
-            {
-                // Load the file into memory
-                XmlDocument xdoc = new XmlDocument();
-                xdoc.Load(@"./data/mapData.xml");
-
-                string starbaseError;
-                DateTime cachedUntil;
-
-                XmlNode error = xdoc.DocumentElement.SelectSingleNode("descendant::error");
-                // If a read error occured, exit
-                if (error != null)
-                {
-                    starbaseError = error.InnerText;
-                    throw new InvalidDataException(starbaseError);
-                }
-                else
-                {
-                    cachedUntil = EveSession.GetCacheExpiryUTC(xdoc);
-                    
-                    XmlNodeList systemNodeList = xdoc.GetElementsByTagName("system");
-
-                    foreach (XmlNode systemNode in systemNodeList)
-                    {
-                        if (systemNode.FirstChild.InnerText == (this.locationId))
-                        {
-                            this.solarsystem = systemNode.ChildNodes.Item(1).InnerText;
-                            this.region = systemNode.ChildNodes.Item(4).InnerText;
-                            this.constellation = systemNode.ChildNodes.Item(3).InnerText;
-                            this.security = systemNode.ChildNodes.Item(2).InnerText;
-                            return; // once you've found the node with the information there is noneed to go any further in the search.
-                        }
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Exception: {0}", e.ToString());
-            }
-        }
+        
         public String getSolarSystem()
         {
-            return this.solarsystem;
+            return starbaseSystem.systemName;
         }
         public String getRegion()
         {
-            return this.region;
+            return starbaseSystem.regionName;
         }
         public String getSecurity()
         {
-            return this.security;
+            return starbaseSystem.security;
         }
         public String getConstellation()
         {
-            return this.constellation;
+            return starbaseSystem.constellationName;
         }
         public String getLocationID()
         {
-            return this.locationId;
+            return starbaseSystem.locationID;
         }
     }
 }
