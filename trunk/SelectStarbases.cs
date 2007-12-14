@@ -94,6 +94,16 @@ namespace EVEPOSMon
 
             StarbaseInfo starbaseInfo = new StarbaseInfo(starbase);
             starbaseInfo.Show();
+
+            MainScreen mainScreen = new MainScreen();
+            StarbaseMonitor sm = new StarbaseMonitor(starbase);
+            TabPage tp = new TabPage("test");
+            sm.Parent = tp;
+            sm.Dock = DockStyle.Fill;
+            mainScreen.AddTab(tp);
+            mainScreen.Visible = true;
+
+            
         }
 
         // Prompt the user to confirm closing the program and all other windows
