@@ -52,9 +52,11 @@ namespace EVEPOSMon
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FuelRequiredQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TimeRemaining = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.statusStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbStationImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgFuelList)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // statusStrip
@@ -197,15 +199,18 @@ namespace EVEPOSMon
             this.dgFuelList.AllowUserToAddRows = false;
             this.dgFuelList.AllowUserToDeleteRows = false;
             this.dgFuelList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgFuelList.ColumnHeadersVisible = false;
             this.dgFuelList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.FuelName,
             this.Quantity,
             this.FuelRequiredQuantity,
             this.TimeRemaining});
-            this.dgFuelList.Location = new System.Drawing.Point(15, 209);
+            this.dgFuelList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgFuelList.Location = new System.Drawing.Point(0, 0);
             this.dgFuelList.Name = "dgFuelList";
             this.dgFuelList.ReadOnly = true;
-            this.dgFuelList.Size = new System.Drawing.Size(463, 321);
+            this.dgFuelList.RowHeadersVisible = false;
+            this.dgFuelList.Size = new System.Drawing.Size(489, 355);
             this.dgFuelList.TabIndex = 4;
             // 
             // imageList1
@@ -238,12 +243,20 @@ namespace EVEPOSMon
             this.TimeRemaining.Name = "TimeRemaining";
             this.TimeRemaining.ReadOnly = true;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.dgFuelList);
+            this.panel1.Location = new System.Drawing.Point(0, 196);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(489, 355);
+            this.panel1.TabIndex = 5;
+            // 
             // StarbaseInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(490, 573);
-            this.Controls.Add(this.dgFuelList);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pbStationImage);
             this.Controls.Add(this.lblClaimingSovereignty);
             this.Controls.Add(this.lblAllowAllianceMembers);
@@ -266,6 +279,7 @@ namespace EVEPOSMon
             this.statusStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbStationImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgFuelList)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -296,5 +310,6 @@ namespace EVEPOSMon
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn FuelRequiredQuantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn TimeRemaining;
+        private System.Windows.Forms.Panel panel1;
     }
 }
