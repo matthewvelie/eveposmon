@@ -38,6 +38,12 @@
   <ItemGroup>
     <Compile Include="AutoShrink.cs" />
     <Compile Include="ControlTowerTypes.cs" />
+    <Compile Include="MainScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainScreen.Designer.cs">
+      <DependentUpon>MainScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="MapData.cs" />
     <Compile Include="SerializableStarbase.cs" />
     <Compile Include="Starbase.cs" />
@@ -87,6 +93,12 @@
     <Compile Include="StarbaseInfo.Designer.cs">
       <DependentUpon>StarbaseInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="StarbaseMonitor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StarbaseMonitor.Designer.cs">
+      <DependentUpon>StarbaseMonitor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Throbber.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -96,6 +108,14 @@
     <Compile Include="TowerResources.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="MainScreen.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MainScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StarbaseMonitor.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>StarbaseMonitor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="throbber.png" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
