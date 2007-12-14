@@ -41,6 +41,11 @@ namespace EVEPOSMon
                 re.description = reNode.ChildNodes[5].InnerText;
                 re.volume = reNode.ChildNodes[6].InnerText;
                 tr.resourceEntries.Add(re);
+
+                if (re.towerTypeId == "12236")
+                {
+                    System.Diagnostics.Debug.WriteLine(re.typeId);
+                }
             }
 
             foreach (ResourceEntry re in tr.resourceEntries)
@@ -51,7 +56,9 @@ namespace EVEPOSMon
                 }
                 else
                 {
-                    tr.towerTypeIds.Add(re.towerTypeId, new List<ResourceEntry>());
+                    List<ResourceEntry> reList = new List<ResourceEntry>();
+                    reList.Add(re);
+                    tr.towerTypeIds.Add(re.towerTypeId, reList);
                 }
             }
 
