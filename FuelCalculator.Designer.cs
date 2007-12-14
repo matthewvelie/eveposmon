@@ -40,7 +40,7 @@ namespace EVEPOSMon
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.txtNitrogenIsotopesQuantity = new System.Windows.Forms.TextBox();
             this.textBox16 = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -53,7 +53,7 @@ namespace EVEPOSMon
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.txtHydrogenIsotopesQuantity = new System.Windows.Forms.TextBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -66,7 +66,7 @@ namespace EVEPOSMon
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtOxygenIsotopesQuantity = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -79,7 +79,7 @@ namespace EVEPOSMon
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtHeliumIsotopesQuantity = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label49 = new System.Windows.Forms.Label();
@@ -93,7 +93,7 @@ namespace EVEPOSMon
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.textBox25 = new System.Windows.Forms.TextBox();
             this.textBox26 = new System.Windows.Forms.TextBox();
-            this.textBox27 = new System.Windows.Forms.TextBox();
+            this.txtHeavyWaterQuantity = new System.Windows.Forms.TextBox();
             this.textBox28 = new System.Windows.Forms.TextBox();
             this.label57 = new System.Windows.Forms.Label();
             this.label58 = new System.Windows.Forms.Label();
@@ -106,9 +106,12 @@ namespace EVEPOSMon
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.textBox29 = new System.Windows.Forms.TextBox();
             this.textBox30 = new System.Windows.Forms.TextBox();
-            this.textBox31 = new System.Windows.Forms.TextBox();
+            this.txtLiquidOzoneQuantity = new System.Windows.Forms.TextBox();
             this.textBox32 = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.textBox55 = new System.Windows.Forms.TextBox();
+            this.textBox54 = new System.Windows.Forms.TextBox();
+            this.textBox53 = new System.Windows.Forms.TextBox();
             this.label41 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
@@ -123,52 +126,20 @@ namespace EVEPOSMon
             this.textBox23 = new System.Windows.Forms.TextBox();
             this.textBox24 = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.label33 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.label34 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
             this.label65 = new System.Windows.Forms.Label();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.textBox19 = new System.Windows.Forms.TextBox();
+            this.label35 = new System.Windows.Forms.Label();
             this.textBox20 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label66 = new System.Windows.Forms.Label();
-            this.label67 = new System.Windows.Forms.Label();
-            this.label68 = new System.Windows.Forms.Label();
-            this.label69 = new System.Windows.Forms.Label();
-            this.label70 = new System.Windows.Forms.Label();
-            this.label71 = new System.Windows.Forms.Label();
-            this.label72 = new System.Windows.Forms.Label();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.textBox33 = new System.Windows.Forms.TextBox();
-            this.textBox34 = new System.Windows.Forms.TextBox();
-            this.textBox35 = new System.Windows.Forms.TextBox();
-            this.textBox36 = new System.Windows.Forms.TextBox();
-            this.label73 = new System.Windows.Forms.Label();
-            this.label74 = new System.Windows.Forms.Label();
-            this.label75 = new System.Windows.Forms.Label();
-            this.label76 = new System.Windows.Forms.Label();
-            this.label77 = new System.Windows.Forms.Label();
-            this.label78 = new System.Windows.Forms.Label();
-            this.label79 = new System.Windows.Forms.Label();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.textBox37 = new System.Windows.Forms.TextBox();
-            this.textBox38 = new System.Windows.Forms.TextBox();
-            this.textBox39 = new System.Windows.Forms.TextBox();
-            this.textBox40 = new System.Windows.Forms.TextBox();
-            this.label80 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.textBox19 = new System.Windows.Forms.TextBox();
+            this.label37 = new System.Windows.Forms.Label();
+            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.label39 = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label81 = new System.Windows.Forms.Label();
             this.label82 = new System.Windows.Forms.Label();
             this.label83 = new System.Windows.Forms.Label();
@@ -179,33 +150,90 @@ namespace EVEPOSMon
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.textBox41 = new System.Windows.Forms.TextBox();
             this.textBox42 = new System.Windows.Forms.TextBox();
-            this.textBox43 = new System.Windows.Forms.TextBox();
+            this.txtOxygenQuantity = new System.Windows.Forms.TextBox();
             this.textBox44 = new System.Windows.Forms.TextBox();
             this.label88 = new System.Windows.Forms.Label();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.label89 = new System.Windows.Forms.Label();
             this.textBox45 = new System.Windows.Forms.TextBox();
             this.label90 = new System.Windows.Forms.Label();
-            this.textBox46 = new System.Windows.Forms.TextBox();
+            this.txtEnrichedUraniumQuantity = new System.Windows.Forms.TextBox();
             this.label91 = new System.Windows.Forms.Label();
             this.textBox47 = new System.Windows.Forms.TextBox();
             this.label92 = new System.Windows.Forms.Label();
             this.textBox48 = new System.Windows.Forms.TextBox();
             this.label93 = new System.Windows.Forms.Label();
             this.label94 = new System.Windows.Forms.Label();
+            this.label73 = new System.Windows.Forms.Label();
+            this.label74 = new System.Windows.Forms.Label();
+            this.label75 = new System.Windows.Forms.Label();
+            this.label76 = new System.Windows.Forms.Label();
+            this.label77 = new System.Windows.Forms.Label();
+            this.label78 = new System.Windows.Forms.Label();
+            this.label79 = new System.Windows.Forms.Label();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.textBox37 = new System.Windows.Forms.TextBox();
+            this.textBox38 = new System.Windows.Forms.TextBox();
+            this.txtMechanicalPartsQuantity = new System.Windows.Forms.TextBox();
+            this.textBox40 = new System.Windows.Forms.TextBox();
+            this.label66 = new System.Windows.Forms.Label();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.label67 = new System.Windows.Forms.Label();
+            this.textBox36 = new System.Windows.Forms.TextBox();
+            this.label68 = new System.Windows.Forms.Label();
+            this.txtRoboticsQuantity = new System.Windows.Forms.TextBox();
+            this.label69 = new System.Windows.Forms.Label();
+            this.textBox34 = new System.Windows.Forms.TextBox();
+            this.label70 = new System.Windows.Forms.Label();
+            this.textBox33 = new System.Windows.Forms.TextBox();
+            this.label71 = new System.Windows.Forms.Label();
+            this.label72 = new System.Windows.Forms.Label();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label95 = new System.Windows.Forms.Label();
+            this.label80 = new System.Windows.Forms.Label();
             this.label96 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
             this.label97 = new System.Windows.Forms.Label();
-            this.textBox49 = new System.Windows.Forms.TextBox();
-            this.label98 = new System.Windows.Forms.Label();
-            this.textBox50 = new System.Windows.Forms.TextBox();
-            this.label99 = new System.Windows.Forms.Label();
-            this.textBox51 = new System.Windows.Forms.TextBox();
-            this.label100 = new System.Windows.Forms.Label();
-            this.textBox52 = new System.Windows.Forms.TextBox();
-            this.label101 = new System.Windows.Forms.Label();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.textBox49 = new System.Windows.Forms.TextBox();
             this.label102 = new System.Windows.Forms.Label();
+            this.label98 = new System.Windows.Forms.Label();
+            this.label101 = new System.Windows.Forms.Label();
+            this.txtCoolantQuantity = new System.Windows.Forms.TextBox();
+            this.textBox52 = new System.Windows.Forms.TextBox();
+            this.label99 = new System.Windows.Forms.Label();
+            this.label100 = new System.Windows.Forms.Label();
+            this.textBox51 = new System.Windows.Forms.TextBox();
+            this.rbManualCalc = new System.Windows.Forms.RadioButton();
+            this.rbTimeCalc = new System.Windows.Forms.RadioButton();
+            this.rbCargoCalc = new System.Windows.Forms.RadioButton();
+            this.rbIskCalc = new System.Windows.Forms.RadioButton();
+            this.dgvStations = new System.Windows.Forms.DataGridView();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label103 = new System.Windows.Forms.Label();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.label114 = new System.Windows.Forms.Label();
+            this.textBox61 = new System.Windows.Forms.TextBox();
+            this.label115 = new System.Windows.Forms.Label();
+            this.label107 = new System.Windows.Forms.Label();
+            this.label106 = new System.Windows.Forms.Label();
+            this.textBox57 = new System.Windows.Forms.TextBox();
+            this.textBox56 = new System.Windows.Forms.TextBox();
+            this.label105 = new System.Windows.Forms.Label();
+            this.label104 = new System.Windows.Forms.Label();
+            this.lblHaulerCargoSize = new System.Windows.Forms.Label();
+            this.txtCargoSize = new System.Windows.Forms.TextBox();
+            this.lblAmtToSpend = new System.Windows.Forms.Label();
+            this.txtAmtToSpend = new System.Windows.Forms.TextBox();
+            this.lblFuelShouldLast = new System.Windows.Forms.Label();
+            this.txtFuelLastDays = new System.Windows.Forms.TextBox();
+            this.lblFuelDays = new System.Windows.Forms.Label();
+            this.lblHaulerM3 = new System.Windows.Forms.Label();
+            this.lblAmtToSpendIsk = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -217,15 +245,17 @@ namespace EVEPOSMon
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.groupBox4.SuspendLayout();
-            this.groupBox5.SuspendLayout();
-            this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStations)).BeginInit();
+            this.groupBox7.SuspendLayout();
+            this.groupBox8.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -241,7 +271,7 @@ namespace EVEPOSMon
             this.groupBox1.Controls.Add(this.pictureBox4);
             this.groupBox1.Controls.Add(this.textBox13);
             this.groupBox1.Controls.Add(this.textBox14);
-            this.groupBox1.Controls.Add(this.textBox15);
+            this.groupBox1.Controls.Add(this.txtNitrogenIsotopesQuantity);
             this.groupBox1.Controls.Add(this.textBox16);
             this.groupBox1.Controls.Add(this.label17);
             this.groupBox1.Controls.Add(this.label18);
@@ -254,7 +284,7 @@ namespace EVEPOSMon
             this.groupBox1.Controls.Add(this.pictureBox3);
             this.groupBox1.Controls.Add(this.textBox9);
             this.groupBox1.Controls.Add(this.textBox10);
-            this.groupBox1.Controls.Add(this.textBox11);
+            this.groupBox1.Controls.Add(this.txtHydrogenIsotopesQuantity);
             this.groupBox1.Controls.Add(this.textBox12);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label10);
@@ -267,7 +297,7 @@ namespace EVEPOSMon
             this.groupBox1.Controls.Add(this.pictureBox2);
             this.groupBox1.Controls.Add(this.textBox5);
             this.groupBox1.Controls.Add(this.textBox6);
-            this.groupBox1.Controls.Add(this.textBox7);
+            this.groupBox1.Controls.Add(this.txtOxygenIsotopesQuantity);
             this.groupBox1.Controls.Add(this.textBox8);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
@@ -280,7 +310,7 @@ namespace EVEPOSMon
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.textBox4);
             this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.txtHeliumIsotopesQuantity);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Location = new System.Drawing.Point(12, 398);
             this.groupBox1.Name = "groupBox1";
@@ -373,6 +403,7 @@ namespace EVEPOSMon
             // 
             // textBox13
             // 
+            this.textBox13.Enabled = false;
             this.textBox13.Location = new System.Drawing.Point(876, 97);
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(60, 20);
@@ -382,6 +413,7 @@ namespace EVEPOSMon
             // 
             // textBox14
             // 
+            this.textBox14.Enabled = false;
             this.textBox14.Location = new System.Drawing.Point(876, 71);
             this.textBox14.Name = "textBox14";
             this.textBox14.Size = new System.Drawing.Size(60, 20);
@@ -389,14 +421,14 @@ namespace EVEPOSMon
             this.textBox14.Text = "0";
             this.textBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // textBox15
+            // txtNitrogenIsotopesQuantity
             // 
-            this.textBox15.Location = new System.Drawing.Point(876, 45);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(86, 20);
-            this.textBox15.TabIndex = 40;
-            this.textBox15.Text = "0";
-            this.textBox15.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtNitrogenIsotopesQuantity.Location = new System.Drawing.Point(876, 45);
+            this.txtNitrogenIsotopesQuantity.Name = "txtNitrogenIsotopesQuantity";
+            this.txtNitrogenIsotopesQuantity.Size = new System.Drawing.Size(86, 20);
+            this.txtNitrogenIsotopesQuantity.TabIndex = 40;
+            this.txtNitrogenIsotopesQuantity.Text = "0";
+            this.txtNitrogenIsotopesQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox16
             // 
@@ -410,7 +442,7 @@ namespace EVEPOSMon
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(693, 74);
+            this.label17.Location = new System.Drawing.Point(699, 74);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(28, 13);
             this.label17.TabIndex = 38;
@@ -419,7 +451,7 @@ namespace EVEPOSMon
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(693, 100);
+            this.label18.Location = new System.Drawing.Point(699, 100);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(24, 13);
             this.label18.TabIndex = 37;
@@ -428,7 +460,7 @@ namespace EVEPOSMon
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(693, 22);
+            this.label19.Location = new System.Drawing.Point(699, 22);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(24, 13);
             this.label19.TabIndex = 36;
@@ -437,7 +469,7 @@ namespace EVEPOSMon
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(584, 100);
+            this.label20.Location = new System.Drawing.Point(590, 100);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(46, 13);
             this.label20.TabIndex = 35;
@@ -446,7 +478,7 @@ namespace EVEPOSMon
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(586, 74);
+            this.label21.Location = new System.Drawing.Point(592, 74);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(42, 13);
             this.label21.TabIndex = 34;
@@ -455,7 +487,7 @@ namespace EVEPOSMon
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(582, 48);
+            this.label22.Location = new System.Drawing.Point(588, 48);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(48, 13);
             this.label22.TabIndex = 33;
@@ -464,7 +496,7 @@ namespace EVEPOSMon
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(580, 22);
+            this.label23.Location = new System.Drawing.Point(586, 22);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(50, 13);
             this.label23.TabIndex = 32;
@@ -474,7 +506,7 @@ namespace EVEPOSMon
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(509, 26);
+            this.label24.Location = new System.Drawing.Point(515, 26);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(61, 13);
             this.label24.TabIndex = 31;
@@ -483,7 +515,7 @@ namespace EVEPOSMon
             // pictureBox3
             // 
             this.pictureBox3.Image = global::EVEPOSMon.Properties.Resources.icon51_14;
-            this.pictureBox3.Location = new System.Drawing.Point(508, 45);
+            this.pictureBox3.Location = new System.Drawing.Point(514, 45);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(64, 64);
             this.pictureBox3.TabIndex = 30;
@@ -491,7 +523,8 @@ namespace EVEPOSMon
             // 
             // textBox9
             // 
-            this.textBox9.Location = new System.Drawing.Point(631, 97);
+            this.textBox9.Enabled = false;
+            this.textBox9.Location = new System.Drawing.Point(637, 97);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(60, 20);
             this.textBox9.TabIndex = 29;
@@ -500,25 +533,26 @@ namespace EVEPOSMon
             // 
             // textBox10
             // 
-            this.textBox10.Location = new System.Drawing.Point(631, 71);
+            this.textBox10.Enabled = false;
+            this.textBox10.Location = new System.Drawing.Point(637, 71);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(60, 20);
             this.textBox10.TabIndex = 28;
             this.textBox10.Text = "0";
             this.textBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // textBox11
+            // txtHydrogenIsotopesQuantity
             // 
-            this.textBox11.Location = new System.Drawing.Point(631, 45);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(86, 20);
-            this.textBox11.TabIndex = 27;
-            this.textBox11.Text = "0";
-            this.textBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtHydrogenIsotopesQuantity.Location = new System.Drawing.Point(637, 45);
+            this.txtHydrogenIsotopesQuantity.Name = "txtHydrogenIsotopesQuantity";
+            this.txtHydrogenIsotopesQuantity.Size = new System.Drawing.Size(86, 20);
+            this.txtHydrogenIsotopesQuantity.TabIndex = 27;
+            this.txtHydrogenIsotopesQuantity.Text = "0";
+            this.txtHydrogenIsotopesQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox12
             // 
-            this.textBox12.Location = new System.Drawing.Point(631, 19);
+            this.textBox12.Location = new System.Drawing.Point(637, 19);
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(60, 20);
             this.textBox12.TabIndex = 26;
@@ -609,6 +643,7 @@ namespace EVEPOSMon
             // 
             // textBox5
             // 
+            this.textBox5.Enabled = false;
             this.textBox5.Location = new System.Drawing.Point(382, 97);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(60, 20);
@@ -618,6 +653,7 @@ namespace EVEPOSMon
             // 
             // textBox6
             // 
+            this.textBox6.Enabled = false;
             this.textBox6.Location = new System.Drawing.Point(382, 71);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(60, 20);
@@ -625,14 +661,14 @@ namespace EVEPOSMon
             this.textBox6.Text = "0";
             this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // textBox7
+            // txtOxygenIsotopesQuantity
             // 
-            this.textBox7.Location = new System.Drawing.Point(382, 45);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(86, 20);
-            this.textBox7.TabIndex = 14;
-            this.textBox7.Text = "0";
-            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtOxygenIsotopesQuantity.Location = new System.Drawing.Point(382, 45);
+            this.txtOxygenIsotopesQuantity.Name = "txtOxygenIsotopesQuantity";
+            this.txtOxygenIsotopesQuantity.Size = new System.Drawing.Size(86, 20);
+            this.txtOxygenIsotopesQuantity.TabIndex = 14;
+            this.txtOxygenIsotopesQuantity.Text = "0";
+            this.txtOxygenIsotopesQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox8
             // 
@@ -727,6 +763,7 @@ namespace EVEPOSMon
             // 
             // textBox4
             // 
+            this.textBox4.Enabled = false;
             this.textBox4.Location = new System.Drawing.Point(141, 97);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(60, 20);
@@ -736,6 +773,7 @@ namespace EVEPOSMon
             // 
             // textBox3
             // 
+            this.textBox3.Enabled = false;
             this.textBox3.Location = new System.Drawing.Point(141, 71);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(60, 20);
@@ -743,14 +781,14 @@ namespace EVEPOSMon
             this.textBox3.Text = "0";
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // textBox2
+            // txtHeliumIsotopesQuantity
             // 
-            this.textBox2.Location = new System.Drawing.Point(141, 45);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(86, 20);
-            this.textBox2.TabIndex = 1;
-            this.textBox2.Text = "0";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtHeliumIsotopesQuantity.Location = new System.Drawing.Point(141, 45);
+            this.txtHeliumIsotopesQuantity.Name = "txtHeliumIsotopesQuantity";
+            this.txtHeliumIsotopesQuantity.Size = new System.Drawing.Size(86, 20);
+            this.txtHeliumIsotopesQuantity.TabIndex = 1;
+            this.txtHeliumIsotopesQuantity.Text = "0";
+            this.txtHeliumIsotopesQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox1
             // 
@@ -774,7 +812,7 @@ namespace EVEPOSMon
             this.groupBox2.Controls.Add(this.pictureBox7);
             this.groupBox2.Controls.Add(this.textBox25);
             this.groupBox2.Controls.Add(this.textBox26);
-            this.groupBox2.Controls.Add(this.textBox27);
+            this.groupBox2.Controls.Add(this.txtHeavyWaterQuantity);
             this.groupBox2.Controls.Add(this.textBox28);
             this.groupBox2.Controls.Add(this.label57);
             this.groupBox2.Controls.Add(this.label58);
@@ -787,7 +825,7 @@ namespace EVEPOSMon
             this.groupBox2.Controls.Add(this.pictureBox8);
             this.groupBox2.Controls.Add(this.textBox29);
             this.groupBox2.Controls.Add(this.textBox30);
-            this.groupBox2.Controls.Add(this.textBox31);
+            this.groupBox2.Controls.Add(this.txtLiquidOzoneQuantity);
             this.groupBox2.Controls.Add(this.textBox32);
             this.groupBox2.Location = new System.Drawing.Point(12, 262);
             this.groupBox2.Name = "groupBox2";
@@ -880,6 +918,7 @@ namespace EVEPOSMon
             // 
             // textBox25
             // 
+            this.textBox25.Enabled = false;
             this.textBox25.Location = new System.Drawing.Point(382, 97);
             this.textBox25.Name = "textBox25";
             this.textBox25.Size = new System.Drawing.Size(60, 20);
@@ -889,6 +928,7 @@ namespace EVEPOSMon
             // 
             // textBox26
             // 
+            this.textBox26.Enabled = false;
             this.textBox26.Location = new System.Drawing.Point(382, 71);
             this.textBox26.Name = "textBox26";
             this.textBox26.Size = new System.Drawing.Size(60, 20);
@@ -896,14 +936,14 @@ namespace EVEPOSMon
             this.textBox26.Text = "0";
             this.textBox26.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // textBox27
+            // txtHeavyWaterQuantity
             // 
-            this.textBox27.Location = new System.Drawing.Point(382, 45);
-            this.textBox27.Name = "textBox27";
-            this.textBox27.Size = new System.Drawing.Size(86, 20);
-            this.textBox27.TabIndex = 14;
-            this.textBox27.Text = "0";
-            this.textBox27.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtHeavyWaterQuantity.Location = new System.Drawing.Point(382, 45);
+            this.txtHeavyWaterQuantity.Name = "txtHeavyWaterQuantity";
+            this.txtHeavyWaterQuantity.Size = new System.Drawing.Size(86, 20);
+            this.txtHeavyWaterQuantity.TabIndex = 14;
+            this.txtHeavyWaterQuantity.Text = "0";
+            this.txtHeavyWaterQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox28
             // 
@@ -998,6 +1038,7 @@ namespace EVEPOSMon
             // 
             // textBox29
             // 
+            this.textBox29.Enabled = false;
             this.textBox29.Location = new System.Drawing.Point(141, 97);
             this.textBox29.Name = "textBox29";
             this.textBox29.Size = new System.Drawing.Size(60, 20);
@@ -1007,6 +1048,7 @@ namespace EVEPOSMon
             // 
             // textBox30
             // 
+            this.textBox30.Enabled = false;
             this.textBox30.Location = new System.Drawing.Point(141, 71);
             this.textBox30.Name = "textBox30";
             this.textBox30.Size = new System.Drawing.Size(60, 20);
@@ -1014,14 +1056,14 @@ namespace EVEPOSMon
             this.textBox30.Text = "0";
             this.textBox30.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // textBox31
+            // txtLiquidOzoneQuantity
             // 
-            this.textBox31.Location = new System.Drawing.Point(141, 45);
-            this.textBox31.Name = "textBox31";
-            this.textBox31.Size = new System.Drawing.Size(86, 20);
-            this.textBox31.TabIndex = 1;
-            this.textBox31.Text = "0";
-            this.textBox31.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtLiquidOzoneQuantity.Location = new System.Drawing.Point(141, 45);
+            this.txtLiquidOzoneQuantity.Name = "txtLiquidOzoneQuantity";
+            this.txtLiquidOzoneQuantity.Size = new System.Drawing.Size(86, 20);
+            this.txtLiquidOzoneQuantity.TabIndex = 1;
+            this.txtLiquidOzoneQuantity.Text = "0";
+            this.txtLiquidOzoneQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox32
             // 
@@ -1034,6 +1076,9 @@ namespace EVEPOSMon
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.textBox55);
+            this.groupBox3.Controls.Add(this.textBox54);
+            this.groupBox3.Controls.Add(this.textBox53);
             this.groupBox3.Controls.Add(this.label41);
             this.groupBox3.Controls.Add(this.label42);
             this.groupBox3.Controls.Add(this.label43);
@@ -1049,15 +1094,42 @@ namespace EVEPOSMon
             this.groupBox3.Controls.Add(this.textBox24);
             this.groupBox3.Location = new System.Drawing.Point(504, 262);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(241, 130);
+            this.groupBox3.Size = new System.Drawing.Size(256, 130);
             this.groupBox3.TabIndex = 53;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Starbase Charters";
             // 
+            // textBox55
+            // 
+            this.textBox55.Location = new System.Drawing.Point(196, 45);
+            this.textBox55.Name = "textBox55";
+            this.textBox55.Size = new System.Drawing.Size(23, 20);
+            this.textBox55.TabIndex = 15;
+            this.textBox55.Text = "0";
+            this.textBox55.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBox54
+            // 
+            this.textBox54.Location = new System.Drawing.Point(170, 45);
+            this.textBox54.Name = "textBox54";
+            this.textBox54.Size = new System.Drawing.Size(23, 20);
+            this.textBox54.TabIndex = 14;
+            this.textBox54.Text = "0";
+            this.textBox54.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBox53
+            // 
+            this.textBox53.Location = new System.Drawing.Point(145, 45);
+            this.textBox53.Name = "textBox53";
+            this.textBox53.Size = new System.Drawing.Size(23, 20);
+            this.textBox53.TabIndex = 13;
+            this.textBox53.Text = "0";
+            this.textBox53.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // label41
             // 
             this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(203, 74);
+            this.label41.Location = new System.Drawing.Point(207, 74);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(28, 13);
             this.label41.TabIndex = 12;
@@ -1066,7 +1138,7 @@ namespace EVEPOSMon
             // label42
             // 
             this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(203, 100);
+            this.label42.Location = new System.Drawing.Point(207, 100);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(24, 13);
             this.label42.TabIndex = 11;
@@ -1075,7 +1147,7 @@ namespace EVEPOSMon
             // label43
             // 
             this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(203, 22);
+            this.label43.Location = new System.Drawing.Point(207, 22);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(24, 13);
             this.label43.TabIndex = 10;
@@ -1084,7 +1156,7 @@ namespace EVEPOSMon
             // label44
             // 
             this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(94, 100);
+            this.label44.Location = new System.Drawing.Point(98, 100);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(46, 13);
             this.label44.TabIndex = 9;
@@ -1093,7 +1165,7 @@ namespace EVEPOSMon
             // label45
             // 
             this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(96, 74);
+            this.label45.Location = new System.Drawing.Point(100, 74);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(42, 13);
             this.label45.TabIndex = 8;
@@ -1102,7 +1174,7 @@ namespace EVEPOSMon
             // label46
             // 
             this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(92, 48);
+            this.label46.Location = new System.Drawing.Point(96, 48);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(48, 13);
             this.label46.TabIndex = 7;
@@ -1111,7 +1183,7 @@ namespace EVEPOSMon
             // label47
             // 
             this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(90, 22);
+            this.label47.Location = new System.Drawing.Point(94, 22);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(50, 13);
             this.label47.TabIndex = 6;
@@ -1121,7 +1193,7 @@ namespace EVEPOSMon
             // 
             this.label48.AutoSize = true;
             this.label48.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label48.Location = new System.Drawing.Point(21, 26);
+            this.label48.Location = new System.Drawing.Point(25, 26);
             this.label48.Name = "label48";
             this.label48.Size = new System.Drawing.Size(54, 13);
             this.label48.TabIndex = 5;
@@ -1130,7 +1202,7 @@ namespace EVEPOSMon
             // pictureBox6
             // 
             this.pictureBox6.Image = global::EVEPOSMon.Properties.Resources.icon55_12;
-            this.pictureBox6.Location = new System.Drawing.Point(18, 45);
+            this.pictureBox6.Location = new System.Drawing.Point(22, 45);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(64, 64);
             this.pictureBox6.TabIndex = 4;
@@ -1138,7 +1210,8 @@ namespace EVEPOSMon
             // 
             // textBox21
             // 
-            this.textBox21.Location = new System.Drawing.Point(141, 97);
+            this.textBox21.Enabled = false;
+            this.textBox21.Location = new System.Drawing.Point(145, 97);
             this.textBox21.Name = "textBox21";
             this.textBox21.Size = new System.Drawing.Size(60, 20);
             this.textBox21.TabIndex = 3;
@@ -1147,7 +1220,8 @@ namespace EVEPOSMon
             // 
             // textBox22
             // 
-            this.textBox22.Location = new System.Drawing.Point(141, 71);
+            this.textBox22.Enabled = false;
+            this.textBox22.Location = new System.Drawing.Point(145, 71);
             this.textBox22.Name = "textBox22";
             this.textBox22.Size = new System.Drawing.Size(60, 20);
             this.textBox22.TabIndex = 2;
@@ -1156,16 +1230,16 @@ namespace EVEPOSMon
             // 
             // textBox23
             // 
-            this.textBox23.Location = new System.Drawing.Point(141, 45);
+            this.textBox23.Location = new System.Drawing.Point(223, 45);
             this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(86, 20);
+            this.textBox23.Size = new System.Drawing.Size(23, 20);
             this.textBox23.TabIndex = 1;
             this.textBox23.Text = "0";
             this.textBox23.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox24
             // 
-            this.textBox24.Location = new System.Drawing.Point(141, 19);
+            this.textBox24.Location = new System.Drawing.Point(145, 19);
             this.textBox24.Name = "textBox24";
             this.textBox24.Size = new System.Drawing.Size(60, 20);
             this.textBox24.TabIndex = 0;
@@ -1189,10 +1263,130 @@ namespace EVEPOSMon
             this.groupBox4.Controls.Add(this.label40);
             this.groupBox4.Location = new System.Drawing.Point(504, 136);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(238, 120);
+            this.groupBox4.Size = new System.Drawing.Size(256, 120);
             this.groupBox4.TabIndex = 54;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Reinforced Fuel";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(207, 64);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(28, 13);
+            this.label34.TabIndex = 25;
+            this.label34.Text = "M^3";
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label65.Location = new System.Drawing.Point(25, 16);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(60, 13);
+            this.label65.TabIndex = 18;
+            this.label65.Text = "Strontium";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(207, 90);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(24, 13);
+            this.label35.TabIndex = 24;
+            this.label35.Text = "ISK";
+            // 
+            // textBox20
+            // 
+            this.textBox20.Location = new System.Drawing.Point(145, 9);
+            this.textBox20.Name = "textBox20";
+            this.textBox20.Size = new System.Drawing.Size(60, 20);
+            this.textBox20.TabIndex = 13;
+            this.textBox20.Text = "0";
+            this.textBox20.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(207, 12);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(24, 13);
+            this.label36.TabIndex = 23;
+            this.label36.Text = "ISK";
+            // 
+            // textBox19
+            // 
+            this.textBox19.Location = new System.Drawing.Point(145, 35);
+            this.textBox19.Name = "textBox19";
+            this.textBox19.Size = new System.Drawing.Size(86, 20);
+            this.textBox19.TabIndex = 14;
+            this.textBox19.Text = "0";
+            this.textBox19.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(98, 90);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(46, 13);
+            this.label37.TabIndex = 22;
+            this.label37.Text = "Subtotal";
+            // 
+            // textBox18
+            // 
+            this.textBox18.Enabled = false;
+            this.textBox18.Location = new System.Drawing.Point(145, 61);
+            this.textBox18.Name = "textBox18";
+            this.textBox18.Size = new System.Drawing.Size(60, 20);
+            this.textBox18.TabIndex = 15;
+            this.textBox18.Text = "0";
+            this.textBox18.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(100, 64);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(42, 13);
+            this.label38.TabIndex = 21;
+            this.label38.Text = "Volume";
+            // 
+            // textBox17
+            // 
+            this.textBox17.Enabled = false;
+            this.textBox17.Location = new System.Drawing.Point(145, 87);
+            this.textBox17.Name = "textBox17";
+            this.textBox17.Size = new System.Drawing.Size(60, 20);
+            this.textBox17.TabIndex = 16;
+            this.textBox17.Text = "0";
+            this.textBox17.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(96, 38);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(48, 13);
+            this.label39.TabIndex = 20;
+            this.label39.Text = "Quanitity";
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::EVEPOSMon.Properties.Resources.icon51_10;
+            this.pictureBox5.Location = new System.Drawing.Point(22, 35);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(64, 64);
+            this.pictureBox5.TabIndex = 17;
+            this.pictureBox5.TabStop = false;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(94, 12);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(50, 13);
+            this.label40.TabIndex = 19;
+            this.label40.Text = "Price Per";
             // 
             // groupBox5
             // 
@@ -1206,14 +1400,14 @@ namespace EVEPOSMon
             this.groupBox5.Controls.Add(this.pictureBox11);
             this.groupBox5.Controls.Add(this.textBox41);
             this.groupBox5.Controls.Add(this.textBox42);
-            this.groupBox5.Controls.Add(this.textBox43);
+            this.groupBox5.Controls.Add(this.txtOxygenQuantity);
             this.groupBox5.Controls.Add(this.textBox44);
             this.groupBox5.Controls.Add(this.label88);
             this.groupBox5.Controls.Add(this.pictureBox12);
             this.groupBox5.Controls.Add(this.label89);
             this.groupBox5.Controls.Add(this.textBox45);
             this.groupBox5.Controls.Add(this.label90);
-            this.groupBox5.Controls.Add(this.textBox46);
+            this.groupBox5.Controls.Add(this.txtEnrichedUraniumQuantity);
             this.groupBox5.Controls.Add(this.label91);
             this.groupBox5.Controls.Add(this.textBox47);
             this.groupBox5.Controls.Add(this.label92);
@@ -1230,14 +1424,14 @@ namespace EVEPOSMon
             this.groupBox5.Controls.Add(this.pictureBox10);
             this.groupBox5.Controls.Add(this.textBox37);
             this.groupBox5.Controls.Add(this.textBox38);
-            this.groupBox5.Controls.Add(this.textBox39);
+            this.groupBox5.Controls.Add(this.txtMechanicalPartsQuantity);
             this.groupBox5.Controls.Add(this.textBox40);
             this.groupBox5.Controls.Add(this.label66);
             this.groupBox5.Controls.Add(this.pictureBox9);
             this.groupBox5.Controls.Add(this.label67);
             this.groupBox5.Controls.Add(this.textBox36);
             this.groupBox5.Controls.Add(this.label68);
-            this.groupBox5.Controls.Add(this.textBox35);
+            this.groupBox5.Controls.Add(this.txtRoboticsQuantity);
             this.groupBox5.Controls.Add(this.label69);
             this.groupBox5.Controls.Add(this.textBox34);
             this.groupBox5.Controls.Add(this.label70);
@@ -1251,317 +1445,228 @@ namespace EVEPOSMon
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Online Fuel";
             // 
-            // groupBox6
+            // label81
             // 
-            this.groupBox6.Controls.Add(this.label95);
-            this.groupBox6.Controls.Add(this.label80);
-            this.groupBox6.Controls.Add(this.label96);
-            this.groupBox6.Controls.Add(this.label33);
-            this.groupBox6.Controls.Add(this.label97);
-            this.groupBox6.Controls.Add(this.pictureBox13);
-            this.groupBox6.Controls.Add(this.textBox49);
-            this.groupBox6.Controls.Add(this.label102);
-            this.groupBox6.Controls.Add(this.label98);
-            this.groupBox6.Controls.Add(this.label101);
-            this.groupBox6.Controls.Add(this.textBox50);
-            this.groupBox6.Controls.Add(this.textBox52);
-            this.groupBox6.Controls.Add(this.label99);
-            this.groupBox6.Controls.Add(this.label100);
-            this.groupBox6.Controls.Add(this.textBox51);
-            this.groupBox6.Location = new System.Drawing.Point(490, 12);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(252, 118);
-            this.groupBox6.TabIndex = 56;
-            this.groupBox6.TabStop = false;
+            this.label81.AutoSize = true;
+            this.label81.Location = new System.Drawing.Point(446, 68);
+            this.label81.Name = "label81";
+            this.label81.Size = new System.Drawing.Size(28, 13);
+            this.label81.TabIndex = 73;
+            this.label81.Text = "M^3";
             // 
-            // label33
+            // label82
             // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(-3, 6);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(7, 78);
-            this.label33.TabIndex = 0;
-            this.label33.Text = "\r\n\r\n\r\n\r\n\r\n\r\n";
+            this.label82.AutoSize = true;
+            this.label82.Location = new System.Drawing.Point(446, 16);
+            this.label82.Name = "label82";
+            this.label82.Size = new System.Drawing.Size(24, 13);
+            this.label82.TabIndex = 72;
+            this.label82.Text = "ISK";
             // 
-            // radioButton1
+            // label83
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(766, 265);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(118, 17);
-            this.radioButton1.TabIndex = 57;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Manual Calucations";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.label83.AutoSize = true;
+            this.label83.Location = new System.Drawing.Point(337, 94);
+            this.label83.Name = "label83";
+            this.label83.Size = new System.Drawing.Size(46, 13);
+            this.label83.TabIndex = 71;
+            this.label83.Text = "Subtotal";
             // 
-            // radioButton2
+            // label84
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(766, 288);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(108, 17);
-            this.radioButton2.TabIndex = 58;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Time Calculations";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.label84.AutoSize = true;
+            this.label84.Location = new System.Drawing.Point(339, 68);
+            this.label84.Name = "label84";
+            this.label84.Size = new System.Drawing.Size(42, 13);
+            this.label84.TabIndex = 70;
+            this.label84.Text = "Volume";
             // 
-            // radioButton3
+            // label85
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(766, 311);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(113, 17);
-            this.radioButton3.TabIndex = 59;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Cargo Calculations";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.label85.AutoSize = true;
+            this.label85.Location = new System.Drawing.Point(335, 42);
+            this.label85.Name = "label85";
+            this.label85.Size = new System.Drawing.Size(48, 13);
+            this.label85.TabIndex = 69;
+            this.label85.Text = "Quanitity";
             // 
-            // radioButton4
+            // label86
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(766, 334);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(102, 17);
-            this.radioButton4.TabIndex = 60;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "ISK Calculations";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.label86.AutoSize = true;
+            this.label86.Location = new System.Drawing.Point(333, 16);
+            this.label86.Name = "label86";
+            this.label86.Size = new System.Drawing.Size(50, 13);
+            this.label86.TabIndex = 68;
+            this.label86.Text = "Price Per";
             // 
-            // label34
+            // label87
             // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(198, 64);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(28, 13);
-            this.label34.TabIndex = 25;
-            this.label34.Text = "M^3";
+            this.label87.AutoSize = true;
+            this.label87.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label87.Location = new System.Drawing.Point(267, 20);
+            this.label87.Name = "label87";
+            this.label87.Size = new System.Drawing.Size(49, 13);
+            this.label87.TabIndex = 67;
+            this.label87.Text = "Oxygen";
             // 
-            // label35
+            // pictureBox11
             // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(198, 90);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(24, 13);
-            this.label35.TabIndex = 24;
-            this.label35.Text = "ISK";
+            this.pictureBox11.Image = global::EVEPOSMon.Properties.Resources.icon10_07;
+            this.pictureBox11.Location = new System.Drawing.Point(261, 39);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(64, 64);
+            this.pictureBox11.TabIndex = 66;
+            this.pictureBox11.TabStop = false;
             // 
-            // label36
+            // textBox41
             // 
-            this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(198, 12);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(24, 13);
-            this.label36.TabIndex = 23;
-            this.label36.Text = "ISK";
+            this.textBox41.Enabled = false;
+            this.textBox41.Location = new System.Drawing.Point(384, 91);
+            this.textBox41.Name = "textBox41";
+            this.textBox41.Size = new System.Drawing.Size(60, 20);
+            this.textBox41.TabIndex = 65;
+            this.textBox41.Text = "0";
+            this.textBox41.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // label37
+            // textBox42
             // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(89, 90);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(46, 13);
-            this.label37.TabIndex = 22;
-            this.label37.Text = "Subtotal";
+            this.textBox42.Enabled = false;
+            this.textBox42.Location = new System.Drawing.Point(384, 65);
+            this.textBox42.Name = "textBox42";
+            this.textBox42.Size = new System.Drawing.Size(60, 20);
+            this.textBox42.TabIndex = 64;
+            this.textBox42.Text = "0";
+            this.textBox42.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // label38
+            // txtOxygenQuantity
             // 
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(91, 64);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(42, 13);
-            this.label38.TabIndex = 21;
-            this.label38.Text = "Volume";
+            this.txtOxygenQuantity.Location = new System.Drawing.Point(384, 39);
+            this.txtOxygenQuantity.Name = "txtOxygenQuantity";
+            this.txtOxygenQuantity.Size = new System.Drawing.Size(86, 20);
+            this.txtOxygenQuantity.TabIndex = 63;
+            this.txtOxygenQuantity.Text = "0";
+            this.txtOxygenQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // label39
+            // textBox44
             // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(87, 38);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(48, 13);
-            this.label39.TabIndex = 20;
-            this.label39.Text = "Quanitity";
+            this.textBox44.Location = new System.Drawing.Point(384, 13);
+            this.textBox44.Name = "textBox44";
+            this.textBox44.Size = new System.Drawing.Size(60, 20);
+            this.textBox44.TabIndex = 62;
+            this.textBox44.Text = "0";
+            this.textBox44.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // label40
+            // label88
             // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(85, 12);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(50, 13);
-            this.label40.TabIndex = 19;
-            this.label40.Text = "Price Per";
+            this.label88.AutoSize = true;
+            this.label88.Location = new System.Drawing.Point(205, 68);
+            this.label88.Name = "label88";
+            this.label88.Size = new System.Drawing.Size(28, 13);
+            this.label88.TabIndex = 61;
+            this.label88.Text = "M^3";
             // 
-            // label65
+            // pictureBox12
             // 
-            this.label65.AutoSize = true;
-            this.label65.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label65.Location = new System.Drawing.Point(16, 16);
-            this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(60, 13);
-            this.label65.TabIndex = 18;
-            this.label65.Text = "Strontium";
+            this.pictureBox12.Image = global::EVEPOSMon.Properties.Resources.icon06_06;
+            this.pictureBox12.Location = new System.Drawing.Point(20, 39);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(64, 64);
+            this.pictureBox12.TabIndex = 54;
+            this.pictureBox12.TabStop = false;
             // 
-            // pictureBox5
+            // label89
             // 
-            this.pictureBox5.Image = global::EVEPOSMon.Properties.Resources.icon51_10;
-            this.pictureBox5.Location = new System.Drawing.Point(13, 35);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(64, 64);
-            this.pictureBox5.TabIndex = 17;
-            this.pictureBox5.TabStop = false;
+            this.label89.AutoSize = true;
+            this.label89.Location = new System.Drawing.Point(205, 16);
+            this.label89.Name = "label89";
+            this.label89.Size = new System.Drawing.Size(24, 13);
+            this.label89.TabIndex = 60;
+            this.label89.Text = "ISK";
             // 
-            // textBox17
+            // textBox45
             // 
-            this.textBox17.Location = new System.Drawing.Point(136, 87);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(60, 20);
-            this.textBox17.TabIndex = 16;
-            this.textBox17.Text = "0";
-            this.textBox17.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBox45.Location = new System.Drawing.Point(143, 13);
+            this.textBox45.Name = "textBox45";
+            this.textBox45.Size = new System.Drawing.Size(60, 20);
+            this.textBox45.TabIndex = 50;
+            this.textBox45.Text = "0";
+            this.textBox45.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // textBox18
+            // label90
             // 
-            this.textBox18.Location = new System.Drawing.Point(136, 61);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(60, 20);
-            this.textBox18.TabIndex = 15;
-            this.textBox18.Text = "0";
-            this.textBox18.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.label90.AutoSize = true;
+            this.label90.Location = new System.Drawing.Point(96, 94);
+            this.label90.Name = "label90";
+            this.label90.Size = new System.Drawing.Size(46, 13);
+            this.label90.TabIndex = 59;
+            this.label90.Text = "Subtotal";
             // 
-            // textBox19
+            // txtEnrichedUraniumQuantity
             // 
-            this.textBox19.Location = new System.Drawing.Point(136, 35);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(86, 20);
-            this.textBox19.TabIndex = 14;
-            this.textBox19.Text = "0";
-            this.textBox19.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtEnrichedUraniumQuantity.Location = new System.Drawing.Point(143, 39);
+            this.txtEnrichedUraniumQuantity.Name = "txtEnrichedUraniumQuantity";
+            this.txtEnrichedUraniumQuantity.Size = new System.Drawing.Size(86, 20);
+            this.txtEnrichedUraniumQuantity.TabIndex = 51;
+            this.txtEnrichedUraniumQuantity.Text = "0";
+            this.txtEnrichedUraniumQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // textBox20
+            // label91
             // 
-            this.textBox20.Location = new System.Drawing.Point(136, 9);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(60, 20);
-            this.textBox20.TabIndex = 13;
-            this.textBox20.Text = "0";
-            this.textBox20.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.label91.AutoSize = true;
+            this.label91.Location = new System.Drawing.Point(98, 68);
+            this.label91.Name = "label91";
+            this.label91.Size = new System.Drawing.Size(42, 13);
+            this.label91.TabIndex = 58;
+            this.label91.Text = "Volume";
             // 
-            // dataGridView1
+            // textBox47
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(766, 19);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(227, 206);
-            this.dataGridView1.TabIndex = 61;
+            this.textBox47.Enabled = false;
+            this.textBox47.Location = new System.Drawing.Point(143, 65);
+            this.textBox47.Name = "textBox47";
+            this.textBox47.Size = new System.Drawing.Size(60, 20);
+            this.textBox47.TabIndex = 52;
+            this.textBox47.Text = "0";
+            this.textBox47.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // label66
+            // label92
             // 
-            this.label66.AutoSize = true;
-            this.label66.Location = new System.Drawing.Point(205, 187);
-            this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(28, 13);
-            this.label66.TabIndex = 37;
-            this.label66.Text = "M^3";
+            this.label92.AutoSize = true;
+            this.label92.Location = new System.Drawing.Point(94, 42);
+            this.label92.Name = "label92";
+            this.label92.Size = new System.Drawing.Size(48, 13);
+            this.label92.TabIndex = 57;
+            this.label92.Text = "Quanitity";
             // 
-            // label67
+            // textBox48
             // 
-            this.label67.AutoSize = true;
-            this.label67.Location = new System.Drawing.Point(205, 135);
-            this.label67.Name = "label67";
-            this.label67.Size = new System.Drawing.Size(24, 13);
-            this.label67.TabIndex = 36;
-            this.label67.Text = "ISK";
+            this.textBox48.Enabled = false;
+            this.textBox48.Location = new System.Drawing.Point(143, 91);
+            this.textBox48.Name = "textBox48";
+            this.textBox48.Size = new System.Drawing.Size(60, 20);
+            this.textBox48.TabIndex = 53;
+            this.textBox48.Text = "0";
+            this.textBox48.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // label68
+            // label93
             // 
-            this.label68.AutoSize = true;
-            this.label68.Location = new System.Drawing.Point(96, 213);
-            this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(46, 13);
-            this.label68.TabIndex = 35;
-            this.label68.Text = "Subtotal";
+            this.label93.AutoSize = true;
+            this.label93.Location = new System.Drawing.Point(92, 16);
+            this.label93.Name = "label93";
+            this.label93.Size = new System.Drawing.Size(50, 13);
+            this.label93.TabIndex = 56;
+            this.label93.Text = "Price Per";
             // 
-            // label69
+            // label94
             // 
-            this.label69.AutoSize = true;
-            this.label69.Location = new System.Drawing.Point(98, 187);
-            this.label69.Name = "label69";
-            this.label69.Size = new System.Drawing.Size(42, 13);
-            this.label69.TabIndex = 34;
-            this.label69.Text = "Volume";
-            // 
-            // label70
-            // 
-            this.label70.AutoSize = true;
-            this.label70.Location = new System.Drawing.Point(94, 161);
-            this.label70.Name = "label70";
-            this.label70.Size = new System.Drawing.Size(48, 13);
-            this.label70.TabIndex = 33;
-            this.label70.Text = "Quanitity";
-            // 
-            // label71
-            // 
-            this.label71.AutoSize = true;
-            this.label71.Location = new System.Drawing.Point(92, 135);
-            this.label71.Name = "label71";
-            this.label71.Size = new System.Drawing.Size(50, 13);
-            this.label71.TabIndex = 32;
-            this.label71.Text = "Price Per";
-            // 
-            // label72
-            // 
-            this.label72.AutoSize = true;
-            this.label72.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label72.Location = new System.Drawing.Point(22, 139);
-            this.label72.Name = "label72";
-            this.label72.Size = new System.Drawing.Size(57, 13);
-            this.label72.TabIndex = 31;
-            this.label72.Text = "Robotics";
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Image = global::EVEPOSMon.Properties.Resources.icon24_14;
-            this.pictureBox9.Location = new System.Drawing.Point(20, 158);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(64, 64);
-            this.pictureBox9.TabIndex = 30;
-            this.pictureBox9.TabStop = false;
-            // 
-            // textBox33
-            // 
-            this.textBox33.Location = new System.Drawing.Point(143, 210);
-            this.textBox33.Name = "textBox33";
-            this.textBox33.Size = new System.Drawing.Size(60, 20);
-            this.textBox33.TabIndex = 29;
-            this.textBox33.Text = "0";
-            this.textBox33.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBox34
-            // 
-            this.textBox34.Location = new System.Drawing.Point(143, 184);
-            this.textBox34.Name = "textBox34";
-            this.textBox34.Size = new System.Drawing.Size(60, 20);
-            this.textBox34.TabIndex = 28;
-            this.textBox34.Text = "0";
-            this.textBox34.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBox35
-            // 
-            this.textBox35.Location = new System.Drawing.Point(143, 158);
-            this.textBox35.Name = "textBox35";
-            this.textBox35.Size = new System.Drawing.Size(86, 20);
-            this.textBox35.TabIndex = 27;
-            this.textBox35.Text = "0";
-            this.textBox35.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBox36
-            // 
-            this.textBox36.Location = new System.Drawing.Point(143, 132);
-            this.textBox36.Name = "textBox36";
-            this.textBox36.Size = new System.Drawing.Size(60, 20);
-            this.textBox36.TabIndex = 26;
-            this.textBox36.Text = "0";
-            this.textBox36.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.label94.AutoSize = true;
+            this.label94.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label94.Location = new System.Drawing.Point(22, 13);
+            this.label94.Name = "label94";
+            this.label94.Size = new System.Drawing.Size(57, 26);
+            this.label94.TabIndex = 55;
+            this.label94.Text = "Enriched\r\nUranium";
+            this.label94.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label73
             // 
@@ -1639,6 +1744,7 @@ namespace EVEPOSMon
             // 
             // textBox37
             // 
+            this.textBox37.Enabled = false;
             this.textBox37.Location = new System.Drawing.Point(384, 210);
             this.textBox37.Name = "textBox37";
             this.textBox37.Size = new System.Drawing.Size(60, 20);
@@ -1648,6 +1754,7 @@ namespace EVEPOSMon
             // 
             // textBox38
             // 
+            this.textBox38.Enabled = false;
             this.textBox38.Location = new System.Drawing.Point(384, 184);
             this.textBox38.Name = "textBox38";
             this.textBox38.Size = new System.Drawing.Size(60, 20);
@@ -1655,14 +1762,14 @@ namespace EVEPOSMon
             this.textBox38.Text = "0";
             this.textBox38.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // textBox39
+            // txtMechanicalPartsQuantity
             // 
-            this.textBox39.Location = new System.Drawing.Point(384, 158);
-            this.textBox39.Name = "textBox39";
-            this.textBox39.Size = new System.Drawing.Size(86, 20);
-            this.textBox39.TabIndex = 39;
-            this.textBox39.Text = "0";
-            this.textBox39.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtMechanicalPartsQuantity.Location = new System.Drawing.Point(384, 158);
+            this.txtMechanicalPartsQuantity.Name = "txtMechanicalPartsQuantity";
+            this.txtMechanicalPartsQuantity.Size = new System.Drawing.Size(86, 20);
+            this.txtMechanicalPartsQuantity.TabIndex = 39;
+            this.txtMechanicalPartsQuantity.Text = "0";
+            this.txtMechanicalPartsQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox40
             // 
@@ -1673,6 +1780,149 @@ namespace EVEPOSMon
             this.textBox40.Text = "0";
             this.textBox40.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // label66
+            // 
+            this.label66.AutoSize = true;
+            this.label66.Location = new System.Drawing.Point(205, 187);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(28, 13);
+            this.label66.TabIndex = 37;
+            this.label66.Text = "M^3";
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Image = global::EVEPOSMon.Properties.Resources.icon24_14;
+            this.pictureBox9.Location = new System.Drawing.Point(20, 158);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(64, 64);
+            this.pictureBox9.TabIndex = 30;
+            this.pictureBox9.TabStop = false;
+            // 
+            // label67
+            // 
+            this.label67.AutoSize = true;
+            this.label67.Location = new System.Drawing.Point(205, 135);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(24, 13);
+            this.label67.TabIndex = 36;
+            this.label67.Text = "ISK";
+            // 
+            // textBox36
+            // 
+            this.textBox36.Location = new System.Drawing.Point(143, 132);
+            this.textBox36.Name = "textBox36";
+            this.textBox36.Size = new System.Drawing.Size(60, 20);
+            this.textBox36.TabIndex = 26;
+            this.textBox36.Text = "0";
+            this.textBox36.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label68
+            // 
+            this.label68.AutoSize = true;
+            this.label68.Location = new System.Drawing.Point(96, 213);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(46, 13);
+            this.label68.TabIndex = 35;
+            this.label68.Text = "Subtotal";
+            // 
+            // txtRoboticsQuantity
+            // 
+            this.txtRoboticsQuantity.Location = new System.Drawing.Point(143, 158);
+            this.txtRoboticsQuantity.Name = "txtRoboticsQuantity";
+            this.txtRoboticsQuantity.Size = new System.Drawing.Size(86, 20);
+            this.txtRoboticsQuantity.TabIndex = 27;
+            this.txtRoboticsQuantity.Text = "0";
+            this.txtRoboticsQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label69
+            // 
+            this.label69.AutoSize = true;
+            this.label69.Location = new System.Drawing.Point(98, 187);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(42, 13);
+            this.label69.TabIndex = 34;
+            this.label69.Text = "Volume";
+            // 
+            // textBox34
+            // 
+            this.textBox34.Enabled = false;
+            this.textBox34.Location = new System.Drawing.Point(143, 184);
+            this.textBox34.Name = "textBox34";
+            this.textBox34.Size = new System.Drawing.Size(60, 20);
+            this.textBox34.TabIndex = 28;
+            this.textBox34.Text = "0";
+            this.textBox34.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label70
+            // 
+            this.label70.AutoSize = true;
+            this.label70.Location = new System.Drawing.Point(94, 161);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(48, 13);
+            this.label70.TabIndex = 33;
+            this.label70.Text = "Quanitity";
+            // 
+            // textBox33
+            // 
+            this.textBox33.Enabled = false;
+            this.textBox33.Location = new System.Drawing.Point(143, 210);
+            this.textBox33.Name = "textBox33";
+            this.textBox33.Size = new System.Drawing.Size(60, 20);
+            this.textBox33.TabIndex = 29;
+            this.textBox33.Text = "0";
+            this.textBox33.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label71
+            // 
+            this.label71.AutoSize = true;
+            this.label71.Location = new System.Drawing.Point(92, 135);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(50, 13);
+            this.label71.TabIndex = 32;
+            this.label71.Text = "Price Per";
+            // 
+            // label72
+            // 
+            this.label72.AutoSize = true;
+            this.label72.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label72.Location = new System.Drawing.Point(22, 139);
+            this.label72.Name = "label72";
+            this.label72.Size = new System.Drawing.Size(57, 13);
+            this.label72.TabIndex = 31;
+            this.label72.Text = "Robotics";
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.label95);
+            this.groupBox6.Controls.Add(this.label80);
+            this.groupBox6.Controls.Add(this.label96);
+            this.groupBox6.Controls.Add(this.label33);
+            this.groupBox6.Controls.Add(this.label97);
+            this.groupBox6.Controls.Add(this.pictureBox13);
+            this.groupBox6.Controls.Add(this.textBox49);
+            this.groupBox6.Controls.Add(this.label102);
+            this.groupBox6.Controls.Add(this.label98);
+            this.groupBox6.Controls.Add(this.label101);
+            this.groupBox6.Controls.Add(this.txtCoolantQuantity);
+            this.groupBox6.Controls.Add(this.textBox52);
+            this.groupBox6.Controls.Add(this.label99);
+            this.groupBox6.Controls.Add(this.label100);
+            this.groupBox6.Controls.Add(this.textBox51);
+            this.groupBox6.Location = new System.Drawing.Point(490, 12);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(270, 118);
+            this.groupBox6.TabIndex = 56;
+            this.groupBox6.TabStop = false;
+            // 
+            // label95
+            // 
+            this.label95.AutoSize = true;
+            this.label95.Location = new System.Drawing.Point(221, 68);
+            this.label95.Name = "label95";
+            this.label95.Size = new System.Drawing.Size(28, 13);
+            this.label95.TabIndex = 38;
+            this.label95.Text = "M^3";
+            // 
             // label80
             // 
             this.label80.AutoSize = true;
@@ -1682,359 +1932,451 @@ namespace EVEPOSMon
             this.label80.TabIndex = 1;
             this.label80.Text = "\r\n\r\n\r\n\r\n\r\n\r\n";
             // 
-            // label81
-            // 
-            this.label81.AutoSize = true;
-            this.label81.Location = new System.Drawing.Point(446, 68);
-            this.label81.Name = "label81";
-            this.label81.Size = new System.Drawing.Size(28, 13);
-            this.label81.TabIndex = 73;
-            this.label81.Text = "M^3";
-            // 
-            // label82
-            // 
-            this.label82.AutoSize = true;
-            this.label82.Location = new System.Drawing.Point(446, 16);
-            this.label82.Name = "label82";
-            this.label82.Size = new System.Drawing.Size(24, 13);
-            this.label82.TabIndex = 72;
-            this.label82.Text = "ISK";
-            // 
-            // label83
-            // 
-            this.label83.AutoSize = true;
-            this.label83.Location = new System.Drawing.Point(337, 94);
-            this.label83.Name = "label83";
-            this.label83.Size = new System.Drawing.Size(46, 13);
-            this.label83.TabIndex = 71;
-            this.label83.Text = "Subtotal";
-            // 
-            // label84
-            // 
-            this.label84.AutoSize = true;
-            this.label84.Location = new System.Drawing.Point(339, 68);
-            this.label84.Name = "label84";
-            this.label84.Size = new System.Drawing.Size(42, 13);
-            this.label84.TabIndex = 70;
-            this.label84.Text = "Volume";
-            // 
-            // label85
-            // 
-            this.label85.AutoSize = true;
-            this.label85.Location = new System.Drawing.Point(335, 42);
-            this.label85.Name = "label85";
-            this.label85.Size = new System.Drawing.Size(48, 13);
-            this.label85.TabIndex = 69;
-            this.label85.Text = "Quanitity";
-            // 
-            // label86
-            // 
-            this.label86.AutoSize = true;
-            this.label86.Location = new System.Drawing.Point(333, 16);
-            this.label86.Name = "label86";
-            this.label86.Size = new System.Drawing.Size(50, 13);
-            this.label86.TabIndex = 68;
-            this.label86.Text = "Price Per";
-            // 
-            // label87
-            // 
-            this.label87.AutoSize = true;
-            this.label87.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label87.Location = new System.Drawing.Point(267, 20);
-            this.label87.Name = "label87";
-            this.label87.Size = new System.Drawing.Size(49, 13);
-            this.label87.TabIndex = 67;
-            this.label87.Text = "Oxygen";
-            // 
-            // pictureBox11
-            // 
-            this.pictureBox11.Image = global::EVEPOSMon.Properties.Resources.icon10_07;
-            this.pictureBox11.Location = new System.Drawing.Point(261, 39);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(64, 64);
-            this.pictureBox11.TabIndex = 66;
-            this.pictureBox11.TabStop = false;
-            // 
-            // textBox41
-            // 
-            this.textBox41.Location = new System.Drawing.Point(384, 91);
-            this.textBox41.Name = "textBox41";
-            this.textBox41.Size = new System.Drawing.Size(60, 20);
-            this.textBox41.TabIndex = 65;
-            this.textBox41.Text = "0";
-            this.textBox41.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBox42
-            // 
-            this.textBox42.Location = new System.Drawing.Point(384, 65);
-            this.textBox42.Name = "textBox42";
-            this.textBox42.Size = new System.Drawing.Size(60, 20);
-            this.textBox42.TabIndex = 64;
-            this.textBox42.Text = "0";
-            this.textBox42.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBox43
-            // 
-            this.textBox43.Location = new System.Drawing.Point(384, 39);
-            this.textBox43.Name = "textBox43";
-            this.textBox43.Size = new System.Drawing.Size(86, 20);
-            this.textBox43.TabIndex = 63;
-            this.textBox43.Text = "0";
-            this.textBox43.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBox44
-            // 
-            this.textBox44.Location = new System.Drawing.Point(384, 13);
-            this.textBox44.Name = "textBox44";
-            this.textBox44.Size = new System.Drawing.Size(60, 20);
-            this.textBox44.TabIndex = 62;
-            this.textBox44.Text = "0";
-            this.textBox44.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label88
-            // 
-            this.label88.AutoSize = true;
-            this.label88.Location = new System.Drawing.Point(205, 68);
-            this.label88.Name = "label88";
-            this.label88.Size = new System.Drawing.Size(28, 13);
-            this.label88.TabIndex = 61;
-            this.label88.Text = "M^3";
-            // 
-            // pictureBox12
-            // 
-            this.pictureBox12.Image = global::EVEPOSMon.Properties.Resources.icon06_06;
-            this.pictureBox12.Location = new System.Drawing.Point(20, 39);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(64, 64);
-            this.pictureBox12.TabIndex = 54;
-            this.pictureBox12.TabStop = false;
-            // 
-            // label89
-            // 
-            this.label89.AutoSize = true;
-            this.label89.Location = new System.Drawing.Point(205, 16);
-            this.label89.Name = "label89";
-            this.label89.Size = new System.Drawing.Size(24, 13);
-            this.label89.TabIndex = 60;
-            this.label89.Text = "ISK";
-            // 
-            // textBox45
-            // 
-            this.textBox45.Location = new System.Drawing.Point(143, 13);
-            this.textBox45.Name = "textBox45";
-            this.textBox45.Size = new System.Drawing.Size(60, 20);
-            this.textBox45.TabIndex = 50;
-            this.textBox45.Text = "0";
-            this.textBox45.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label90
-            // 
-            this.label90.AutoSize = true;
-            this.label90.Location = new System.Drawing.Point(96, 94);
-            this.label90.Name = "label90";
-            this.label90.Size = new System.Drawing.Size(46, 13);
-            this.label90.TabIndex = 59;
-            this.label90.Text = "Subtotal";
-            // 
-            // textBox46
-            // 
-            this.textBox46.Location = new System.Drawing.Point(143, 39);
-            this.textBox46.Name = "textBox46";
-            this.textBox46.Size = new System.Drawing.Size(86, 20);
-            this.textBox46.TabIndex = 51;
-            this.textBox46.Text = "0";
-            this.textBox46.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label91
-            // 
-            this.label91.AutoSize = true;
-            this.label91.Location = new System.Drawing.Point(98, 68);
-            this.label91.Name = "label91";
-            this.label91.Size = new System.Drawing.Size(42, 13);
-            this.label91.TabIndex = 58;
-            this.label91.Text = "Volume";
-            // 
-            // textBox47
-            // 
-            this.textBox47.Location = new System.Drawing.Point(143, 65);
-            this.textBox47.Name = "textBox47";
-            this.textBox47.Size = new System.Drawing.Size(60, 20);
-            this.textBox47.TabIndex = 52;
-            this.textBox47.Text = "0";
-            this.textBox47.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label92
-            // 
-            this.label92.AutoSize = true;
-            this.label92.Location = new System.Drawing.Point(94, 42);
-            this.label92.Name = "label92";
-            this.label92.Size = new System.Drawing.Size(48, 13);
-            this.label92.TabIndex = 57;
-            this.label92.Text = "Quanitity";
-            // 
-            // textBox48
-            // 
-            this.textBox48.Location = new System.Drawing.Point(143, 91);
-            this.textBox48.Name = "textBox48";
-            this.textBox48.Size = new System.Drawing.Size(60, 20);
-            this.textBox48.TabIndex = 53;
-            this.textBox48.Text = "0";
-            this.textBox48.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label93
-            // 
-            this.label93.AutoSize = true;
-            this.label93.Location = new System.Drawing.Point(92, 16);
-            this.label93.Name = "label93";
-            this.label93.Size = new System.Drawing.Size(50, 13);
-            this.label93.TabIndex = 56;
-            this.label93.Text = "Price Per";
-            // 
-            // label94
-            // 
-            this.label94.AutoSize = true;
-            this.label94.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label94.Location = new System.Drawing.Point(22, 13);
-            this.label94.Name = "label94";
-            this.label94.Size = new System.Drawing.Size(57, 26);
-            this.label94.TabIndex = 55;
-            this.label94.Text = "Enriched\r\nUranium";
-            this.label94.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label95
-            // 
-            this.label95.AutoSize = true;
-            this.label95.Location = new System.Drawing.Point(205, 68);
-            this.label95.Name = "label95";
-            this.label95.Size = new System.Drawing.Size(28, 13);
-            this.label95.TabIndex = 38;
-            this.label95.Text = "M^3";
-            // 
             // label96
             // 
             this.label96.AutoSize = true;
             this.label96.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label96.Location = new System.Drawing.Point(23, 20);
+            this.label96.Location = new System.Drawing.Point(39, 20);
             this.label96.Name = "label96";
             this.label96.Size = new System.Drawing.Size(50, 13);
             this.label96.TabIndex = 31;
             this.label96.Text = "Coolant";
             // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(-3, 6);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(7, 78);
+            this.label33.TabIndex = 0;
+            this.label33.Text = "\r\n\r\n\r\n\r\n\r\n\r\n";
+            // 
             // label97
             // 
             this.label97.AutoSize = true;
-            this.label97.Location = new System.Drawing.Point(205, 94);
+            this.label97.Location = new System.Drawing.Point(221, 94);
             this.label97.Name = "label97";
             this.label97.Size = new System.Drawing.Size(24, 13);
             this.label97.TabIndex = 37;
             this.label97.Text = "ISK";
             // 
+            // pictureBox13
+            // 
+            this.pictureBox13.Image = global::EVEPOSMon.Properties.Resources.icon24_06;
+            this.pictureBox13.Location = new System.Drawing.Point(36, 39);
+            this.pictureBox13.Name = "pictureBox13";
+            this.pictureBox13.Size = new System.Drawing.Size(64, 64);
+            this.pictureBox13.TabIndex = 30;
+            this.pictureBox13.TabStop = false;
+            // 
             // textBox49
             // 
-            this.textBox49.Location = new System.Drawing.Point(143, 13);
+            this.textBox49.Location = new System.Drawing.Point(159, 13);
             this.textBox49.Name = "textBox49";
             this.textBox49.Size = new System.Drawing.Size(60, 20);
             this.textBox49.TabIndex = 26;
             this.textBox49.Text = "0";
             this.textBox49.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // label102
+            // 
+            this.label102.AutoSize = true;
+            this.label102.Location = new System.Drawing.Point(108, 16);
+            this.label102.Name = "label102";
+            this.label102.Size = new System.Drawing.Size(50, 13);
+            this.label102.TabIndex = 32;
+            this.label102.Text = "Price Per";
+            // 
             // label98
             // 
             this.label98.AutoSize = true;
-            this.label98.Location = new System.Drawing.Point(205, 16);
+            this.label98.Location = new System.Drawing.Point(221, 16);
             this.label98.Name = "label98";
             this.label98.Size = new System.Drawing.Size(24, 13);
             this.label98.TabIndex = 36;
             this.label98.Text = "ISK";
             // 
-            // textBox50
+            // label101
             // 
-            this.textBox50.Location = new System.Drawing.Point(143, 39);
-            this.textBox50.Name = "textBox50";
-            this.textBox50.Size = new System.Drawing.Size(86, 20);
-            this.textBox50.TabIndex = 27;
-            this.textBox50.Text = "0";
-            this.textBox50.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.label101.AutoSize = true;
+            this.label101.Location = new System.Drawing.Point(110, 42);
+            this.label101.Name = "label101";
+            this.label101.Size = new System.Drawing.Size(48, 13);
+            this.label101.TabIndex = 33;
+            this.label101.Text = "Quanitity";
             // 
-            // label99
+            // txtCoolantQuantity
             // 
-            this.label99.AutoSize = true;
-            this.label99.Location = new System.Drawing.Point(96, 94);
-            this.label99.Name = "label99";
-            this.label99.Size = new System.Drawing.Size(46, 13);
-            this.label99.TabIndex = 35;
-            this.label99.Text = "Subtotal";
-            // 
-            // textBox51
-            // 
-            this.textBox51.Location = new System.Drawing.Point(143, 65);
-            this.textBox51.Name = "textBox51";
-            this.textBox51.Size = new System.Drawing.Size(60, 20);
-            this.textBox51.TabIndex = 28;
-            this.textBox51.Text = "0";
-            this.textBox51.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label100
-            // 
-            this.label100.AutoSize = true;
-            this.label100.Location = new System.Drawing.Point(98, 68);
-            this.label100.Name = "label100";
-            this.label100.Size = new System.Drawing.Size(42, 13);
-            this.label100.TabIndex = 34;
-            this.label100.Text = "Volume";
+            this.txtCoolantQuantity.Location = new System.Drawing.Point(159, 39);
+            this.txtCoolantQuantity.Name = "txtCoolantQuantity";
+            this.txtCoolantQuantity.Size = new System.Drawing.Size(86, 20);
+            this.txtCoolantQuantity.TabIndex = 27;
+            this.txtCoolantQuantity.Text = "0";
+            this.txtCoolantQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox52
             // 
-            this.textBox52.Location = new System.Drawing.Point(143, 91);
+            this.textBox52.Enabled = false;
+            this.textBox52.Location = new System.Drawing.Point(159, 91);
             this.textBox52.Name = "textBox52";
             this.textBox52.Size = new System.Drawing.Size(60, 20);
             this.textBox52.TabIndex = 29;
             this.textBox52.Text = "0";
             this.textBox52.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // label101
+            // label99
             // 
-            this.label101.AutoSize = true;
-            this.label101.Location = new System.Drawing.Point(94, 42);
-            this.label101.Name = "label101";
-            this.label101.Size = new System.Drawing.Size(48, 13);
-            this.label101.TabIndex = 33;
-            this.label101.Text = "Quanitity";
+            this.label99.AutoSize = true;
+            this.label99.Location = new System.Drawing.Point(112, 94);
+            this.label99.Name = "label99";
+            this.label99.Size = new System.Drawing.Size(46, 13);
+            this.label99.TabIndex = 35;
+            this.label99.Text = "Subtotal";
             // 
-            // pictureBox13
+            // label100
             // 
-            this.pictureBox13.Image = global::EVEPOSMon.Properties.Resources.icon24_06;
-            this.pictureBox13.Location = new System.Drawing.Point(20, 39);
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(64, 64);
-            this.pictureBox13.TabIndex = 30;
-            this.pictureBox13.TabStop = false;
+            this.label100.AutoSize = true;
+            this.label100.Location = new System.Drawing.Point(114, 68);
+            this.label100.Name = "label100";
+            this.label100.Size = new System.Drawing.Size(42, 13);
+            this.label100.TabIndex = 34;
+            this.label100.Text = "Volume";
             // 
-            // label102
+            // textBox51
             // 
-            this.label102.AutoSize = true;
-            this.label102.Location = new System.Drawing.Point(92, 16);
-            this.label102.Name = "label102";
-            this.label102.Size = new System.Drawing.Size(50, 13);
-            this.label102.TabIndex = 32;
-            this.label102.Text = "Price Per";
+            this.textBox51.Enabled = false;
+            this.textBox51.Location = new System.Drawing.Point(159, 65);
+            this.textBox51.Name = "textBox51";
+            this.textBox51.Size = new System.Drawing.Size(60, 20);
+            this.textBox51.TabIndex = 28;
+            this.textBox51.Text = "0";
+            this.textBox51.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // rbManualCalc
+            // 
+            this.rbManualCalc.AutoSize = true;
+            this.rbManualCalc.Checked = true;
+            this.rbManualCalc.Location = new System.Drawing.Point(298, 538);
+            this.rbManualCalc.Name = "rbManualCalc";
+            this.rbManualCalc.Size = new System.Drawing.Size(118, 17);
+            this.rbManualCalc.TabIndex = 57;
+            this.rbManualCalc.TabStop = true;
+            this.rbManualCalc.Text = "Manual Calucations";
+            this.rbManualCalc.UseVisualStyleBackColor = true;
+            this.rbManualCalc.CheckedChanged += new System.EventHandler(this.rbManualCalc_CheckedChanged);
+            // 
+            // rbTimeCalc
+            // 
+            this.rbTimeCalc.AutoSize = true;
+            this.rbTimeCalc.Location = new System.Drawing.Point(298, 583);
+            this.rbTimeCalc.Name = "rbTimeCalc";
+            this.rbTimeCalc.Size = new System.Drawing.Size(108, 17);
+            this.rbTimeCalc.TabIndex = 58;
+            this.rbTimeCalc.TabStop = true;
+            this.rbTimeCalc.Text = "Time Calculations";
+            this.rbTimeCalc.UseVisualStyleBackColor = true;
+            this.rbTimeCalc.CheckedChanged += new System.EventHandler(this.rbTimeCalc_CheckedChanged);
+            // 
+            // rbCargoCalc
+            // 
+            this.rbCargoCalc.AutoSize = true;
+            this.rbCargoCalc.Location = new System.Drawing.Point(298, 560);
+            this.rbCargoCalc.Name = "rbCargoCalc";
+            this.rbCargoCalc.Size = new System.Drawing.Size(113, 17);
+            this.rbCargoCalc.TabIndex = 59;
+            this.rbCargoCalc.TabStop = true;
+            this.rbCargoCalc.Text = "Cargo Calculations";
+            this.rbCargoCalc.UseVisualStyleBackColor = true;
+            this.rbCargoCalc.CheckedChanged += new System.EventHandler(this.rbCargoCalc_CheckedChanged);
+            // 
+            // rbIskCalc
+            // 
+            this.rbIskCalc.AutoSize = true;
+            this.rbIskCalc.Location = new System.Drawing.Point(298, 606);
+            this.rbIskCalc.Name = "rbIskCalc";
+            this.rbIskCalc.Size = new System.Drawing.Size(102, 17);
+            this.rbIskCalc.TabIndex = 60;
+            this.rbIskCalc.TabStop = true;
+            this.rbIskCalc.Text = "ISK Calculations";
+            this.rbIskCalc.UseVisualStyleBackColor = true;
+            this.rbIskCalc.CheckedChanged += new System.EventHandler(this.rbIskCalc_CheckedChanged);
+            // 
+            // dgvStations
+            // 
+            this.dgvStations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStations.Location = new System.Drawing.Point(766, 51);
+            this.dgvStations.Name = "dgvStations";
+            this.dgvStations.Size = new System.Drawing.Size(227, 341);
+            this.dgvStations.TabIndex = 61;
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.button3);
+            this.groupBox7.Controls.Add(this.button2);
+            this.groupBox7.Controls.Add(this.button1);
+            this.groupBox7.Controls.Add(this.comboBox1);
+            this.groupBox7.Location = new System.Drawing.Point(13, 538);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(240, 88);
+            this.groupBox7.TabIndex = 62;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Shopping Lists";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(17, 46);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(101, 32);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "Export List";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(134, 46);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(91, 32);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Save Current...";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(155, 17);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(70, 22);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Load List";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(16, 19);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 0;
+            // 
+            // label103
+            // 
+            this.label103.AutoSize = true;
+            this.label103.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label103.Location = new System.Drawing.Point(801, 18);
+            this.label103.Name = "label103";
+            this.label103.Size = new System.Drawing.Size(147, 20);
+            this.label103.TabIndex = 63;
+            this.label103.Text = "Station Selection";
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.label114);
+            this.groupBox8.Controls.Add(this.textBox61);
+            this.groupBox8.Controls.Add(this.label115);
+            this.groupBox8.Controls.Add(this.label107);
+            this.groupBox8.Controls.Add(this.label106);
+            this.groupBox8.Controls.Add(this.textBox57);
+            this.groupBox8.Controls.Add(this.textBox56);
+            this.groupBox8.Controls.Add(this.label105);
+            this.groupBox8.Controls.Add(this.label104);
+            this.groupBox8.Location = new System.Drawing.Point(746, 534);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(247, 92);
+            this.groupBox8.TabIndex = 64;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Totals";
+            // 
+            // label114
+            // 
+            this.label114.AutoSize = true;
+            this.label114.Location = new System.Drawing.Point(206, 16);
+            this.label114.Name = "label114";
+            this.label114.Size = new System.Drawing.Size(31, 13);
+            this.label114.TabIndex = 8;
+            this.label114.Text = "Days";
+            // 
+            // textBox61
+            // 
+            this.textBox61.Enabled = false;
+            this.textBox61.Location = new System.Drawing.Point(86, 13);
+            this.textBox61.Name = "textBox61";
+            this.textBox61.Size = new System.Drawing.Size(114, 20);
+            this.textBox61.TabIndex = 7;
+            // 
+            // label115
+            // 
+            this.label115.AutoSize = true;
+            this.label115.Location = new System.Drawing.Point(11, 16);
+            this.label115.Name = "label115";
+            this.label115.Size = new System.Drawing.Size(70, 13);
+            this.label115.TabIndex = 6;
+            this.label115.Text = "Fuel Will Last";
+            // 
+            // label107
+            // 
+            this.label107.AutoSize = true;
+            this.label107.Location = new System.Drawing.Point(206, 67);
+            this.label107.Name = "label107";
+            this.label107.Size = new System.Drawing.Size(24, 13);
+            this.label107.TabIndex = 5;
+            this.label107.Text = "ISK";
+            // 
+            // label106
+            // 
+            this.label106.AutoSize = true;
+            this.label106.Location = new System.Drawing.Point(206, 41);
+            this.label106.Name = "label106";
+            this.label106.Size = new System.Drawing.Size(28, 13);
+            this.label106.TabIndex = 4;
+            this.label106.Text = "M^3";
+            // 
+            // textBox57
+            // 
+            this.textBox57.Enabled = false;
+            this.textBox57.Location = new System.Drawing.Point(86, 64);
+            this.textBox57.Name = "textBox57";
+            this.textBox57.Size = new System.Drawing.Size(114, 20);
+            this.textBox57.TabIndex = 3;
+            // 
+            // textBox56
+            // 
+            this.textBox56.Enabled = false;
+            this.textBox56.Location = new System.Drawing.Point(86, 38);
+            this.textBox56.Name = "textBox56";
+            this.textBox56.Size = new System.Drawing.Size(114, 20);
+            this.textBox56.TabIndex = 2;
+            // 
+            // label105
+            // 
+            this.label105.AutoSize = true;
+            this.label105.Location = new System.Drawing.Point(11, 67);
+            this.label105.Name = "label105";
+            this.label105.Size = new System.Drawing.Size(55, 13);
+            this.label105.TabIndex = 1;
+            this.label105.Text = "Total Cost";
+            // 
+            // label104
+            // 
+            this.label104.AutoSize = true;
+            this.label104.Location = new System.Drawing.Point(11, 41);
+            this.label104.Name = "label104";
+            this.label104.Size = new System.Drawing.Size(69, 13);
+            this.label104.TabIndex = 0;
+            this.label104.Text = "Total Volume";
+            // 
+            // lblHaulerCargoSize
+            // 
+            this.lblHaulerCargoSize.AutoSize = true;
+            this.lblHaulerCargoSize.Enabled = false;
+            this.lblHaulerCargoSize.Location = new System.Drawing.Point(439, 539);
+            this.lblHaulerCargoSize.Name = "lblHaulerCargoSize";
+            this.lblHaulerCargoSize.Size = new System.Drawing.Size(92, 13);
+            this.lblHaulerCargoSize.TabIndex = 65;
+            this.lblHaulerCargoSize.Text = "Hauler Cargo Size";
+            // 
+            // txtCargoSize
+            // 
+            this.txtCargoSize.Enabled = false;
+            this.txtCargoSize.Location = new System.Drawing.Point(539, 535);
+            this.txtCargoSize.Name = "txtCargoSize";
+            this.txtCargoSize.Size = new System.Drawing.Size(109, 20);
+            this.txtCargoSize.TabIndex = 66;
+            // 
+            // lblAmtToSpend
+            // 
+            this.lblAmtToSpend.AutoSize = true;
+            this.lblAmtToSpend.Enabled = false;
+            this.lblAmtToSpend.Location = new System.Drawing.Point(439, 604);
+            this.lblAmtToSpend.Name = "lblAmtToSpend";
+            this.lblAmtToSpend.Size = new System.Drawing.Size(93, 13);
+            this.lblAmtToSpend.TabIndex = 67;
+            this.lblAmtToSpend.Text = "Amount To Spend";
+            // 
+            // txtAmtToSpend
+            // 
+            this.txtAmtToSpend.Enabled = false;
+            this.txtAmtToSpend.Location = new System.Drawing.Point(539, 601);
+            this.txtAmtToSpend.Name = "txtAmtToSpend";
+            this.txtAmtToSpend.Size = new System.Drawing.Size(109, 20);
+            this.txtAmtToSpend.TabIndex = 68;
+            // 
+            // lblFuelShouldLast
+            // 
+            this.lblFuelShouldLast.AutoSize = true;
+            this.lblFuelShouldLast.Enabled = false;
+            this.lblFuelShouldLast.Location = new System.Drawing.Point(439, 571);
+            this.lblFuelShouldLast.Name = "lblFuelShouldLast";
+            this.lblFuelShouldLast.Size = new System.Drawing.Size(86, 13);
+            this.lblFuelShouldLast.TabIndex = 69;
+            this.lblFuelShouldLast.Text = "Fuel Should Last";
+            // 
+            // txtFuelLastDays
+            // 
+            this.txtFuelLastDays.Enabled = false;
+            this.txtFuelLastDays.Location = new System.Drawing.Point(539, 568);
+            this.txtFuelLastDays.Name = "txtFuelLastDays";
+            this.txtFuelLastDays.Size = new System.Drawing.Size(109, 20);
+            this.txtFuelLastDays.TabIndex = 70;
+            // 
+            // lblFuelDays
+            // 
+            this.lblFuelDays.AutoSize = true;
+            this.lblFuelDays.Enabled = false;
+            this.lblFuelDays.Location = new System.Drawing.Point(666, 571);
+            this.lblFuelDays.Name = "lblFuelDays";
+            this.lblFuelDays.Size = new System.Drawing.Size(31, 13);
+            this.lblFuelDays.TabIndex = 71;
+            this.lblFuelDays.Text = "Days";
+            // 
+            // lblHaulerM3
+            // 
+            this.lblHaulerM3.AutoSize = true;
+            this.lblHaulerM3.Enabled = false;
+            this.lblHaulerM3.Location = new System.Drawing.Point(666, 538);
+            this.lblHaulerM3.Name = "lblHaulerM3";
+            this.lblHaulerM3.Size = new System.Drawing.Size(28, 13);
+            this.lblHaulerM3.TabIndex = 72;
+            this.lblHaulerM3.Text = "M^3";
+            // 
+            // lblAmtToSpendIsk
+            // 
+            this.lblAmtToSpendIsk.AutoSize = true;
+            this.lblAmtToSpendIsk.Enabled = false;
+            this.lblAmtToSpendIsk.Location = new System.Drawing.Point(666, 604);
+            this.lblAmtToSpendIsk.Name = "lblAmtToSpendIsk";
+            this.lblAmtToSpendIsk.Size = new System.Drawing.Size(24, 13);
+            this.lblAmtToSpendIsk.TabIndex = 73;
+            this.lblAmtToSpendIsk.Text = "ISK";
             // 
             // FuelCalculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 537);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.radioButton4);
-            this.Controls.Add(this.radioButton3);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.ClientSize = new System.Drawing.Size(1004, 635);
+            this.Controls.Add(this.lblAmtToSpendIsk);
+            this.Controls.Add(this.lblHaulerM3);
+            this.Controls.Add(this.lblFuelDays);
+            this.Controls.Add(this.txtFuelLastDays);
+            this.Controls.Add(this.lblFuelShouldLast);
+            this.Controls.Add(this.txtAmtToSpend);
+            this.Controls.Add(this.lblAmtToSpend);
+            this.Controls.Add(this.txtCargoSize);
+            this.Controls.Add(this.lblHaulerCargoSize);
+            this.Controls.Add(this.groupBox8);
+            this.Controls.Add(this.label103);
+            this.Controls.Add(this.groupBox7);
+            this.Controls.Add(this.dgvStations);
+            this.Controls.Add(this.rbIskCalc);
+            this.Controls.Add(this.rbCargoCalc);
+            this.Controls.Add(this.rbTimeCalc);
+            this.Controls.Add(this.rbManualCalc);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "FuelCalculator";
             this.Text = "Fuel Calculator";
@@ -2053,17 +2395,20 @@ namespace EVEPOSMon
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStations)).EndInit();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2076,7 +2421,7 @@ namespace EVEPOSMon
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtHeliumIsotopesQuantity;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
@@ -2089,7 +2434,7 @@ namespace EVEPOSMon
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.TextBox textBox13;
         private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.TextBox txtNitrogenIsotopesQuantity;
         private System.Windows.Forms.TextBox textBox16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
@@ -2102,7 +2447,7 @@ namespace EVEPOSMon
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox txtHydrogenIsotopesQuantity;
         private System.Windows.Forms.TextBox textBox12;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
@@ -2115,7 +2460,7 @@ namespace EVEPOSMon
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtOxygenIsotopesQuantity;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
@@ -2136,7 +2481,7 @@ namespace EVEPOSMon
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.TextBox textBox25;
         private System.Windows.Forms.TextBox textBox26;
-        private System.Windows.Forms.TextBox textBox27;
+        private System.Windows.Forms.TextBox txtHeavyWaterQuantity;
         private System.Windows.Forms.TextBox textBox28;
         private System.Windows.Forms.Label label57;
         private System.Windows.Forms.Label label58;
@@ -2149,7 +2494,7 @@ namespace EVEPOSMon
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.TextBox textBox29;
         private System.Windows.Forms.TextBox textBox30;
-        private System.Windows.Forms.TextBox textBox31;
+        private System.Windows.Forms.TextBox txtLiquidOzoneQuantity;
         private System.Windows.Forms.TextBox textBox32;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label41;
@@ -2169,10 +2514,10 @@ namespace EVEPOSMon
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.RadioButton rbManualCalc;
+        private System.Windows.Forms.RadioButton rbTimeCalc;
+        private System.Windows.Forms.RadioButton rbCargoCalc;
+        private System.Windows.Forms.RadioButton rbIskCalc;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label label65;
         private System.Windows.Forms.Label label35;
@@ -2186,7 +2531,7 @@ namespace EVEPOSMon
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvStations;
         private System.Windows.Forms.Label label81;
         private System.Windows.Forms.Label label82;
         private System.Windows.Forms.Label label83;
@@ -2197,14 +2542,14 @@ namespace EVEPOSMon
         private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.TextBox textBox41;
         private System.Windows.Forms.TextBox textBox42;
-        private System.Windows.Forms.TextBox textBox43;
+        private System.Windows.Forms.TextBox txtOxygenQuantity;
         private System.Windows.Forms.TextBox textBox44;
         private System.Windows.Forms.Label label88;
         private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.Label label89;
         private System.Windows.Forms.TextBox textBox45;
         private System.Windows.Forms.Label label90;
-        private System.Windows.Forms.TextBox textBox46;
+        private System.Windows.Forms.TextBox txtEnrichedUraniumQuantity;
         private System.Windows.Forms.Label label91;
         private System.Windows.Forms.TextBox textBox47;
         private System.Windows.Forms.Label label92;
@@ -2221,14 +2566,14 @@ namespace EVEPOSMon
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.TextBox textBox37;
         private System.Windows.Forms.TextBox textBox38;
-        private System.Windows.Forms.TextBox textBox39;
+        private System.Windows.Forms.TextBox txtMechanicalPartsQuantity;
         private System.Windows.Forms.TextBox textBox40;
         private System.Windows.Forms.Label label66;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.Label label67;
         private System.Windows.Forms.TextBox textBox36;
         private System.Windows.Forms.Label label68;
-        private System.Windows.Forms.TextBox textBox35;
+        private System.Windows.Forms.TextBox txtRoboticsQuantity;
         private System.Windows.Forms.Label label69;
         private System.Windows.Forms.TextBox textBox34;
         private System.Windows.Forms.Label label70;
@@ -2244,10 +2589,38 @@ namespace EVEPOSMon
         private System.Windows.Forms.Label label102;
         private System.Windows.Forms.Label label98;
         private System.Windows.Forms.Label label101;
-        private System.Windows.Forms.TextBox textBox50;
+        private System.Windows.Forms.TextBox txtCoolantQuantity;
         private System.Windows.Forms.TextBox textBox52;
         private System.Windows.Forms.Label label99;
         private System.Windows.Forms.Label label100;
         private System.Windows.Forms.TextBox textBox51;
+        private System.Windows.Forms.TextBox textBox55;
+        private System.Windows.Forms.TextBox textBox54;
+        private System.Windows.Forms.TextBox textBox53;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label103;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.Label label107;
+        private System.Windows.Forms.Label label106;
+        private System.Windows.Forms.TextBox textBox57;
+        private System.Windows.Forms.TextBox textBox56;
+        private System.Windows.Forms.Label label105;
+        private System.Windows.Forms.Label label104;
+        private System.Windows.Forms.Label lblHaulerCargoSize;
+        private System.Windows.Forms.TextBox txtCargoSize;
+        private System.Windows.Forms.Label lblAmtToSpend;
+        private System.Windows.Forms.TextBox txtAmtToSpend;
+        private System.Windows.Forms.Label lblFuelShouldLast;
+        private System.Windows.Forms.TextBox txtFuelLastDays;
+        private System.Windows.Forms.Label lblFuelDays;
+        private System.Windows.Forms.Label lblHaulerM3;
+        private System.Windows.Forms.Label lblAmtToSpendIsk;
+        private System.Windows.Forms.Label label114;
+        private System.Windows.Forms.TextBox textBox61;
+        private System.Windows.Forms.Label label115;
     }
 }

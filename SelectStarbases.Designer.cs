@@ -40,6 +40,7 @@ namespace EVEPOSMon
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.characterInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.lbStations)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -144,15 +145,25 @@ namespace EVEPOSMon
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.characterInformationToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // characterInformationToolStripMenuItem
             // 
             this.characterInformationToolStripMenuItem.Name = "characterInformationToolStripMenuItem";
-            this.characterInformationToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.characterInformationToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.characterInformationToolStripMenuItem.Text = "Character Information";
             this.characterInformationToolStripMenuItem.Click += new System.EventHandler(this.characterInformationToolStripMenuItem_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(309, 344);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(86, 19);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Fuel Calculator";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // SelectStarbases
             // 
@@ -160,6 +171,7 @@ namespace EVEPOSMon
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(423, 375);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSaveAutoload);
             this.Controls.Add(this.lbStations);
             this.Controls.Add(this.btnGetStationInfo);
@@ -192,6 +204,7 @@ namespace EVEPOSMon
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem characterInformationToolStripMenuItem;
+        private System.Windows.Forms.Button button1;
     }
 }
 

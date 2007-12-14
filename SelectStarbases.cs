@@ -17,6 +17,7 @@ namespace EVEPOSMon
     {
         List<Starbase> m_starbasesList = new List<Starbase>();
         private MainScreen mainScreen = new MainScreen();
+        private FuelCalculator fuelCalculator = new FuelCalculator();
 
         public SelectStarbases()
         {
@@ -102,11 +103,6 @@ namespace EVEPOSMon
 
                     starbase.setDetails("http://www.exa-nation.com/corp/StarbaseDetail.xml.aspx?itemId=");
 
-                    /*  because tabs work so well this old display is commented out.
-                    StarbaseInfo starbaseInfo = new StarbaseInfo(starbase);
-                    starbaseInfo.Show();
-                    */
-                     
                     tp = new TabPage(starbase.StarbaseSystem.locationID);
                     mainScreen.AddTab(tp);
                     tp.Text = starbase.Moon.moonName;
@@ -125,6 +121,7 @@ namespace EVEPOSMon
         // Prompt the user to confirm closing the program and all other windows
         private void SelectStarbases_FormClosing(object sender, FormClosingEventArgs e)
         {
+            /*
             DialogResult result = DialogResult.No;
             result = MessageBox.Show("Closing this window will close all others", "Are you sure you want to close", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (result == DialogResult.Yes)
@@ -133,6 +130,7 @@ namespace EVEPOSMon
             }
             else
                 e.Cancel = true;
+             */
         }
 
         private void btnSaveAutoload_Click(object sender, EventArgs e)
@@ -143,6 +141,11 @@ namespace EVEPOSMon
         private void characterInformationToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Temp box, need a new form and class for editing and storing character information aka: user api key, char name...", "Alert", MessageBoxButtons.OK);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            fuelCalculator.Visible = true;
         }
     }
 }
