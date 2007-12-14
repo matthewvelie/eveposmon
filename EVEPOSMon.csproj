@@ -37,6 +37,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutoShrink.cs" />
+    <Compile Include="ControlTowerTypes.cs" />
     <Compile Include="Starbase.cs" />
     <Compile Include="EVEMonWebRequest.cs" />
     <Compile Include="EveSession.cs" />
