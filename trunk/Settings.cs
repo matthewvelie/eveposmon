@@ -10,6 +10,7 @@ using System.Xml.Serialization;
 using EVEMon.Common;
 using System.Windows.Forms;
 using System.Security.Cryptography;
+using EVEPOSMon;
 
 namespace EVEMon.Common
 {
@@ -44,6 +45,8 @@ namespace EVEMon.Common
                 return m_instance;
             }
         }
+
+        public TowerResources towerResources;
 
         private bool m_useCustomProxySettings = false;
         public bool UseCustomProxySettings
