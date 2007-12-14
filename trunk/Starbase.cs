@@ -40,16 +40,16 @@ namespace EVEPOSMon
             }
         }
 
-        private ControlTower starbaseControlTower;
-        public ControlTower StarbaseControlTower
+        private ControlTower tower;
+        public ControlTower Tower
         {
             get
             {
-                if (starbaseControlTower == null)
+                if (tower == null)
                 {
-                    starbaseControlTower = m_settings.controlTowerTypes.GetTowerInfo(this.typeId);
+                    tower = m_settings.controlTowerTypes.GetTowerInfo(this.typeId);
                 }
-                return starbaseControlTower;
+                return tower;
             }
         }
 
