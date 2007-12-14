@@ -146,7 +146,7 @@ namespace EVEPOSMon
             }
             else if (controlTower.volume == "8000")
             {
-                strontiumCapacity = 110000;
+                strontiumCapacity = 50000;
             }
 
             pgStrontiumBay.Maximum = strontiumCapacity;
