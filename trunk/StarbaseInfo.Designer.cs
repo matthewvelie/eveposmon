@@ -64,6 +64,7 @@ namespace EVEPOSMon
             this.statusStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbStationImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgFuelList)).BeginInit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.throbber1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,13 +82,13 @@ namespace EVEPOSMon
             // lblXmlLastDownloaded
             // 
             this.lblXmlLastDownloaded.Name = "lblXmlLastDownloaded";
-            this.lblXmlLastDownloaded.Size = new System.Drawing.Size(118, 17);
+            this.lblXmlLastDownloaded.Size = new System.Drawing.Size(109, 17);
             this.lblXmlLastDownloaded.Text = "toolStripStatusLabel1";
             // 
             // lblDataCachedUntil
             // 
             this.lblDataCachedUntil.Name = "lblDataCachedUntil";
-            this.lblDataCachedUntil.Size = new System.Drawing.Size(118, 17);
+            this.lblDataCachedUntil.Size = new System.Drawing.Size(109, 17);
             this.lblDataCachedUntil.Text = "toolStripStatusLabel2";
             // 
             // lblStarbaseName
@@ -220,7 +221,7 @@ namespace EVEPOSMon
             this.dgFuelList.Name = "dgFuelList";
             this.dgFuelList.ReadOnly = true;
             this.dgFuelList.RowHeadersVisible = false;
-            this.dgFuelList.Size = new System.Drawing.Size(670, 551);
+            this.dgFuelList.Size = new System.Drawing.Size(489, 355);
             this.dgFuelList.TabIndex = 4;
             // 
             // FuelName
@@ -255,6 +256,7 @@ namespace EVEPOSMon
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.dgFuelList);
             this.panel1.Location = new System.Drawing.Point(0, 196);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(489, 355);
@@ -335,7 +337,6 @@ namespace EVEPOSMon
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(670, 573);
-            this.Controls.Add(this.dgFuelList);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.throbber1);
             this.Controls.Add(this.lblStrontiumBayValue);
@@ -368,6 +369,7 @@ namespace EVEPOSMon
             this.statusStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbStationImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgFuelList)).EndInit();
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.throbber1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
