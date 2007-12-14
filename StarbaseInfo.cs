@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 using EVEMon.Common;
 
 namespace EVEPOSMon
@@ -173,12 +174,18 @@ namespace EVEPOSMon
         public void loadStationImage(string typeId)
         {
             string basePath = Path.Combine(Application.StartupPath, "images");
-            switch (typeId)
+
+            //test to make sure we have a valid id (only 5 numbers, verify file exists)
+            Match m = Regex.Match(typeId, @"(\d{5})");
+            if(m.Success)
             {
-                case "12236":
-                    pbStationImage.Image = Image.FromFile(Path.Combine(basePath, "12236.png"));
-                    break;
+                string fileName = Path.Combine(basePath, typeId + ".png");
+                if(File.Exists(fileName))
+                {
+                    pbStationImage.Image = Image.FromFile(fileName);
+                }
             }
+
         }
     }
 }
