@@ -87,7 +87,7 @@ namespace EVEPOSMon
 
         private void btnGetStationInfo_Click(object sender, EventArgs e)
         {
-            
+            mainScreen.clearTabs();
             StarbaseMonitor sm;
             TabPage tp;
             for (int i = 0; i < lbStations.RowCount; i++)

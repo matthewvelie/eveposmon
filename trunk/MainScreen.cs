@@ -24,6 +24,11 @@ namespace EVEPOSMon
         {
             e.Cancel = true;
             Visible = false;
+            clearTabs();
+        }
+
+        public void clearTabs()
+        {
             tabControl1.TabPages.Clear();
         }
     }
