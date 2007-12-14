@@ -8,7 +8,7 @@ using System.Xml.Serialization;
 
 namespace EVEPOSMon
 {
-    public class Moon
+    public class MoonInfo
     {
         public string moonId;
         public string moonName;
@@ -28,7 +28,7 @@ namespace EVEPOSMon
                 XmlNodeList rowsNodeList = doc.GetElementsByTagName("row");
                 foreach (XmlNode r in rowsNodeList)
                 {
-                    Moon moon = new Moon();
+                    MoonInfo moon = new MoonInfo();
                     moon.moonId = r.ChildNodes[0].InnerText;
                     moon.moonName = r.ChildNodes[1].InnerText;
                     moonData.Moons.Add(moon.moonId, moon);
@@ -38,11 +38,11 @@ namespace EVEPOSMon
             }
         }
 
-        public Moon GetMoonInfo(string moonId)
+        public MoonInfo GetMoonInfo(string moonId)
         {
             if (Moons.ContainsKey(moonId))
             {
-                return Moons[moonId] as Moon;
+                return Moons[moonId] as MoonInfo;
             }
             return null;
         }
