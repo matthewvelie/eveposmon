@@ -23,6 +23,9 @@ namespace EVEPOSMon
 
         private void StarbaseInfo_Load(object sender, EventArgs e)
         {
+            ControlTower controlTower = m_settings.controlTowerTypes.GetTowerInfo(m_starbase.typeId);
+            lblStarbaseName.Text = controlTower.typeName;
+
             if (m_starbase.onStandingDrop.enabled == "1")
             {
                 lblOnStandingDropValue.Text = "Enabled";
