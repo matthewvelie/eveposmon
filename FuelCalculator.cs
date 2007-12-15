@@ -75,7 +75,8 @@ namespace EVEPOSMon
 
                 //Enable Quantity Fields
                 changeQuantityFieldEnable(true);
-
+                dgvStations.Enabled = false;
+                dgvStations.Visible = false;
             }
         }
 
@@ -95,6 +96,8 @@ namespace EVEPOSMon
                 this.txtFuelLastDays.Enabled = false;
 
                 changeQuantityFieldEnable(false);
+                dgvStations.Enabled = true;
+                dgvStations.Visible = true;
             }
         }
 
@@ -114,6 +117,8 @@ namespace EVEPOSMon
                 this.txtFuelLastDays.Enabled = true;
 
                 changeQuantityFieldEnable(false);
+                dgvStations.Enabled = true;
+                dgvStations.Visible = true;
             }
         }
 
@@ -133,6 +138,8 @@ namespace EVEPOSMon
                 this.txtFuelLastDays.Enabled = false;
 
                 changeQuantityFieldEnable(false);
+                dgvStations.Enabled = true;
+                dgvStations.Visible = true;
            } 
         }
 
@@ -192,6 +199,306 @@ namespace EVEPOSMon
                 txtCoolantSubtotal.Text = Convert.ToString(Convert.ToInt32(txtCoolantQuantity.Text) * Convert.ToDouble(txtCoolantPricePer.Text));
             }
             catch (System.FormatException) { }
+        }
+
+        private void txtLiquidOzonePricePer_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                txtLiquidOzoneSubtotal.Text = Convert.ToString(Convert.ToInt32(txtLiquidOzoneQuantity.Text) * Convert.ToDouble(txtLiquidOzonePricePer.Text));
+            }
+            catch (System.FormatException) { }
+        }
+
+        private void txtLiquidOzoneQuantity_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                txtLiquidOzoneVolume.Text = Convert.ToString(Convert.ToInt32(txtLiquidOzoneQuantity.Text) * volLiquidOzone);
+                txtLiquidOzoneSubtotal.Text = Convert.ToString(Convert.ToInt32(txtLiquidOzoneQuantity.Text) * Convert.ToDouble(txtLiquidOzonePricePer.Text));
+            }
+            catch (System.FormatException) { }
+        }
+
+        private void txtHeavyWaterPricePer_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtHeavyWaterQuantity_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                txtHeavyWaterVolume.Text = Convert.ToString(Convert.ToInt32(txtHeavyWaterQuantity.Text) * volHeavyWater);
+                txtHeavyWaterSubtotal.Text = Convert.ToString(Convert.ToInt32(txtHeavyWaterQuantity.Text) * Convert.ToDouble(txtHeavyWaterPricePer.Text));
+            }
+            catch (System.FormatException) { }
+        }
+
+        private void txtRoboticsPricePer_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                txtRoboticsSubtotal.Text = Convert.ToString(Convert.ToInt32(txtRoboticsQuantity.Text) * Convert.ToDouble(txtRoboticsPricePer.Text));
+            }
+            catch (System.FormatException) { }
+        }
+
+        private void txtRoboticsQuantity_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                txtRoboticsVolume.Text = Convert.ToString(Convert.ToInt32(txtRoboticsQuantity.Text) * volRobotics);
+                txtRoboticsSubtotal.Text = Convert.ToString(Convert.ToInt32(txtRoboticsQuantity.Text) * Convert.ToDouble(txtRoboticsPricePer.Text));
+            }
+            catch (System.FormatException) { }
+        }
+
+        private void txtMechanicalPartsPricePer_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtMechanicalPartsQuantity_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                txtMechanicalPartsVolume.Text = Convert.ToString(Convert.ToInt32(txtMechanicalPartsQuantity.Text) * volMechanicalParts);
+                txtMechanicalPartsSubtotal.Text = Convert.ToString(Convert.ToInt32(txtMechanicalPartsQuantity.Text) * Convert.ToDouble(txtMechanicalPartsPricePer.Text));
+            }
+            catch (System.FormatException) { }
+        }
+
+        private void txtHeliumPricePer_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                txtHeliumIsotopesSubtotal.Text = Convert.ToString(Convert.ToInt32(txtHeliumIsotopesQuantity.Text) * Convert.ToDouble(txtHeliumIsotopesPricePer.Text));
+            }
+            catch (System.FormatException) { }
+        }
+
+        private void txtHeliumIsotopesQuantity_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                txtHeliumIsotopesVolume.Text = Convert.ToString(Convert.ToInt32(txtHeliumIsotopesQuantity.Text) * volIsotopes);
+                txtHeliumIsotopesSubtotal.Text = Convert.ToString(Convert.ToInt32(txtHeliumIsotopesQuantity.Text) * Convert.ToDouble(txtHeliumIsotopesPricePer.Text));
+            }
+            catch (System.FormatException) { }
+        }
+
+        private void txtOxygenIsotopesPricePer_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                txtOxygenIsotopesSubtotal.Text = Convert.ToString(Convert.ToInt32(txtOxygenIsotopesQuantity.Text) * Convert.ToDouble(txtOxygenIsotopesPricePer.Text));
+            }
+            catch (System.FormatException) { }
+        }
+
+        private void txtOxygenIsotopesQuantity_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                txtOxygenIsotopesVolume.Text = Convert.ToString(Convert.ToInt32(txtOxygenIsotopesQuantity.Text) * volIsotopes);
+                txtOxygenIsotopesSubtotal.Text = Convert.ToString(Convert.ToInt32(txtOxygenIsotopesQuantity.Text) * Convert.ToDouble(txtOxygenIsotopesPricePer.Text));
+            }
+            catch (System.FormatException) { }
+        }
+
+        private void txtHydrogenIsotopesPricePer_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                txtHydrogenIsotopesSubtotal.Text = Convert.ToString(Convert.ToInt32(txtHydrogenIsotopesQuantity.Text) * Convert.ToDouble(txtHydrogenIsotopesPricePer.Text));
+            }
+            catch (System.FormatException) { }
+        }
+
+        private void txtHydrogenIsotopesQuantity_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                txtHydrogenIsotopesVolume.Text = Convert.ToString(Convert.ToInt32(txtHydrogenIsotopesQuantity.Text) * volIsotopes);
+                txtHydrogenIsotopesSubtotal.Text = Convert.ToString(Convert.ToInt32(txtHydrogenIsotopesQuantity.Text) * Convert.ToDouble(txtHydrogenIsotopesPricePer.Text));
+            }
+            catch (System.FormatException) { }
+        }
+
+        private void txtNitrogenIsotopesPricePer_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                txtNitrogenIsotopesSubtotal.Text = Convert.ToString(Convert.ToInt32(txtNitrogenIsotopesQuantity.Text) * Convert.ToDouble(txtNitrogenIsotopesPricePer.Text));
+            }
+            catch (System.FormatException) { }
+        }
+
+        private void txtNitrogenIsotopesQuantity_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                txtNitrogenIsotopesVolume.Text = Convert.ToString(Convert.ToInt32(txtNitrogenIsotopesQuantity.Text) * volIsotopes);
+                txtNitrogenIsotopesSubtotal.Text = Convert.ToString(Convert.ToInt32(txtNitrogenIsotopesQuantity.Text) * Convert.ToDouble(txtNitrogenIsotopesPricePer.Text));
+            }
+            catch (System.FormatException) { }
+        }
+
+        private void txtEnrichedUraniumSubtotal_TextChanged(object sender, EventArgs e)
+        {
+            updateSubtotal();
+        }
+
+        private void txtOxygenSubtotal_TextChanged(object sender, EventArgs e)
+        {
+            updateSubtotal();
+        }
+
+        private void txtCoolantSubtotal_TextChanged(object sender, EventArgs e)
+        {
+            updateSubtotal();
+        }
+
+        private void txtRoboticsSubtotal_TextChanged(object sender, EventArgs e)
+        {
+            updateSubtotal();
+        }
+
+        private void txtMechanicalPartsSubtotal_TextChanged(object sender, EventArgs e)
+        {
+            updateSubtotal();
+        }
+
+        private void txtStrontiumSubtotal_TextChanged(object sender, EventArgs e)
+        {
+            updateSubtotal();
+        }
+
+        private void txtLiquidOzoneSubtotal_TextChanged(object sender, EventArgs e)
+        {
+            updateSubtotal();
+        }
+
+        private void txtHeavyWaterSubtotal_TextChanged(object sender, EventArgs e)
+        {
+            updateSubtotal();
+        }
+
+        private void txtHeliumIsotopesSubtotal_TextChanged(object sender, EventArgs e)
+        {
+            updateSubtotal();
+        }
+
+        private void txtOxygenIsotopesSubtotal_TextChanged(object sender, EventArgs e)
+        {
+            updateSubtotal();
+        }
+
+        private void txtHydrogenIsotopesSubtotal_TextChanged(object sender, EventArgs e)
+        {
+            updateSubtotal();
+        }
+
+        private void txtNitrogenIsotopesSubtotal_TextChanged(object sender, EventArgs e)
+        {
+            updateSubtotal();
+        }
+
+        private void updateSubtotal()
+        {
+            txtTotalCost.Text = Convert.ToString(
+                Convert.ToDouble(txtNitrogenIsotopesSubtotal.Text) +
+                Convert.ToDouble(txtOxygenIsotopesSubtotal.Text) +
+                Convert.ToDouble(txtHeliumIsotopesSubtotal.Text) +
+                Convert.ToDouble(txtHydrogenIsotopesSubtotal.Text) +
+                Convert.ToDouble(txtHeavyWaterSubtotal.Text) +
+                Convert.ToDouble(txtLiquidOzoneSubtotal.Text) +
+                Convert.ToDouble(txtStrontiumSubtotal.Text) +
+                Convert.ToDouble(txtMechanicalPartsSubtotal.Text) +
+                Convert.ToDouble(txtRoboticsSubtotal.Text) +
+                Convert.ToDouble(txtCoolantSubtotal.Text) +
+                Convert.ToDouble(txtOxygenSubtotal.Text) +
+                Convert.ToDouble(txtEnrichedUraniumSubtotal.Text)
+                );
+        }
+
+        private void txtEnrichedUraniumVolume_TextChanged(object sender, EventArgs e)
+        {
+            updateTotalVolume();
+        }
+
+        private void txtOxygenVolume_TextChanged(object sender, EventArgs e)
+        {
+            updateTotalVolume();
+        }
+
+        private void txtCoolantVolume_TextChanged(object sender, EventArgs e)
+        {
+            updateTotalVolume();
+        }
+
+        private void txtRoboticsVolume_TextChanged(object sender, EventArgs e)
+        {
+            updateTotalVolume();
+        }
+
+        private void txtMechanicalPartsVolume_TextChanged(object sender, EventArgs e)
+        {
+            updateTotalVolume();
+        }
+
+        private void txtStrontiumVolume_TextChanged(object sender, EventArgs e)
+        {
+            updateTotalVolume();
+        }
+
+        private void txtLiquidOzoneVolume_TextChanged(object sender, EventArgs e)
+        {
+            updateTotalVolume();
+        }
+
+        private void txtHeavyWaterVolume_TextChanged(object sender, EventArgs e)
+        {
+            updateTotalVolume();
+        }
+
+        private void txtHeliumIsotopesVolume_TextChanged(object sender, EventArgs e)
+        {
+            updateTotalVolume();
+        }
+
+        private void txtOxygenIsotopesVolume_TextChanged(object sender, EventArgs e)
+        {
+            updateTotalVolume();
+        }
+
+        private void txtHydrogenIsotopesVolume_TextChanged(object sender, EventArgs e)
+        {
+            updateTotalVolume();
+        }
+
+        private void txtNitrogenIsotopesVolume_TextChanged(object sender, EventArgs e)
+        {
+            updateTotalVolume();
+        }
+
+        private void updateTotalVolume()
+        {
+            txtTotalVolume.Text = Convert.ToString(
+                Convert.ToDouble(txtNitrogenIsotopesVolume.Text) +
+                Convert.ToDouble(txtOxygenIsotopesVolume.Text) +
+                Convert.ToDouble(txtHeliumIsotopesVolume.Text) +
+                Convert.ToDouble(txtHydrogenIsotopesVolume.Text) +
+                Convert.ToDouble(txtHeavyWaterVolume.Text) +
+                Convert.ToDouble(txtLiquidOzoneVolume.Text) +
+                Convert.ToDouble(txtStrontiumVolume.Text) +
+                Convert.ToDouble(txtMechanicalPartsVolume.Text) +
+                Convert.ToDouble(txtRoboticsVolume.Text) +
+                Convert.ToDouble(txtCoolantVolume.Text) +
+                Convert.ToDouble(txtOxygenVolume.Text) +
+                Convert.ToDouble(txtEnrichedUraniumVolume.Text)
+                );
         }
 
     }
