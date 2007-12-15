@@ -161,16 +161,17 @@ namespace EVEPOSMon
             return ct.typeName + " -- " + StarbaseSystem.systemName + " -- " + StarbaseSystem.security + " -- " + ct.description;
         }
 
-        internal void setValues(System.Xml.XmlAttributeCollection atts)
+        public void LoadFromListApiXml(XmlNode starbaseNode, DateTime cachedUntil)
         {
-            // Taken from SelectStarbases.cs->btnLoadStations_Click() to internalize starbase functions
-            itemId = atts["itemID"].InnerText;
-            typeId = atts["typeID"].InnerText;
-            locationId = atts["locationID"].InnerText;
-            moonId = atts["moonID"].InnerText;
-            state = atts["state"].InnerText;
-            stateTimestamp = EveSession.ConvertCCPTimeStringToDateTime(atts["stateTimestamp"].InnerText);
-            onlineTimeStamp = EveSession.ConvertCCPTimeStringToDateTime(atts["onlineTimestamp"].InnerText);
+            XmlAttributeCollection attrs = starbaseNode.Attributes;
+            this.itemId = attrs["itemID"].InnerText;
+            this.typeId = attrs["typeID"].InnerText;
+            this.locationId = attrs["locationID"].InnerText;
+            this.moonId = attrs["moonID"].InnerText;
+            this.state = attrs["state"].InnerText;
+            this.stateTimestamp = EveSession.ConvertCCPTimeStringToDateTime(attrs["stateTimestamp"].InnerText);
+            this.onlineTimeStamp = EveSession.ConvertCCPTimeStringToDateTime(attrs["onlineTimestamp"].InnerText);
+            this.cachedUntil = cachedUntil;
         }
 
         internal void setDetails(String loc)

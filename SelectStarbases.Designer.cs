@@ -30,18 +30,17 @@ namespace EVEPOSMon
         {
             this.btnLoadStations = new System.Windows.Forms.Button();
             this.btnGetStationInfo = new System.Windows.Forms.Button();
-            this.lbStations = new System.Windows.Forms.DataGridView();
-            this.Column0 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hidden_object = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgStations = new System.Windows.Forms.DataGridView();
             this.btnSaveAutoload = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.characterInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.lbStations)).BeginInit();
+            this.Column0 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgStations)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,58 +66,26 @@ namespace EVEPOSMon
             this.btnGetStationInfo.UseVisualStyleBackColor = true;
             this.btnGetStationInfo.Click += new System.EventHandler(this.btnGetStationInfo_Click);
             // 
-            // lbStations
+            // dgStations
             // 
-            this.lbStations.AllowUserToAddRows = false;
-            this.lbStations.AllowUserToDeleteRows = false;
-            this.lbStations.AllowUserToOrderColumns = true;
-            this.lbStations.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbStations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.lbStations.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgStations.AllowUserToAddRows = false;
+            this.dgStations.AllowUserToDeleteRows = false;
+            this.dgStations.AllowUserToOrderColumns = true;
+            this.dgStations.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgStations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgStations.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column0,
             this.Column1,
             this.Column2,
-            this.Column3,
-            this.hidden_object});
-            this.lbStations.Location = new System.Drawing.Point(9, 86);
-            this.lbStations.Name = "lbStations";
-            this.lbStations.RowHeadersVisible = false;
-            this.lbStations.Size = new System.Drawing.Size(404, 249);
-            this.lbStations.TabIndex = 3;
-            // 
-            // Column0
-            // 
-            this.Column0.FalseValue = "false";
-            this.Column0.HeaderText = "Load";
-            this.Column0.Name = "Column0";
-            this.Column0.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column0.TrueValue = "true";
-            this.Column0.Width = 50;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Region";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Constellation";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "System/Planet/Moon";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 150;
-            // 
-            // hidden_object
-            // 
-            this.hidden_object.HeaderText = "Column4";
-            this.hidden_object.Name = "hidden_object";
-            this.hidden_object.Visible = false;
+            this.Column3});
+            this.dgStations.Location = new System.Drawing.Point(9, 86);
+            this.dgStations.MultiSelect = false;
+            this.dgStations.Name = "dgStations";
+            this.dgStations.RowHeadersVisible = false;
+            this.dgStations.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgStations.Size = new System.Drawing.Size(404, 249);
+            this.dgStations.TabIndex = 3;
+            this.dgStations.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgStations_CellValueChanged_1);
             // 
             // btnSaveAutoload
             // 
@@ -165,6 +132,34 @@ namespace EVEPOSMon
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // Column0
+            // 
+            this.Column0.FalseValue = "false";
+            this.Column0.HeaderText = "Load";
+            this.Column0.Name = "Column0";
+            this.Column0.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column0.TrueValue = "true";
+            this.Column0.Width = 50;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Region";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Constellation";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "System/Planet/Moon";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 150;
+            // 
             // SelectStarbases
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -173,7 +168,7 @@ namespace EVEPOSMon
             this.ClientSize = new System.Drawing.Size(423, 375);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSaveAutoload);
-            this.Controls.Add(this.lbStations);
+            this.Controls.Add(this.dgStations);
             this.Controls.Add(this.btnGetStationInfo);
             this.Controls.Add(this.btnLoadStations);
             this.Controls.Add(this.menuStrip1);
@@ -182,7 +177,7 @@ namespace EVEPOSMon
             this.Text = "EVEPOSMon Station Selection";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SelectStarbases_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.lbStations)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgStations)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -194,17 +189,16 @@ namespace EVEPOSMon
 
         private System.Windows.Forms.Button btnLoadStations;
         private System.Windows.Forms.Button btnGetStationInfo;
-        private System.Windows.Forms.DataGridView lbStations;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column0;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hidden_object;
+        private System.Windows.Forms.DataGridView dgStations;
         private System.Windows.Forms.Button btnSaveAutoload;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem characterInformationToolStripMenuItem;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Column0;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
     }
 }
 
