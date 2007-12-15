@@ -54,6 +54,8 @@ namespace EVEMon.Common
         public List<Starbase> availableStarBases = new List<Starbase>();
         public AccountInfo accountInfo;
 
+        public readonly string SerializedStarbasesFilename = "Starbases.xml";
+
         public List<Starbase> monitoredStarbases
         {
             get
