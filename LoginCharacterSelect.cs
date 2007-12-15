@@ -33,6 +33,7 @@ namespace EVEPOSMon
             accountInfo.apiKey = tbApiKey.Text;
 
             XmlDocument doc = EVEMonWebRequest.LoadXml(@"http://api.eve-online.com/account/Characters.xml.aspx?userid=" + tbUserId.Text + "&apikey=" + tbApiKey.Text);
+            //XmlDocument doc = EveSession.GetCharList(tbUserId.Text, tbApiKey.Text);
             DateTime cachedUntil = EveSession.GetCacheExpiryUTC(doc);
             XmlNodeList rows = doc.GetElementsByTagName("row");
             foreach (XmlNode row in rows)
