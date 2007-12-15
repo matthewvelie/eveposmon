@@ -5,6 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Xml;
+using System.Xml.Serialization;
 using EVEMon.Common;
 
 namespace EVEPOSMon
@@ -12,7 +14,9 @@ namespace EVEPOSMon
     public partial class FuelCalculator : Form
     {
         private Settings m_settings = Settings.GetInstance();
-        
+
+        const string eveCentralWebsite = "http://eve-central.com/home/marketstat_xml.html?typeid=";
+
         const double volEnrichedUranium = 1;
         const double volCoolant = 2;
         const double volOxygen = 1;
@@ -37,8 +41,10 @@ namespace EVEPOSMon
             {
                 dgvStations.Rows.Add(new object[] { false, s.Moon.moonName, s });
             }
-             
+
         }
+
+        #region changeTypeOfCalc
 
         private void changeQuantityFieldEnable(bool state)
         {
@@ -157,10 +163,13 @@ namespace EVEPOSMon
                 lblFuelWilllastTotal.Enabled = true;
                 lblTotalDaysUnit.Enabled = true;
                 txtTotalFuelLastDays.Enabled = true;
-           } 
-        }
+           }
+       }
+        #endregion
 
-        private void txtEnrichedUraniumPricePer_TextChanged(object sender, EventArgs e)
+       #region autoUpdatePriceVolume
+
+       private void txtEnrichedUraniumPricePer_TextChanged(object sender, EventArgs e)
         {
             try
             {
@@ -362,6 +371,10 @@ namespace EVEPOSMon
             catch (System.FormatException) { }
         }
 
+       #endregion
+
+        #region updateTotalSubtotals
+
         private void txtEnrichedUraniumSubtotal_TextChanged(object sender, EventArgs e)
         {
             updateSubtotal();
@@ -439,7 +452,9 @@ namespace EVEPOSMon
                 Convert.ToDouble(txtEnrichedUraniumSubtotal.Text)
                 );
         }
+        #endregion
 
+        #region updateTotalVolume
         private void txtEnrichedUraniumVolume_TextChanged(object sender, EventArgs e)
         {
             updateTotalVolume();
@@ -517,6 +532,35 @@ namespace EVEPOSMon
                 Convert.ToDouble(txtEnrichedUraniumVolume.Text)
                 );
         }
+#endregion
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            //download data for each typeId
+            txtMechanicalPartsPricePer.Text = downloadPriceData(3689); //mech parts
+            txtCoolantPricePer.Text = downloadPriceData(9832); //Coolant
+            txtRoboticsPricePer.Text = downloadPriceData(9848); //Robotics
+            txtOxygenPricePer.Text = downloadPriceData(3683); //Oxygen
+            txtOxygenIsotopesPricePer.Text = downloadPriceData(17887); //Oxygen Isotopes
+            txtHeavyWaterPricePer.Text = downloadPriceData(16272); //Heavy Water
+            txtLiquidOzonePricePer.Text = downloadPriceData(16273); //Liquid Ozone
+            txtEnrichedUraniumPricePer.Text = downloadPriceData(44); //Enriched Uranium
+            txtNitrogenIsotopesPricePer.Text = downloadPriceData(16275); //Nitrogen Isotopes
+            txtHeliumIsotopesPricePer.Text = downloadPriceData(16274); //Helium Isotopes
+            txtHydrogenIsotopesPricePer.Text = downloadPriceData(17889); //Hydrogen Isotopes
+        }
+
+        private string downloadPriceData(int typeId)
+        {
+            string link = eveCentralWebsite + Convert.ToString(typeId);
+            XmlDocument doc = new XmlDocument();
+            doc.Load(link);
+            XmlNodeList xmlPriceElement = doc.GetElementsByTagName("avg_price");
+            string avg_cost = xmlPriceElement.Item(0).InnerText;
+            
+            return Convert.ToString( Math.Round( Convert.ToDecimal( avg_cost ), 2 ) );
+        }
+
 
     }
 }
