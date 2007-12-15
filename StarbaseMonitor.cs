@@ -172,5 +172,10 @@ namespace EVEPOSMon
             }
 
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblTimer.Text = Convert.ToString(Convert.ToInt32(lblTimer.Text) - 1);
+        }
     }
 }
