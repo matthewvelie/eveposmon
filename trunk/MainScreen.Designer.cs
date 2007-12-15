@@ -31,11 +31,17 @@ namespace EVEPOSMon
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.utilitiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fuelCalculatorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutEvePOSMonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fuelCalculatorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stationNotesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aPIKeysToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.starbaseSelectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,13 +75,35 @@ namespace EVEPOSMon
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
+            // quitToolStripMenuItem
+            // 
+            this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
+            this.quitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
+            this.quitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.quitToolStripMenuItem.Text = "&Quit";
+            this.quitToolStripMenuItem.Click += new System.EventHandler(this.quitToolStripMenuItem_Click);
+            // 
             // utilitiesToolStripMenuItem
             // 
             this.utilitiesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fuelCalculatorToolStripMenuItem});
+            this.fuelCalculatorToolStripMenuItem,
+            this.stationNotesToolStripMenuItem,
+            this.toolStripMenuItem1,
+            this.aPIKeysToolStripMenuItem,
+            this.starbaseSelectionToolStripMenuItem,
+            this.toolStripMenuItem2,
+            this.settingsToolStripMenuItem});
             this.utilitiesToolStripMenuItem.Name = "utilitiesToolStripMenuItem";
             this.utilitiesToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.utilitiesToolStripMenuItem.Text = "Utilities";
+            // 
+            // fuelCalculatorToolStripMenuItem
+            // 
+            this.fuelCalculatorToolStripMenuItem.Name = "fuelCalculatorToolStripMenuItem";
+            this.fuelCalculatorToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F)));
+            this.fuelCalculatorToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.fuelCalculatorToolStripMenuItem.Text = "&Fuel Calculator";
+            this.fuelCalculatorToolStripMenuItem.Click += new System.EventHandler(this.fuelCalculatorToolStripMenuItem_Click_1);
             // 
             // helpToolStripMenuItem
             // 
@@ -92,18 +120,42 @@ namespace EVEPOSMon
             this.aboutEvePOSMonToolStripMenuItem.Text = "&About EvePOSMon";
             this.aboutEvePOSMonToolStripMenuItem.Click += new System.EventHandler(this.aboutEvePOSMonToolStripMenuItem_Click);
             // 
-            // quitToolStripMenuItem
+            // stationNotesToolStripMenuItem
             // 
-            this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
-            this.quitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.quitToolStripMenuItem.Text = "&Quit";
-            this.quitToolStripMenuItem.Click += new System.EventHandler(this.quitToolStripMenuItem_Click);
+            this.stationNotesToolStripMenuItem.Name = "stationNotesToolStripMenuItem";
+            this.stationNotesToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.N)));
+            this.stationNotesToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.stationNotesToolStripMenuItem.Text = "Station &Notes";
             // 
-            // fuelCalculatorToolStripMenuItem
+            // toolStripMenuItem1
             // 
-            this.fuelCalculatorToolStripMenuItem.Name = "fuelCalculatorToolStripMenuItem";
-            this.fuelCalculatorToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.fuelCalculatorToolStripMenuItem.Text = "&Fuel Calculator";
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(187, 6);
+            // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.S)));
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.settingsToolStripMenuItem.Text = "&Settings....";
+            // 
+            // aPIKeysToolStripMenuItem
+            // 
+            this.aPIKeysToolStripMenuItem.Name = "aPIKeysToolStripMenuItem";
+            this.aPIKeysToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.aPIKeysToolStripMenuItem.Text = "API Keys";
+            this.aPIKeysToolStripMenuItem.Click += new System.EventHandler(this.aPIKeysToolStripMenuItem_Click_1);
+            // 
+            // starbaseSelectionToolStripMenuItem
+            // 
+            this.starbaseSelectionToolStripMenuItem.Name = "starbaseSelectionToolStripMenuItem";
+            this.starbaseSelectionToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.starbaseSelectionToolStripMenuItem.Text = "Starbase Selection";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(187, 6);
             // 
             // MainScreen
             // 
@@ -136,5 +188,11 @@ namespace EVEPOSMon
         private System.Windows.Forms.ToolStripMenuItem fuelCalculatorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutEvePOSMonToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem stationNotesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aPIKeysToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem starbaseSelectionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
     }
 }
