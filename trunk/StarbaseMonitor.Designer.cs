@@ -28,7 +28,8 @@ namespace EVEPOSMon
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.components = new System.ComponentModel.Container();
+            this.lblTimer = new System.Windows.Forms.Label();
             this.pbStationImage = new System.Windows.Forms.PictureBox();
             this.lblStarbaseName = new System.Windows.Forms.Label();
             this.lblStrontiumBayValue = new System.Windows.Forms.Label();
@@ -67,6 +68,8 @@ namespace EVEPOSMon
             this.lblPosSustainabilityTime = new System.Windows.Forms.Label();
             this.lblPosSustainabilityFuels = new System.Windows.Forms.Label();
             this.lblPosSustainability = new System.Windows.Forms.Label();
+            this.tmrSecondTick = new System.Windows.Forms.Timer(this.components);
+            this.tmrThreeHourCache = new System.Windows.Forms.Timer(this.components);
             this.throbber1 = new EVEMon.Throbber();
             ((System.ComponentModel.ISupportInitialize)(this.pbStationImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgFuelList)).BeginInit();
@@ -75,14 +78,14 @@ namespace EVEPOSMon
             ((System.ComponentModel.ISupportInitialize)(this.throbber1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // lblTimer
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(494, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "label1";
+            this.lblTimer.AutoSize = true;
+            this.lblTimer.Location = new System.Drawing.Point(480, 33);
+            this.lblTimer.Name = "lblTimer";
+            this.lblTimer.Size = new System.Drawing.Size(55, 13);
+            this.lblTimer.TabIndex = 1;
+            this.lblTimer.Text = "10800000";
             // 
             // pbStationImage
             // 
@@ -399,6 +402,16 @@ namespace EVEPOSMon
             this.lblPosSustainability.TabIndex = 10;
             this.lblPosSustainability.Text = "Sustainability:";
             // 
+            // tmrSecondTick
+            // 
+            this.tmrSecondTick.Enabled = true;
+            this.tmrSecondTick.Interval = 1000;
+            this.tmrSecondTick.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // tmrThreeHourCache
+            // 
+            this.tmrThreeHourCache.Interval = 10800000;
+            // 
             // throbber1
             // 
             this.throbber1.Location = new System.Drawing.Point(502, 6);
@@ -445,7 +458,7 @@ namespace EVEPOSMon
             this.Controls.Add(this.lblCombatSettings);
             this.Controls.Add(this.lblStarbaseName);
             this.Controls.Add(this.pbStationImage);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblTimer);
             this.Controls.Add(this.throbber1);
             this.Name = "StarbaseMonitor";
             this.Size = new System.Drawing.Size(535, 673);
@@ -464,7 +477,7 @@ namespace EVEPOSMon
         #endregion
 
         private EVEMon.Throbber throbber1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTimer;
         private System.Windows.Forms.PictureBox pbStationImage;
         private System.Windows.Forms.Label lblStarbaseName;
         private System.Windows.Forms.Label lblStrontiumBayValue;
@@ -503,5 +516,7 @@ namespace EVEPOSMon
         private System.Windows.Forms.Label lblPosSustainabilityTime;
         private System.Windows.Forms.Label lblPosSustainabilityFuels;
         private System.Windows.Forms.Label lblPosSustainability;
+        private System.Windows.Forms.Timer tmrSecondTick;
+        private System.Windows.Forms.Timer tmrThreeHourCache;
     }
 }

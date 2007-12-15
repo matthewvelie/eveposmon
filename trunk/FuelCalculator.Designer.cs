@@ -423,6 +423,7 @@ namespace EVEPOSMon
             this.txtNitrogenIsotopesSubtotal.Name = "txtNitrogenIsotopesSubtotal";
             this.txtNitrogenIsotopesSubtotal.Size = new System.Drawing.Size(93, 20);
             this.txtNitrogenIsotopesSubtotal.TabIndex = 42;
+            this.txtNitrogenIsotopesSubtotal.TabStop = false;
             this.txtNitrogenIsotopesSubtotal.Text = "0";
             this.txtNitrogenIsotopesSubtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtNitrogenIsotopesSubtotal.TextChanged += new System.EventHandler(this.txtNitrogenIsotopesSubtotal_TextChanged);
@@ -434,6 +435,7 @@ namespace EVEPOSMon
             this.txtNitrogenIsotopesVolume.Name = "txtNitrogenIsotopesVolume";
             this.txtNitrogenIsotopesVolume.Size = new System.Drawing.Size(93, 20);
             this.txtNitrogenIsotopesVolume.TabIndex = 41;
+            this.txtNitrogenIsotopesVolume.TabStop = false;
             this.txtNitrogenIsotopesVolume.Text = "0";
             this.txtNitrogenIsotopesVolume.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtNitrogenIsotopesVolume.TextChanged += new System.EventHandler(this.txtNitrogenIsotopesVolume_TextChanged);
@@ -443,7 +445,7 @@ namespace EVEPOSMon
             this.txtNitrogenIsotopesQuantity.Location = new System.Drawing.Point(943, 45);
             this.txtNitrogenIsotopesQuantity.Name = "txtNitrogenIsotopesQuantity";
             this.txtNitrogenIsotopesQuantity.Size = new System.Drawing.Size(93, 20);
-            this.txtNitrogenIsotopesQuantity.TabIndex = 40;
+            this.txtNitrogenIsotopesQuantity.TabIndex = 22;
             this.txtNitrogenIsotopesQuantity.Text = "0";
             this.txtNitrogenIsotopesQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtNitrogenIsotopesQuantity.TextChanged += new System.EventHandler(this.txtNitrogenIsotopesQuantity_TextChanged);
@@ -453,7 +455,7 @@ namespace EVEPOSMon
             this.txtNitrogenIsotopesPricePer.Location = new System.Drawing.Point(943, 19);
             this.txtNitrogenIsotopesPricePer.Name = "txtNitrogenIsotopesPricePer";
             this.txtNitrogenIsotopesPricePer.Size = new System.Drawing.Size(93, 20);
-            this.txtNitrogenIsotopesPricePer.TabIndex = 39;
+            this.txtNitrogenIsotopesPricePer.TabIndex = 21;
             this.txtNitrogenIsotopesPricePer.Text = "0";
             this.txtNitrogenIsotopesPricePer.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtNitrogenIsotopesPricePer.TextChanged += new System.EventHandler(this.txtNitrogenIsotopesPricePer_TextChanged);
@@ -547,6 +549,7 @@ namespace EVEPOSMon
             this.txtHydrogenIsotopesSubtotal.Name = "txtHydrogenIsotopesSubtotal";
             this.txtHydrogenIsotopesSubtotal.Size = new System.Drawing.Size(93, 20);
             this.txtHydrogenIsotopesSubtotal.TabIndex = 29;
+            this.txtHydrogenIsotopesSubtotal.TabStop = false;
             this.txtHydrogenIsotopesSubtotal.Text = "0";
             this.txtHydrogenIsotopesSubtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtHydrogenIsotopesSubtotal.TextChanged += new System.EventHandler(this.txtHydrogenIsotopesSubtotal_TextChanged);
@@ -558,6 +561,7 @@ namespace EVEPOSMon
             this.txtHydrogenIsotopesVolume.Name = "txtHydrogenIsotopesVolume";
             this.txtHydrogenIsotopesVolume.Size = new System.Drawing.Size(93, 20);
             this.txtHydrogenIsotopesVolume.TabIndex = 28;
+            this.txtHydrogenIsotopesVolume.TabStop = false;
             this.txtHydrogenIsotopesVolume.Text = "0";
             this.txtHydrogenIsotopesVolume.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtHydrogenIsotopesVolume.TextChanged += new System.EventHandler(this.txtHydrogenIsotopesVolume_TextChanged);
@@ -567,7 +571,7 @@ namespace EVEPOSMon
             this.txtHydrogenIsotopesQuantity.Location = new System.Drawing.Point(679, 45);
             this.txtHydrogenIsotopesQuantity.Name = "txtHydrogenIsotopesQuantity";
             this.txtHydrogenIsotopesQuantity.Size = new System.Drawing.Size(93, 20);
-            this.txtHydrogenIsotopesQuantity.TabIndex = 27;
+            this.txtHydrogenIsotopesQuantity.TabIndex = 20;
             this.txtHydrogenIsotopesQuantity.Text = "0";
             this.txtHydrogenIsotopesQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtHydrogenIsotopesQuantity.TextChanged += new System.EventHandler(this.txtHydrogenIsotopesQuantity_TextChanged);
@@ -577,7 +581,7 @@ namespace EVEPOSMon
             this.txtHydrogenIsotopesPricePer.Location = new System.Drawing.Point(679, 19);
             this.txtHydrogenIsotopesPricePer.Name = "txtHydrogenIsotopesPricePer";
             this.txtHydrogenIsotopesPricePer.Size = new System.Drawing.Size(93, 20);
-            this.txtHydrogenIsotopesPricePer.TabIndex = 26;
+            this.txtHydrogenIsotopesPricePer.TabIndex = 19;
             this.txtHydrogenIsotopesPricePer.Text = "0";
             this.txtHydrogenIsotopesPricePer.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtHydrogenIsotopesPricePer.TextChanged += new System.EventHandler(this.txtHydrogenIsotopesPricePer_TextChanged);
@@ -671,6 +675,7 @@ namespace EVEPOSMon
             this.txtOxygenIsotopesSubtotal.Name = "txtOxygenIsotopesSubtotal";
             this.txtOxygenIsotopesSubtotal.Size = new System.Drawing.Size(93, 20);
             this.txtOxygenIsotopesSubtotal.TabIndex = 16;
+            this.txtOxygenIsotopesSubtotal.TabStop = false;
             this.txtOxygenIsotopesSubtotal.Text = "0";
             this.txtOxygenIsotopesSubtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtOxygenIsotopesSubtotal.TextChanged += new System.EventHandler(this.txtOxygenIsotopesSubtotal_TextChanged);
@@ -682,6 +687,7 @@ namespace EVEPOSMon
             this.txtOxygenIsotopesVolume.Name = "txtOxygenIsotopesVolume";
             this.txtOxygenIsotopesVolume.Size = new System.Drawing.Size(93, 20);
             this.txtOxygenIsotopesVolume.TabIndex = 15;
+            this.txtOxygenIsotopesVolume.TabStop = false;
             this.txtOxygenIsotopesVolume.Text = "0";
             this.txtOxygenIsotopesVolume.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtOxygenIsotopesVolume.TextChanged += new System.EventHandler(this.txtOxygenIsotopesVolume_TextChanged);
@@ -691,7 +697,7 @@ namespace EVEPOSMon
             this.txtOxygenIsotopesQuantity.Location = new System.Drawing.Point(411, 45);
             this.txtOxygenIsotopesQuantity.Name = "txtOxygenIsotopesQuantity";
             this.txtOxygenIsotopesQuantity.Size = new System.Drawing.Size(93, 20);
-            this.txtOxygenIsotopesQuantity.TabIndex = 14;
+            this.txtOxygenIsotopesQuantity.TabIndex = 18;
             this.txtOxygenIsotopesQuantity.Text = "0";
             this.txtOxygenIsotopesQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtOxygenIsotopesQuantity.TextChanged += new System.EventHandler(this.txtOxygenIsotopesQuantity_TextChanged);
@@ -701,7 +707,7 @@ namespace EVEPOSMon
             this.txtOxygenIsotopesPricePer.Location = new System.Drawing.Point(411, 19);
             this.txtOxygenIsotopesPricePer.Name = "txtOxygenIsotopesPricePer";
             this.txtOxygenIsotopesPricePer.Size = new System.Drawing.Size(93, 20);
-            this.txtOxygenIsotopesPricePer.TabIndex = 13;
+            this.txtOxygenIsotopesPricePer.TabIndex = 17;
             this.txtOxygenIsotopesPricePer.Text = "0";
             this.txtOxygenIsotopesPricePer.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtOxygenIsotopesPricePer.TextChanged += new System.EventHandler(this.txtOxygenIsotopesPricePer_TextChanged);
@@ -795,6 +801,7 @@ namespace EVEPOSMon
             this.txtHeliumIsotopesSubtotal.Name = "txtHeliumIsotopesSubtotal";
             this.txtHeliumIsotopesSubtotal.Size = new System.Drawing.Size(93, 20);
             this.txtHeliumIsotopesSubtotal.TabIndex = 3;
+            this.txtHeliumIsotopesSubtotal.TabStop = false;
             this.txtHeliumIsotopesSubtotal.Text = "0";
             this.txtHeliumIsotopesSubtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtHeliumIsotopesSubtotal.TextChanged += new System.EventHandler(this.txtHeliumIsotopesSubtotal_TextChanged);
@@ -806,6 +813,7 @@ namespace EVEPOSMon
             this.txtHeliumIsotopesVolume.Name = "txtHeliumIsotopesVolume";
             this.txtHeliumIsotopesVolume.Size = new System.Drawing.Size(93, 20);
             this.txtHeliumIsotopesVolume.TabIndex = 2;
+            this.txtHeliumIsotopesVolume.TabStop = false;
             this.txtHeliumIsotopesVolume.Text = "0";
             this.txtHeliumIsotopesVolume.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtHeliumIsotopesVolume.TextChanged += new System.EventHandler(this.txtHeliumIsotopesVolume_TextChanged);
@@ -815,7 +823,7 @@ namespace EVEPOSMon
             this.txtHeliumIsotopesQuantity.Location = new System.Drawing.Point(141, 45);
             this.txtHeliumIsotopesQuantity.Name = "txtHeliumIsotopesQuantity";
             this.txtHeliumIsotopesQuantity.Size = new System.Drawing.Size(93, 20);
-            this.txtHeliumIsotopesQuantity.TabIndex = 1;
+            this.txtHeliumIsotopesQuantity.TabIndex = 16;
             this.txtHeliumIsotopesQuantity.Text = "0";
             this.txtHeliumIsotopesQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtHeliumIsotopesQuantity.TextChanged += new System.EventHandler(this.txtHeliumIsotopesQuantity_TextChanged);
@@ -825,7 +833,7 @@ namespace EVEPOSMon
             this.txtHeliumIsotopesPricePer.Location = new System.Drawing.Point(141, 19);
             this.txtHeliumIsotopesPricePer.Name = "txtHeliumIsotopesPricePer";
             this.txtHeliumIsotopesPricePer.Size = new System.Drawing.Size(93, 20);
-            this.txtHeliumIsotopesPricePer.TabIndex = 0;
+            this.txtHeliumIsotopesPricePer.TabIndex = 15;
             this.txtHeliumIsotopesPricePer.Text = "0";
             this.txtHeliumIsotopesPricePer.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtHeliumIsotopesPricePer.TextChanged += new System.EventHandler(this.txtHeliumPricePer_TextChanged);
@@ -954,6 +962,7 @@ namespace EVEPOSMon
             this.txtHeavyWaterSubtotal.Name = "txtHeavyWaterSubtotal";
             this.txtHeavyWaterSubtotal.Size = new System.Drawing.Size(93, 20);
             this.txtHeavyWaterSubtotal.TabIndex = 16;
+            this.txtHeavyWaterSubtotal.TabStop = false;
             this.txtHeavyWaterSubtotal.Text = "0";
             this.txtHeavyWaterSubtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtHeavyWaterSubtotal.TextChanged += new System.EventHandler(this.txtHeavyWaterSubtotal_TextChanged);
@@ -965,6 +974,7 @@ namespace EVEPOSMon
             this.txtHeavyWaterVolume.Name = "txtHeavyWaterVolume";
             this.txtHeavyWaterVolume.Size = new System.Drawing.Size(93, 20);
             this.txtHeavyWaterVolume.TabIndex = 15;
+            this.txtHeavyWaterVolume.TabStop = false;
             this.txtHeavyWaterVolume.Text = "0";
             this.txtHeavyWaterVolume.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtHeavyWaterVolume.TextChanged += new System.EventHandler(this.txtHeavyWaterVolume_TextChanged);
@@ -1078,6 +1088,7 @@ namespace EVEPOSMon
             this.txtLiquidOzoneSubtotal.Name = "txtLiquidOzoneSubtotal";
             this.txtLiquidOzoneSubtotal.Size = new System.Drawing.Size(93, 20);
             this.txtLiquidOzoneSubtotal.TabIndex = 3;
+            this.txtLiquidOzoneSubtotal.TabStop = false;
             this.txtLiquidOzoneSubtotal.Text = "0";
             this.txtLiquidOzoneSubtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtLiquidOzoneSubtotal.TextChanged += new System.EventHandler(this.txtLiquidOzoneSubtotal_TextChanged);
@@ -1089,6 +1100,7 @@ namespace EVEPOSMon
             this.txtLiquidOzoneVolume.Name = "txtLiquidOzoneVolume";
             this.txtLiquidOzoneVolume.Size = new System.Drawing.Size(93, 20);
             this.txtLiquidOzoneVolume.TabIndex = 2;
+            this.txtLiquidOzoneVolume.TabStop = false;
             this.txtLiquidOzoneVolume.Text = "0";
             this.txtLiquidOzoneVolume.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtLiquidOzoneVolume.TextChanged += new System.EventHandler(this.txtLiquidOzoneVolume_TextChanged);
@@ -1098,7 +1110,7 @@ namespace EVEPOSMon
             this.txtLiquidOzoneQuantity.Location = new System.Drawing.Point(141, 45);
             this.txtLiquidOzoneQuantity.Name = "txtLiquidOzoneQuantity";
             this.txtLiquidOzoneQuantity.Size = new System.Drawing.Size(93, 20);
-            this.txtLiquidOzoneQuantity.TabIndex = 1;
+            this.txtLiquidOzoneQuantity.TabIndex = 12;
             this.txtLiquidOzoneQuantity.Text = "0";
             this.txtLiquidOzoneQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtLiquidOzoneQuantity.TextChanged += new System.EventHandler(this.txtLiquidOzoneQuantity_TextChanged);
@@ -1108,7 +1120,7 @@ namespace EVEPOSMon
             this.txtLiquidOzonePricePer.Location = new System.Drawing.Point(141, 19);
             this.txtLiquidOzonePricePer.Name = "txtLiquidOzonePricePer";
             this.txtLiquidOzonePricePer.Size = new System.Drawing.Size(93, 20);
-            this.txtLiquidOzonePricePer.TabIndex = 0;
+            this.txtLiquidOzonePricePer.TabIndex = 11;
             this.txtLiquidOzonePricePer.Text = "0";
             this.txtLiquidOzonePricePer.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtLiquidOzonePricePer.TextChanged += new System.EventHandler(this.txtLiquidOzonePricePer_TextChanged);
@@ -1144,7 +1156,7 @@ namespace EVEPOSMon
             this.textBox1.Location = new System.Drawing.Point(234, 45);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(23, 20);
-            this.textBox1.TabIndex = 16;
+            this.textBox1.TabIndex = 17;
             this.textBox1.Text = "0";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -1264,6 +1276,7 @@ namespace EVEPOSMon
             this.textBox21.Name = "textBox21";
             this.textBox21.Size = new System.Drawing.Size(93, 20);
             this.textBox21.TabIndex = 3;
+            this.textBox21.TabStop = false;
             this.textBox21.Text = "0";
             this.textBox21.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -1274,6 +1287,7 @@ namespace EVEPOSMon
             this.textBox22.Name = "textBox22";
             this.textBox22.Size = new System.Drawing.Size(93, 20);
             this.textBox22.TabIndex = 2;
+            this.textBox22.TabStop = false;
             this.textBox22.Text = "0";
             this.textBox22.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -1282,7 +1296,7 @@ namespace EVEPOSMon
             this.textBox23.Location = new System.Drawing.Point(209, 45);
             this.textBox23.Name = "textBox23";
             this.textBox23.Size = new System.Drawing.Size(23, 20);
-            this.textBox23.TabIndex = 1;
+            this.textBox23.TabIndex = 16;
             this.textBox23.Text = "0";
             this.textBox23.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -1388,6 +1402,7 @@ namespace EVEPOSMon
             this.txtStrontiumVolume.Name = "txtStrontiumVolume";
             this.txtStrontiumVolume.Size = new System.Drawing.Size(93, 20);
             this.txtStrontiumVolume.TabIndex = 15;
+            this.txtStrontiumVolume.TabStop = false;
             this.txtStrontiumVolume.Text = "0";
             this.txtStrontiumVolume.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtStrontiumVolume.TextChanged += new System.EventHandler(this.txtStrontiumVolume_TextChanged);
@@ -1408,6 +1423,7 @@ namespace EVEPOSMon
             this.txtStrontiumSubtotal.Name = "txtStrontiumSubtotal";
             this.txtStrontiumSubtotal.Size = new System.Drawing.Size(93, 20);
             this.txtStrontiumSubtotal.TabIndex = 16;
+            this.txtStrontiumSubtotal.TabStop = false;
             this.txtStrontiumSubtotal.Text = "0";
             this.txtStrontiumSubtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtStrontiumSubtotal.TextChanged += new System.EventHandler(this.txtStrontiumSubtotal_TextChanged);
@@ -1616,6 +1632,7 @@ namespace EVEPOSMon
             this.txtOxygenSubtotal.Name = "txtOxygenSubtotal";
             this.txtOxygenSubtotal.Size = new System.Drawing.Size(93, 20);
             this.txtOxygenSubtotal.TabIndex = 65;
+            this.txtOxygenSubtotal.TabStop = false;
             this.txtOxygenSubtotal.Text = "0";
             this.txtOxygenSubtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtOxygenSubtotal.TextChanged += new System.EventHandler(this.txtOxygenSubtotal_TextChanged);
@@ -1627,6 +1644,7 @@ namespace EVEPOSMon
             this.txtOxygenVolume.Name = "txtOxygenVolume";
             this.txtOxygenVolume.Size = new System.Drawing.Size(93, 20);
             this.txtOxygenVolume.TabIndex = 64;
+            this.txtOxygenVolume.TabStop = false;
             this.txtOxygenVolume.Text = "0";
             this.txtOxygenVolume.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtOxygenVolume.TextChanged += new System.EventHandler(this.txtOxygenVolume_TextChanged);
@@ -1636,7 +1654,7 @@ namespace EVEPOSMon
             this.txtOxygenQuantity.Location = new System.Drawing.Point(413, 39);
             this.txtOxygenQuantity.Name = "txtOxygenQuantity";
             this.txtOxygenQuantity.Size = new System.Drawing.Size(93, 20);
-            this.txtOxygenQuantity.TabIndex = 63;
+            this.txtOxygenQuantity.TabIndex = 4;
             this.txtOxygenQuantity.Text = "0";
             this.txtOxygenQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtOxygenQuantity.TextChanged += new System.EventHandler(this.txtOxygenQuantity_TextChanged);
@@ -1646,7 +1664,7 @@ namespace EVEPOSMon
             this.txtOxygenPricePer.Location = new System.Drawing.Point(413, 13);
             this.txtOxygenPricePer.Name = "txtOxygenPricePer";
             this.txtOxygenPricePer.Size = new System.Drawing.Size(93, 20);
-            this.txtOxygenPricePer.TabIndex = 62;
+            this.txtOxygenPricePer.TabIndex = 3;
             this.txtOxygenPricePer.Text = "0";
             this.txtOxygenPricePer.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtOxygenPricePer.TextChanged += new System.EventHandler(this.txtOxygenPricePer_TextChanged);
@@ -1683,7 +1701,7 @@ namespace EVEPOSMon
             this.txtEnrichedUraniumPricePer.Location = new System.Drawing.Point(143, 13);
             this.txtEnrichedUraniumPricePer.Name = "txtEnrichedUraniumPricePer";
             this.txtEnrichedUraniumPricePer.Size = new System.Drawing.Size(93, 20);
-            this.txtEnrichedUraniumPricePer.TabIndex = 50;
+            this.txtEnrichedUraniumPricePer.TabIndex = 1;
             this.txtEnrichedUraniumPricePer.Text = "0";
             this.txtEnrichedUraniumPricePer.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtEnrichedUraniumPricePer.TextChanged += new System.EventHandler(this.txtEnrichedUraniumPricePer_TextChanged);
@@ -1702,7 +1720,7 @@ namespace EVEPOSMon
             this.txtEnrichedUraniumQuantity.Location = new System.Drawing.Point(143, 39);
             this.txtEnrichedUraniumQuantity.Name = "txtEnrichedUraniumQuantity";
             this.txtEnrichedUraniumQuantity.Size = new System.Drawing.Size(93, 20);
-            this.txtEnrichedUraniumQuantity.TabIndex = 51;
+            this.txtEnrichedUraniumQuantity.TabIndex = 2;
             this.txtEnrichedUraniumQuantity.Text = "0";
             this.txtEnrichedUraniumQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtEnrichedUraniumQuantity.TextChanged += new System.EventHandler(this.txtEnrichedUraniumQuantity_TextChanged);
@@ -1723,6 +1741,7 @@ namespace EVEPOSMon
             this.txtEnrichedUraniumVolume.Name = "txtEnrichedUraniumVolume";
             this.txtEnrichedUraniumVolume.Size = new System.Drawing.Size(93, 20);
             this.txtEnrichedUraniumVolume.TabIndex = 52;
+            this.txtEnrichedUraniumVolume.TabStop = false;
             this.txtEnrichedUraniumVolume.Text = "0";
             this.txtEnrichedUraniumVolume.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtEnrichedUraniumVolume.TextChanged += new System.EventHandler(this.txtEnrichedUraniumVolume_TextChanged);
@@ -1743,6 +1762,7 @@ namespace EVEPOSMon
             this.txtEnrichedUraniumSubtotal.Name = "txtEnrichedUraniumSubtotal";
             this.txtEnrichedUraniumSubtotal.Size = new System.Drawing.Size(93, 20);
             this.txtEnrichedUraniumSubtotal.TabIndex = 53;
+            this.txtEnrichedUraniumSubtotal.TabStop = false;
             this.txtEnrichedUraniumSubtotal.Text = "0";
             this.txtEnrichedUraniumSubtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtEnrichedUraniumSubtotal.TextChanged += new System.EventHandler(this.txtEnrichedUraniumSubtotal_TextChanged);
@@ -1848,6 +1868,7 @@ namespace EVEPOSMon
             this.txtMechanicalPartsSubtotal.Name = "txtMechanicalPartsSubtotal";
             this.txtMechanicalPartsSubtotal.Size = new System.Drawing.Size(93, 20);
             this.txtMechanicalPartsSubtotal.TabIndex = 41;
+            this.txtMechanicalPartsSubtotal.TabStop = false;
             this.txtMechanicalPartsSubtotal.Text = "0";
             this.txtMechanicalPartsSubtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtMechanicalPartsSubtotal.TextChanged += new System.EventHandler(this.txtMechanicalPartsSubtotal_TextChanged);
@@ -1859,6 +1880,7 @@ namespace EVEPOSMon
             this.txtMechanicalPartsVolume.Name = "txtMechanicalPartsVolume";
             this.txtMechanicalPartsVolume.Size = new System.Drawing.Size(93, 20);
             this.txtMechanicalPartsVolume.TabIndex = 40;
+            this.txtMechanicalPartsVolume.TabStop = false;
             this.txtMechanicalPartsVolume.Text = "0";
             this.txtMechanicalPartsVolume.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtMechanicalPartsVolume.TextChanged += new System.EventHandler(this.txtMechanicalPartsVolume_TextChanged);
@@ -1868,7 +1890,7 @@ namespace EVEPOSMon
             this.txtMechanicalPartsQuantity.Location = new System.Drawing.Point(413, 158);
             this.txtMechanicalPartsQuantity.Name = "txtMechanicalPartsQuantity";
             this.txtMechanicalPartsQuantity.Size = new System.Drawing.Size(93, 20);
-            this.txtMechanicalPartsQuantity.TabIndex = 39;
+            this.txtMechanicalPartsQuantity.TabIndex = 10;
             this.txtMechanicalPartsQuantity.Text = "0";
             this.txtMechanicalPartsQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtMechanicalPartsQuantity.TextChanged += new System.EventHandler(this.txtMechanicalPartsQuantity_TextChanged);
@@ -1878,7 +1900,7 @@ namespace EVEPOSMon
             this.txtMechanicalPartsPricePer.Location = new System.Drawing.Point(413, 132);
             this.txtMechanicalPartsPricePer.Name = "txtMechanicalPartsPricePer";
             this.txtMechanicalPartsPricePer.Size = new System.Drawing.Size(93, 20);
-            this.txtMechanicalPartsPricePer.TabIndex = 38;
+            this.txtMechanicalPartsPricePer.TabIndex = 9;
             this.txtMechanicalPartsPricePer.Text = "0";
             this.txtMechanicalPartsPricePer.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtMechanicalPartsPricePer.TextChanged += new System.EventHandler(this.txtMechanicalPartsPricePer_TextChanged);
@@ -1915,7 +1937,7 @@ namespace EVEPOSMon
             this.txtRoboticsPricePer.Location = new System.Drawing.Point(143, 132);
             this.txtRoboticsPricePer.Name = "txtRoboticsPricePer";
             this.txtRoboticsPricePer.Size = new System.Drawing.Size(93, 20);
-            this.txtRoboticsPricePer.TabIndex = 26;
+            this.txtRoboticsPricePer.TabIndex = 7;
             this.txtRoboticsPricePer.Text = "0";
             this.txtRoboticsPricePer.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtRoboticsPricePer.TextChanged += new System.EventHandler(this.txtRoboticsPricePer_TextChanged);
@@ -1934,7 +1956,7 @@ namespace EVEPOSMon
             this.txtRoboticsQuantity.Location = new System.Drawing.Point(143, 158);
             this.txtRoboticsQuantity.Name = "txtRoboticsQuantity";
             this.txtRoboticsQuantity.Size = new System.Drawing.Size(93, 20);
-            this.txtRoboticsQuantity.TabIndex = 27;
+            this.txtRoboticsQuantity.TabIndex = 8;
             this.txtRoboticsQuantity.Text = "0";
             this.txtRoboticsQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtRoboticsQuantity.TextChanged += new System.EventHandler(this.txtRoboticsQuantity_TextChanged);
@@ -1955,6 +1977,7 @@ namespace EVEPOSMon
             this.txtRoboticsVolume.Name = "txtRoboticsVolume";
             this.txtRoboticsVolume.Size = new System.Drawing.Size(93, 20);
             this.txtRoboticsVolume.TabIndex = 28;
+            this.txtRoboticsVolume.TabStop = false;
             this.txtRoboticsVolume.Text = "0";
             this.txtRoboticsVolume.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtRoboticsVolume.TextChanged += new System.EventHandler(this.txtRoboticsVolume_TextChanged);
@@ -1975,6 +1998,7 @@ namespace EVEPOSMon
             this.txtRoboticsSubtotal.Name = "txtRoboticsSubtotal";
             this.txtRoboticsSubtotal.Size = new System.Drawing.Size(93, 20);
             this.txtRoboticsSubtotal.TabIndex = 29;
+            this.txtRoboticsSubtotal.TabStop = false;
             this.txtRoboticsSubtotal.Text = "0";
             this.txtRoboticsSubtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtRoboticsSubtotal.TextChanged += new System.EventHandler(this.txtRoboticsSubtotal_TextChanged);
@@ -2061,7 +2085,7 @@ namespace EVEPOSMon
             this.txtCoolantPricePer.Location = new System.Drawing.Point(161, 13);
             this.txtCoolantPricePer.Name = "txtCoolantPricePer";
             this.txtCoolantPricePer.Size = new System.Drawing.Size(93, 20);
-            this.txtCoolantPricePer.TabIndex = 26;
+            this.txtCoolantPricePer.TabIndex = 5;
             this.txtCoolantPricePer.Text = "0";
             this.txtCoolantPricePer.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtCoolantPricePer.TextChanged += new System.EventHandler(this.txtCoolantPricePer_TextChanged);
@@ -2098,7 +2122,7 @@ namespace EVEPOSMon
             this.txtCoolantQuantity.Location = new System.Drawing.Point(161, 39);
             this.txtCoolantQuantity.Name = "txtCoolantQuantity";
             this.txtCoolantQuantity.Size = new System.Drawing.Size(93, 20);
-            this.txtCoolantQuantity.TabIndex = 27;
+            this.txtCoolantQuantity.TabIndex = 6;
             this.txtCoolantQuantity.Text = "0";
             this.txtCoolantQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtCoolantQuantity.TextChanged += new System.EventHandler(this.txtCoolantQuantity_TextChanged);
@@ -2110,6 +2134,7 @@ namespace EVEPOSMon
             this.txtCoolantSubtotal.Name = "txtCoolantSubtotal";
             this.txtCoolantSubtotal.Size = new System.Drawing.Size(93, 20);
             this.txtCoolantSubtotal.TabIndex = 29;
+            this.txtCoolantSubtotal.TabStop = false;
             this.txtCoolantSubtotal.Text = "0";
             this.txtCoolantSubtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtCoolantSubtotal.TextChanged += new System.EventHandler(this.txtCoolantSubtotal_TextChanged);
@@ -2139,6 +2164,7 @@ namespace EVEPOSMon
             this.txtCoolantVolume.Name = "txtCoolantVolume";
             this.txtCoolantVolume.Size = new System.Drawing.Size(93, 20);
             this.txtCoolantVolume.TabIndex = 28;
+            this.txtCoolantVolume.TabStop = false;
             this.txtCoolantVolume.Text = "0";
             this.txtCoolantVolume.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtCoolantVolume.TextChanged += new System.EventHandler(this.txtCoolantVolume_TextChanged);
@@ -2323,6 +2349,7 @@ namespace EVEPOSMon
             this.txtTotalFuelLastDays.Name = "txtTotalFuelLastDays";
             this.txtTotalFuelLastDays.Size = new System.Drawing.Size(132, 20);
             this.txtTotalFuelLastDays.TabIndex = 7;
+            this.txtTotalFuelLastDays.TabStop = false;
             // 
             // lblFuelWilllastTotal
             // 
@@ -2360,6 +2387,7 @@ namespace EVEPOSMon
             this.txtTotalCost.Name = "txtTotalCost";
             this.txtTotalCost.Size = new System.Drawing.Size(132, 20);
             this.txtTotalCost.TabIndex = 3;
+            this.txtTotalCost.TabStop = false;
             // 
             // txtTotalVolume
             // 
@@ -2368,6 +2396,7 @@ namespace EVEPOSMon
             this.txtTotalVolume.Name = "txtTotalVolume";
             this.txtTotalVolume.Size = new System.Drawing.Size(132, 20);
             this.txtTotalVolume.TabIndex = 2;
+            this.txtTotalVolume.TabStop = false;
             // 
             // label105
             // 
