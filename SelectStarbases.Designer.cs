@@ -41,7 +41,7 @@ namespace EVEPOSMon
             // 
             // btnLoadStations
             // 
-            this.btnLoadStations.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoadStations.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoadStations.Location = new System.Drawing.Point(12, 12);
             this.btnLoadStations.Name = "btnLoadStations";
             this.btnLoadStations.Size = new System.Drawing.Size(135, 22);
@@ -66,6 +66,8 @@ namespace EVEPOSMon
             this.dgStations.AllowUserToAddRows = false;
             this.dgStations.AllowUserToDeleteRows = false;
             this.dgStations.AllowUserToOrderColumns = true;
+            this.dgStations.AllowUserToResizeColumns = false;
+            this.dgStations.AllowUserToResizeRows = false;
             this.dgStations.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dgStations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgStations.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -130,7 +132,11 @@ namespace EVEPOSMon
             this.Controls.Add(this.dgStations);
             this.Controls.Add(this.btnGetStationInfo);
             this.Controls.Add(this.btnLoadStations);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "SelectStarbases";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "EVEPOSMon Station Selection";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SelectStarbases_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
