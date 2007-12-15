@@ -77,6 +77,11 @@ namespace EVEPOSMon
                 changeQuantityFieldEnable(true);
                 dgvStations.Enabled = false;
                 dgvStations.Visible = false;
+
+                //
+                lblFuelWilllastTotal.Enabled = false;
+                lblTotalDaysUnit.Enabled = false;
+                txtTotalFuelLastDays.Enabled = false;
             }
         }
 
@@ -98,6 +103,10 @@ namespace EVEPOSMon
                 changeQuantityFieldEnable(false);
                 dgvStations.Enabled = true;
                 dgvStations.Visible = true;
+
+                lblFuelWilllastTotal.Enabled = true;
+                lblTotalDaysUnit.Enabled = true;
+                txtTotalFuelLastDays.Enabled = true;
             }
         }
 
@@ -119,6 +128,10 @@ namespace EVEPOSMon
                 changeQuantityFieldEnable(false);
                 dgvStations.Enabled = true;
                 dgvStations.Visible = true;
+
+                lblFuelWilllastTotal.Enabled = true;
+                lblTotalDaysUnit.Enabled = true;
+                txtTotalFuelLastDays.Enabled = true;
             }
         }
 
@@ -140,6 +153,10 @@ namespace EVEPOSMon
                 changeQuantityFieldEnable(false);
                 dgvStations.Enabled = true;
                 dgvStations.Visible = true;
+
+                lblFuelWilllastTotal.Enabled = true;
+                lblTotalDaysUnit.Enabled = true;
+                txtTotalFuelLastDays.Enabled = true;
            } 
         }
 

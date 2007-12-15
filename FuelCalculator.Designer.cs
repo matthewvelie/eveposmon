@@ -221,9 +221,9 @@ namespace EVEPOSMon
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label103 = new System.Windows.Forms.Label();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.label114 = new System.Windows.Forms.Label();
+            this.lblTotalDaysUnit = new System.Windows.Forms.Label();
             this.txtTotalFuelLastDays = new System.Windows.Forms.TextBox();
-            this.label115 = new System.Windows.Forms.Label();
+            this.lblFuelWilllastTotal = new System.Windows.Forms.Label();
             this.label107 = new System.Windows.Forms.Label();
             this.label106 = new System.Windows.Forms.Label();
             this.txtTotalCost = new System.Windows.Forms.TextBox();
@@ -2228,6 +2228,7 @@ namespace EVEPOSMon
             // 
             // button3
             // 
+            this.button3.Enabled = false;
             this.button3.Location = new System.Drawing.Point(17, 46);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(101, 32);
@@ -2237,6 +2238,7 @@ namespace EVEPOSMon
             // 
             // button2
             // 
+            this.button2.Enabled = false;
             this.button2.Location = new System.Drawing.Point(134, 46);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(91, 32);
@@ -2246,6 +2248,7 @@ namespace EVEPOSMon
             // 
             // button1
             // 
+            this.button1.Enabled = false;
             this.button1.Location = new System.Drawing.Point(155, 17);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(70, 22);
@@ -2255,6 +2258,7 @@ namespace EVEPOSMon
             // 
             // comboBox1
             // 
+            this.comboBox1.Enabled = false;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(16, 19);
             this.comboBox1.Name = "comboBox1";
@@ -2273,9 +2277,9 @@ namespace EVEPOSMon
             // 
             // groupBox8
             // 
-            this.groupBox8.Controls.Add(this.label114);
+            this.groupBox8.Controls.Add(this.lblTotalDaysUnit);
             this.groupBox8.Controls.Add(this.txtTotalFuelLastDays);
-            this.groupBox8.Controls.Add(this.label115);
+            this.groupBox8.Controls.Add(this.lblFuelWilllastTotal);
             this.groupBox8.Controls.Add(this.label107);
             this.groupBox8.Controls.Add(this.label106);
             this.groupBox8.Controls.Add(this.txtTotalCost);
@@ -2289,14 +2293,15 @@ namespace EVEPOSMon
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Totals";
             // 
-            // label114
+            // lblTotalDaysUnit
             // 
-            this.label114.AutoSize = true;
-            this.label114.Location = new System.Drawing.Point(206, 16);
-            this.label114.Name = "label114";
-            this.label114.Size = new System.Drawing.Size(31, 13);
-            this.label114.TabIndex = 8;
-            this.label114.Text = "Days";
+            this.lblTotalDaysUnit.AutoSize = true;
+            this.lblTotalDaysUnit.Enabled = false;
+            this.lblTotalDaysUnit.Location = new System.Drawing.Point(206, 16);
+            this.lblTotalDaysUnit.Name = "lblTotalDaysUnit";
+            this.lblTotalDaysUnit.Size = new System.Drawing.Size(31, 13);
+            this.lblTotalDaysUnit.TabIndex = 8;
+            this.lblTotalDaysUnit.Text = "Days";
             // 
             // txtTotalFuelLastDays
             // 
@@ -2306,14 +2311,15 @@ namespace EVEPOSMon
             this.txtTotalFuelLastDays.Size = new System.Drawing.Size(114, 20);
             this.txtTotalFuelLastDays.TabIndex = 7;
             // 
-            // label115
+            // lblFuelWilllastTotal
             // 
-            this.label115.AutoSize = true;
-            this.label115.Location = new System.Drawing.Point(11, 16);
-            this.label115.Name = "label115";
-            this.label115.Size = new System.Drawing.Size(70, 13);
-            this.label115.TabIndex = 6;
-            this.label115.Text = "Fuel Will Last";
+            this.lblFuelWilllastTotal.AutoSize = true;
+            this.lblFuelWilllastTotal.Enabled = false;
+            this.lblFuelWilllastTotal.Location = new System.Drawing.Point(11, 16);
+            this.lblFuelWilllastTotal.Name = "lblFuelWilllastTotal";
+            this.lblFuelWilllastTotal.Size = new System.Drawing.Size(70, 13);
+            this.lblFuelWilllastTotal.TabIndex = 6;
+            this.lblFuelWilllastTotal.Text = "Fuel Will Last";
             // 
             // label107
             // 
@@ -2502,8 +2508,8 @@ namespace EVEPOSMon
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label112);
             this.Controls.Add(this.dgvStations);
+            this.Controls.Add(this.label112);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
@@ -2748,9 +2754,9 @@ namespace EVEPOSMon
         private System.Windows.Forms.Label lblFuelDays;
         private System.Windows.Forms.Label lblHaulerM3;
         private System.Windows.Forms.Label lblAmtToSpendIsk;
-        private System.Windows.Forms.Label label114;
+        private System.Windows.Forms.Label lblTotalDaysUnit;
         private System.Windows.Forms.TextBox txtTotalFuelLastDays;
-        private System.Windows.Forms.Label label115;
+        private System.Windows.Forms.Label lblFuelWilllastTotal;
         private System.Windows.Forms.Label label111;
         private System.Windows.Forms.Label label110;
         private System.Windows.Forms.Label label109;
