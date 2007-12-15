@@ -38,7 +38,7 @@ namespace EVEPOSMon
             btnLoadStations.Enabled = false; 
             
             // Clear the master list and station list so it wont affect updates
-            lbStations.Rows.Clear();
+            dgStations.Rows.Clear();
             m_settings.availableStarBases.Clear();
             
             XmlDocument xdoc = EVEMonWebRequest.LoadXml(@"http://www.exa-nation.com/corp/StarbaseList.xml.aspx");
@@ -57,20 +57,17 @@ namespace EVEPOSMon
             // Process xml file 
             else
             {
+                // For each starbase in the list create an object and place it on the master(m) starbase list
                 cachedUntil = EveSession.GetCacheExpiryUTC(xdoc);
                 XmlNodeList starbases = xdoc.DocumentElement.SelectNodes("descendant::rowset/row");
-                // For each starbase in the list create an object and place it on the master(m) starbase list
                 foreach (XmlNode starbaseNode in starbases)
                 {
-                    XmlAttributeCollection atts = starbaseNode.Attributes;
                     Starbase starbase = new Starbase();
-                    starbase.setValues(atts);
-                    /************ Code moved to starbase.setValues() ********* */
+                    starbase.LoadFromListApiXml(starbaseNode, cachedUntil);
                     m_settings.availableStarBases.Add(starbase);
                 }
             }
 
-            
             //load new list items
             displayAvailableStarbases();
 
@@ -98,28 +95,26 @@ namespace EVEPOSMon
                 {
                     monitored = false;
                 }
-                lbStations.Rows.Add(new object[] { monitored, s.StarbaseSystem.regionName, s.StarbaseSystem.constellationName, s.Moon.moonName, s });
+
+                DataGridViewRow row = new DataGridViewRow();
+                row.CreateCells(dgStations, new object[] { monitored, s.StarbaseSystem.regionName, s.StarbaseSystem.constellationName, s.Moon.moonName});
+                row.Tag = s;
+                dgStations.Rows.Add(row);
             }
         }
 
         private void btnGetStationInfo_Click(object sender, EventArgs e)
         {
-            bool wasSelection = false;
             mainScreen.clearTabs();
             mainScreen.Visible = false;
             StarbaseMonitor sm;
             TabPage tp;
-            for (int i = 0; i < lbStations.RowCount; i++)
+            foreach (DataGridViewRow row in dgStations.Rows)
             {
-                Starbase starbase = lbStations.Rows[i].Cells[4].Value as Starbase;
+                Starbase starbase = row.Tag as Starbase;
 
-                if (lbStations.Rows[i].Cells[0].Value.ToString() == "true")
+                if (starbase.monitored == true)
                 {
-                    wasSelection = true;
-                    // cell 4 is a hidden field with the starbase object
-                    
-                    starbase.monitored = true;
-
                     starbase.setDetails("http://www.exa-nation.com/corp/StarbaseDetail.xml.aspx?itemId=");
 
                     tp = new TabPage(starbase.StarbaseSystem.locationID);
@@ -129,16 +124,11 @@ namespace EVEPOSMon
                     sm.Parent = tp;
                     sm.Dock = DockStyle.Fill;
                 }
-                else
-                {
-                    starbase.monitored = false;
-                }
             }
+
             // Only display the mainScreen if any of the stations we're checked.
-            if (wasSelection)
-                mainScreen.Visible = true;
-            else
-                MessageBox.Show("You must select a starbase in order to have information displayed", "No Starbases Selected", MessageBoxButtons.OK, MessageBoxIcon.Hand );
+            mainScreen.Visible = true;
+            mainScreen.Focus();
         }
 
         // Prompt the user to confirm closing the program and all other windows
@@ -184,6 +174,25 @@ namespace EVEPOSMon
         private void button1_Click(object sender, EventArgs e)
         {
             fuelCalculator.Visible = true;
+        }
+
+        private void dgStations_CellValueChanged_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+            {
+                return;
+            }
+
+            DataGridViewRow row = dgStations.Rows[e.RowIndex];
+            Starbase s = row.Tag as Starbase;
+            if (Convert.ToBoolean(row.Cells[0].Value) == true)
+            {
+                s.monitored = true;
+            }
+            else
+            {
+                s.monitored = false;
+            }
         }
     }
 }
