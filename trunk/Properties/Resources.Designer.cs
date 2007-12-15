@@ -585,6 +585,20 @@ namespace EVEPOSMon.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap icon57_05 {
+            get {
+                object obj = ResourceManager.GetObject("icon57_05", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap icon57_06 {
+            get {
+                object obj = ResourceManager.GetObject("icon57_06", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap icon57_07 {
             get {
                 object obj = ResourceManager.GetObject("icon57_07", resourceCulture);
