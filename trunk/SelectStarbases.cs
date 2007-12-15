@@ -28,7 +28,7 @@ namespace EVEPOSMon
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            displayAvailableStarbases();
+            addAvailableStarbasesToDataGridView();
         }
 
         private void btnLoadStations_Click(object sender, EventArgs e)
@@ -38,28 +38,17 @@ namespace EVEPOSMon
             dgStations.Rows.Clear();
             m_settings.availableStarBases.Clear();
             Starbase.LoadStarbaseListFromApi();
-            displayAvailableStarbases();
+            addAvailableStarbasesToDataGridView();
 
             btnLoadStations.Enabled = true;
         }
 
-        public void displayAvailableStarbases()
+        public void addAvailableStarbasesToDataGridView()
         {
             foreach (Starbase s in m_settings.availableStarBases)
             {
-                bool monitored;
-
-                if (s.monitored)
-                {
-                    monitored = true;
-                }
-                else
-                {
-                    monitored = false;
-                }
-
                 DataGridViewRow row = new DataGridViewRow();
-                row.CreateCells(dgStations, new object[] { monitored, s.StarbaseSystem.regionName, s.StarbaseSystem.constellationName, s.Moon.moonName});
+                row.CreateCells(dgStations, new object[] { s.monitored, s.StarbaseSystem.regionName, s.StarbaseSystem.constellationName, s.Moon.moonName});
                 row.Tag = s;
                 dgStations.Rows.Add(row);
             }
@@ -77,8 +66,7 @@ namespace EVEPOSMon
 
                 if (starbase.monitored == true)
                 {
-                    starbase.setDetails("http://www.exa-nation.com/corp/StarbaseDetail.xml.aspx?itemId=");
-
+                    starbase.LoadStarbaseDetailsFromApi();
                     tp = new TabPage(starbase.StarbaseSystem.locationID);
                     mainScreen.AddTab(tp);
                     tp.Text = starbase.Moon.moonName;
@@ -88,7 +76,6 @@ namespace EVEPOSMon
                 }
             }
 
-            // Only display the mainScreen if any of the stations we're checked.
             mainScreen.Visible = true;
             mainScreen.Focus();
         }
