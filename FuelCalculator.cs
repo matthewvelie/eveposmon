@@ -173,7 +173,7 @@ namespace EVEPOSMon
         {
             try
             {
-                txtEnrichedUraniumSubtotal.Text = Convert.ToString(Convert.ToInt32(txtEnrichedUraniumQuantity.Text) * Convert.ToDouble(txtEnrichedUraniumPricePer.Text));
+                txtEnrichedUraniumSubtotal.Text = String.Format("{0:n}",Convert.ToInt32(txtEnrichedUraniumQuantity.Text) * Convert.ToDouble(txtEnrichedUraniumPricePer.Text));
             }
             catch (System.FormatException) { }
         }
@@ -182,8 +182,8 @@ namespace EVEPOSMon
         {
             try
             {
-                txtEnrichedUraniumVolume.Text = Convert.ToString(Convert.ToInt32(txtEnrichedUraniumQuantity.Text) * volEnrichedUranium);
-                txtEnrichedUraniumSubtotal.Text = Convert.ToString(Convert.ToInt32(txtEnrichedUraniumQuantity.Text) * Convert.ToDouble(txtEnrichedUraniumPricePer.Text));
+                txtEnrichedUraniumVolume.Text = String.Format("{0:n}",Convert.ToInt32(txtEnrichedUraniumQuantity.Text) * volEnrichedUranium);
+                txtEnrichedUraniumSubtotal.Text = String.Format("{0:n}",Convert.ToInt32(txtEnrichedUraniumQuantity.Text) * Convert.ToDouble(txtEnrichedUraniumPricePer.Text));
             }
             catch (System.FormatException) { }
         }
@@ -192,7 +192,7 @@ namespace EVEPOSMon
         {
             try
             {
-                txtOxygenSubtotal.Text = Convert.ToString(Convert.ToInt32(txtOxygenQuantity.Text) * Convert.ToDouble(txtOxygenPricePer.Text));
+                txtOxygenSubtotal.Text = String.Format("{0:n}",Convert.ToInt32(txtOxygenQuantity.Text) * Convert.ToDouble(txtOxygenPricePer.Text));
             }
             catch (System.FormatException) { }
         }
@@ -202,8 +202,8 @@ namespace EVEPOSMon
             try
             {
 
-                txtOxygenVolume.Text = Convert.ToString(Convert.ToInt32(txtOxygenQuantity.Text) * volOxygen);
-                txtOxygenSubtotal.Text = Convert.ToString(Convert.ToInt32(txtOxygenQuantity.Text) * Convert.ToDouble(txtOxygenPricePer.Text));
+                txtOxygenVolume.Text = String.Format("{0:n}",Convert.ToInt32(txtOxygenQuantity.Text) * volOxygen);
+                txtOxygenSubtotal.Text = String.Format("{0:n}",Convert.ToInt32(txtOxygenQuantity.Text) * Convert.ToDouble(txtOxygenPricePer.Text));
             }
             catch (System.FormatException) { }
         }
@@ -212,7 +212,7 @@ namespace EVEPOSMon
         {
             try
             {
-                txtCoolantSubtotal.Text = Convert.ToString(Convert.ToInt32(txtCoolantQuantity.Text) * Convert.ToDouble(txtCoolantPricePer.Text));
+                txtCoolantSubtotal.Text = String.Format("{0:n}",Convert.ToInt32(txtCoolantQuantity.Text) * Convert.ToDouble(txtCoolantPricePer.Text));
             }
             catch (System.FormatException) { }
         }
@@ -221,8 +221,8 @@ namespace EVEPOSMon
         {
             try
             {
-                txtCoolantVolume.Text = Convert.ToString(Convert.ToInt32(txtCoolantQuantity.Text) * volCoolant);
-                txtCoolantSubtotal.Text = Convert.ToString(Convert.ToInt32(txtCoolantQuantity.Text) * Convert.ToDouble(txtCoolantPricePer.Text));
+                txtCoolantVolume.Text = String.Format("{0:n}",Convert.ToInt32(txtCoolantQuantity.Text) * volCoolant);
+                txtCoolantSubtotal.Text = String.Format("{0:n}",Convert.ToInt32(txtCoolantQuantity.Text) * Convert.ToDouble(txtCoolantPricePer.Text));
             }
             catch (System.FormatException) { }
         }
@@ -231,7 +231,7 @@ namespace EVEPOSMon
         {
             try
             {
-                txtLiquidOzoneSubtotal.Text = Convert.ToString(Convert.ToInt32(txtLiquidOzoneQuantity.Text) * Convert.ToDouble(txtLiquidOzonePricePer.Text));
+                txtLiquidOzoneSubtotal.Text = String.Format("{0:n}",Convert.ToInt32(txtLiquidOzoneQuantity.Text) * Convert.ToDouble(txtLiquidOzonePricePer.Text));
             }
             catch (System.FormatException) { }
         }
@@ -240,8 +240,8 @@ namespace EVEPOSMon
         {
             try
             {
-                txtLiquidOzoneVolume.Text = Convert.ToString(Convert.ToInt32(txtLiquidOzoneQuantity.Text) * volLiquidOzone);
-                txtLiquidOzoneSubtotal.Text = Convert.ToString(Convert.ToInt32(txtLiquidOzoneQuantity.Text) * Convert.ToDouble(txtLiquidOzonePricePer.Text));
+                txtLiquidOzoneVolume.Text = String.Format("{0:n}",Convert.ToInt32(txtLiquidOzoneQuantity.Text) * volLiquidOzone);
+                txtLiquidOzoneSubtotal.Text = String.Format("{0:n}",Convert.ToInt32(txtLiquidOzoneQuantity.Text) * Convert.ToDouble(txtLiquidOzonePricePer.Text));
             }
             catch (System.FormatException) { }
         }
@@ -255,8 +255,8 @@ namespace EVEPOSMon
         {
             try
             {
-                txtHeavyWaterVolume.Text = Convert.ToString(Convert.ToInt32(txtHeavyWaterQuantity.Text) * volHeavyWater);
-                txtHeavyWaterSubtotal.Text = Convert.ToString(Convert.ToInt32(txtHeavyWaterQuantity.Text) * Convert.ToDouble(txtHeavyWaterPricePer.Text));
+                txtHeavyWaterVolume.Text = String.Format("{0:n}",Convert.ToInt32(txtHeavyWaterQuantity.Text) * volHeavyWater);
+                txtHeavyWaterSubtotal.Text = String.Format("{0:n}",Convert.ToInt32(txtHeavyWaterQuantity.Text) * Convert.ToDouble(txtHeavyWaterPricePer.Text));
             }
             catch (System.FormatException) { }
         }
@@ -265,7 +265,7 @@ namespace EVEPOSMon
         {
             try
             {
-                txtRoboticsSubtotal.Text = Convert.ToString(Convert.ToInt32(txtRoboticsQuantity.Text) * Convert.ToDouble(txtRoboticsPricePer.Text));
+                txtRoboticsSubtotal.Text = String.Format("{0:n}",Convert.ToInt32(txtRoboticsQuantity.Text) * Convert.ToDouble(txtRoboticsPricePer.Text));
             }
             catch (System.FormatException) { }
         }
@@ -274,8 +274,8 @@ namespace EVEPOSMon
         {
             try
             {
-                txtRoboticsVolume.Text = Convert.ToString(Convert.ToInt32(txtRoboticsQuantity.Text) * volRobotics);
-                txtRoboticsSubtotal.Text = Convert.ToString(Convert.ToInt32(txtRoboticsQuantity.Text) * Convert.ToDouble(txtRoboticsPricePer.Text));
+                txtRoboticsVolume.Text = String.Format("{0:n}",Convert.ToInt32(txtRoboticsQuantity.Text) * volRobotics);
+                txtRoboticsSubtotal.Text = String.Format("{0:n}",Convert.ToInt32(txtRoboticsQuantity.Text) * Convert.ToDouble(txtRoboticsPricePer.Text));
             }
             catch (System.FormatException) { }
         }
@@ -289,8 +289,8 @@ namespace EVEPOSMon
         {
             try
             {
-                txtMechanicalPartsVolume.Text = Convert.ToString(Convert.ToInt32(txtMechanicalPartsQuantity.Text) * volMechanicalParts);
-                txtMechanicalPartsSubtotal.Text = Convert.ToString(Convert.ToInt32(txtMechanicalPartsQuantity.Text) * Convert.ToDouble(txtMechanicalPartsPricePer.Text));
+                txtMechanicalPartsVolume.Text = String.Format("{0:n}",Convert.ToInt32(txtMechanicalPartsQuantity.Text) * volMechanicalParts);
+                txtMechanicalPartsSubtotal.Text = String.Format("{0:n}",Convert.ToInt32(txtMechanicalPartsQuantity.Text) * Convert.ToDouble(txtMechanicalPartsPricePer.Text));
             }
             catch (System.FormatException) { }
         }
@@ -299,7 +299,7 @@ namespace EVEPOSMon
         {
             try
             {
-                txtHeliumIsotopesSubtotal.Text = Convert.ToString(Convert.ToInt32(txtHeliumIsotopesQuantity.Text) * Convert.ToDouble(txtHeliumIsotopesPricePer.Text));
+                txtHeliumIsotopesSubtotal.Text = String.Format("{0:n}",Convert.ToInt32(txtHeliumIsotopesQuantity.Text) * Convert.ToDouble(txtHeliumIsotopesPricePer.Text));
             }
             catch (System.FormatException) { }
         }
@@ -308,8 +308,8 @@ namespace EVEPOSMon
         {
             try
             {
-                txtHeliumIsotopesVolume.Text = Convert.ToString(Convert.ToInt32(txtHeliumIsotopesQuantity.Text) * volIsotopes);
-                txtHeliumIsotopesSubtotal.Text = Convert.ToString(Convert.ToInt32(txtHeliumIsotopesQuantity.Text) * Convert.ToDouble(txtHeliumIsotopesPricePer.Text));
+                txtHeliumIsotopesVolume.Text = String.Format("{0:n}",Convert.ToInt32(txtHeliumIsotopesQuantity.Text) * volIsotopes);
+                txtHeliumIsotopesSubtotal.Text = String.Format("{0:n}",Convert.ToInt32(txtHeliumIsotopesQuantity.Text) * Convert.ToDouble(txtHeliumIsotopesPricePer.Text));
             }
             catch (System.FormatException) { }
         }
@@ -318,7 +318,7 @@ namespace EVEPOSMon
         {
             try
             {
-                txtOxygenIsotopesSubtotal.Text = Convert.ToString(Convert.ToInt32(txtOxygenIsotopesQuantity.Text) * Convert.ToDouble(txtOxygenIsotopesPricePer.Text));
+                txtOxygenIsotopesSubtotal.Text = String.Format("{0:n}",Convert.ToInt32(txtOxygenIsotopesQuantity.Text) * Convert.ToDouble(txtOxygenIsotopesPricePer.Text));
             }
             catch (System.FormatException) { }
         }
@@ -327,8 +327,8 @@ namespace EVEPOSMon
         {
             try
             {
-                txtOxygenIsotopesVolume.Text = Convert.ToString(Convert.ToInt32(txtOxygenIsotopesQuantity.Text) * volIsotopes);
-                txtOxygenIsotopesSubtotal.Text = Convert.ToString(Convert.ToInt32(txtOxygenIsotopesQuantity.Text) * Convert.ToDouble(txtOxygenIsotopesPricePer.Text));
+                txtOxygenIsotopesVolume.Text = String.Format("{0:n}",Convert.ToInt32(txtOxygenIsotopesQuantity.Text) * volIsotopes);
+                txtOxygenIsotopesSubtotal.Text = String.Format("{0:n}",Convert.ToInt32(txtOxygenIsotopesQuantity.Text) * Convert.ToDouble(txtOxygenIsotopesPricePer.Text));
             }
             catch (System.FormatException) { }
         }
@@ -337,7 +337,7 @@ namespace EVEPOSMon
         {
             try
             {
-                txtHydrogenIsotopesSubtotal.Text = Convert.ToString(Convert.ToInt32(txtHydrogenIsotopesQuantity.Text) * Convert.ToDouble(txtHydrogenIsotopesPricePer.Text));
+                txtHydrogenIsotopesSubtotal.Text = String.Format("{0:n}",Convert.ToInt32(txtHydrogenIsotopesQuantity.Text) * Convert.ToDouble(txtHydrogenIsotopesPricePer.Text));
             }
             catch (System.FormatException) { }
         }
@@ -346,8 +346,8 @@ namespace EVEPOSMon
         {
             try
             {
-                txtHydrogenIsotopesVolume.Text = Convert.ToString(Convert.ToInt32(txtHydrogenIsotopesQuantity.Text) * volIsotopes);
-                txtHydrogenIsotopesSubtotal.Text = Convert.ToString(Convert.ToInt32(txtHydrogenIsotopesQuantity.Text) * Convert.ToDouble(txtHydrogenIsotopesPricePer.Text));
+                txtHydrogenIsotopesVolume.Text = String.Format("{0:n}",Convert.ToInt32(txtHydrogenIsotopesQuantity.Text) * volIsotopes);
+                txtHydrogenIsotopesSubtotal.Text = String.Format("{0:n}",Convert.ToInt32(txtHydrogenIsotopesQuantity.Text) * Convert.ToDouble(txtHydrogenIsotopesPricePer.Text));
             }
             catch (System.FormatException) { }
         }
@@ -356,7 +356,7 @@ namespace EVEPOSMon
         {
             try
             {
-                txtNitrogenIsotopesSubtotal.Text = Convert.ToString(Convert.ToInt32(txtNitrogenIsotopesQuantity.Text) * Convert.ToDouble(txtNitrogenIsotopesPricePer.Text));
+                txtNitrogenIsotopesSubtotal.Text = String.Format("{0:n}",Convert.ToInt32(txtNitrogenIsotopesQuantity.Text) * Convert.ToDouble(txtNitrogenIsotopesPricePer.Text));
             }
             catch (System.FormatException) { }
         }
@@ -365,8 +365,8 @@ namespace EVEPOSMon
         {
             try
             {
-                txtNitrogenIsotopesVolume.Text = Convert.ToString(Convert.ToInt32(txtNitrogenIsotopesQuantity.Text) * volIsotopes);
-                txtNitrogenIsotopesSubtotal.Text = Convert.ToString(Convert.ToInt32(txtNitrogenIsotopesQuantity.Text) * Convert.ToDouble(txtNitrogenIsotopesPricePer.Text));
+                txtNitrogenIsotopesVolume.Text = String.Format("{0:n}",Convert.ToInt32(txtNitrogenIsotopesQuantity.Text) * volIsotopes);
+                txtNitrogenIsotopesSubtotal.Text = String.Format("{0:n}",Convert.ToInt32(txtNitrogenIsotopesQuantity.Text) * Convert.ToDouble(txtNitrogenIsotopesPricePer.Text));
             }
             catch (System.FormatException) { }
         }
@@ -437,7 +437,7 @@ namespace EVEPOSMon
 
         private void updateSubtotal()
         {
-            txtTotalCost.Text = Convert.ToString(
+            txtTotalCost.Text = String.Format("{0:n}", 
                 Convert.ToDouble(txtNitrogenIsotopesSubtotal.Text) +
                 Convert.ToDouble(txtOxygenIsotopesSubtotal.Text) +
                 Convert.ToDouble(txtHeliumIsotopesSubtotal.Text) +
@@ -517,7 +517,7 @@ namespace EVEPOSMon
 
         private void updateTotalVolume()
         {
-            txtTotalVolume.Text = Convert.ToString(
+            txtTotalVolume.Text = String.Format("{0:n}",
                 Convert.ToDouble(txtNitrogenIsotopesVolume.Text) +
                 Convert.ToDouble(txtOxygenIsotopesVolume.Text) +
                 Convert.ToDouble(txtHeliumIsotopesVolume.Text) +
@@ -536,18 +536,24 @@ namespace EVEPOSMon
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
+            tspbDownloadingData.Enabled = true;
+
             //download data for each typeId
-            txtMechanicalPartsPricePer.Text = downloadPriceData(3689); //mech parts
-            txtCoolantPricePer.Text = downloadPriceData(9832); //Coolant
-            txtRoboticsPricePer.Text = downloadPriceData(9848); //Robotics
-            txtOxygenPricePer.Text = downloadPriceData(3683); //Oxygen
-            txtOxygenIsotopesPricePer.Text = downloadPriceData(17887); //Oxygen Isotopes
-            txtHeavyWaterPricePer.Text = downloadPriceData(16272); //Heavy Water
-            txtLiquidOzonePricePer.Text = downloadPriceData(16273); //Liquid Ozone
-            txtEnrichedUraniumPricePer.Text = downloadPriceData(44); //Enriched Uranium
-            txtNitrogenIsotopesPricePer.Text = downloadPriceData(16275); //Nitrogen Isotopes
-            txtHeliumIsotopesPricePer.Text = downloadPriceData(16274); //Helium Isotopes
-            txtHydrogenIsotopesPricePer.Text = downloadPriceData(17889); //Hydrogen Isotopes
+            txtMechanicalPartsPricePer.Text = downloadPriceData(3689);      //Mechanical Parts
+            txtCoolantPricePer.Text = downloadPriceData(9832);              //Coolant
+            txtRoboticsPricePer.Text = downloadPriceData(9848);             //Robotics
+            txtOxygenPricePer.Text = downloadPriceData(3683);               //Oxygen
+            txtOxygenIsotopesPricePer.Text = downloadPriceData(17887);      //Oxygen Isotopes
+            txtHeavyWaterPricePer.Text = downloadPriceData(16272);          //Heavy Water
+            txtLiquidOzonePricePer.Text = downloadPriceData(16273);         //Liquid Ozone
+            txtEnrichedUraniumPricePer.Text = downloadPriceData(44);        //Enriched Uranium
+            txtNitrogenIsotopesPricePer.Text = downloadPriceData(16275);    //Nitrogen Isotopes
+            txtHeliumIsotopesPricePer.Text = downloadPriceData(16274);      //Helium Isotopes
+            txtHydrogenIsotopesPricePer.Text = downloadPriceData(17889);    //Hydrogen Isotopes
+            txtStrontiumPricePer.Text = downloadPriceData(16275);           //Strontium Clatherates
+
+            tspbDownloadingData.Enabled = false;
+            tspbDownloadingData.Value = 0;
         }
 
         private string downloadPriceData(int typeId)
@@ -557,9 +563,28 @@ namespace EVEPOSMon
             doc.Load(link);
             XmlNodeList xmlPriceElement = doc.GetElementsByTagName("avg_price");
             string avg_cost = xmlPriceElement.Item(0).InnerText;
-            
-            return Convert.ToString( Math.Round( Convert.ToDecimal( avg_cost ), 2 ) );
+
+            tspbDownloadingData.Value += 8;
+
+            return String.Format("{0:n}", Math.Round( Convert.ToDecimal( avg_cost ), 2 ) );
         }
+
+        private void toolStripLabel1_Click(object sender, EventArgs e)
+        {
+            txtCoolantPricePer.Enabled = txtCoolantPricePer.Enabled ? false : true;
+            txtRoboticsPricePer.Enabled = txtRoboticsPricePer.Enabled ? false : true;
+            txtOxygenPricePer.Enabled = txtOxygenPricePer.Enabled ? false : true;
+            txtMechanicalPartsPricePer.Enabled = txtMechanicalPartsPricePer.Enabled ? false : true;
+            txtEnrichedUraniumPricePer.Enabled = txtEnrichedUraniumPricePer.Enabled ? false : true;
+            txtHeavyWaterPricePer.Enabled = txtHeavyWaterPricePer.Enabled ? false : true;
+            txtLiquidOzonePricePer.Enabled = txtLiquidOzonePricePer.Enabled ? false : true;
+            txtStrontiumPricePer.Enabled = txtStrontiumPricePer.Enabled ? false : true;
+            txtHeliumIsotopesPricePer.Enabled = txtHeliumIsotopesPricePer.Enabled ? false : true;
+            txtHydrogenIsotopesPricePer.Enabled = txtHydrogenIsotopesPricePer.Enabled ? false : true;
+            txtNitrogenIsotopesPricePer.Enabled = txtNitrogenIsotopesPricePer.Enabled ? false : true;
+            txtOxygenIsotopesPricePer.Enabled = txtOxygenIsotopesPricePer.Enabled ? false : true;
+        }
+
 
 
     }
