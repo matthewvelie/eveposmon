@@ -5,6 +5,7 @@ using EVEMon.Common;
 using System.Xml;
 using System.IO;
 using System.Xml.Serialization;
+using EVEMon.Common;
 
 namespace EVEPOSMon
 {
@@ -159,6 +160,34 @@ namespace EVEPOSMon
             //MapSystem ms = m_settings.mapData.GetSystemInfo(locationId);
             ControlTower ct = m_settings.controlTowerTypes.GetTowerInfo(typeId);
             return ct.typeName + " -- " + StarbaseSystem.systemName + " -- " + StarbaseSystem.security + " -- " + ct.description;
+        }
+
+        /// <summary>
+        /// Get the starbase list from the API, add the starbases to the availableStarbases list in Settings
+        /// </summary>
+        public static void LoadStarbaseListFromApi()
+        {
+            XmlDocument xdoc = EVEMonWebRequest.LoadXml(@"http://www.exa-nation.com/corp/StarbaseList.xml.aspx");
+            Settings settings = Settings.GetInstance();
+            XmlNode error = xdoc.DocumentElement.SelectSingleNode("descendant::error");
+            // If a read error occured, exit
+            if (error != null)
+            {
+                throw new InvalidDataException(error.InnerText);
+            }
+            // Process xml file 
+            else
+            {
+                // For each starbase in the list create an object and place it on the master(m) starbase list
+                DateTime cachedUntil = EveSession.GetCacheExpiryUTC(xdoc);
+                XmlNodeList starbases = xdoc.DocumentElement.SelectNodes("descendant::rowset/row");
+                foreach (XmlNode starbaseNode in starbases)
+                {
+                    Starbase starbase = new Starbase();
+                    starbase.LoadFromListApiXml(starbaseNode, cachedUntil);
+                    settings.availableStarBases.Add(starbase);
+                }
+            }
         }
 
         public void LoadFromListApiXml(XmlNode starbaseNode, DateTime cachedUntil)

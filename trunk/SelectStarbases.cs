@@ -33,51 +33,13 @@ namespace EVEPOSMon
 
         private void btnLoadStations_Click(object sender, EventArgs e)
         {
-            //deactivate the button on first click (is reactivated at end of function)
-            //prevents loading data multiple times to the UI
             btnLoadStations.Enabled = false; 
             
-            // Clear the master list and station list so it wont affect updates
             dgStations.Rows.Clear();
             m_settings.availableStarBases.Clear();
-            
-            XmlDocument xdoc = EVEMonWebRequest.LoadXml(@"http://www.exa-nation.com/corp/StarbaseList.xml.aspx");
-
-            string starbaseListError;
-            DateTime cachedUntil;
-
-            XmlNode error = xdoc.DocumentElement.SelectSingleNode("descendant::error");
-            // If a read error occured, exit
-            if (error != null)
-            {
-                
-                starbaseListError = error.InnerText;
-                throw new InvalidDataException(starbaseListError);
-            }
-            // Process xml file 
-            else
-            {
-                // For each starbase in the list create an object and place it on the master(m) starbase list
-                cachedUntil = EveSession.GetCacheExpiryUTC(xdoc);
-                XmlNodeList starbases = xdoc.DocumentElement.SelectNodes("descendant::rowset/row");
-                foreach (XmlNode starbaseNode in starbases)
-                {
-                    Starbase starbase = new Starbase();
-                    starbase.LoadFromListApiXml(starbaseNode, cachedUntil);
-                    m_settings.availableStarBases.Add(starbase);
-                }
-            }
-
-            //load new list items
+            Starbase.LoadStarbaseListFromApi();
             displayAvailableStarbases();
 
-            // Dirty delay on button reactivation
-            for (int i = 0; i < 5000; i++)
-            {
-                System.Threading.Thread.Sleep(1);
-                Application.DoEvents();
-            }
-            // Reactivate the button
             btnLoadStations.Enabled = true;
         }
 
