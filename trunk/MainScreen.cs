@@ -36,5 +36,16 @@ namespace EVEPOSMon
         {
 
         }
+
+        private void aboutEvePOSMonToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutBox aboutDialog = new AboutBox();
+            aboutDialog.ShowDialog();
+        }
+
+        private void quitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(1);
+        }
     }
 }

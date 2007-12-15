@@ -308,6 +308,7 @@ namespace EVEPOSMon
             this.statusStrip.Location = new System.Drawing.Point(0, 651);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Size = new System.Drawing.Size(535, 22);
+            this.statusStrip.SizingGrip = false;
             this.statusStrip.TabIndex = 29;
             this.statusStrip.Text = "statusStrip1";
             // 
