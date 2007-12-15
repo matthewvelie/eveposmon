@@ -389,7 +389,6 @@
     <None Include="icons\icon57_13.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
     <None Include="icons\icon63_03.png" />
   </ItemGroup>
   <ItemGroup>

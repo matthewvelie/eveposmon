@@ -7,10 +7,10 @@ using System.Drawing;
 using System.IO;
 using System.Text;
 using System.Xml;
+using System.Xml.Serialization;
 using System.Windows.Forms;
 using EVEMon.Common;
-using System.Threading;
-using System.Xml.Serialization;
+
 
 namespace EVEPOSMon
 {
@@ -19,12 +19,12 @@ namespace EVEPOSMon
         Settings m_settings = Settings.GetInstance();
         private MainScreen mainScreen;
         
-
         public SelectStarbases(MainScreen screen)
         {
             InitializeComponent();
             this.mainScreen = screen;
-            
+            addAvailableStarbasesToDataGridView();
+            populateTabs();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -46,6 +46,7 @@ namespace EVEPOSMon
 
         public void addAvailableStarbasesToDataGridView()
         {
+            dgStations.Rows.Clear();
             foreach (Starbase s in m_settings.availableStarBases)
             {
                 DataGridViewRow row = new DataGridViewRow();
@@ -55,7 +56,7 @@ namespace EVEPOSMon
             }
         }
 
-        private void btnGetStationInfo_Click(object sender, EventArgs e)
+        private void populateTabs()
         {
             int count = 0;
             foreach (DataGridViewRow row in dgStations.Rows)
@@ -72,23 +73,21 @@ namespace EVEPOSMon
 
             mainScreen.clearTabs();
 
-            StarbaseMonitor sm;
-            TabPage tp;
             foreach (DataGridViewRow row in dgStations.Rows)
             {
                 Starbase starbase = row.Tag as Starbase;
 
                 if (starbase.monitored == true)
                 {
-                    starbase.LoadStarbaseDetailsFromApi();
-                    tp = new TabPage(starbase.StarbaseSystem.locationID);
-                    mainScreen.AddTab(tp);
-                    tp.Text = starbase.Moon.moonName;
-                    sm = new StarbaseMonitor(starbase);
-                    sm.Parent = tp;
-                    sm.Dock = DockStyle.Fill;
+                    mainScreen.AddTab(starbase);
                 }
             }
+            Starbase.SerializeStarbasesToFile(m_settings.SerializedStarbasesFilename, m_settings.availableStarBases);
+        }
+
+        private void btnGetStationInfo_Click(object sender, EventArgs e)
+        {
+            populateTabs();
 
             this.Visible = false;
             mainScreen.Focus();
@@ -111,11 +110,6 @@ namespace EVEPOSMon
             {
                 m_settings.accountInfo = lcs.accountInfo;
             }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
         }
 
         private void dgStations_CellValueChanged_1(object sender, DataGridViewCellEventArgs e)

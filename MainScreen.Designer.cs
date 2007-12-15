@@ -170,7 +170,7 @@ namespace EVEPOSMon
             this.MaximizeBox = false;
             this.Name = "MainScreen";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.Text = "MainScreen";
+            this.Text = "EVE Starbase Monitor";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainScreen_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
