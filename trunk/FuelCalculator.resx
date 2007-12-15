@@ -123,10 +123,32 @@
   <metadata name="Moon.UserAddedColumn" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="UseStarbase.UserAddedColumn" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Moon.UserAddedColumn" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
+  <data name="label112.Text" xml:space="preserve">
+    <value>Manual Mode is used to calculate basic
+fuel needs without taking into account
+any of the current pos's.  
+
+If you would like automatic quantity 
+selection, please select one of the three
+other methods to use information about
+fuel currently in your watched starbases.
+
+Using Cargo:
+Type in the cargo room of your hauler
+and the best fuel fit for selected starbases
+will be select that can fit in your hold
+
+Using Time:
+Type in the number of days you would
+like selected starbases to last, and the
+correct amount of fuel to buy will be
+displayed.
+
+Using ISK:
+Type in the amount of ISK you have to
+spend and the correct amount of fuel
+to buy to keep all selected starbases
+running as long as possible will be
+displayed.</value>
+  </data>
 </root>
