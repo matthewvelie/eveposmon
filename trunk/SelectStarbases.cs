@@ -80,7 +80,6 @@ namespace EVEPOSMon
             mainScreen.Focus();
         }
 
-        // Prompt the user to confirm closing the program and all other windows
         private void SelectStarbases_FormClosing(object sender, FormClosingEventArgs e)
         {
             /*
@@ -93,22 +92,12 @@ namespace EVEPOSMon
             else
                 e.Cancel = true;
              */
-            serializeStarbases();
+            Starbase.SerializeStarbasesToFile(m_settings.SerializedStarbasesFilename, m_settings.availableStarBases);
         }
 
         private void btnSaveAutoload_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show("Temp box", "Alert", MessageBoxButtons.OK);
-            serializeStarbases();
-        }
-
-        public void serializeStarbases()
-        {
-            XmlSerializer serializer = new XmlSerializer(typeof(List<Starbase>));
-            using (Stream s = new FileStream("Starbases.xml", FileMode.Create))
-            {
-                serializer.Serialize(s, m_settings.availableStarBases);
-            }
+            Starbase.SerializeStarbasesToFile(m_settings.SerializedStarbasesFilename, m_settings.availableStarBases);
         }
 
         private void characterInformationToolStripMenuItem_Click(object sender, EventArgs e)

@@ -253,5 +253,14 @@ namespace EVEPOSMon
             }
         }
 
+        public static void SerializeStarbasesToFile(string filename, List<Starbase> starbaseList)
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(List<Starbase>));
+            using (Stream s = new FileStream(filename, FileMode.Create))
+            {
+                serializer.Serialize(s, starbaseList);
+            }
+        }
+
     }
 }
