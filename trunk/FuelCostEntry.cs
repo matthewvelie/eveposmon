@@ -1,12 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using EVEMon.Common;
-using System.Xml;
 using System.IO;
+using System.Xml;
 using System.Xml.Serialization;
 
 namespace EVEPOSMon

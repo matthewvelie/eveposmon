@@ -214,6 +214,8 @@ namespace EVEPOSMon
             this.rbCargoCalc = new System.Windows.Forms.RadioButton();
             this.rbIskCalc = new System.Windows.Forms.RadioButton();
             this.dgvStations = new System.Windows.Forms.DataGridView();
+            this.UseStarbase = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Moon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -239,9 +241,11 @@ namespace EVEPOSMon
             this.lblFuelDays = new System.Windows.Forms.Label();
             this.lblHaulerM3 = new System.Windows.Forms.Label();
             this.lblAmtToSpendIsk = new System.Windows.Forms.Label();
-            this.UseStarbase = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Moon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label112 = new System.Windows.Forms.Label();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -264,6 +268,7 @@ namespace EVEPOSMon
             ((System.ComponentModel.ISupportInitialize)(this.dgvStations)).BeginInit();
             this.groupBox7.SuspendLayout();
             this.groupBox8.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -320,7 +325,7 @@ namespace EVEPOSMon
             this.groupBox1.Controls.Add(this.txtHeliumIsotopesVolume);
             this.groupBox1.Controls.Add(this.txtHeliumIsotopesQuantity);
             this.groupBox1.Controls.Add(this.txtHeliumIsotopesPricePer);
-            this.groupBox1.Location = new System.Drawing.Point(12, 398);
+            this.groupBox1.Location = new System.Drawing.Point(11, 418);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(981, 130);
             this.groupBox1.TabIndex = 0;
@@ -851,7 +856,7 @@ namespace EVEPOSMon
             this.groupBox2.Controls.Add(this.txtLiquidOzoneVolume);
             this.groupBox2.Controls.Add(this.txtLiquidOzoneQuantity);
             this.groupBox2.Controls.Add(this.txtLiquidOzonePricePer);
-            this.groupBox2.Location = new System.Drawing.Point(12, 262);
+            this.groupBox2.Location = new System.Drawing.Point(11, 282);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(482, 130);
             this.groupBox2.TabIndex = 52;
@@ -1124,7 +1129,7 @@ namespace EVEPOSMon
             this.groupBox3.Controls.Add(this.textBox22);
             this.groupBox3.Controls.Add(this.textBox23);
             this.groupBox3.Controls.Add(this.textBox24);
-            this.groupBox3.Location = new System.Drawing.Point(504, 262);
+            this.groupBox3.Location = new System.Drawing.Point(503, 282);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(256, 130);
             this.groupBox3.TabIndex = 53;
@@ -1293,7 +1298,7 @@ namespace EVEPOSMon
             this.groupBox4.Controls.Add(this.label39);
             this.groupBox4.Controls.Add(this.pictureBox5);
             this.groupBox4.Controls.Add(this.label40);
-            this.groupBox4.Location = new System.Drawing.Point(504, 136);
+            this.groupBox4.Location = new System.Drawing.Point(503, 156);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(256, 120);
             this.groupBox4.TabIndex = 54;
@@ -1476,7 +1481,7 @@ namespace EVEPOSMon
             this.groupBox5.Controls.Add(this.txtRoboticsSubtotal);
             this.groupBox5.Controls.Add(this.label71);
             this.groupBox5.Controls.Add(this.label72);
-            this.groupBox5.Location = new System.Drawing.Point(10, 12);
+            this.groupBox5.Location = new System.Drawing.Point(9, 32);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(482, 244);
             this.groupBox5.TabIndex = 55;
@@ -1998,7 +2003,7 @@ namespace EVEPOSMon
             this.groupBox6.Controls.Add(this.label99);
             this.groupBox6.Controls.Add(this.label100);
             this.groupBox6.Controls.Add(this.txtCoolantVolume);
-            this.groupBox6.Location = new System.Drawing.Point(490, 12);
+            this.groupBox6.Location = new System.Drawing.Point(489, 32);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(270, 118);
             this.groupBox6.TabIndex = 56;
@@ -2150,7 +2155,7 @@ namespace EVEPOSMon
             // 
             this.rbManualCalc.AutoSize = true;
             this.rbManualCalc.Checked = true;
-            this.rbManualCalc.Location = new System.Drawing.Point(298, 538);
+            this.rbManualCalc.Location = new System.Drawing.Point(297, 558);
             this.rbManualCalc.Name = "rbManualCalc";
             this.rbManualCalc.Size = new System.Drawing.Size(118, 17);
             this.rbManualCalc.TabIndex = 57;
@@ -2162,7 +2167,7 @@ namespace EVEPOSMon
             // rbTimeCalc
             // 
             this.rbTimeCalc.AutoSize = true;
-            this.rbTimeCalc.Location = new System.Drawing.Point(298, 583);
+            this.rbTimeCalc.Location = new System.Drawing.Point(297, 603);
             this.rbTimeCalc.Name = "rbTimeCalc";
             this.rbTimeCalc.Size = new System.Drawing.Size(108, 17);
             this.rbTimeCalc.TabIndex = 58;
@@ -2174,7 +2179,7 @@ namespace EVEPOSMon
             // rbCargoCalc
             // 
             this.rbCargoCalc.AutoSize = true;
-            this.rbCargoCalc.Location = new System.Drawing.Point(298, 560);
+            this.rbCargoCalc.Location = new System.Drawing.Point(297, 580);
             this.rbCargoCalc.Name = "rbCargoCalc";
             this.rbCargoCalc.Size = new System.Drawing.Size(113, 17);
             this.rbCargoCalc.TabIndex = 59;
@@ -2186,7 +2191,7 @@ namespace EVEPOSMon
             // rbIskCalc
             // 
             this.rbIskCalc.AutoSize = true;
-            this.rbIskCalc.Location = new System.Drawing.Point(298, 606);
+            this.rbIskCalc.Location = new System.Drawing.Point(297, 626);
             this.rbIskCalc.Name = "rbIskCalc";
             this.rbIskCalc.Size = new System.Drawing.Size(102, 17);
             this.rbIskCalc.TabIndex = 60;
@@ -2206,12 +2211,28 @@ namespace EVEPOSMon
             this.UseStarbase,
             this.Moon});
             this.dgvStations.Enabled = false;
-            this.dgvStations.Location = new System.Drawing.Point(766, 51);
+            this.dgvStations.Location = new System.Drawing.Point(765, 71);
             this.dgvStations.Name = "dgvStations";
+            this.dgvStations.RowHeadersVisible = false;
             this.dgvStations.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvStations.Size = new System.Drawing.Size(227, 341);
             this.dgvStations.TabIndex = 61;
             this.dgvStations.Visible = false;
+            // 
+            // UseStarbase
+            // 
+            this.UseStarbase.HeaderText = "Use";
+            this.UseStarbase.Name = "UseStarbase";
+            this.UseStarbase.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.UseStarbase.Width = 32;
+            // 
+            // Moon
+            // 
+            this.Moon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Moon.HeaderText = "Moon";
+            this.Moon.Name = "Moon";
+            this.Moon.ReadOnly = true;
+            this.Moon.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // groupBox7
             // 
@@ -2219,7 +2240,7 @@ namespace EVEPOSMon
             this.groupBox7.Controls.Add(this.button2);
             this.groupBox7.Controls.Add(this.button1);
             this.groupBox7.Controls.Add(this.comboBox1);
-            this.groupBox7.Location = new System.Drawing.Point(13, 538);
+            this.groupBox7.Location = new System.Drawing.Point(12, 558);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(240, 88);
             this.groupBox7.TabIndex = 62;
@@ -2269,7 +2290,7 @@ namespace EVEPOSMon
             // 
             this.label103.AutoSize = true;
             this.label103.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label103.Location = new System.Drawing.Point(801, 18);
+            this.label103.Location = new System.Drawing.Point(800, 38);
             this.label103.Name = "label103";
             this.label103.Size = new System.Drawing.Size(147, 20);
             this.label103.TabIndex = 63;
@@ -2286,7 +2307,7 @@ namespace EVEPOSMon
             this.groupBox8.Controls.Add(this.txtTotalVolume);
             this.groupBox8.Controls.Add(this.label105);
             this.groupBox8.Controls.Add(this.label104);
-            this.groupBox8.Location = new System.Drawing.Point(746, 534);
+            this.groupBox8.Location = new System.Drawing.Point(745, 554);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(247, 92);
             this.groupBox8.TabIndex = 64;
@@ -2377,7 +2398,7 @@ namespace EVEPOSMon
             // 
             this.lblHaulerCargoSize.AutoSize = true;
             this.lblHaulerCargoSize.Enabled = false;
-            this.lblHaulerCargoSize.Location = new System.Drawing.Point(439, 539);
+            this.lblHaulerCargoSize.Location = new System.Drawing.Point(438, 559);
             this.lblHaulerCargoSize.Name = "lblHaulerCargoSize";
             this.lblHaulerCargoSize.Size = new System.Drawing.Size(92, 13);
             this.lblHaulerCargoSize.TabIndex = 65;
@@ -2386,7 +2407,7 @@ namespace EVEPOSMon
             // txtCargoSize
             // 
             this.txtCargoSize.Enabled = false;
-            this.txtCargoSize.Location = new System.Drawing.Point(539, 535);
+            this.txtCargoSize.Location = new System.Drawing.Point(538, 555);
             this.txtCargoSize.Name = "txtCargoSize";
             this.txtCargoSize.Size = new System.Drawing.Size(109, 20);
             this.txtCargoSize.TabIndex = 66;
@@ -2395,7 +2416,7 @@ namespace EVEPOSMon
             // 
             this.lblAmtToSpend.AutoSize = true;
             this.lblAmtToSpend.Enabled = false;
-            this.lblAmtToSpend.Location = new System.Drawing.Point(439, 604);
+            this.lblAmtToSpend.Location = new System.Drawing.Point(438, 624);
             this.lblAmtToSpend.Name = "lblAmtToSpend";
             this.lblAmtToSpend.Size = new System.Drawing.Size(93, 13);
             this.lblAmtToSpend.TabIndex = 67;
@@ -2404,7 +2425,7 @@ namespace EVEPOSMon
             // txtAmtToSpend
             // 
             this.txtAmtToSpend.Enabled = false;
-            this.txtAmtToSpend.Location = new System.Drawing.Point(539, 601);
+            this.txtAmtToSpend.Location = new System.Drawing.Point(538, 621);
             this.txtAmtToSpend.Name = "txtAmtToSpend";
             this.txtAmtToSpend.Size = new System.Drawing.Size(109, 20);
             this.txtAmtToSpend.TabIndex = 68;
@@ -2413,7 +2434,7 @@ namespace EVEPOSMon
             // 
             this.lblFuelShouldLast.AutoSize = true;
             this.lblFuelShouldLast.Enabled = false;
-            this.lblFuelShouldLast.Location = new System.Drawing.Point(439, 571);
+            this.lblFuelShouldLast.Location = new System.Drawing.Point(438, 591);
             this.lblFuelShouldLast.Name = "lblFuelShouldLast";
             this.lblFuelShouldLast.Size = new System.Drawing.Size(86, 13);
             this.lblFuelShouldLast.TabIndex = 69;
@@ -2422,7 +2443,7 @@ namespace EVEPOSMon
             // txtFuelLastDays
             // 
             this.txtFuelLastDays.Enabled = false;
-            this.txtFuelLastDays.Location = new System.Drawing.Point(539, 568);
+            this.txtFuelLastDays.Location = new System.Drawing.Point(538, 588);
             this.txtFuelLastDays.Name = "txtFuelLastDays";
             this.txtFuelLastDays.Size = new System.Drawing.Size(109, 20);
             this.txtFuelLastDays.TabIndex = 70;
@@ -2431,7 +2452,7 @@ namespace EVEPOSMon
             // 
             this.lblFuelDays.AutoSize = true;
             this.lblFuelDays.Enabled = false;
-            this.lblFuelDays.Location = new System.Drawing.Point(666, 571);
+            this.lblFuelDays.Location = new System.Drawing.Point(665, 591);
             this.lblFuelDays.Name = "lblFuelDays";
             this.lblFuelDays.Size = new System.Drawing.Size(31, 13);
             this.lblFuelDays.TabIndex = 71;
@@ -2441,7 +2462,7 @@ namespace EVEPOSMon
             // 
             this.lblHaulerM3.AutoSize = true;
             this.lblHaulerM3.Enabled = false;
-            this.lblHaulerM3.Location = new System.Drawing.Point(666, 538);
+            this.lblHaulerM3.Location = new System.Drawing.Point(665, 558);
             this.lblHaulerM3.Name = "lblHaulerM3";
             this.lblHaulerM3.Size = new System.Drawing.Size(28, 13);
             this.lblHaulerM3.TabIndex = 72;
@@ -2451,41 +2472,60 @@ namespace EVEPOSMon
             // 
             this.lblAmtToSpendIsk.AutoSize = true;
             this.lblAmtToSpendIsk.Enabled = false;
-            this.lblAmtToSpendIsk.Location = new System.Drawing.Point(666, 604);
+            this.lblAmtToSpendIsk.Location = new System.Drawing.Point(665, 624);
             this.lblAmtToSpendIsk.Name = "lblAmtToSpendIsk";
             this.lblAmtToSpendIsk.Size = new System.Drawing.Size(24, 13);
             this.lblAmtToSpendIsk.TabIndex = 73;
             this.lblAmtToSpendIsk.Text = "ISK";
             // 
-            // UseStarbase
-            // 
-            this.UseStarbase.HeaderText = "Use";
-            this.UseStarbase.Name = "UseStarbase";
-            this.UseStarbase.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.UseStarbase.Width = 32;
-            // 
-            // Moon
-            // 
-            this.Moon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Moon.HeaderText = "Moon";
-            this.Moon.Name = "Moon";
-            this.Moon.ReadOnly = true;
-            this.Moon.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
             // label112
             // 
             this.label112.AutoSize = true;
-            this.label112.Location = new System.Drawing.Point(777, 51);
+            this.label112.Location = new System.Drawing.Point(776, 71);
             this.label112.Name = "label112";
             this.label112.Size = new System.Drawing.Size(203, 338);
             this.label112.TabIndex = 74;
             this.label112.Text = resources.GetString("label112.Text");
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1,
+            this.toolStripSeparator1,
+            this.toolStripLabel1});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1004, 25);
+            this.toolStrip1.TabIndex = 75;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Image = global::EVEPOSMon.Properties.Resources.icon40_14;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(93, 22);
+            this.toolStripButton1.Text = "Update Prices";
+            this.toolStripButton1.ToolTipText = "Update Prices from EVE-Central.com";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(94, 22);
+            this.toolStripLabel1.Text = "Lock/Unlock Prices";
+            // 
             // FuelCalculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1004, 635);
+            this.ClientSize = new System.Drawing.Size(1004, 655);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.lblAmtToSpendIsk);
             this.Controls.Add(this.lblHaulerM3);
             this.Controls.Add(this.lblFuelDays);
@@ -2544,6 +2584,8 @@ namespace EVEPOSMon
             this.groupBox7.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2764,5 +2806,9 @@ namespace EVEPOSMon
         private System.Windows.Forms.DataGridViewCheckBoxColumn UseStarbase;
         private System.Windows.Forms.DataGridViewTextBoxColumn Moon;
         private System.Windows.Forms.Label label112;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
     }
 }
