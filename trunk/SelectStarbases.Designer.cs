@@ -57,7 +57,7 @@ namespace EVEPOSMon
             this.btnGetStationInfo.Name = "btnGetStationInfo";
             this.btnGetStationInfo.Size = new System.Drawing.Size(111, 23);
             this.btnGetStationInfo.TabIndex = 2;
-            this.btnGetStationInfo.Text = "Get Station Info";
+            this.btnGetStationInfo.Text = "Select Starbases";
             this.btnGetStationInfo.UseVisualStyleBackColor = true;
             this.btnGetStationInfo.Click += new System.EventHandler(this.btnGetStationInfo_Click);
             // 
@@ -79,6 +79,7 @@ namespace EVEPOSMon
             this.dgStations.MultiSelect = false;
             this.dgStations.Name = "dgStations";
             this.dgStations.RowHeadersVisible = false;
+            this.dgStations.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgStations.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgStations.Size = new System.Drawing.Size(404, 249);
             this.dgStations.TabIndex = 3;
@@ -120,13 +121,13 @@ namespace EVEPOSMon
             this.btnSaveAutoload.TabIndex = 4;
             this.btnSaveAutoload.Text = "Save Selection for Auto-load";
             this.btnSaveAutoload.UseVisualStyleBackColor = true;
+            this.btnSaveAutoload.Visible = false;
             this.btnSaveAutoload.Click += new System.EventHandler(this.btnSaveAutoload_Click);
             // 
             // SelectStarbases
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(423, 328);
             this.Controls.Add(this.btnSaveAutoload);
             this.Controls.Add(this.dgStations);

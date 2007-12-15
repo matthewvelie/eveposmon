@@ -63,6 +63,7 @@ namespace EVEPOSMon
             this.Name = "CharacterSelect";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CharacterSelect";
             this.Load += new System.EventHandler(this.CharacterSelect_Load);

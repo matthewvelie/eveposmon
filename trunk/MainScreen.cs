@@ -20,6 +20,17 @@ namespace EVEPOSMon
             starbaseWindow = new SelectStarbases(this);
         }
 
+        public void AddTab(Starbase starbase)
+        {
+
+            TabPage tp = new TabPage(starbase.StarbaseSystem.locationID);
+            AddTab(tp);
+            tp.Text = starbase.Moon.moonName;
+            StarbaseMonitor sm = new StarbaseMonitor(starbase);
+            sm.Parent = tp;
+            sm.Dock = DockStyle.Fill;
+        }
+
         public void AddTab(TabPage tp)
         {
             tabControl1.TabPages.Add(tp);
