@@ -56,6 +56,19 @@ namespace EVEPOSMon
 
         private void btnGetStationInfo_Click(object sender, EventArgs e)
         {
+            int count = 0;
+            foreach (DataGridViewRow row in dgStations.Rows)
+            {
+                Starbase starbase = row.Tag as Starbase;
+                if (starbase.monitored == true)
+                    count++;
+            }
+            if (count == 0)
+            {
+                System.Windows.Forms.MessageBox.Show("Please select at least one Starbase to monitor");
+                return;
+            }
+
             mainScreen.clearTabs();
             mainScreen.Visible = false;
             StarbaseMonitor sm;
