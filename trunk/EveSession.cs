@@ -23,6 +23,52 @@ namespace EVEMon.Common
 {
     public class EveSession
     {
+        private static Object mutexLock = new Object();
+        private static EveSession m_instance = null;
+
+        public static EveSession GetInstance()
+        {
+            lock (mutexLock)
+            {
+                if (m_instance == null)
+                    m_instance = new EveSession();
+                return m_instance;
+            }
+        }
+
+#if USE_TEST_SERVER
+        private static string APIBASE = "http://www.exa-nation.com";
+        private static string m_ApiCharListUrl = "/account/Characters.xml.aspx";
+        private static string m_ApiStarbaseListUrl = "/corp/StarbaseList.xml.aspx";
+        private static string m_ApiStarbaseDetailUrl = "/corp/StarbaseDetail.xml.aspx";
+#else
+        private static string APIBASE = "http://api.eve-online.com";
+        private static string m_ApiCharListUrl = "/account/Characters.xml.aspx";
+        private static string m_ApiStarbaseListUrl = "/corp/StarbaseList.xml.aspx";
+        private static string m_ApiStarbaseDetailUrl = "/corp/StarbaseDetail.xml.aspx";
+#endif
+
+        public static XmlDocument GetCharList(string userId, string apiKey)
+        {
+            WebRequestState wrs = new WebRequestState();
+            wrs.SetPost("userid=" + userId + "&apiKey=" + apiKey);
+            return EVEMonWebRequest.LoadXml(APIBASE + m_ApiCharListUrl, wrs);
+        }
+
+        public static XmlDocument GetStarbaseList(string userId, string apiKey, string characterId)
+        {
+            WebRequestState wrs = new WebRequestState();
+            wrs.SetPost("userid=" + userId + "&apiKey=" + apiKey + "&characterId=" + characterId);
+            return EVEMonWebRequest.LoadXml(APIBASE + m_ApiStarbaseListUrl, wrs);
+        }
+
+        public static XmlDocument GetStarbaseDetail(string userId, string apiKey, string characterId, string itemId)
+        {
+            WebRequestState wrs = new WebRequestState();
+            wrs.SetPost("userid=" + userId + "&apiKey=" + apiKey + "&characterId=" + characterId + "&itemId=" + itemId);
+            return EVEMonWebRequest.LoadXml(APIBASE + m_ApiStarbaseDetailUrl, wrs);
+        }
+
         /// <summary>
         /// Compute the "cached until" time for the user's machine from the currentTime and cachedUntil nodes 
         /// in a CCP API message.
