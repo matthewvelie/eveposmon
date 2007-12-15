@@ -10,6 +10,7 @@ using System.Xml;
 using System.Windows.Forms;
 using EVEMon.Common;
 using System.Threading;
+using System.Xml.Serialization;
 
 namespace EVEPOSMon
 {
@@ -26,8 +27,8 @@ namespace EVEPOSMon
         }
 
         private void Form1_Load(object sender, EventArgs e)
-        {   
-            
+        {
+            displayAvailableStarbases();
         }
 
         private void btnLoadStations_Click(object sender, EventArgs e)
@@ -71,10 +72,7 @@ namespace EVEPOSMon
 
             
             //load new list items
-            foreach (Starbase s in m_settings.availableStarBases)
-            {
-                lbStations.Rows.Add(new object[] { false, s.StarbaseSystem.regionName, s.StarbaseSystem.constellationName, s.Moon.moonName, s });
-            }
+            displayAvailableStarbases();
 
             // Dirty delay on button reactivation
             for (int i = 0; i < 5000; i++)
@@ -86,6 +84,24 @@ namespace EVEPOSMon
             btnLoadStations.Enabled = true;
         }
 
+        public void displayAvailableStarbases()
+        {
+            foreach (Starbase s in m_settings.availableStarBases)
+            {
+                bool monitored;
+
+                if (s.monitored)
+                {
+                    monitored = true;
+                }
+                else
+                {
+                    monitored = false;
+                }
+                lbStations.Rows.Add(new object[] { monitored, s.StarbaseSystem.regionName, s.StarbaseSystem.constellationName, s.Moon.moonName, s });
+            }
+        }
+
         private void btnGetStationInfo_Click(object sender, EventArgs e)
         {
             bool wasSelection = false;
@@ -95,11 +111,14 @@ namespace EVEPOSMon
             TabPage tp;
             for (int i = 0; i < lbStations.RowCount; i++)
             {
+                Starbase starbase = lbStations.Rows[i].Cells[4].Value as Starbase;
+
                 if (lbStations.Rows[i].Cells[0].Value.ToString() == "true")
                 {
                     wasSelection = true;
                     // cell 4 is a hidden field with the starbase object
-                    Starbase starbase = lbStations.Rows[i].Cells[4].Value as Starbase;
+                    
+                    starbase.monitored = true;
 
                     starbase.setDetails("http://www.exa-nation.com/corp/StarbaseDetail.xml.aspx?itemId=");
 
@@ -109,6 +128,10 @@ namespace EVEPOSMon
                     sm = new StarbaseMonitor(starbase);
                     sm.Parent = tp;
                     sm.Dock = DockStyle.Fill;
+                }
+                else
+                {
+                    starbase.monitored = false;
                 }
             }
             // Only display the mainScreen if any of the stations we're checked.
@@ -131,11 +154,22 @@ namespace EVEPOSMon
             else
                 e.Cancel = true;
              */
+            serializeStarbases();
         }
 
         private void btnSaveAutoload_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Temp box", "Alert", MessageBoxButtons.OK);
+            //MessageBox.Show("Temp box", "Alert", MessageBoxButtons.OK);
+            serializeStarbases();
+        }
+
+        public void serializeStarbases()
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(List<Starbase>));
+            using (Stream s = new FileStream("Starbases.xml", FileMode.Create))
+            {
+                serializer.Serialize(s, m_settings.availableStarBases);
+            }
         }
 
         private void characterInformationToolStripMenuItem_Click(object sender, EventArgs e)

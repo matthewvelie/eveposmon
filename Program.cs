@@ -4,6 +4,8 @@ using System.Windows.Forms;
 using EVEMon.Common;
 using System.IO;
 using System.IO.Compression;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace EVEPOSMon
 {
@@ -47,7 +49,16 @@ namespace EVEPOSMon
             {
                 settings.moonData = MoonData.Load(zs);
             }
-            
+
+            if (File.Exists("Starbases.xml"))
+            {
+                XmlSerializer serializer = new XmlSerializer(typeof(List<Starbase>));
+                using (Stream s = new FileStream("Starbases.xml", FileMode.Open))
+                {
+                    settings.availableStarBases = serializer.Deserialize(s) as List<Starbase>;
+                }
+            }
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new SelectStarbases());
