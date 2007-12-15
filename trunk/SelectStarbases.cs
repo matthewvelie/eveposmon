@@ -18,7 +18,7 @@ namespace EVEPOSMon
     {
         Settings m_settings = Settings.GetInstance();
         private MainScreen mainScreen = new MainScreen();
-        private FuelCalculator fuelCalculator = new FuelCalculator();
+        
 
         public SelectStarbases()
         {
@@ -124,7 +124,7 @@ namespace EVEPOSMon
 
         private void button1_Click(object sender, EventArgs e)
         {
-            fuelCalculator.Visible = true;
+            
         }
 
         private void dgStations_CellValueChanged_1(object sender, DataGridViewCellEventArgs e)
