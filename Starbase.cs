@@ -170,15 +170,12 @@ namespace EVEPOSMon
             XmlDocument xdoc = EVEMonWebRequest.LoadXml(@"http://www.exa-nation.com/corp/StarbaseList.xml.aspx");
             Settings settings = Settings.GetInstance();
             XmlNode error = xdoc.DocumentElement.SelectSingleNode("descendant::error");
-            // If a read error occured, exit
             if (error != null)
             {
                 throw new InvalidDataException(error.InnerText);
             }
-            // Process xml file 
             else
             {
-                // For each starbase in the list create an object and place it on the master(m) starbase list
                 DateTime cachedUntil = EveSession.GetCacheExpiryUTC(xdoc);
                 XmlNodeList starbases = xdoc.DocumentElement.SelectNodes("descendant::rowset/row");
                 foreach (XmlNode starbaseNode in starbases)
@@ -203,63 +200,57 @@ namespace EVEPOSMon
             this.cachedUntil = cachedUntil;
         }
 
-        internal void setDetails(String loc)
+        public void LoadStarbaseDetailsFromApi()
         {
-            XmlDocument xdoc = EVEMonWebRequest.LoadXml(@loc + this.itemId);
+            XmlDocument detailsXmlDoc = EVEMonWebRequest.LoadXml(@"http://www.exa-nation.com/corp/StarbaseDetail.xml.aspx?itemId=" + this.itemId);
 
-            string starbaseError;
-
-            XmlNode error = xdoc.DocumentElement.SelectSingleNode("descendant::error");
-            // If a read error occured, exit
+            XmlNode error = detailsXmlDoc.DocumentElement.SelectSingleNode("descendant::error");
             if (error != null)
             {
-                starbaseError = error.InnerText;
-                throw new InvalidDataException(starbaseError);
+                throw new InvalidDataException(error.InnerText);
             }
             else
             {
-                cachedUntil = EveSession.GetCacheExpiryUTC(xdoc);
-                /*  ****** Code moved to setDetails() ******   */
-                setDetails(xdoc);
-
-                XmlNodeList fuelNodeList = xdoc.DocumentElement.SelectNodes("descendant::rowset/row");
-                // Clear any old data from the list before adding new information
-                FuelList.Clear();
-                foreach (XmlNode fuelNode in fuelNodeList)
-                {
-                    XmlAttributeCollection atts = fuelNode.Attributes;
-                    Fuel fuel = new Fuel();
-                    fuel.typeId = atts["typeID"].InnerText;
-                    fuel.quantity = atts["quantity"].InnerText;
-                    this.FuelList.Add(fuel);
-                }
+                LoadDetailsFromXml(detailsXmlDoc);
             }
         }
-        internal void setDetails(System.Xml.XmlDocument xdoc)
+
+        public void LoadDetailsFromXml(System.Xml.XmlDocument detailsXmlDoc)
         {
+            this.cachedUntil = EveSession.GetCacheExpiryUTC(detailsXmlDoc);
             lastDownloaded = DateTime.Now;
-            usageFlags = xdoc.GetElementsByTagName("usageFlags")[0].InnerText;
-            deployFlags = xdoc.GetElementsByTagName("deployFlags")[0].InnerText;
-            allowAllianceMembers = xdoc.GetElementsByTagName("allowAllianceMembers")[0].InnerText;
-            allowCorporationMembers = xdoc.GetElementsByTagName("allowCorporationMembers")[0].InnerText;
-            claimSovereignty = xdoc.GetElementsByTagName("claimSovereignty")[0].InnerText;
+            usageFlags = detailsXmlDoc.GetElementsByTagName("usageFlags")[0].InnerText;
+            deployFlags = detailsXmlDoc.GetElementsByTagName("deployFlags")[0].InnerText;
+            allowAllianceMembers = detailsXmlDoc.GetElementsByTagName("allowAllianceMembers")[0].InnerText;
+            allowCorporationMembers = detailsXmlDoc.GetElementsByTagName("allowCorporationMembers")[0].InnerText;
+            claimSovereignty = detailsXmlDoc.GetElementsByTagName("claimSovereignty")[0].InnerText;
 
             XmlAttributeCollection attrs;
 
-            attrs = xdoc.GetElementsByTagName("onStandingDrop")[0].Attributes;
+            attrs = detailsXmlDoc.GetElementsByTagName("onStandingDrop")[0].Attributes;
             onStandingDrop.enabled = attrs["enabled"].InnerText;
             onStandingDrop.standing = attrs["standing"].InnerText;
 
-            attrs = xdoc.GetElementsByTagName("onStatusDrop")[0].Attributes;
+            attrs = detailsXmlDoc.GetElementsByTagName("onStatusDrop")[0].Attributes;
             onStatusDrop.enabled = attrs["enabled"].InnerText;
             onStatusDrop.standing = attrs["standing"].InnerText;
 
-            attrs = xdoc.GetElementsByTagName("onAggression")[0].Attributes;
+            attrs = detailsXmlDoc.GetElementsByTagName("onAggression")[0].Attributes;
             onAgression.enabled = attrs["enabled"].InnerText;
 
-
-            attrs = xdoc.GetElementsByTagName("onCorporationWar")[0].Attributes;
+            attrs = detailsXmlDoc.GetElementsByTagName("onCorporationWar")[0].Attributes;
             onCorporationWar.enabled = attrs["enabled"].InnerText;
+
+            FuelList.Clear();
+            XmlNodeList fuelNodeList = detailsXmlDoc.DocumentElement.SelectNodes("descendant::rowset/row");
+            foreach (XmlNode fuelNode in fuelNodeList)
+            {
+                XmlAttributeCollection atts = fuelNode.Attributes;
+                Fuel fuel = new Fuel();
+                fuel.typeId = atts["typeID"].InnerText;
+                fuel.quantity = atts["quantity"].InnerText;
+                this.FuelList.Add(fuel);
+            }
         }
 
     }
