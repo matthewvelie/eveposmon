@@ -61,7 +61,7 @@ namespace EVEPOSMon
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SelectStarbases());
+            Application.Run(new MainScreen());
         }
     }
 }

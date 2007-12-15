@@ -12,10 +12,12 @@ namespace EVEPOSMon
     public partial class MainScreen : Form
     {
         Settings m_settings = Settings.GetInstance();
+        SelectStarbases starbaseWindow;
 
         public MainScreen()
         {
             InitializeComponent();
+            starbaseWindow = new SelectStarbases(this);
         }
 
         public void AddTab(TabPage tp)
@@ -64,6 +66,11 @@ namespace EVEPOSMon
             {
                 m_settings.accountInfo = lcs.accountInfo;
             }
+        }
+
+        private void starbaseSelectionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            starbaseWindow.Visible = true;
         }
     }
 }

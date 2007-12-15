@@ -37,13 +37,13 @@ namespace EVEPOSMon
             this.lbCharacters.FormattingEnabled = true;
             this.lbCharacters.Location = new System.Drawing.Point(13, 13);
             this.lbCharacters.Name = "lbCharacters";
-            this.lbCharacters.Size = new System.Drawing.Size(203, 199);
+            this.lbCharacters.Size = new System.Drawing.Size(203, 69);
             this.lbCharacters.TabIndex = 0;
             // 
             // btnSelect
             // 
             this.btnSelect.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnSelect.Location = new System.Drawing.Point(141, 231);
+            this.btnSelect.Location = new System.Drawing.Point(66, 88);
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Size = new System.Drawing.Size(75, 23);
             this.btnSelect.TabIndex = 1;
@@ -55,10 +55,15 @@ namespace EVEPOSMon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(292, 266);
+            this.ClientSize = new System.Drawing.Size(227, 121);
             this.Controls.Add(this.btnSelect);
             this.Controls.Add(this.lbCharacters);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "CharacterSelect";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CharacterSelect";
             this.Load += new System.EventHandler(this.CharacterSelect_Load);
             this.ResumeLayout(false);

@@ -17,12 +17,13 @@ namespace EVEPOSMon
     public partial class SelectStarbases : Form
     {
         Settings m_settings = Settings.GetInstance();
-        private MainScreen mainScreen = new MainScreen();
+        private MainScreen mainScreen;
         
 
-        public SelectStarbases()
+        public SelectStarbases(MainScreen screen)
         {
             InitializeComponent();
+            this.mainScreen = screen;
             
         }
 
@@ -70,7 +71,7 @@ namespace EVEPOSMon
             }
 
             mainScreen.clearTabs();
-            mainScreen.Visible = false;
+
             StarbaseMonitor sm;
             TabPage tp;
             foreach (DataGridViewRow row in dgStations.Rows)
@@ -89,22 +90,12 @@ namespace EVEPOSMon
                 }
             }
 
-            mainScreen.Visible = true;
+            this.Visible = false;
             mainScreen.Focus();
         }
 
         private void SelectStarbases_FormClosing(object sender, FormClosingEventArgs e)
         {
-            /*
-            DialogResult result = DialogResult.No;
-            result = MessageBox.Show("Closing this window will close all others", "Are you sure you want to close", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-            if (result == DialogResult.Yes)
-            {
-                return;
-            }
-            else
-                e.Cancel = true;
-             */
             Starbase.SerializeStarbasesToFile(m_settings.SerializedStarbasesFilename, m_settings.availableStarBases);
         }
 
