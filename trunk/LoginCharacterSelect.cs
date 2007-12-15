@@ -54,5 +54,14 @@ namespace EVEPOSMon
                 characterSelect.selectedCharacter.selected = true;
             }
         }
+
+        private void btnOk_Click(object sender, EventArgs e)
+        {
+            if (tbUserId.Text == string.Empty || tbApiKey.Text == string.Empty || tbCharacter.Text == string.Empty);
+            {
+                MessageBox.Show("Please enter UserID and ApiKey then choose a character");
+                DialogResult = DialogResult.None;
+            }
+        }
     }
 }

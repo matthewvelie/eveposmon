@@ -50,9 +50,25 @@ namespace EVEMon.Common
         public ControlTowerTypes controlTowerTypes;
         public MapData mapData;
         public MoonData moonData;
-        public List<Starbase> monitoredStarBases = new List<Starbase>();
+
         public List<Starbase> availableStarBases = new List<Starbase>();
         public AccountInfo accountInfo;
+
+        public List<Starbase> monitoredStarbases
+        {
+            get
+            {
+                List<Starbase> result = new List<Starbase>();
+                foreach (Starbase s in availableStarBases)
+                {
+                    if (s.monitored == true)
+                    {
+                        result.Add(s); 
+                    }
+                }
+                return result;
+            }
+        }
 
         private bool m_useCustomProxySettings = false;
         public bool UseCustomProxySettings
