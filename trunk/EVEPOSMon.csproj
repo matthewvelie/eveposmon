@@ -87,10 +87,6 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="StarbaseInfo.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>StarbaseInfo.cs</DependentUpon>
-    </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
@@ -107,12 +103,6 @@
     </Compile>
     <Compile Include="Settings.cs">
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="StarbaseInfo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="StarbaseInfo.Designer.cs">
-      <DependentUpon>StarbaseInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="StarbaseMonitor.cs">
       <SubType>UserControl</SubType>
