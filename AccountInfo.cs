@@ -10,6 +10,7 @@ namespace EVEPOSMon
         public string characterId;
         public string coportationName;
         public string corporationId;
+        public bool selected;
 
         public override string ToString()
         {
