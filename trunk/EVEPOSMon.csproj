@@ -346,6 +346,58 @@
   <ItemGroup>
     <None Include="icons\icon57_03.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon06_02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon06_03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon06_07.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon07_04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon07_09.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon09_04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon25_08.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon34_06.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon49_03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon51_08.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon53_11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon57_07.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon57_08.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon57_13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="icons\icon63_03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon57_05.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\icon57_06.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
