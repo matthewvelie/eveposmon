@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("EVEPOSMon")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("EvePOSMon is a utility application for managing Starbases and their associated resources in the massively multiplayer online game Eve Online.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("a")]
+[assembly: AssemblyCompany("EXA Nation")]
 [assembly: AssemblyProduct("EVEPOSMon")]
-[assembly: AssemblyCopyright("Copyright © a 2007")]
+[assembly: AssemblyCopyright("Copyright © 2007")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -29,5 +29,5 @@ using System.Runtime.InteropServices;
 //      Build Number
 //      Revision
 //
-[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyVersion("0.0.0.1")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
