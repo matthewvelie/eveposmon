@@ -52,6 +52,7 @@ namespace EVEMon.Common
         public MoonData moonData;
         public List<Starbase> monitoredStarBases = new List<Starbase>();
         public List<Starbase> availableStarBases = new List<Starbase>();
+        public AccountInfo accountInfo;
 
         private bool m_useCustomProxySettings = false;
         public bool UseCustomProxySettings

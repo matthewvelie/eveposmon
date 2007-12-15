@@ -141,7 +141,10 @@ namespace EVEPOSMon
         private void characterInformationToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LoginCharacterSelect lcs = new LoginCharacterSelect();
-            lcs.ShowDialog();
+            if (lcs.ShowDialog() == DialogResult.OK)
+            {
+                m_settings.accountInfo = lcs.accountInfo;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

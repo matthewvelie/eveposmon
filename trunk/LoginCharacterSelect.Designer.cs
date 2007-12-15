@@ -99,6 +99,7 @@ namespace EVEPOSMon
             // 
             // btnOk
             // 
+            this.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnOk.Location = new System.Drawing.Point(269, 258);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(73, 24);
@@ -108,6 +109,7 @@ namespace EVEPOSMon
             // 
             // btnCancel
             // 
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Location = new System.Drawing.Point(348, 258);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(73, 24);
