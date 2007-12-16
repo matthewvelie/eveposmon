@@ -17,12 +17,11 @@ namespace EVEPOSMon
         public MainScreen()
         {
             InitializeComponent();
-            InitializeTabs();
+            updateTabs();
         }
 
-        private void InitializeTabs()
+        public void updateTabs()
         {
-            // check how row.tag is loaded and get the starbase list from that. (starbases.xml i think)
             foreach (Starbase starbase in m_settings.availableStarBases)
             {
                 if (starbase.monitored == true)

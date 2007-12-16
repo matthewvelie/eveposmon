@@ -72,19 +72,7 @@ namespace EVEPOSMon
             }
 
             mainScreen.clearTabs();
-            // ***************************** integrating into mainscreen
-            foreach (DataGridViewRow row in dgStations.Rows)
-            {
-                Starbase starbase = row.Tag as Starbase;
-
-                if (starbase.monitored == true)
-                {
-                    starbase.LoadStarbaseDetailsFromApi();
-                    mainScreen.AddTab(starbase);
-                }
-            }
-            Starbase.SerializeStarbasesToFile(m_settings.SerializedStarbasesFilename, m_settings.availableStarBases);
-        //****************************** integrating into mainscreen
+            mainScreen.updateTabs();
         }
 
         private void btnGetStationInfo_Click(object sender, EventArgs e)
