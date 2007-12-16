@@ -79,6 +79,7 @@ namespace EVEPOSMon
 
                 if (starbase.monitored == true)
                 {
+                    starbase.LoadStarbaseDetailsFromApi();
                     mainScreen.AddTab(starbase);
                 }
             }
