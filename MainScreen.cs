@@ -36,12 +36,18 @@ namespace EVEPOSMon
             tabControl1.TabPages.Add(tp);
         }
 
+
         private void MainScreen_FormClosing(object sender, FormClosingEventArgs e)
         {
-            e.Cancel = true;
-            Visible = false;
-            clearTabs();
+            DialogResult result = MessageBox.Show("Are you sure you want to quit?",
+                "Caption", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result != DialogResult.Yes)
+                e.Cancel = true; 
+            //e.Cancel = true;
+            //Visible = false;
+            //clearTabs();
         }
+
 
         public void clearTabs()
         {

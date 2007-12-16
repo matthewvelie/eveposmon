@@ -133,6 +133,7 @@ namespace EVEPOSMon
             this.Controls.Add(this.dgStations);
             this.Controls.Add(this.btnGetStationInfo);
             this.Controls.Add(this.btnLoadStations);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "SelectStarbases";

@@ -81,11 +81,11 @@ namespace EVEPOSMon
             // lblTimer
             // 
             this.lblTimer.AutoSize = true;
-            this.lblTimer.Location = new System.Drawing.Point(480, 33);
+            this.lblTimer.Location = new System.Drawing.Point(462, 33);
             this.lblTimer.Name = "lblTimer";
-            this.lblTimer.Size = new System.Drawing.Size(55, 13);
+            this.lblTimer.Size = new System.Drawing.Size(70, 13);
             this.lblTimer.TabIndex = 1;
-            this.lblTimer.Text = "10800000";
+            this.lblTimer.Text = "888:88:88:88";
             // 
             // pbStationImage
             // 
@@ -100,7 +100,7 @@ namespace EVEPOSMon
             this.lblStarbaseName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStarbaseName.Location = new System.Drawing.Point(149, 6);
             this.lblStarbaseName.Name = "lblStarbaseName";
-            this.lblStarbaseName.Size = new System.Drawing.Size(343, 23);
+            this.lblStarbaseName.Size = new System.Drawing.Size(318, 23);
             this.lblStarbaseName.TabIndex = 3;
             this.lblStarbaseName.Text = "starbase name";
             this.lblStarbaseName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -414,7 +414,7 @@ namespace EVEPOSMon
             // 
             // throbber1
             // 
-            this.throbber1.Location = new System.Drawing.Point(502, 6);
+            this.throbber1.Location = new System.Drawing.Point(501, 6);
             this.throbber1.MaximumSize = new System.Drawing.Size(24, 24);
             this.throbber1.MinimumSize = new System.Drawing.Size(24, 24);
             this.throbber1.Name = "throbber1";

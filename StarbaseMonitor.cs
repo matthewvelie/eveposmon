@@ -21,6 +21,7 @@ namespace EVEPOSMon
 
         private Starbase m_starbase;
         private Settings m_settings = Settings.GetInstance();
+        private int seconds = 10800000;
 
         private void StarbaseMonitor_Load(object sender, EventArgs e)
         {
@@ -175,7 +176,13 @@ namespace EVEPOSMon
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            lblTimer.Text = Convert.ToString(Convert.ToInt32(lblTimer.Text) - 1);
+            //lblTimer.Text = Convert.ToString(Convert.ToInt32(lblTimer.Text) - 1);
+            seconds--;
+            int s = seconds;
+            int d = s / 86400;    s = s % 66400;
+            int h = s / 3600;     s = s % 3600;
+            int m = s / 60;       s = s % 60;
+            lblTimer.Text = Convert.ToString(d) + ":" + Convert.ToString(h) + ":" + Convert.ToString(m) + ":" + Convert.ToString(s);
         }
     }
 }
