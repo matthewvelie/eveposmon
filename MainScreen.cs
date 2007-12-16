@@ -17,7 +17,22 @@ namespace EVEPOSMon
         public MainScreen()
         {
             InitializeComponent();
-            starbaseWindow = new SelectStarbases(this);
+            InitializeTabs();
+        }
+
+        private void InitializeTabs()
+        {
+            // check how row.tag is loaded and get the starbase list from that. (starbases.xml i think)
+            foreach (Starbase starbase in m_settings.availableStarBases)
+            {
+                if (starbase.monitored == true)
+                {
+                    starbase.LoadStarbaseDetailsFromApi();
+                    AddTab(starbase);
+                }
+            }
+            Starbase.SerializeStarbasesToFile(m_settings.SerializedStarbasesFilename, m_settings.availableStarBases);
+        
         }
 
         public void AddTab(Starbase starbase)
@@ -87,6 +102,7 @@ namespace EVEPOSMon
 
         private void starbaseSelectionToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            starbaseWindow = new SelectStarbases(this);
             starbaseWindow.Visible = true;
         }
     }

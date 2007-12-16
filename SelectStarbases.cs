@@ -72,7 +72,7 @@ namespace EVEPOSMon
             }
 
             mainScreen.clearTabs();
-
+            // ***************************** integrating into mainscreen
             foreach (DataGridViewRow row in dgStations.Rows)
             {
                 Starbase starbase = row.Tag as Starbase;
@@ -84,6 +84,7 @@ namespace EVEPOSMon
                 }
             }
             Starbase.SerializeStarbasesToFile(m_settings.SerializedStarbasesFilename, m_settings.availableStarBases);
+        //****************************** integrating into mainscreen
         }
 
         private void btnGetStationInfo_Click(object sender, EventArgs e)
