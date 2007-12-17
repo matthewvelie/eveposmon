@@ -83,7 +83,7 @@ namespace EVEPOSMon
             this.dgStations.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgStations.Size = new System.Drawing.Size(404, 249);
             this.dgStations.TabIndex = 3;
-            this.dgStations.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgStations_CellValueChanged_1);
+            this.dgStations.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgStations_CellValueChanged);
             // 
             // Column0
             // 

@@ -27,6 +27,8 @@ namespace EVEPOSMon
         {
             lblStarbaseName.Text = m_starbase.Tower.typeName;
 
+            //System.Windows.Forms.MessageBox.Show("Loading Startbase " + m_starbase.Tower.typeName);
+
             if (m_starbase.onStandingDrop.enabled == "1")
             {
                 lblOnStandingDropValue.Text = "Enabled";

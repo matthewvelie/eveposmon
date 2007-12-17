@@ -11,7 +11,7 @@ namespace EVEPOSMon
     public class FuelCostEntry
     {
         [XmlElement] 
-        public string typeId; 
+        public int typeId; 
  
         [XmlElement] 
         public double costPerUnit;
@@ -25,7 +25,7 @@ namespace EVEPOSMon
         public static void SerializeFuelToFile(string filename, List<FuelCostEntry> fuelList)
         {
             XmlSerializer serializer = new XmlSerializer(typeof(List<FuelCostEntry>));
-            using (Stream s = new FileStream("fuelCost.xml", FileMode.Create))
+            using (Stream s = new FileStream(filename, FileMode.Create))
             {
                 serializer.Serialize(s, fuelList);
             }

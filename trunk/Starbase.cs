@@ -166,7 +166,7 @@ namespace EVEPOSMon
         /// </summary>
         public static void LoadStarbaseListFromApi()
         {
-            XmlDocument xdoc = EVEMonWebRequest.LoadXml(@"http://www.exa-nation.com/corp/StarbaseList.xml.aspx");
+            XmlDocument xdoc = EveSession.GetStarbaseList("","",""); ;
             Settings settings = Settings.GetInstance();
             XmlNode error = xdoc.DocumentElement.SelectSingleNode("descendant::error");
             if (error != null)
@@ -201,7 +201,7 @@ namespace EVEPOSMon
 
         public void LoadStarbaseDetailsFromApi()
         {
-            XmlDocument detailsXmlDoc = EVEMonWebRequest.LoadXml(@"http://www.exa-nation.com/corp/StarbaseDetail.xml.aspx?itemId=" + this.itemId);
+            XmlDocument detailsXmlDoc = EveSession.GetStarbaseDetail("","","", this.itemId);
 
             XmlNode error = detailsXmlDoc.DocumentElement.SelectSingleNode("descendant::error");
             if (error != null)
