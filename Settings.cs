@@ -51,10 +51,12 @@ namespace EVEMon.Common
         public MapData mapData;
         public MoonData moonData;
 
+        public List<FuelCostEntry> fuelCosts = new List<FuelCostEntry>();
         public List<Starbase> availableStarBases = new List<Starbase>();
         public AccountInfo accountInfo;
 
         public readonly string SerializedStarbasesFilename = "Starbases.xml";
+        public readonly string SerializedFuelCostFilename = "FuelCost.xml";
 
         public List<Starbase> monitoredStarbases
         {

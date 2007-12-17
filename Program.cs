@@ -55,7 +55,14 @@ namespace EVEPOSMon
                 XmlSerializer serializer = new XmlSerializer(typeof(List<Starbase>));
                 using (Stream s = new FileStream("Starbases.xml", FileMode.Open))
                 {
-                    settings.availableStarBases = serializer.Deserialize(s) as List<Starbase>;
+                    try
+                    {
+                        settings.availableStarBases = serializer.Deserialize(s) as List<Starbase>;
+                    }
+                    catch
+                    {
+
+                    }
                 }
             }
 

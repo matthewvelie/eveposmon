@@ -38,18 +38,13 @@ namespace EVEPOSMon
         {
 
             TabPage tp = new TabPage(starbase.StarbaseSystem.locationID);
-            AddTab(tp);
+            tabControl1.TabPages.Add(tp);
             tp.Text = starbase.Moon.moonName;
             StarbaseMonitor sm = new StarbaseMonitor(starbase);
+            //System.Windows.Forms.MessageBox.Show(starbase.moonId);
             sm.Parent = tp;
             sm.Dock = DockStyle.Fill;
         }
-
-        public void AddTab(TabPage tp)
-        {
-            tabControl1.TabPages.Add(tp);
-        }
-
 
         private void MainScreen_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -57,9 +52,7 @@ namespace EVEPOSMon
                 "Caption", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result != DialogResult.Yes)
                 e.Cancel = true; 
-            //e.Cancel = true;
-            //Visible = false;
-            //clearTabs();
+
         }
 
 
@@ -103,6 +96,11 @@ namespace EVEPOSMon
         {
             starbaseWindow = new SelectStarbases(this);
             starbaseWindow.Visible = true;
+        }
+
+        private void MainScreen_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

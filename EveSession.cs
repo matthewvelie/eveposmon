@@ -38,15 +38,12 @@ namespace EVEMon.Common
 
 #if USE_TEST_SERVER
         private static string APIBASE = "http://www.exa-nation.com";
-        private static string m_ApiCharListUrl = "/account/Characters.xml.aspx";
-        private static string m_ApiStarbaseListUrl = "/corp/StarbaseList.xml.aspx";
-        private static string m_ApiStarbaseDetailUrl = "/corp/StarbaseDetail.xml.aspx";
 #else
         private static string APIBASE = "http://api.eve-online.com";
+#endif    
         private static string m_ApiCharListUrl = "/account/Characters.xml.aspx";
         private static string m_ApiStarbaseListUrl = "/corp/StarbaseList.xml.aspx";
         private static string m_ApiStarbaseDetailUrl = "/corp/StarbaseDetail.xml.aspx";
-#endif
 
         public static XmlDocument GetCharList(string userId, string apiKey)
         {
@@ -58,14 +55,14 @@ namespace EVEMon.Common
         public static XmlDocument GetStarbaseList(string userId, string apiKey, string characterId)
         {
             WebRequestState wrs = new WebRequestState();
-            wrs.SetPost("userid=" + userId + "&apiKey=" + apiKey + "&characterId=" + characterId);
+            wrs.SetPost("userid=" + userId + "&apiKey=" + apiKey + "&characterId=" + characterId + "&version=2");
             return EVEMonWebRequest.LoadXml(APIBASE + m_ApiStarbaseListUrl, wrs);
         }
 
         public static XmlDocument GetStarbaseDetail(string userId, string apiKey, string characterId, string itemId)
         {
             WebRequestState wrs = new WebRequestState();
-            wrs.SetPost("userid=" + userId + "&apiKey=" + apiKey + "&characterId=" + characterId + "&itemId=" + itemId);
+            wrs.SetPost("userid=" + userId + "&apiKey=" + apiKey + "&characterId=" + characterId + "&itemId=" + itemId + "&version=2");
             return EVEMonWebRequest.LoadXml(APIBASE + m_ApiStarbaseDetailUrl, wrs);
         }
 

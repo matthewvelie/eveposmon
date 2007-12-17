@@ -248,6 +248,8 @@ namespace EVEPOSMon
             this.tsbLockUnlock = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbHelp = new System.Windows.Forms.ToolStripButton();
+            this.btnUseStarbases = new System.Windows.Forms.Button();
+            this.cbEmptyStarbase = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -2197,6 +2199,7 @@ namespace EVEPOSMon
             // rbCargoCalc
             // 
             this.rbCargoCalc.AutoSize = true;
+            this.rbCargoCalc.Enabled = false;
             this.rbCargoCalc.Location = new System.Drawing.Point(306, 580);
             this.rbCargoCalc.Name = "rbCargoCalc";
             this.rbCargoCalc.Size = new System.Drawing.Size(113, 17);
@@ -2209,6 +2212,7 @@ namespace EVEPOSMon
             // rbIskCalc
             // 
             this.rbIskCalc.AutoSize = true;
+            this.rbIskCalc.Enabled = false;
             this.rbIskCalc.Location = new System.Drawing.Point(306, 626);
             this.rbIskCalc.Name = "rbIskCalc";
             this.rbIskCalc.Size = new System.Drawing.Size(102, 17);
@@ -2233,9 +2237,11 @@ namespace EVEPOSMon
             this.dgvStations.Name = "dgvStations";
             this.dgvStations.RowHeadersVisible = false;
             this.dgvStations.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvStations.Size = new System.Drawing.Size(240, 341);
+            this.dgvStations.Size = new System.Drawing.Size(240, 302);
             this.dgvStations.TabIndex = 61;
             this.dgvStations.Visible = false;
+            this.dgvStations.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStations_CellEndEdit);
+            this.dgvStations.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStations_CellValueChanged);
             // 
             // UseStarbase
             // 
@@ -2308,7 +2314,7 @@ namespace EVEPOSMon
             // 
             this.label103.AutoSize = true;
             this.label103.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label103.Location = new System.Drawing.Point(892, 41);
+            this.label103.Location = new System.Drawing.Point(887, 32);
             this.label103.Name = "label103";
             this.label103.Size = new System.Drawing.Size(147, 20);
             this.label103.TabIndex = 63;
@@ -2471,6 +2477,7 @@ namespace EVEPOSMon
             this.txtFuelLastDays.Name = "txtFuelLastDays";
             this.txtFuelLastDays.Size = new System.Drawing.Size(109, 20);
             this.txtFuelLastDays.TabIndex = 70;
+            this.txtFuelLastDays.TextChanged += new System.EventHandler(this.txtFuelLastDays_TextChanged);
             // 
             // lblFuelDays
             // 
@@ -2507,7 +2514,7 @@ namespace EVEPOSMon
             this.label112.AutoSize = true;
             this.label112.Location = new System.Drawing.Point(863, 71);
             this.label112.Name = "label112";
-            this.label112.Size = new System.Drawing.Size(203, 338);
+            this.label112.Size = new System.Drawing.Size(203, 286);
             this.label112.TabIndex = 74;
             this.label112.Text = resources.GetString("label112.Text");
             // 
@@ -2574,11 +2581,37 @@ namespace EVEPOSMon
             this.tsbHelp.Size = new System.Drawing.Size(48, 22);
             this.tsbHelp.Text = "Help";
             // 
+            // btnUseStarbases
+            // 
+            this.btnUseStarbases.Enabled = false;
+            this.btnUseStarbases.Location = new System.Drawing.Point(962, 387);
+            this.btnUseStarbases.Name = "btnUseStarbases";
+            this.btnUseStarbases.Size = new System.Drawing.Size(121, 25);
+            this.btnUseStarbases.TabIndex = 76;
+            this.btnUseStarbases.Text = "Use These Starbases";
+            this.btnUseStarbases.UseVisualStyleBackColor = true;
+            this.btnUseStarbases.Visible = false;
+            this.btnUseStarbases.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // cbEmptyStarbase
+            // 
+            this.cbEmptyStarbase.AutoSize = true;
+            this.cbEmptyStarbase.Location = new System.Drawing.Point(837, 385);
+            this.cbEmptyStarbase.Name = "cbEmptyStarbase";
+            this.cbEmptyStarbase.Size = new System.Drawing.Size(114, 30);
+            this.cbEmptyStarbase.TabIndex = 77;
+            this.cbEmptyStarbase.Text = "Assume starbases \r\nare empty";
+            this.cbEmptyStarbase.UseVisualStyleBackColor = true;
+            this.cbEmptyStarbase.Visible = false;
+            this.cbEmptyStarbase.CheckedChanged += new System.EventHandler(this.cbEmptyStarbase_CheckedChanged);
+            // 
             // FuelCalculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1095, 655);
+            this.Controls.Add(this.cbEmptyStarbase);
+            this.Controls.Add(this.btnUseStarbases);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.lblAmtToSpendIsk);
             this.Controls.Add(this.lblHaulerM3);
@@ -2866,5 +2899,7 @@ namespace EVEPOSMon
         private System.Windows.Forms.ToolStripButton tsbHelp;
         private System.Windows.Forms.ToolStripButton tsbLockUnlock;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnUseStarbases;
+        private System.Windows.Forms.CheckBox cbEmptyStarbase;
     }
 }

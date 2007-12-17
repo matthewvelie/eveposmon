@@ -60,6 +60,11 @@ namespace EVEPOSMon
             return tr;
         }
 
+        public ResourceEntry GetFuelInfo(string towerTypeId, int fuelTypeId)
+        {
+            return GetFuelInfo(towerTypeId, Convert.ToString(fuelTypeId));
+        }
+
         public ResourceEntry GetFuelInfo(string towerTypeId, string fuelTypeId)
         {
             List<ResourceEntry> res = towerTypeIds[towerTypeId] as List<ResourceEntry>;

@@ -14,6 +14,7 @@ namespace EVEPOSMon
     public partial class FuelCalculator : Form
     {
         private Settings m_settings = Settings.GetInstance();
+        public List<FuelCostEntry> fuelCosts = new List<FuelCostEntry>();
 
         const string eveCentralWebsite = "http://eve-central.com/home/marketstat_xml.html?typeid=";
 
@@ -37,11 +38,13 @@ namespace EVEPOSMon
         public void loadStarbase()
         {
             dgvStations.Rows.Clear();
-            foreach ( Starbase s in m_settings.availableStarBases )
+            foreach (Starbase s in m_settings.availableStarBases)
             {
-                dgvStations.Rows.Add(new object[] { false, s.Moon.moonName, s });
+                DataGridViewRow row = new DataGridViewRow();
+                row.CreateCells(dgvStations, new object[] { false, s.Moon.moonName, s });
+                row.Tag = s;
+                dgvStations.Rows.Add(row);
             }
-
         }
 
         #region changeTypeOfCalc
@@ -88,6 +91,9 @@ namespace EVEPOSMon
                 lblFuelWilllastTotal.Enabled = false;
                 lblTotalDaysUnit.Enabled = false;
                 txtTotalFuelLastDays.Enabled = false;
+
+                btnUseStarbases.Visible = false;
+                cbEmptyStarbase.Visible = false;
             }
         }
 
@@ -113,6 +119,9 @@ namespace EVEPOSMon
                 lblFuelWilllastTotal.Enabled = true;
                 lblTotalDaysUnit.Enabled = true;
                 txtTotalFuelLastDays.Enabled = true;
+
+                btnUseStarbases.Visible = true;
+                cbEmptyStarbase.Visible = true;
             }
         }
 
@@ -138,6 +147,9 @@ namespace EVEPOSMon
                 lblFuelWilllastTotal.Enabled = true;
                 lblTotalDaysUnit.Enabled = true;
                 txtTotalFuelLastDays.Enabled = true;
+
+                btnUseStarbases.Visible = true;
+                cbEmptyStarbase.Visible = true;
             }
         }
 
@@ -163,11 +175,14 @@ namespace EVEPOSMon
                 lblFuelWilllastTotal.Enabled = true;
                 lblTotalDaysUnit.Enabled = true;
                 txtTotalFuelLastDays.Enabled = true;
+
+                btnUseStarbases.Visible = true;
+                cbEmptyStarbase.Visible = true;
            }
        }
         #endregion
 
-       #region autoUpdatePriceVolume
+        #region autoUpdatePriceVolume
 
        private void txtEnrichedUraniumPricePer_TextChanged(object sender, EventArgs e)
         {
@@ -537,6 +552,7 @@ namespace EVEPOSMon
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             tspbDownloadingData.Enabled = true;
+            tsbUpdatePrices.Enabled = false;
 
             //download data for each typeId
             txtMechanicalPartsPricePer.Text = downloadPriceData(3689);      //Mechanical Parts
@@ -547,13 +563,25 @@ namespace EVEPOSMon
             txtHeavyWaterPricePer.Text = downloadPriceData(16272);          //Heavy Water
             txtLiquidOzonePricePer.Text = downloadPriceData(16273);         //Liquid Ozone
             txtEnrichedUraniumPricePer.Text = downloadPriceData(44);        //Enriched Uranium
-            txtNitrogenIsotopesPricePer.Text = downloadPriceData(16275);    //Nitrogen Isotopes
+            txtNitrogenIsotopesPricePer.Text = downloadPriceData(17888);    //Nitrogen Isotopes
             txtHeliumIsotopesPricePer.Text = downloadPriceData(16274);      //Helium Isotopes
             txtHydrogenIsotopesPricePer.Text = downloadPriceData(17889);    //Hydrogen Isotopes
             txtStrontiumPricePer.Text = downloadPriceData(16275);           //Strontium Clatherates
 
+            //save data to list
+            FuelCostEntry fuelCost = new FuelCostEntry();
+            fuelCost.typeId = 3689;
+            fuelCost.lastUpdated = System.DateTime.Now;
+            fuelCost.costPerUnit = Convert.ToDouble(txtMechanicalPartsPricePer.Text);
+            fuelCosts.Add(fuelCost);
+
             tspbDownloadingData.Enabled = false;
             tspbDownloadingData.Value = 0;
+
+            //serialize and save data
+            FuelCostEntry.SerializeFuelToFile(m_settings.SerializedFuelCostFilename, fuelCosts);
+            
+            tsbUpdatePrices.Enabled = true;
         }
 
         private string downloadPriceData(int typeId)
@@ -564,7 +592,7 @@ namespace EVEPOSMon
             XmlNodeList xmlPriceElement = doc.GetElementsByTagName("avg_price");
             string avg_cost = xmlPriceElement.Item(0).InnerText;
 
-            tspbDownloadingData.Value += 8;
+            tspbDownloadingData.Value += 8;  //update progress bar
 
             return String.Format("{0:n}", Math.Round( Convert.ToDecimal( avg_cost ), 2 ) );
         }
@@ -585,7 +613,153 @@ namespace EVEPOSMon
             txtOxygenIsotopesPricePer.Enabled = txtOxygenIsotopesPricePer.Enabled ? false : true;
         }
 
+        private void dgvStations_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+        }
 
+        private int returnQuantity(string towerId, int typeId)
+        {
+            ResourceEntry fuelNeed = m_settings.towerResources.GetFuelInfo(towerId, typeId);
+            return fuelNeed == null ? 0 : Convert.ToInt32(fuelNeed.quantity);
+        }
+
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            calculateFuel();
+            btnUseStarbases.Enabled = false;
+        }
+
+        private void calculateFuel()
+        {
+            //needed fuel
+            int mechanicalPartsFuelNeed = 0;
+            int roboticsFuelNeed = 0;
+            int oxygenFuelNeed = 0;
+            int coolantFuelNeed = 0;
+            int enrichedUraniumFuelNeed = 0;
+            int heavyWaterFuelNeed = 0;
+            int liquidOzoneFuelNeed = 0;
+            int heliumIsotopesFuelNeed = 0;
+            int hydrogenIsotopesFuelNeed = 0;
+            int nitrogenIsotopesFuelNeed = 0;
+            int oxygenIsotopesFuelNeed = 0;
+
+            //has fuel
+            int mechanicalPartsFuelHas = 0;
+            int roboticsFuelHas = 0;
+            int oxygenFuelHas = 0;
+            int coolantFuelHas = 0;
+            int enrichedUraniumFuelHas = 0;
+            int heavyWaterFuelHas = 0;
+            int liquidOzoneFuelHas = 0;
+            int heliumIsotopesFuelHas = 0;
+            int hydrogenIsotopesFuelHas = 0;
+            int nitrogenIsotopesFuelHas = 0;
+            int oxygenIsotopesFuelHas = 0;
+
+            //figure out how much is needed total
+            foreach (DataGridViewRow row in dgvStations.Rows)
+            {
+                Starbase s = row.Tag as Starbase;
+                if (Convert.ToBoolean(row.Cells[0].Value) == true)
+                {
+                    mechanicalPartsFuelNeed +=  returnQuantity(s.typeId, 3689);
+                    roboticsFuelNeed +=         returnQuantity(s.typeId, 9848);
+                    oxygenFuelNeed +=           returnQuantity(s.typeId, 3683);
+                    coolantFuelNeed +=          returnQuantity(s.typeId, 9832);
+                    enrichedUraniumFuelNeed +=  returnQuantity(s.typeId, 44);
+                    heavyWaterFuelNeed +=       returnQuantity(s.typeId,16272);
+                    liquidOzoneFuelNeed +=      returnQuantity(s.typeId,16273);
+                    heliumIsotopesFuelNeed +=   returnQuantity(s.typeId,16274);
+                    hydrogenIsotopesFuelNeed += returnQuantity(s.typeId,17889);
+                    nitrogenIsotopesFuelNeed += returnQuantity(s.typeId, 17888);
+                    oxygenIsotopesFuelNeed +=   returnQuantity(s.typeId,17887);
+
+
+                    //figure out how much we have, if assume empty leave all as 0
+                    if (cbEmptyStarbase.Checked != true)
+                    {
+                        foreach (Fuel fuel in s.FuelList)
+                        {
+                            mechanicalPartsFuelHas += fuel.typeId == "3689" ? Convert.ToInt32(fuel.quantity) : 0;
+                            roboticsFuelHas += fuel.typeId == "9848" ? Convert.ToInt32(fuel.quantity) : 0;
+                            oxygenFuelHas += fuel.typeId == "3683" ? Convert.ToInt32(fuel.quantity) : 0;
+                            coolantFuelHas += fuel.typeId == "9832" ? Convert.ToInt32(fuel.quantity) : 0;
+                            enrichedUraniumFuelHas += fuel.typeId == "44" ? Convert.ToInt32(fuel.quantity) : 0;
+                            heavyWaterFuelHas += fuel.typeId == "16272" ? Convert.ToInt32(fuel.quantity) : 0;
+                            liquidOzoneFuelHas += fuel.typeId == "16273" ? Convert.ToInt32(fuel.quantity) : 0;
+                            heliumIsotopesFuelHas += fuel.typeId == "16274" ? Convert.ToInt32(fuel.quantity) : 0;
+                            hydrogenIsotopesFuelHas += fuel.typeId == "17889" ? Convert.ToInt32(fuel.quantity) : 0;
+                            nitrogenIsotopesFuelHas += fuel.typeId == "17888" ? Convert.ToInt32(fuel.quantity) : 0;
+                            oxygenIsotopesFuelHas += fuel.typeId == "17887" ? Convert.ToInt32(fuel.quantity) : 0;
+
+                        }
+                    }
+
+                    //System.Windows.Forms.MessageBox.Show("The starbase has: " + mechanicalPartsFuelHas + " mech parts on hand.");
+                }
+            }
+
+            if (rbTimeCalc.Checked)
+            {
+                if (txtFuelLastDays.Text == "")
+                {
+                    System.Windows.Forms.MessageBox.Show("Please enter a number of days for the starbases to last.");
+                    txtFuelLastDays.Focus();
+                    return;
+                }
+
+                //System.Windows.Forms.MessageBox.Show("Nitrogen Isotopes needed for one cycle with selected towers: " + nitrogenIsotopesFuelNeed);
+                //System.Windows.Forms.MessageBox.Show("Oxygen Isotopes needed for one cycle with selected towers: " + oxygenIsotopesFuelNeed);
+
+                int numberOfCycles = Convert.ToInt32(txtFuelLastDays.Text) * 24;
+
+                //multiply by number of days
+                mechanicalPartsFuelNeed *= numberOfCycles;
+                roboticsFuelNeed *= numberOfCycles;
+                oxygenFuelNeed *= numberOfCycles;
+                coolantFuelNeed *= numberOfCycles;
+                enrichedUraniumFuelNeed *= numberOfCycles;
+                heavyWaterFuelNeed *= numberOfCycles;
+                liquidOzoneFuelNeed *= numberOfCycles;
+                heliumIsotopesFuelNeed *= numberOfCycles;
+                hydrogenIsotopesFuelNeed *= numberOfCycles;
+                nitrogenIsotopesFuelNeed *= numberOfCycles;
+                oxygenIsotopesFuelNeed *= numberOfCycles;
+
+                txtMechanicalPartsQuantity.Text = mechanicalPartsFuelNeed > mechanicalPartsFuelHas ? Convert.ToString(mechanicalPartsFuelNeed - mechanicalPartsFuelHas) : Convert.ToString(0);
+                txtRoboticsQuantity.Text = roboticsFuelNeed > roboticsFuelHas ? Convert.ToString(roboticsFuelNeed - roboticsFuelHas) : Convert.ToString(0);
+                txtOxygenQuantity.Text = oxygenFuelNeed > oxygenFuelHas ? Convert.ToString(oxygenFuelNeed - oxygenFuelHas) : Convert.ToString(0);
+                txtCoolantQuantity.Text = coolantFuelNeed > coolantFuelHas ? Convert.ToString(coolantFuelNeed - coolantFuelHas) : Convert.ToString(0);
+                txtEnrichedUraniumQuantity.Text = enrichedUraniumFuelNeed > enrichedUraniumFuelHas ? Convert.ToString(enrichedUraniumFuelNeed - enrichedUraniumFuelHas) : Convert.ToString(0);
+                txtHeavyWaterQuantity.Text = heavyWaterFuelNeed > heavyWaterFuelHas ? Convert.ToString(heavyWaterFuelNeed - heavyWaterFuelHas) : Convert.ToString(0);
+                txtLiquidOzoneQuantity.Text = liquidOzoneFuelNeed > liquidOzoneFuelHas ? Convert.ToString(liquidOzoneFuelNeed - liquidOzoneFuelHas) : Convert.ToString(0);
+                txtHeliumIsotopesQuantity.Text = heliumIsotopesFuelNeed > heliumIsotopesFuelHas ? Convert.ToString(heliumIsotopesFuelNeed - heliumIsotopesFuelHas) : Convert.ToString(0);
+                txtHydrogenIsotopesQuantity.Text = hydrogenIsotopesFuelNeed > hydrogenIsotopesFuelHas ? Convert.ToString(hydrogenIsotopesFuelNeed - hydrogenIsotopesFuelHas) : Convert.ToString(0);
+                txtNitrogenIsotopesQuantity.Text = nitrogenIsotopesFuelNeed > nitrogenIsotopesFuelHas ? Convert.ToString(nitrogenIsotopesFuelNeed - nitrogenIsotopesFuelHas) : Convert.ToString(0);
+                txtOxygenIsotopesQuantity.Text = oxygenIsotopesFuelNeed > oxygenIsotopesFuelHas ? Convert.ToString(oxygenIsotopesFuelNeed - oxygenIsotopesFuelHas) : Convert.ToString(0);
+
+                //System.Windows.Forms.MessageBox.Show("Oxygen Isotopes needed for " + numberOfCycles / 24 + " days with selected towers: " + oxygenIsotopesFuelNeed);
+                //System.Windows.Forms.MessageBox.Show("Nitrogen Isotopes needed for " + numberOfCycles / 24 + " days with selected towers: " + nitrogenIsotopesFuelNeed);
+            }
+
+        }
+
+        private void txtFuelLastDays_TextChanged(object sender, EventArgs e)
+        {
+            calculateFuel();
+        }
+
+        private void cbEmptyStarbase_CheckedChanged(object sender, EventArgs e)
+        {
+            calculateFuel();
+        }
+
+        private void dgvStations_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            btnUseStarbases.Enabled = true;
+        }
 
     }
 }

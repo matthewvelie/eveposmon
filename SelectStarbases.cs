@@ -102,7 +102,7 @@ namespace EVEPOSMon
             }
         }
 
-        private void dgStations_CellValueChanged_1(object sender, DataGridViewCellEventArgs e)
+        private void dgStations_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0)
             {
