@@ -48,22 +48,24 @@ namespace EVEMon.Common
         public static XmlDocument GetCharList(string userId, string apiKey)
         {
             WebRequestState wrs = new WebRequestState();
-            wrs.SetPost("userid=" + userId + "&apiKey=" + apiKey);
-            return EVEMonWebRequest.LoadXml(APIBASE + m_ApiCharListUrl, wrs);
+            //For Some reason server sends back a 405 error when using a post like this, so for now we use get
+            //wrs.SetPost("userid=" + userId + "&apiKey=" + apiKey);
+            //return EVEMonWebRequest.LoadXml(@"http://www.exa-nation.com" + m_ApiCharListUrl, wrs);
+            return EVEMonWebRequest.LoadXml(@"http://www.exa-nation.com" + m_ApiCharListUrl + "?userid=" + userId + "&apiKey=" + apiKey, wrs);
         }
 
         public static XmlDocument GetStarbaseList(string userId, string apiKey, string characterId)
         {
             WebRequestState wrs = new WebRequestState();
             wrs.SetPost("userid=" + userId + "&apiKey=" + apiKey + "&characterId=" + characterId + "&version=2");
-            return EVEMonWebRequest.LoadXml(APIBASE + m_ApiStarbaseListUrl, wrs);
+            return EVEMonWebRequest.LoadXml(@APIBASE + m_ApiStarbaseListUrl, wrs);
         }
 
         public static XmlDocument GetStarbaseDetail(string userId, string apiKey, string characterId, string itemId)
         {
             WebRequestState wrs = new WebRequestState();
             wrs.SetPost("userid=" + userId + "&apiKey=" + apiKey + "&characterId=" + characterId + "&itemId=" + itemId + "&version=2");
-            return EVEMonWebRequest.LoadXml(APIBASE + m_ApiStarbaseDetailUrl, wrs);
+            return EVEMonWebRequest.LoadXml(@APIBASE + m_ApiStarbaseDetailUrl, wrs);
         }
 
         /// <summary>
