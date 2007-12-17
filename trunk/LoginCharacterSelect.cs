@@ -51,6 +51,13 @@ namespace EVEPOSMon
 
             if (characterSelect.ShowDialog() == DialogResult.OK)
             {
+                foreach (Character c in accountInfo.characters)
+                {
+                    if (c.name == characterSelect.selectedCharacter.name)
+                    {
+                        c.selected = true;
+                    }
+                }
                 tbCharacter.Text = characterSelect.selectedCharacter.name;
                 characterSelect.selectedCharacter.selected = true;
             }
