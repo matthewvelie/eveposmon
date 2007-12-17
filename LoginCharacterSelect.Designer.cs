@@ -71,7 +71,7 @@ namespace EVEPOSMon
             // 
             this.tbApiKey.Location = new System.Drawing.Point(66, 107);
             this.tbApiKey.Name = "tbApiKey";
-            this.tbApiKey.Size = new System.Drawing.Size(338, 20);
+            this.tbApiKey.Size = new System.Drawing.Size(397, 20);
             this.tbApiKey.TabIndex = 1;
             // 
             // lblCharacter
@@ -104,7 +104,7 @@ namespace EVEPOSMon
             // btnOk
             // 
             this.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnOk.Location = new System.Drawing.Point(267, 208);
+            this.btnOk.Location = new System.Drawing.Point(311, 208);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(73, 24);
             this.btnOk.TabIndex = 4;
@@ -115,7 +115,7 @@ namespace EVEPOSMon
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(356, 208);
+            this.btnCancel.Location = new System.Drawing.Point(390, 208);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(73, 24);
             this.btnCancel.TabIndex = 4;
@@ -157,7 +157,7 @@ namespace EVEPOSMon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(436, 235);
+            this.ClientSize = new System.Drawing.Size(475, 235);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label1);
