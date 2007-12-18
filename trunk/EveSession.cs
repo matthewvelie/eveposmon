@@ -44,7 +44,7 @@ namespace EVEMon.Common
         private static string m_ApiCharListUrl = "/account/Characters.xml.aspx";
         private static string m_ApiStarbaseListUrl = "/corp/StarbaseList.xml.aspx";
         private static string m_ApiStarbaseDetailUrl = "/corp/StarbaseDetail.xml.aspx";
-        private static string m_UpgradeUrlCheck = "http://eveposmon.googlecode.com/files/currentversion.xml";
+        private static string m_UpgradeUrlCheck = "http://eveposmon.googlecode.com/svn/trunk/currentversion.xml";
 
         public static XmlDocument GetCharList(string userId, string apiKey)
         {
@@ -54,6 +54,13 @@ namespace EVEMon.Common
             //return EVEMonWebRequest.LoadXml(@"http://www.exa-nation.com" + m_ApiCharListUrl, wrs);
             return EVEMonWebRequest.LoadXml(@"http://www.exa-nation.com" + m_ApiCharListUrl + "?userid=" + userId + "&apiKey=" + apiKey, wrs);
         }
+
+        public static XmlDocument GetUpdateDocument()
+        {
+            WebRequestState wrs = new WebRequestState();
+            return EVEMonWebRequest.LoadXml(m_UpgradeUrlCheck, wrs);
+        }
+
 
         public static XmlDocument GetStarbaseList(string userId, string apiKey, string characterId)
         {
