@@ -10,8 +10,7 @@
     <RootNamespace>EVEPOSMon</RootNamespace>
     <AssemblyName>EVEPOSMon</AssemblyName>
     <StartupObject>EVEPOSMon.Program</StartupObject>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
