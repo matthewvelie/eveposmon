@@ -44,6 +44,7 @@ namespace EVEMon.Common
         private static string m_ApiCharListUrl = "/account/Characters.xml.aspx";
         private static string m_ApiStarbaseListUrl = "/corp/StarbaseList.xml.aspx";
         private static string m_ApiStarbaseDetailUrl = "/corp/StarbaseDetail.xml.aspx";
+        private static string m_UpgradeUrlCheck = "http://eveposmon.googlecode.com/files/currentversion.xml";
 
         public static XmlDocument GetCharList(string userId, string apiKey)
         {

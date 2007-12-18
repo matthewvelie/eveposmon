@@ -10,6 +10,7 @@
     <RootNamespace>EVEPOSMon</RootNamespace>
     <AssemblyName>EVEPOSMon</AssemblyName>
     <StartupObject>EVEPOSMon.Program</StartupObject>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -397,6 +398,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="icons\icon57_06.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="logo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
