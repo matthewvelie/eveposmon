@@ -20,7 +20,7 @@ namespace EVEPOSMon
             Settings settings = Settings.GetInstance();
 
             Version vrs = new Version(Application.ProductVersion);
-            MessageBox.Show("Major: " + vrs.Major + "\r\nMinor: " + vrs.Minor + "Build: " + vrs.Build + "\r\nRevision: " + vrs.Revision);
+            //MessageBox.Show("Major: " + vrs.Major + "\r\nMinor: " + vrs.Minor + "Build: " + vrs.Build + "\r\nRevision: " + vrs.Revision);
 
             XmlDocument doc = EveSession.GetUpdateDocument();
             try

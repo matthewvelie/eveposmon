@@ -49,6 +49,9 @@ namespace EVEPOSMon
         [XmlElement]
         public bool monitored;
 
+        [XmlElement]
+        public string nickname;
+
         #region map data
 
         private MapSystem starbaseSystem;
