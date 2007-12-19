@@ -242,7 +242,7 @@ namespace EVEPOSMon
         public void LoadStarbaseDetailsFromApi()
         {
             // Don't send a request to the api unless we're expired
-            if (DateTime.Now < this.cachedUntil)
+            if (DateTime.Now < this.cachedUntil && this.lastDownloaded != DateTime.MinValue)
             {
                 return;
             }
