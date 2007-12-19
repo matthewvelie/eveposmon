@@ -241,6 +241,12 @@ namespace EVEPOSMon
 
         public void LoadStarbaseDetailsFromApi()
         {
+            // Don't send a request to the api unless we're expired
+            if (DateTime.Now < this.cachedUntil)
+            {
+                return;
+            }
+
             XmlDocument detailsXmlDoc = EveSession.GetStarbaseDetail("","","", this.itemId);
 
             XmlNode error = detailsXmlDoc.DocumentElement.SelectSingleNode("descendant::error");
