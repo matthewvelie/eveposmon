@@ -67,7 +67,7 @@ namespace EVEPOSMon
             dgFuelList.Columns[1].DisplayIndex = 1;
             dgFuelList.Columns[2].DisplayIndex = 2;
             lblXmlLastDownloaded.Text = "XML Last Downloaded At: " + m_starbase.lastDownloaded.ToString();
-            lblDataCachedUntil.Text = "Data Cached Until: " + m_starbase.cachedUntil.ToString();
+            lblDataCachedUntil.Text = "Data Cached Until: " + m_starbase.cachedUntil.ToLocalTime().ToString();
             loadStationImage(m_starbase.typeId);
         }
 
