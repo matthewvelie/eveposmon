@@ -71,11 +71,13 @@ namespace EVEPOSMon
             this.tmrSecondTick = new System.Windows.Forms.Timer(this.components);
             this.tmrThreeHourCache = new System.Windows.Forms.Timer(this.components);
             this.throbber1 = new EVEMon.Throbber();
+            this.pbStatus = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbStationImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgFuelList)).BeginInit();
             this.panel1.SuspendLayout();
             this.statusStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.throbber1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStatus)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTimer
@@ -423,10 +425,19 @@ namespace EVEPOSMon
             this.throbber1.TabIndex = 0;
             this.throbber1.TabStop = false;
             // 
+            // pbStatus
+            // 
+            this.pbStatus.Location = new System.Drawing.Point(87, 87);
+            this.pbStatus.Name = "pbStatus";
+            this.pbStatus.Size = new System.Drawing.Size(50, 50);
+            this.pbStatus.TabIndex = 30;
+            this.pbStatus.TabStop = false;
+            // 
             // StarbaseMonitor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.pbStatus);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.lblFuelBay);
             this.Controls.Add(this.panel1);
@@ -469,6 +480,7 @@ namespace EVEPOSMon
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.throbber1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStatus)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -518,5 +530,6 @@ namespace EVEPOSMon
         private System.Windows.Forms.Label lblPosSustainability;
         private System.Windows.Forms.Timer tmrSecondTick;
         private System.Windows.Forms.Timer tmrThreeHourCache;
+        private System.Windows.Forms.PictureBox pbStatus;
     }
 }
