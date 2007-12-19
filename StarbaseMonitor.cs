@@ -76,13 +76,28 @@ namespace EVEPOSMon
             List<Fuel> fuelList = new List<Fuel>(m_starbase.FuelList);
             fuelList.Sort(new CompareFuelByTimeLeft());
             fuelList.Reverse();
-            lblLowestFuelTitle1.Text = fuelList[0].name;
-            lblLowestFuelTitle2.Text = fuelList[1].name;
-            lblLowestFuelTime1.Text = getTimeRemainingString(fuelList[0].timeRemaining);
-            lblLowestFuelTime2.Text = getTimeRemainingString(fuelList[1].timeRemaining);
+            int currentNum = 0;
 
-            lblPosSustainabilityTime.Text = getTimeRemainingString(fuelList[0].timeRemaining);
-            lblPosSustainabilityFuels.Text = fuelList[0].name;
+            //Make Sure Not Strontium
+            if (Convert.ToInt32( fuelList[currentNum].typeId ) == 16275)
+            {
+                currentNum++;
+            }
+            lblLowestFuelTitle1.Text = fuelList[currentNum].name;
+            lblLowestFuelTime1.Text = getTimeRemainingString(fuelList[currentNum].timeRemaining);
+
+            lblPosSustainabilityTime.Text = getTimeRemainingString(fuelList[currentNum].timeRemaining);
+            lblPosSustainabilityFuels.Text = fuelList[currentNum].name;
+
+            currentNum++;
+
+            //Make Sure Not Strontium
+            if (Convert.ToInt32(fuelList[currentNum].typeId ) == 16275)
+            {
+                currentNum++;
+            }
+            lblLowestFuelTitle2.Text = fuelList[currentNum].name;
+            lblLowestFuelTime2.Text = getTimeRemainingString(fuelList[currentNum].timeRemaining);
         }
 
         public void loadStationImage(string typeId)
@@ -124,6 +139,10 @@ namespace EVEPOSMon
         {
             pgStrontiumBay.Maximum = Convert.ToInt32(m_starbase.Tower.strontiumCapacity);
             pgStrontiumBay.Minimum = 0;
+            if (pgStrontiumBay.Value > m_starbase.totalStrontiumVolume)
+            {
+                System.Windows.Forms.MessageBox.Show("Alert!  The volume in the strontium bay for tower " + m_starbase.Moon.moonName + " has decreased since the last check.");
+            }
             pgStrontiumBay.Value = (int)m_starbase.totalStrontiumVolume;
             lblStrontiumBayValue.Text = m_starbase.totalStrontiumVolume.ToString() + "/" + m_starbase.Tower.strontiumCapacity;
 
