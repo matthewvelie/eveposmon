@@ -215,14 +215,29 @@ namespace EVEPOSMon
             }
             else
             {
+                List<Starbase> newStarbasesList = new List<Starbase>();
                 DateTime cachedUntil = EveSession.GetCacheExpiryUTC(xdoc);
                 XmlNodeList starbases = xdoc.DocumentElement.SelectNodes("descendant::rowset/row");
                 foreach (XmlNode starbaseNode in starbases)
                 {
                     Starbase starbase = new Starbase();
                     starbase.LoadFromListApiXml(starbaseNode, cachedUntil);
-                    settings.availableStarBases.Add(starbase);
+                    newStarbasesList.Add(starbase);
                 }
+
+                // If we had starbases checked make sure they stay checked
+                foreach (Starbase oldStarbase in settings.availableStarBases)
+                {
+                    foreach (Starbase newStarbase in newStarbasesList)
+                    {
+                        if (oldStarbase.itemId == newStarbase.itemId)
+                        {
+                            newStarbase.monitored = oldStarbase.monitored;
+                        }
+                    }
+                }
+
+                settings.availableStarBases = newStarbasesList;
             }
         }
 

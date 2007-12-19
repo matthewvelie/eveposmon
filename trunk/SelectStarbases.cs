@@ -23,8 +23,6 @@ namespace EVEPOSMon
         {
             InitializeComponent();
             this.mainScreen = screen;
-            addAvailableStarbasesToDataGridView();
-            populateTabs();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -37,7 +35,6 @@ namespace EVEPOSMon
             btnLoadStations.Enabled = false; 
             
             dgStations.Rows.Clear();
-            m_settings.availableStarBases.Clear();
             Starbase.LoadStarbaseListFromApi();
             addAvailableStarbasesToDataGridView();
 
