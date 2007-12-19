@@ -93,10 +93,6 @@ namespace EVEPOSMon
         private void characterInformationToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LoginCharacterSelect lcs = new LoginCharacterSelect();
-            if (lcs.ShowDialog() == DialogResult.OK)
-            {
-                m_settings.accountInfo = lcs.accountInfo;
-            }
         }
 
         private void dgStations_CellValueChanged(object sender, DataGridViewCellEventArgs e)

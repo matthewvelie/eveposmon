@@ -10,18 +10,18 @@ namespace EVEPOSMon
 {
     public partial class CharacterSelect : Form
     {
-        AccountInfo accountInfo;
+        List<Character> characters;
         public Character selectedCharacter;
 
-        public CharacterSelect(AccountInfo accountInfo)
+        public CharacterSelect(List<Character> characters)
         {
             InitializeComponent();
-            this.accountInfo = accountInfo;
+            this.characters = characters;
         }
 
         private void CharacterSelect_Load(object sender, EventArgs e)
         {
-            foreach (Character c in accountInfo.characters)
+            foreach (Character c in characters)
             {
                 lbCharacters.Items.Add(c);
             }

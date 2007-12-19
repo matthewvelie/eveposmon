@@ -57,6 +57,7 @@ namespace EVEMon.Common
 
         public readonly string SerializedStarbasesFilename = "Starbases.xml";
         public readonly string SerializedFuelCostFilename = "FuelCost.xml";
+        public readonly string SerializedAccountInfoFilename = "AccountInfo.xml";
 
         private bool m_useCustomProxySettings = false;
         public bool UseCustomProxySettings
