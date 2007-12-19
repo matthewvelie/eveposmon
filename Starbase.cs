@@ -211,7 +211,7 @@ namespace EVEPOSMon
             XmlNode error = xdoc.DocumentElement.SelectSingleNode("descendant::error");
             if (error != null)
             {
-                throw new InvalidDataException(error.InnerText);
+                System.Windows.Forms.MessageBox.Show("There was an error: " + error.InnerText);
             }
             else
             {
