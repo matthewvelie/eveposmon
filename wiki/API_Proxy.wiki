@@ -1,0 +1,14 @@
+#labels Phase-Support,Featured
+We're releasing a set of php pages that you can run on your local server that will act as a proxy to the eve server.  This will allow you to download the latest starbase details without giving eveposmon your full api key.  You can rest assured that it is safe.
+
+The way this works is a couple of php files get installed on your server along with a quick mod-rewrite .htacess file.
+
+The incoming request from eveposmon will goto your server.  From there your server will take the request attach your api keys, and then return back to the program just the xml file.  This way the program never receives any api keys so you can feel safe.
+
+{{{
+Sending:
+EVEPOSMon---Request---> Your Server ---- Request + Keys ----> api.eve-online.com
+Recieving:
+api.eve-online.com ---XML----> Your Server ---- XML ---> EVEPOSMon
+
+}}}
