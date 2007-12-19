@@ -171,7 +171,7 @@ namespace EVEPOSMon
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(346, 20);
             this.textBox1.TabIndex = 9;
-            this.textBox1.Text = "http://www.example.com/";
+            this.textBox1.Text = "http://api.eve-online.com";
             this.textBox1.Visible = false;
             // 
             // LoginCharacterSelect
