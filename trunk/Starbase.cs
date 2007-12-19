@@ -15,6 +15,37 @@ namespace EVEPOSMon
 
         [XmlElement]
         public string quantity;
+
+        [XmlElement]
+        public string quantityUsedPerHour;
+
+        [XmlElement]
+        public TimeSpan timeRemaining;
+
+        [XmlElement]
+        public string name;
+
+        [XmlElement]
+        public string volume;
+    }
+
+    public class CompareFuelByTimeLeft : IComparer<Fuel>
+    {
+        public int Compare(Fuel x, Fuel y)
+        {
+            if (x.timeRemaining > y.timeRemaining)
+            {
+                return -1;
+            }
+            if (x.timeRemaining < y.timeRemaining)
+            {
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
+        }
     }
 
     public class Starbase
@@ -51,6 +82,12 @@ namespace EVEPOSMon
 
         [XmlElement]
         public string nickname;
+
+        [XmlElement]
+        public double totalFuelVolume;
+
+        [XmlElement]
+        public double totalStrontiumVolume;
 
         #region map data
 
