@@ -279,9 +279,9 @@ namespace EVEPOSMon
         /// </summary>
         /// <param name="s"></param>
         /// <returns></returns>
-        private static bool isExpired(Starbase s)
+        public static bool isExpired(Starbase s)
         {
-            if (DateTime.Now >= s.cachedUntil || s.lastDownloaded == DateTime.MinValue)
+            if (DateTime.Now.ToUniversalTime() >= s.cachedUntil || s.lastDownloaded == DateTime.MinValue)
             {
                 return true;
             }
@@ -305,7 +305,7 @@ namespace EVEPOSMon
         public void LoadStarbaseDetailsFromApi()
         {
             // Don't send a request to the api unless we're expired
-            if (DateTime.Now < this.cachedUntil && this.lastDownloaded != DateTime.MinValue)
+            if (!isExpired(this))
             {
                 return;
             }
