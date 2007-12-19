@@ -35,8 +35,13 @@ namespace EVEPOSMon
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnSaveAutoload = new System.Windows.Forms.Button();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgStations)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnLoadStations
@@ -113,23 +118,49 @@ namespace EVEPOSMon
             this.Column3.ReadOnly = true;
             this.Column3.Width = 150;
             // 
-            // btnSaveAutoload
+            // statusStrip1
             // 
-            this.btnSaveAutoload.Location = new System.Drawing.Point(130, 298);
-            this.btnSaveAutoload.Name = "btnSaveAutoload";
-            this.btnSaveAutoload.Size = new System.Drawing.Size(150, 23);
-            this.btnSaveAutoload.TabIndex = 4;
-            this.btnSaveAutoload.Text = "Save Selection for Auto-load";
-            this.btnSaveAutoload.UseVisualStyleBackColor = true;
-            this.btnSaveAutoload.Visible = false;
-            this.btnSaveAutoload.Click += new System.EventHandler(this.btnSaveAutoload_Click);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1,
+            this.toolStripStatusLabel2,
+            this.toolStripStatusLabel3,
+            this.toolStripStatusLabel4});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 336);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(423, 22);
+            this.statusStrip1.TabIndex = 5;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(101, 17);
+            this.toolStripStatusLabel1.Text = "Data Recent As Of:";
+            // 
+            // toolStripStatusLabel2
+            // 
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(99, 17);
+            this.toolStripStatusLabel2.Text = "DownloadDateTime";
+            // 
+            // toolStripStatusLabel3
+            // 
+            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(72, 17);
+            this.toolStripStatusLabel3.Text = "Next Update:";
+            // 
+            // toolStripStatusLabel4
+            // 
+            this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
+            this.toolStripStatusLabel4.Size = new System.Drawing.Size(71, 17);
+            this.toolStripStatusLabel4.Text = "CacheTillTime";
             // 
             // SelectStarbases
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(423, 328);
-            this.Controls.Add(this.btnSaveAutoload);
+            this.ClientSize = new System.Drawing.Size(423, 358);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.dgStations);
             this.Controls.Add(this.btnGetStationInfo);
             this.Controls.Add(this.btnLoadStations);
@@ -143,7 +174,10 @@ namespace EVEPOSMon
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SelectStarbases_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgStations)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -152,11 +186,15 @@ namespace EVEPOSMon
         private System.Windows.Forms.Button btnLoadStations;
         private System.Windows.Forms.Button btnGetStationInfo;
         private System.Windows.Forms.DataGridView dgStations;
-        private System.Windows.Forms.Button btnSaveAutoload;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column0;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel4;
     }
 }
 
