@@ -58,22 +58,6 @@ namespace EVEMon.Common
         public readonly string SerializedStarbasesFilename = "Starbases.xml";
         public readonly string SerializedFuelCostFilename = "FuelCost.xml";
 
-        public List<Starbase> monitoredStarbases
-        {
-            get
-            {
-                List<Starbase> result = new List<Starbase>();
-                foreach (Starbase s in availableStarBases)
-                {
-                    if (s.monitored == true)
-                    {
-                        result.Add(s); 
-                    }
-                }
-                return result;
-            }
-        }
-
         private bool m_useCustomProxySettings = false;
         public bool UseCustomProxySettings
         {
