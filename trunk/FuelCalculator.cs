@@ -761,5 +761,11 @@ namespace EVEPOSMon
             btnUseStarbases.Enabled = true;
         }
 
+        private void toolStripButton1_Click_1(object sender, EventArgs e)
+        {
+            IceFuel ice = new IceFuel();
+            ice.Show();
+        }
+
     }
 }
