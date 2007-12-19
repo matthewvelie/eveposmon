@@ -60,6 +60,12 @@
       <DependentUpon>FuelCalculator.cs</DependentUpon>
     </Compile>
     <Compile Include="FuelCostEntry.cs" />
+    <Compile Include="IceFuel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IceFuel.Designer.cs">
+      <DependentUpon>IceFuel.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginCharacterSelect.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +144,10 @@
     <EmbeddedResource Include="FuelCalculator.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FuelCalculator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IceFuel.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>IceFuel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginCharacterSelect.resx">
       <SubType>Designer</SubType>
