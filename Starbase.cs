@@ -225,20 +225,68 @@ namespace EVEPOSMon
                     newStarbasesList.Add(starbase);
                 }
 
-                // If we had starbases checked make sure they stay checked
-                foreach (Starbase oldStarbase in settings.availableStarBases)
+                for (int i = 0; i < newStarbasesList.Count; i++)
                 {
-                    foreach (Starbase newStarbase in newStarbasesList)
+                    // Here we are going to check each of the stabases on the new list
+                    // If we have an unexpired cached version then we will use that instead
+                    Starbase cachedStarbase = getCachedStarbase(newStarbasesList[i].itemId);
+                    if (cachedStarbase != null)
                     {
-                        if (oldStarbase.itemId == newStarbase.itemId)
+                        if (isExpired(cachedStarbase))
                         {
-                            newStarbase.monitored = oldStarbase.monitored;
+                            // If the cached starbase is expired use the new one
+                            // and make sure if it was checked it stays that way
+                            newStarbasesList[i].monitored = cachedStarbase.monitored;
+                        }
+                        else
+                        {
+                            // The cached version isn't expired so use it instead of the
+                            // new one
+                            newStarbasesList[i] = cachedStarbase;
                         }
                     }
                 }
 
+                // The new list contains the cached and new items so lets use it
+                // as our available list from now on
                 settings.availableStarBases = newStarbasesList;
             }
+        }
+
+        /// <summary>
+        /// If we have a cached starbase with the specified itemId return it, otherwise
+        /// return null
+        /// </summary>
+        /// <param name="itemId"></param>
+        /// <returns></returns>
+        private static Starbase getCachedStarbase(string itemId)
+        {
+            foreach (Starbase s in Settings.GetInstance().availableStarBases)
+            {
+                if (s.itemId == itemId)
+                {
+                    return s;
+                }
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// A starbase is expired if we've passed it's cachedUntil date. If it has never had its
+        /// details loaded then lastDownloaded will be DateTime.MinValue - we consider it expired
+        /// because we need to get its details
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        private static bool isExpired(Starbase s)
+        {
+            if (DateTime.Now >= s.cachedUntil || s.lastDownloaded == DateTime.MinValue)
+            {
+                return true;
+            }
+
+            return false;
         }
 
         public void LoadFromListApiXml(XmlNode starbaseNode, DateTime cachedUntil)
