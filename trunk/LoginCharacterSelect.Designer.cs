@@ -41,8 +41,8 @@ namespace EVEPOSMon
             this.label1 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cbUseProxy = new System.Windows.Forms.CheckBox();
+            this.tbProxyAddress = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblUserId
@@ -68,7 +68,7 @@ namespace EVEPOSMon
             this.tbUserId.Location = new System.Drawing.Point(75, 126);
             this.tbUserId.Name = "tbUserId";
             this.tbUserId.Size = new System.Drawing.Size(155, 20);
-            this.tbUserId.TabIndex = 1;
+            this.tbUserId.TabIndex = 0;
             // 
             // tbApiKey
             // 
@@ -99,7 +99,7 @@ namespace EVEPOSMon
             this.btnGetCharacters.Location = new System.Drawing.Point(226, 187);
             this.btnGetCharacters.Name = "btnGetCharacters";
             this.btnGetCharacters.Size = new System.Drawing.Size(31, 20);
-            this.btnGetCharacters.TabIndex = 3;
+            this.btnGetCharacters.TabIndex = 2;
             this.btnGetCharacters.Text = "...";
             this.btnGetCharacters.UseVisualStyleBackColor = true;
             this.btnGetCharacters.Click += new System.EventHandler(this.btnGetCharacters_Click);
@@ -110,7 +110,7 @@ namespace EVEPOSMon
             this.btnOk.Location = new System.Drawing.Point(312, 302);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(73, 24);
-            this.btnOk.TabIndex = 4;
+            this.btnOk.TabIndex = 5;
             this.btnOk.Text = "OK";
             this.btnOk.UseVisualStyleBackColor = true;
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
@@ -121,7 +121,7 @@ namespace EVEPOSMon
             this.btnCancel.Location = new System.Drawing.Point(391, 302);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(73, 24);
-            this.btnCancel.TabIndex = 4;
+            this.btnCancel.TabIndex = 6;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
@@ -140,7 +140,7 @@ namespace EVEPOSMon
             this.linkLabel1.Location = new System.Drawing.Point(165, 106);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(220, 13);
-            this.linkLabel1.TabIndex = 6;
+            this.linkLabel1.TabIndex = 10;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "http://myeve.eve-online.com/api/default.asp";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
@@ -154,33 +154,33 @@ namespace EVEPOSMon
             this.label2.TabIndex = 7;
             this.label2.Text = "Your keys can be found here:";
             // 
-            // checkBox1
+            // cbUseProxy
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(23, 233);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(354, 17);
-            this.checkBox1.TabIndex = 8;
-            this.checkBox1.Text = "I am entering limited keys, use a proxy server when full keys are need:";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.cbUseProxy.AutoSize = true;
+            this.cbUseProxy.Location = new System.Drawing.Point(23, 233);
+            this.cbUseProxy.Name = "cbUseProxy";
+            this.cbUseProxy.Size = new System.Drawing.Size(354, 17);
+            this.cbUseProxy.TabIndex = 3;
+            this.cbUseProxy.Text = "I am entering limited keys, use a proxy server when full keys are need:";
+            this.cbUseProxy.UseVisualStyleBackColor = true;
+            this.cbUseProxy.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // textBox1
+            // tbProxyAddress
             // 
-            this.textBox1.Location = new System.Drawing.Point(24, 266);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(346, 20);
-            this.textBox1.TabIndex = 9;
-            this.textBox1.Text = "http://api.eve-online.com";
-            this.textBox1.Visible = false;
+            this.tbProxyAddress.Location = new System.Drawing.Point(24, 266);
+            this.tbProxyAddress.Name = "tbProxyAddress";
+            this.tbProxyAddress.Size = new System.Drawing.Size(346, 20);
+            this.tbProxyAddress.TabIndex = 4;
+            this.tbProxyAddress.Text = "http://www.example.com/";
+            this.tbProxyAddress.Visible = false;
             // 
             // LoginCharacterSelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(476, 338);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.tbProxyAddress);
+            this.Controls.Add(this.cbUseProxy);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label1);
@@ -201,6 +201,7 @@ namespace EVEPOSMon
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginCharacterSelect";
+            this.Load += new System.EventHandler(this.LoginCharacterSelect_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -220,7 +221,7 @@ namespace EVEPOSMon
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.CheckBox cbUseProxy;
+        private System.Windows.Forms.TextBox tbProxyAddress;
     }
 }

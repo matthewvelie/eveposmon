@@ -13,7 +13,8 @@ namespace EVEPOSMon
 {
     public partial class LoginCharacterSelect : Form
     {
-        public AccountInfo accountInfo;
+        private Settings m_settings = Settings.GetInstance();
+        private List<Character> newCharacterList = new List<Character>();
 
         public LoginCharacterSelect()
         {
@@ -28,14 +29,11 @@ namespace EVEPOSMon
                 return;
             }
 
-            accountInfo = new AccountInfo();
-            accountInfo.userId = tbUserId.Text;
-            accountInfo.apiKey = tbApiKey.Text;
-
             //XmlDocument doc = EVEMonWebRequest.LoadXml(@"http://api.eve-online.com/account/Characters.xml.aspx?userid=" + tbUserId.Text + "&apikey=" + tbApiKey.Text);
             XmlDocument doc = EveSession.GetCharList(tbUserId.Text, tbApiKey.Text);
             DateTime cachedUntil = EveSession.GetCacheExpiryUTC(doc);
             XmlNodeList rows = doc.GetElementsByTagName("row");
+
             foreach (XmlNode row in rows)
             {
                 Character c = new Character();
@@ -44,22 +42,26 @@ namespace EVEPOSMon
                 c.characterId = attrs["characterID"].InnerText;
                 c.corporationId = attrs["corporationName"].InnerText;
                 c.corporationId = attrs["corporationID"].InnerText;
-                accountInfo.characters.Add(c);
+                newCharacterList.Add(c);
             }
 
-            CharacterSelect characterSelect = new CharacterSelect(accountInfo);
+            CharacterSelect characterSelect = new CharacterSelect(newCharacterList);
 
             if (characterSelect.ShowDialog() == DialogResult.OK)
             {
-                foreach (Character c in accountInfo.characters)
+                tbCharacter.Text = characterSelect.selectedCharacter.name;
+                characterSelect.selectedCharacter.selected = true;
+                foreach (Character c in newCharacterList)
                 {
                     if (c.name == characterSelect.selectedCharacter.name)
                     {
                         c.selected = true;
                     }
+                    else
+                    {
+                        c.selected = false;
+                    }
                 }
-                tbCharacter.Text = characterSelect.selectedCharacter.name;
-                characterSelect.selectedCharacter.selected = true;
             }
         }
 
@@ -69,7 +71,25 @@ namespace EVEPOSMon
             {
                 MessageBox.Show("Please enter UserID and ApiKey then choose a character");
                 DialogResult = DialogResult.None;
+                return;
             }
+
+            if (cbUseProxy.Checked && tbProxyAddress.Text == String.Empty)
+            {
+                MessageBox.Show("Please enter a proxy address or uncheck the use proxy option");
+                DialogResult = DialogResult.None;
+                return;
+            }
+
+            if (newCharacterList.Count > 0)
+            {
+                m_settings.accountInfo.characters = newCharacterList;
+            }
+            m_settings.accountInfo.userId = tbUserId.Text;
+            m_settings.accountInfo.apiKey = tbApiKey.Text;
+            m_settings.accountInfo.useProxy = cbUseProxy.Checked;
+            m_settings.accountInfo.proxyAddress = tbProxyAddress.Text;
+            m_settings.accountInfo.serializeTo(m_settings.SerializedAccountInfoFilename);
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -79,13 +99,35 @@ namespace EVEPOSMon
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox1.Checked == true)
+            if (cbUseProxy.Checked == true)
             {
-                textBox1.Visible = true;
+                tbProxyAddress.Visible = true;
             }else{
-                textBox1.Visible = false;
+                tbProxyAddress.Visible = false;
             }
 
+        }
+
+        private void LoginCharacterSelect_Load(object sender, EventArgs e)
+        {
+            tbUserId.Focus();
+            tbApiKey.Text = m_settings.accountInfo.apiKey;
+            tbUserId.Text = m_settings.accountInfo.userId;
+
+            if (m_settings.accountInfo.SelectedCharacter != null)
+            {
+                tbCharacter.Text = m_settings.accountInfo.SelectedCharacter.name;
+            }
+
+            cbUseProxy.Checked = m_settings.accountInfo.useProxy;
+            if (String.IsNullOrEmpty(m_settings.accountInfo.proxyAddress))
+            {
+                tbProxyAddress.Text = "http://www.example.com";
+            }
+            else
+            {
+                tbProxyAddress.Text = m_settings.accountInfo.proxyAddress;
+            }
         }
     }
 }

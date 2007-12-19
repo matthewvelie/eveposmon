@@ -86,10 +86,7 @@ namespace EVEPOSMon
         private void aPIKeysToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             LoginCharacterSelect lcs = new LoginCharacterSelect();
-            if (lcs.ShowDialog() == DialogResult.OK)
-            {
-                m_settings.accountInfo = lcs.accountInfo;
-            }
+            lcs.ShowDialog();
         }
 
         private void starbaseSelectionToolStripMenuItem_Click(object sender, EventArgs e)
