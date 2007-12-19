@@ -76,5 +76,16 @@ namespace EVEPOSMon
         {
             System.Diagnostics.Process.Start("http://myeve.eve-online.com/api/default.asp");
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == true)
+            {
+                textBox1.Visible = true;
+            }else{
+                textBox1.Visible = false;
+            }
+
+        }
     }
 }
