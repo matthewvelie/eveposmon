@@ -117,4 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label1.Text" xml:space="preserve">
+    <value>There are currently two options on how to access data for the starbases:
+1) Enter full API Keys here to access the data directly
+2) Setup a proxy on your website and give us that site
+
+With option 2, only limited keys are needed; however, you are reponsbile
+for setting up the server and maintaining it.  Example files needed to do this
+are available on the website.</value>
+  </data>
 </root>

@@ -28,6 +28,7 @@ namespace EVEPOSMon
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginCharacterSelect));
             this.lblUserId = new System.Windows.Forms.Label();
             this.lblApiKey = new System.Windows.Forms.Label();
             this.tbUserId = new System.Windows.Forms.TextBox();
@@ -40,12 +41,14 @@ namespace EVEPOSMon
             this.label1 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblUserId
             // 
             this.lblUserId.AutoSize = true;
-            this.lblUserId.Location = new System.Drawing.Point(12, 83);
+            this.lblUserId.Location = new System.Drawing.Point(23, 129);
             this.lblUserId.Name = "lblUserId";
             this.lblUserId.Size = new System.Drawing.Size(46, 13);
             this.lblUserId.TabIndex = 0;
@@ -54,7 +57,7 @@ namespace EVEPOSMon
             // lblApiKey
             // 
             this.lblApiKey.AutoSize = true;
-            this.lblApiKey.Location = new System.Drawing.Point(12, 110);
+            this.lblApiKey.Location = new System.Drawing.Point(21, 155);
             this.lblApiKey.Name = "lblApiKey";
             this.lblApiKey.Size = new System.Drawing.Size(48, 13);
             this.lblApiKey.TabIndex = 0;
@@ -62,14 +65,14 @@ namespace EVEPOSMon
             // 
             // tbUserId
             // 
-            this.tbUserId.Location = new System.Drawing.Point(65, 83);
+            this.tbUserId.Location = new System.Drawing.Point(75, 126);
             this.tbUserId.Name = "tbUserId";
             this.tbUserId.Size = new System.Drawing.Size(155, 20);
             this.tbUserId.TabIndex = 1;
             // 
             // tbApiKey
             // 
-            this.tbApiKey.Location = new System.Drawing.Point(66, 107);
+            this.tbApiKey.Location = new System.Drawing.Point(75, 152);
             this.tbApiKey.Name = "tbApiKey";
             this.tbApiKey.Size = new System.Drawing.Size(397, 20);
             this.tbApiKey.TabIndex = 1;
@@ -77,7 +80,7 @@ namespace EVEPOSMon
             // lblCharacter
             // 
             this.lblCharacter.AutoSize = true;
-            this.lblCharacter.Location = new System.Drawing.Point(12, 166);
+            this.lblCharacter.Location = new System.Drawing.Point(11, 187);
             this.lblCharacter.Name = "lblCharacter";
             this.lblCharacter.Size = new System.Drawing.Size(56, 13);
             this.lblCharacter.TabIndex = 0;
@@ -86,14 +89,14 @@ namespace EVEPOSMon
             // tbCharacter
             // 
             this.tbCharacter.Enabled = false;
-            this.tbCharacter.Location = new System.Drawing.Point(75, 166);
+            this.tbCharacter.Location = new System.Drawing.Point(75, 187);
             this.tbCharacter.Name = "tbCharacter";
             this.tbCharacter.Size = new System.Drawing.Size(145, 20);
             this.tbCharacter.TabIndex = 2;
             // 
             // btnGetCharacters
             // 
-            this.btnGetCharacters.Location = new System.Drawing.Point(226, 166);
+            this.btnGetCharacters.Location = new System.Drawing.Point(226, 187);
             this.btnGetCharacters.Name = "btnGetCharacters";
             this.btnGetCharacters.Size = new System.Drawing.Size(31, 20);
             this.btnGetCharacters.TabIndex = 3;
@@ -104,7 +107,7 @@ namespace EVEPOSMon
             // btnOk
             // 
             this.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnOk.Location = new System.Drawing.Point(311, 208);
+            this.btnOk.Location = new System.Drawing.Point(312, 302);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(73, 24);
             this.btnOk.TabIndex = 4;
@@ -115,7 +118,7 @@ namespace EVEPOSMon
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(390, 208);
+            this.btnCancel.Location = new System.Drawing.Point(391, 302);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(73, 24);
             this.btnCancel.TabIndex = 4;
@@ -125,18 +128,16 @@ namespace EVEPOSMon
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 11);
+            this.label1.Location = new System.Drawing.Point(12, 5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(328, 39);
+            this.label1.Size = new System.Drawing.Size(358, 91);
             this.label1.TabIndex = 5;
-            this.label1.Text = "Please enter your API key information here\r\nThis information can be found on the " +
-                "eve website.  \r\nYour FULL key must be used to access information about starbases" +
-                ".";
+            this.label1.Text = resources.GetString("label1.Text");
             // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(165, 61);
+            this.linkLabel1.Location = new System.Drawing.Point(165, 106);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(220, 13);
             this.linkLabel1.TabIndex = 6;
@@ -147,17 +148,39 @@ namespace EVEPOSMon
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 61);
+            this.label2.Location = new System.Drawing.Point(12, 106);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(147, 13);
             this.label2.TabIndex = 7;
             this.label2.Text = "Your keys can be found here:";
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(23, 233);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(354, 17);
+            this.checkBox1.TabIndex = 8;
+            this.checkBox1.Text = "I am entering limited keys, use a proxy server when full keys are need:";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(24, 266);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(346, 20);
+            this.textBox1.TabIndex = 9;
+            this.textBox1.Text = "http://www.example.com/";
+            this.textBox1.Visible = false;
+            // 
             // LoginCharacterSelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(475, 235);
+            this.ClientSize = new System.Drawing.Size(476, 338);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label1);
@@ -197,5 +220,7 @@ namespace EVEPOSMon
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
