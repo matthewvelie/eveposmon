@@ -61,10 +61,6 @@ namespace EVEPOSMon
                 ct.volume = tower.ChildNodes[3].InnerText;
                 ct.capacity = tower.ChildNodes[4].InnerText;
                 ctt.controlTowersList.Add(ct);
-            }
-
-            foreach (ControlTower ct in ctt.controlTowersList)
-            {
                 ctt.towersTypeIds.Add(ct.typeId, ct);
             }
 
