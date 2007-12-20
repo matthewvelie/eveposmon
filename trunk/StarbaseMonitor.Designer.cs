@@ -71,6 +71,9 @@ namespace EVEPOSMon
             this.tmrSecondTick = new System.Windows.Forms.Timer(this.components);
             this.tmrThreeHourCache = new System.Windows.Forms.Timer(this.components);
             this.pbStatus = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblTickAt = new System.Windows.Forms.Label();
             this.throbber1 = new EVEMon.Throbber();
             ((System.ComponentModel.ISupportInitialize)(this.pbStationImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgFuelList)).BeginInit();
@@ -412,10 +415,6 @@ namespace EVEPOSMon
             this.tmrSecondTick.Interval = 1000;
             this.tmrSecondTick.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // tmrThreeHourCache
-            // 
-            this.tmrThreeHourCache.Interval = 10800000;
-            // 
             // pbStatus
             // 
             this.pbStatus.BackColor = System.Drawing.Color.Transparent;
@@ -427,6 +426,33 @@ namespace EVEPOSMon
             this.pbStatus.Size = new System.Drawing.Size(50, 50);
             this.pbStatus.TabIndex = 30;
             this.pbStatus.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(189, 167);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(145, 13);
+            this.label1.TabIndex = 31;
+            this.label1.Text = "Starbase Tick Every Hour At:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(380, 167);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(44, 13);
+            this.label3.TabIndex = 32;
+            this.label3.Text = "Minutes";
+            // 
+            // lblTickAt
+            // 
+            this.lblTickAt.AutoSize = true;
+            this.lblTickAt.Location = new System.Drawing.Point(340, 167);
+            this.lblTickAt.Name = "lblTickAt";
+            this.lblTickAt.Size = new System.Drawing.Size(35, 13);
+            this.lblTickAt.TabIndex = 33;
+            this.lblTickAt.Text = "label4";
             // 
             // throbber1
             // 
@@ -443,6 +469,9 @@ namespace EVEPOSMon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblTickAt);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.pbStatus);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.lblFuelBay);
@@ -537,5 +566,8 @@ namespace EVEPOSMon
         private System.Windows.Forms.Timer tmrSecondTick;
         private System.Windows.Forms.Timer tmrThreeHourCache;
         private System.Windows.Forms.PictureBox pbStatus;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblTickAt;
     }
 }
