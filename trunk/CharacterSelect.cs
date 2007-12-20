@@ -36,5 +36,15 @@ namespace EVEPOSMon
 
             selectedCharacter = lbCharacters.SelectedItem as Character;
         }
+
+        private void lbCharacters_DoubleClick(object sender, EventArgs e)
+        {
+            if (lbCharacters.SelectedItems.Count == 1)
+            {
+                DialogResult = DialogResult.OK;
+            }
+
+            selectedCharacter = lbCharacters.SelectedItem as Character;
+        }
     }
 }
