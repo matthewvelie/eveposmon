@@ -38,6 +38,8 @@ namespace EVEPOSMon
             // Set all the stabase settings labels
             updateOptionLabels();
 
+            dgFuelList.Rows.Clear();
+
             m_starbase.totalStrontiumVolume = 0;
             m_starbase.totalFuelVolume = 0;
             foreach (Fuel f in m_starbase.FuelList)
@@ -45,14 +47,44 @@ namespace EVEPOSMon
                 // The fuel name and amount used per hour come from an external xml file
                 ResourceEntry fuelInfo = m_settings.towerResources.GetFuelInfo(m_starbase.typeId, f.typeId);
                 f.name = fuelInfo.name;
-                f.quantityUsedPerHour = fuelInfo.quantity;
+                
                 f.volume = fuelInfo.volume;
+
+                // water
+                if (fuelInfo.typeId == "16272")
+                {
+                    if (m_starbase.observedWaterPerHour != 0)
+                    {
+                        f.quantityUsedPerHour = m_starbase.observedWaterPerHour.ToString();
+                    }
+                    else
+                    {
+                        f.quantityUsedPerHour = fuelInfo.quantity;
+                    }
+                }
+                // ozone
+                else if (fuelInfo.typeId == "16273")
+                {
+                    if (m_starbase.observedOzonePerHour != 0)
+                    {
+                        f.quantityUsedPerHour = m_starbase.observedOzonePerHour.ToString();
+                    }
+                    else
+                    {
+                        f.quantityUsedPerHour = fuelInfo.quantity;
+                    }
+                }
+                else
+                {
+                    f.quantityUsedPerHour = fuelInfo.quantity;
+                }
 
                 // Add this item to our total fuel volume or total strontium volume
                 if (fuelInfo.typeId == strontiumTypeId)
                 {
                     m_starbase.totalStrontiumVolume += Convert.ToInt32(f.quantity) * Convert.ToDouble(f.volume);
                 }
+                
                 else
                 {
                     m_starbase.totalFuelVolume += Convert.ToInt32(f.quantity) * Convert.ToDouble(f.volume);
@@ -164,6 +196,7 @@ namespace EVEPOSMon
             //Time to refresh
             if (seconds == 0)
             {
+                tmrSecondTick.Stop();
                 //Get current values for ozone/water calculations
                 int lastXmlLiquidOzone = 0;
                 int lastXmlHeavyWater = 0;
@@ -183,7 +216,6 @@ namespace EVEPOSMon
 
                 //Update here
                 m_starbase.LoadStarbaseDetailsFromApi();
-                updateForm();
 
                 //Take new data from api
                 int currentXmlLiquidOzone = 0;
@@ -218,7 +250,11 @@ namespace EVEPOSMon
                 //set the new values (needs to be written!!)
                 //m_settings.towerResources.SetFuelInfo(m_starbase.itemId, "16273", ozonePerHr);
                 //m_settings.towerResources.SetFuelInfo(m_starbase.itemId, "16272", waterPerHr);
+                m_starbase.observedOzonePerHour = ozonePerHr;
+                m_starbase.observedWaterPerHour = waterPerHr;
 
+                updateForm();
+                tmrSecondTick.Start();
             }
 
             //check to see if the pos is ticking this second to update (and it's online)

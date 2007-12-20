@@ -89,6 +89,12 @@ namespace EVEPOSMon
         [XmlElement]
         public double totalStrontiumVolume;
 
+        [XmlElement]
+        public int observedOzonePerHour;
+
+        [XmlElement]
+        public int observedWaterPerHour;
+
         #region map data
 
         private MapSystem starbaseSystem;
