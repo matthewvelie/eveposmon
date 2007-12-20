@@ -464,7 +464,7 @@ Section Uninstall
   Delete "$INSTDIR\icons\icon06_06.png"
   Delete "$INSTDIR\icons\icon06_03.png"
   Delete "$INSTDIR\icons\icon06_02.png"
-  Delete "$INSTDIR\EVEPOSMON.zip"
+  Delete "$INSTDIR\Starbases.xml"
   Delete "$INSTDIR\EVEPOSMon.vshost.exe"
   Delete "$INSTDIR\EVEPOSMon.pdb"
   Delete "$INSTDIR\EVEPOSMon.exe"
