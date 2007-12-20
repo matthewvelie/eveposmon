@@ -36,10 +36,8 @@ namespace EVEPOSMon
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsslCachedUntil = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgStations)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -121,27 +119,13 @@ namespace EVEPOSMon
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1,
-            this.toolStripStatusLabel2,
             this.toolStripStatusLabel3,
-            this.toolStripStatusLabel4});
+            this.tsslCachedUntil});
             this.statusStrip1.Location = new System.Drawing.Point(0, 336);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(423, 22);
             this.statusStrip1.TabIndex = 5;
             this.statusStrip1.Text = "statusStrip1";
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(101, 17);
-            this.toolStripStatusLabel1.Text = "Data Recent As Of:";
-            // 
-            // toolStripStatusLabel2
-            // 
-            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(99, 17);
-            this.toolStripStatusLabel2.Text = "DownloadDateTime";
             // 
             // toolStripStatusLabel3
             // 
@@ -149,11 +133,11 @@ namespace EVEPOSMon
             this.toolStripStatusLabel3.Size = new System.Drawing.Size(72, 17);
             this.toolStripStatusLabel3.Text = "Next Update:";
             // 
-            // toolStripStatusLabel4
+            // tsslCachedUntil
             // 
-            this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
-            this.toolStripStatusLabel4.Size = new System.Drawing.Size(71, 17);
-            this.toolStripStatusLabel4.Text = "CacheTillTime";
+            this.tsslCachedUntil.Name = "tsslCachedUntil";
+            this.tsslCachedUntil.Size = new System.Drawing.Size(71, 17);
+            this.tsslCachedUntil.Text = "CacheTillTime";
             // 
             // SelectStarbases
             // 
@@ -191,10 +175,8 @@ namespace EVEPOSMon
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel4;
+        private System.Windows.Forms.ToolStripStatusLabel tsslCachedUntil;
     }
 }
 

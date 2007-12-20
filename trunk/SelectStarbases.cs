@@ -28,6 +28,19 @@ namespace EVEPOSMon
         private void Form1_Load(object sender, EventArgs e)
         {
             addAvailableStarbasesToDataGridView();
+            updateStarbaseListTimes();
+        }
+
+        private void updateStarbaseListTimes()
+        {
+            if (m_settings.starbaseList.cachedUntil == DateTime.MinValue)
+            {
+                tsslCachedUntil.Text = "Unknown";
+            }
+            else
+            {
+                tsslCachedUntil.Text = m_settings.starbaseList.cachedUntil.ToLocalTime().ToString();
+            }
         }
 
         private void btnLoadStations_Click(object sender, EventArgs e)
@@ -37,6 +50,7 @@ namespace EVEPOSMon
             dgStations.Rows.Clear();
             Starbase.LoadStarbaseListFromApi();
             addAvailableStarbasesToDataGridView();
+            updateStarbaseListTimes();
 
             btnLoadStations.Enabled = true;
         }

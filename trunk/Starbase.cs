@@ -206,8 +206,15 @@ namespace EVEPOSMon
         /// </summary>
         public static void LoadStarbaseListFromApi()
         {
-            XmlDocument xdoc = EveSession.GetStarbaseList("","",""); ;
             Settings settings = Settings.GetInstance();
+
+            if (settings.starbaseList.cachedUntil != DateTime.MinValue &&
+                DateTime.Now < settings.starbaseList.cachedUntil.ToLocalTime())
+            {
+                return;
+            }
+
+            XmlDocument xdoc = EveSession.GetStarbaseList("","",""); ;
             XmlNode error = xdoc.DocumentElement.SelectSingleNode("descendant::error");
             if (error != null)
             {
@@ -250,6 +257,10 @@ namespace EVEPOSMon
                 // The new list contains the cached and new items so lets use it
                 // as our available list from now on
                 settings.availableStarBases = newStarbasesList;
+
+                settings.starbaseList.LastUpdated = DateTime.Now;
+                settings.starbaseList.cachedUntil = cachedUntil;
+                settings.starbaseList.SaveStarbaseListTo(settings.SerializeStarbaseListFilename);
             }
         }
 
