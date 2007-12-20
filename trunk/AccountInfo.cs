@@ -38,6 +38,9 @@ namespace EVEPOSMon
         [XmlArray]
         public List<Character> characters = new List<Character>();
 
+        [XmlElement]
+        public DateTime charactersCachedUntil = DateTime.MinValue;
+
         [XmlIgnore]
         public Character SelectedCharacter
         {
