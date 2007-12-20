@@ -327,17 +327,30 @@ namespace EVEPOSMon
                 return;
             }
 
-            XmlDocument detailsXmlDoc = EveSession.GetStarbaseDetail(m_settings.accountInfo.userId, m_settings.accountInfo.apiKey, m_settings.accountInfo.SelectedCharacter.characterId, this.itemId);
+            if (m_settings.accountInfo.userId == null || m_settings.accountInfo.apiKey == null || m_settings.accountInfo.SelectedCharacter.characterId == null)
+            {
+                return;
+            }
 
-            XmlNode error = detailsXmlDoc.DocumentElement.SelectSingleNode("descendant::error");
-            if (error != null)
+            try
             {
-                throw new InvalidDataException(error.InnerText);
+                XmlDocument detailsXmlDoc = EveSession.GetStarbaseDetail(m_settings.accountInfo.userId, m_settings.accountInfo.apiKey, m_settings.accountInfo.SelectedCharacter.characterId, this.itemId);
+                XmlNode error = detailsXmlDoc.DocumentElement.SelectSingleNode("descendant::error");
+                if (error != null)
+                {
+                    throw new InvalidDataException(error.InnerText);
+                }
+                else
+                {
+                    LoadDetailsFromXml(detailsXmlDoc);
+                }
             }
-            else
+            catch
             {
-                LoadDetailsFromXml(detailsXmlDoc);
+
             }
+
+
         }
 
         public void LoadDetailsFromXml(System.Xml.XmlDocument detailsXmlDoc)
