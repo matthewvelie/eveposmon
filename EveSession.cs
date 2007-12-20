@@ -49,10 +49,8 @@ namespace EVEMon.Common
         public static XmlDocument GetCharList(string userId, string apiKey)
         {
             WebRequestState wrs = new WebRequestState();
-            //For Some reason server sends back a 405 error when using a post like this, so for now we use get
-            //wrs.SetPost("userid=" + userId + "&apiKey=" + apiKey);
-            //return EVEMonWebRequest.LoadXml(@"http://www.exa-nation.com" + m_ApiCharListUrl, wrs);
-            return EVEMonWebRequest.LoadXml(@APIBASE + m_ApiCharListUrl + "?userid=" + userId + "&apiKey=" + apiKey, wrs);
+            wrs.SetPost("userid=" + userId + "&apiKey=" + apiKey);
+            return EVEMonWebRequest.LoadXml(@APIBASE + m_ApiCharListUrl, wrs);
         }
 
         public static XmlDocument GetUpdateDocument()
