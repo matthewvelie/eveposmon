@@ -39,6 +39,7 @@ namespace EVEPOSMon
             this.lbCharacters.Name = "lbCharacters";
             this.lbCharacters.Size = new System.Drawing.Size(203, 69);
             this.lbCharacters.TabIndex = 0;
+            this.lbCharacters.DoubleClick += new System.EventHandler(this.lbCharacters_DoubleClick);
             // 
             // btnSelect
             // 
