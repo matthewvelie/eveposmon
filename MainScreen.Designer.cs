@@ -37,7 +37,7 @@ namespace EVEPOSMon
             this.fuelCalculatorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stationNotesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-            this.aPIKeysToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.apiKeysToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.starbaseSelectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,7 +54,6 @@ namespace EVEPOSMon
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(542, 703);
             this.tabControl1.TabIndex = 0;
-            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // menuStrip1
             // 
@@ -80,7 +79,7 @@ namespace EVEPOSMon
             // 
             this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
             this.quitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
-            this.quitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.quitToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.quitToolStripMenuItem.Text = "&Quit";
             this.quitToolStripMenuItem.Click += new System.EventHandler(this.quitToolStripMenuItem_Click);
             // 
@@ -90,7 +89,7 @@ namespace EVEPOSMon
             this.fuelCalculatorToolStripMenuItem,
             this.stationNotesToolStripMenuItem,
             this.toolStripMenuItem1,
-            this.aPIKeysToolStripMenuItem,
+            this.apiKeysToolStripMenuItem,
             this.starbaseSelectionToolStripMenuItem,
             this.toolStripMenuItem2,
             this.settingsToolStripMenuItem});
@@ -118,12 +117,12 @@ namespace EVEPOSMon
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(187, 6);
             // 
-            // aPIKeysToolStripMenuItem
+            // apiKeysToolStripMenuItem
             // 
-            this.aPIKeysToolStripMenuItem.Name = "aPIKeysToolStripMenuItem";
-            this.aPIKeysToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
-            this.aPIKeysToolStripMenuItem.Text = "API Keys";
-            this.aPIKeysToolStripMenuItem.Click += new System.EventHandler(this.aPIKeysToolStripMenuItem_Click_1);
+            this.apiKeysToolStripMenuItem.Name = "apiKeysToolStripMenuItem";
+            this.apiKeysToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.apiKeysToolStripMenuItem.Text = "API Keys";
+            this.apiKeysToolStripMenuItem.Click += new System.EventHandler(this.apiKeysToolStripMenuItem_Click_1);
             // 
             // starbaseSelectionToolStripMenuItem
             // 
@@ -195,7 +194,7 @@ namespace EVEPOSMon
         private System.Windows.Forms.ToolStripMenuItem stationNotesToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aPIKeysToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem apiKeysToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem starbaseSelectionToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
     }
