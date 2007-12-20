@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using EVEMon.Common;
+using System.Diagnostics;
 
 namespace EVEPOSMon
 {
@@ -22,6 +23,8 @@ namespace EVEPOSMon
         private void MainScreen_Load(object sender, EventArgs e)
         {
             updateTabs();
+            Program.stopWatch.Stop();
+            Debug.WriteLine("Startup time: " + Program.stopWatch.Elapsed);
         }
 
         public void updateTabs()
