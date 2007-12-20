@@ -293,16 +293,16 @@ namespace EVEPOSMon
             switch (state)
             {
                 case 1:
-
+                    posStateIcon1.State = PosStateIcon.PosState.Anchored;
                     break;
                 case 3:
-
+                    posStateIcon1.State = PosStateIcon.PosState.Reinforced;
                     break;
                 case 4:
-
+                    posStateIcon1.State = PosStateIcon.PosState.Online;
                     break;
                 default:
-
+                    posStateIcon1.State = PosStateIcon.PosState.Unknown;
                     break;
             }
         }

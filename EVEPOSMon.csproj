@@ -80,6 +80,9 @@
     </Compile>
     <Compile Include="MapData.cs" />
     <Compile Include="MoonData.cs" />
+    <Compile Include="PosStateIcon.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Starbase.cs" />
     <Compile Include="EVEMonWebRequest.cs" />
     <Compile Include="EveSession.cs" />
@@ -157,6 +160,10 @@
     <EmbeddedResource Include="MainScreen.resx">
       <SubType>Designer</SubType>
       <DependentUpon>MainScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PosStateIcon.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PosStateIcon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StarbaseMonitor.resx">
       <SubType>Designer</SubType>
@@ -412,6 +419,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

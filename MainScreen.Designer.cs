@@ -1,3 +1,5 @@
+using EVEMon;
+
 namespace EVEPOSMon
 {
     partial class MainScreen
