@@ -81,7 +81,8 @@ namespace EVEPOSMon
             DialogResult result = MessageBox.Show("Are you sure you want to quit?",
                 "Caption", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result != DialogResult.Yes)
-                e.Cancel = true; 
+                e.Cancel = true;
+            trayIcon.Visible = false;
         }
 
         public void clearTabs()
