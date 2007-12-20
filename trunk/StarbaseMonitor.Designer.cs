@@ -70,16 +70,15 @@ namespace EVEPOSMon
             this.lblPosSustainability = new System.Windows.Forms.Label();
             this.tmrSecondTick = new System.Windows.Forms.Timer(this.components);
             this.tmrThreeHourCache = new System.Windows.Forms.Timer(this.components);
-            this.pbStatus = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblTickAt = new System.Windows.Forms.Label();
             this.throbber1 = new EVEMon.Throbber();
+            this.posStateIcon1 = new EVEPOSMon.PosStateIcon();
             ((System.ComponentModel.ISupportInitialize)(this.pbStationImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgFuelList)).BeginInit();
             this.panel1.SuspendLayout();
             this.statusStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.throbber1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -415,18 +414,6 @@ namespace EVEPOSMon
             this.tmrSecondTick.Interval = 1000;
             this.tmrSecondTick.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // pbStatus
-            // 
-            this.pbStatus.BackColor = System.Drawing.Color.Transparent;
-            this.pbStatus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pbStatus.ErrorImage = null;
-            this.pbStatus.InitialImage = null;
-            this.pbStatus.Location = new System.Drawing.Point(87, 87);
-            this.pbStatus.Name = "pbStatus";
-            this.pbStatus.Size = new System.Drawing.Size(50, 50);
-            this.pbStatus.TabIndex = 30;
-            this.pbStatus.TabStop = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -465,14 +452,23 @@ namespace EVEPOSMon
             this.throbber1.TabIndex = 0;
             this.throbber1.TabStop = false;
             // 
+            // posStateIcon1
+            // 
+            this.posStateIcon1.BackColor = System.Drawing.Color.Transparent;
+            this.posStateIcon1.Location = new System.Drawing.Point(94, 87);
+            this.posStateIcon1.Name = "posStateIcon1";
+            this.posStateIcon1.Size = new System.Drawing.Size(43, 50);
+            this.posStateIcon1.State = EVEPOSMon.PosStateIcon.PosState.Anchored;
+            this.posStateIcon1.TabIndex = 34;
+            // 
             // StarbaseMonitor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.posStateIcon1);
             this.Controls.Add(this.lblTickAt);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pbStatus);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.lblFuelBay);
             this.Controls.Add(this.panel1);
@@ -514,7 +510,6 @@ namespace EVEPOSMon
             this.panel1.ResumeLayout(false);
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbStatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.throbber1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -565,9 +560,9 @@ namespace EVEPOSMon
         private System.Windows.Forms.Label lblPosSustainability;
         private System.Windows.Forms.Timer tmrSecondTick;
         private System.Windows.Forms.Timer tmrThreeHourCache;
-        private System.Windows.Forms.PictureBox pbStatus;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblTickAt;
+        private PosStateIcon posStateIcon1;
     }
 }
