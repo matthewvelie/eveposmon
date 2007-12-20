@@ -26,9 +26,20 @@ namespace EVEPOSMon
 
         public void updateTabs()
         {
+            // Remove tabs for starbases that we are no longer monitoring
+            foreach (TabPage tabPage in tabControl1.TabPages)
+            {
+                Starbase starbase = tabPage.Tag as Starbase;
+                if (starbase.monitored == false)
+                {
+                    tabControl1.TabPages.Remove(tabPage);
+                }
+            }
+
             foreach (Starbase starbase in m_settings.availableStarBases)
             {
-                if (starbase.monitored == true)
+                // Add the starbases that are flagged to be monitored and not already in a tab
+                if (starbase.monitored == true && !isStarbaseInTabs(starbase))
                 {
                     starbase.LoadStarbaseDetailsFromApi();
                     AddTab(starbase);
@@ -37,12 +48,25 @@ namespace EVEPOSMon
             Starbase.SerializeStarbasesToFile(m_settings.SerializedStarbasesFilename, m_settings.availableStarBases);
         }
 
+        private bool isStarbaseInTabs(Starbase starbase)
+        {
+            foreach (TabPage tabPage in tabControl1.TabPages)
+            {
+                Starbase tabStarBase = tabPage.Tag as Starbase;
+                if (tabStarBase.itemId == starbase.itemId)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public void AddTab(Starbase starbase)
         {
-
             TabPage tp = new TabPage(starbase.StarbaseSystem.locationID);
             tabControl1.TabPages.Add(tp);
             tp.Text = starbase.Moon.moonName;
+            tp.Tag = starbase;
             StarbaseMonitor sm = new StarbaseMonitor(starbase);
             sm.Parent = tp;
             sm.Dock = DockStyle.Fill;
