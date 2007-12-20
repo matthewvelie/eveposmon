@@ -161,9 +161,61 @@ namespace EVEPOSMon
             //Time to refresh
             if (seconds == 0)
             {
-                System.Windows.Forms.MessageBox.Show("Time to refresh from website");
+                //Get current values for ozone/water calculations
+                int lastXmlLiquidOzone = 0;
+                int lastXmlHeavyWater = 0;
+                DateTime lastXmlTime = m_starbase.lastDownloaded;
+
+                foreach (Fuel f in m_starbase.FuelList)
+                {
+                    if (f.typeId == "16273")
+                    {
+                        lastXmlLiquidOzone = Convert.ToInt32(f.quantity);
+                    }
+                    if (f.typeId == "16272")
+                    {
+                        lastXmlHeavyWater = Convert.ToInt32(f.quantity);
+                    }
+                }
+
+                //Update here
                 m_starbase.LoadStarbaseDetailsFromApi();
                 updateForm();
+
+                //Take new data from api
+                int currentXmlLiquidOzone = 0;
+                int currentXmlHeavyWater = 0;
+                DateTime currentXmlTime = m_starbase.lastDownloaded;
+
+                foreach (Fuel f in m_starbase.FuelList)
+                {
+                    if (f.typeId == "16273")
+                    {
+                        currentXmlLiquidOzone = Convert.ToInt32(f.quantity);
+                    }
+                    if (f.typeId == "16272")
+                    {
+                        currentXmlHeavyWater = Convert.ToInt32(f.quantity);
+                    }
+                }
+
+                //calculate the difference between old and new and set
+                TimeSpan timeElapsed = currentXmlTime.Subtract(lastXmlTime);
+                int ozoneDiff = currentXmlLiquidOzone - lastXmlLiquidOzone;
+                int waterDiff = currentXmlHeavyWater - lastXmlHeavyWater;
+
+                //calculate per hr, and make postive (positive loss)
+                int ozonePerHr = (ozoneDiff / (timeElapsed.Hours + 1)) * -1;
+                int waterPerHr = (waterDiff / (timeElapsed.Hours + 1)) * -1;
+
+                //Make sure they didnt add fuel or take away so its less
+                ozonePerHr = ozonePerHr > 150 ? 150 : ozonePerHr;
+                waterPerHr = waterPerHr > 150 ? 150 : waterPerHr;
+
+                //set the new values (needs to be written!!)
+                //m_settings.towerResources.SetFuelInfo(m_starbase.itemId, "16273", ozonePerHr);
+                //m_settings.towerResources.SetFuelInfo(m_starbase.itemId, "16272", waterPerHr);
+
             }
 
             //check to see if the pos is ticking this second to update (and it's online)
