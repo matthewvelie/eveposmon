@@ -247,9 +247,6 @@ namespace EVEPOSMon
                 ozonePerHr = ozonePerHr > 150 ? 150 : ozonePerHr;
                 waterPerHr = waterPerHr > 150 ? 150 : waterPerHr;
 
-                //set the new values (needs to be written!!)
-                //m_settings.towerResources.SetFuelInfo(m_starbase.itemId, "16273", ozonePerHr);
-                //m_settings.towerResources.SetFuelInfo(m_starbase.itemId, "16272", waterPerHr);
                 m_starbase.observedOzonePerHour = ozonePerHr;
                 m_starbase.observedWaterPerHour = waterPerHr;
 
