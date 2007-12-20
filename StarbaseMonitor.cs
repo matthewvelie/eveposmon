@@ -125,9 +125,23 @@ namespace EVEPOSMon
             //lblTimer.Text = Convert.ToString(Convert.ToInt32(lblTimer.Text) - 1);
             seconds--;
             int s = seconds;
-            int h = s / 3600;     s = s % 3600;
-            int m = s / 60;       s = s % 60;
-            lblTimer.Text = Convert.ToString(h) + ":" + Convert.ToString(m) + ":" + Convert.ToString(s);
+            int h = s / 3600;      s = s % 3600;
+            int m = s / 60;        s = s % 60;
+
+            string text = "";
+            text += h + ":";
+            if(m < 10)
+            {
+                text += "0";
+            }
+            text += m + ":";
+            if(s < 10)
+            {
+                text += "0";
+            }
+            text += s;
+
+            lblTimer.Text = text;
         }
 
         private void updateTotalFuelDisplay()
