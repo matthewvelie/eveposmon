@@ -29,24 +29,36 @@ namespace EVEPOSMon
                 return;
             }
 
-            //XmlDocument doc = EVEMonWebRequest.LoadXml(@"http://api.eve-online.com/account/Characters.xml.aspx?userid=" + tbUserId.Text + "&apikey=" + tbApiKey.Text);
-            XmlDocument doc = EveSession.GetCharList(tbUserId.Text, tbApiKey.Text);
-            DateTime cachedUntil = EveSession.GetCacheExpiryUTC(doc);
-            XmlNodeList rows = doc.GetElementsByTagName("row");
+            CharacterSelect characterSelect;
 
-            foreach (XmlNode row in rows)
+            // If cached characters are expired then get new data from the api
+            if (m_settings.accountInfo.charactersCachedUntil == DateTime.MinValue ||
+                DateTime.Now > m_settings.accountInfo.charactersCachedUntil.ToLocalTime())
             {
-                Character c = new Character();
-                XmlAttributeCollection attrs = row.Attributes;
-                c.name = attrs["name"].InnerText;
-                c.characterId = attrs["characterID"].InnerText;
-                c.corporationId = attrs["corporationName"].InnerText;
-                c.corporationId = attrs["corporationID"].InnerText;
-                newCharacterList.Add(c);
+                //XmlDocument doc = EVEMonWebRequest.LoadXml(@"http://api.eve-online.com/account/Characters.xml.aspx?userid=" + tbUserId.Text + "&apikey=" + tbApiKey.Text);
+                XmlDocument doc = EveSession.GetCharList(tbUserId.Text, tbApiKey.Text);
+                DateTime cachedUntil = EveSession.GetCacheExpiryUTC(doc);
+                m_settings.accountInfo.charactersCachedUntil = cachedUntil;
+                XmlNodeList rows = doc.GetElementsByTagName("row");
+
+                foreach (XmlNode row in rows)
+                {
+                    Character c = new Character();
+                    XmlAttributeCollection attrs = row.Attributes;
+                    c.name = attrs["name"].InnerText;
+                    c.characterId = attrs["characterID"].InnerText;
+                    c.corporationId = attrs["corporationName"].InnerText;
+                    c.corporationId = attrs["corporationID"].InnerText;
+                    newCharacterList.Add(c);
+                }
+
+                characterSelect = new CharacterSelect(newCharacterList);
             }
-
-            CharacterSelect characterSelect = new CharacterSelect(newCharacterList);
-
+            // character cache is still valid so use that
+            else
+            {
+                characterSelect = new CharacterSelect(m_settings.accountInfo.characters);
+            }
             if (characterSelect.ShowDialog() == DialogResult.OK)
             {
                 tbCharacter.Text = characterSelect.selectedCharacter.name;
