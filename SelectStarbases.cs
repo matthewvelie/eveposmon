@@ -82,7 +82,6 @@ namespace EVEPOSMon
                 return;
             }
 
-            mainScreen.clearTabs();
             mainScreen.updateTabs();
         }
 
