@@ -92,7 +92,7 @@ namespace EVEPOSMon
         private void starbaseSelectionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             starbaseWindow = new SelectStarbases(this);
-            starbaseWindow.Visible = true;
+            starbaseWindow.ShowDialog();
         }
 
         private void MainScreen_Load(object sender, EventArgs e)
