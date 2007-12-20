@@ -22,10 +22,12 @@ namespace EVEPOSMon
         public PosStateIcon()
         {
             InitializeComponent();
+            PosStateTip.SetToolTip(this, _state.ToString());  
         }
 
         private ImageList StateImages;
         private IContainer components;
+        private ToolTip PosStateTip;
         private PosState _state = PosState.Anchored;
 
         public PosState State
@@ -35,6 +37,7 @@ namespace EVEPOSMon
                 if (value == _state)
                     return;
                 _state = value;
+                PosStateTip.SetToolTip(this, _state.ToString());
                 InvalidateEx();
                 this.Invalidate();
             }
@@ -73,6 +76,7 @@ namespace EVEPOSMon
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PosStateIcon));
             this.StateImages = new System.Windows.Forms.ImageList(this.components);
+            this.PosStateTip = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // StateImages
