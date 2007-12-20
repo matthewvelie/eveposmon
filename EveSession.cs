@@ -52,7 +52,7 @@ namespace EVEMon.Common
             //For Some reason server sends back a 405 error when using a post like this, so for now we use get
             //wrs.SetPost("userid=" + userId + "&apiKey=" + apiKey);
             //return EVEMonWebRequest.LoadXml(@"http://www.exa-nation.com" + m_ApiCharListUrl, wrs);
-            return EVEMonWebRequest.LoadXml(@"http://www.exa-nation.com" + m_ApiCharListUrl + "?userid=" + userId + "&apiKey=" + apiKey, wrs);
+            return EVEMonWebRequest.LoadXml(@APIBASE + m_ApiCharListUrl + "?userid=" + userId + "&apiKey=" + apiKey, wrs);
         }
 
         public static XmlDocument GetUpdateDocument()

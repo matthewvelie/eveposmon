@@ -214,7 +214,13 @@ namespace EVEPOSMon
                 return;
             }
 
-            XmlDocument xdoc = EveSession.GetStarbaseList("","",""); ;
+            if (settings.accountInfo.userId == null)
+            {
+                System.Windows.Forms.MessageBox.Show("API Keys have not been entered, please enter them.");
+                return;
+            }
+
+            XmlDocument xdoc = EveSession.GetStarbaseList(settings.accountInfo.userId, settings.accountInfo.apiKey, settings.accountInfo.SelectedCharacter.characterId);
             XmlNode error = xdoc.DocumentElement.SelectSingleNode("descendant::error");
             if (error != null)
             {
@@ -321,7 +327,7 @@ namespace EVEPOSMon
                 return;
             }
 
-            XmlDocument detailsXmlDoc = EveSession.GetStarbaseDetail("","","", this.itemId);
+            XmlDocument detailsXmlDoc = EveSession.GetStarbaseDetail(m_settings.accountInfo.userId, m_settings.accountInfo.apiKey, m_settings.accountInfo.SelectedCharacter.characterId, this.itemId);
 
             XmlNode error = detailsXmlDoc.DocumentElement.SelectSingleNode("descendant::error");
             if (error != null)

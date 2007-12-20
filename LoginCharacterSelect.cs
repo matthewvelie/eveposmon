@@ -134,7 +134,7 @@ namespace EVEPOSMon
             cbUseProxy.Checked = m_settings.accountInfo.useProxy;
             if (String.IsNullOrEmpty(m_settings.accountInfo.proxyAddress))
             {
-                tbProxyAddress.Text = "http://www.example.com";
+                tbProxyAddress.Text = "http://api.eve-online.com";
             }
             else
             {
