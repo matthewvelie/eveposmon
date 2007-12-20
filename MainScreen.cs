@@ -113,5 +113,38 @@ namespace EVEPOSMon
             starbaseWindow = new SelectStarbases(this);
             starbaseWindow.ShowDialog();
         }
+
+        private void MainScreen_Resize(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Minimized)
+            {
+                this.Hide();
+            }
+        }
+
+        private void trayIcon_DoubleClick(object sender, EventArgs e)
+        {
+            this.Show();
+            WindowState = FormWindowState.Normal;
+        }
+
+        private void restoreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Show();
+            this.Focus();
+            WindowState = FormWindowState.Normal;
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(1);
+        }
+
+        private void trayIcon_MouseClick(object sender, MouseEventArgs e)
+        {
+            this.Show();
+            this.Focus();
+            WindowState = FormWindowState.Normal;
+        }
     }
 }
