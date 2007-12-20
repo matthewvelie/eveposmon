@@ -6,17 +6,20 @@ using System.IO;
 using System.IO.Compression;
 using System.Xml;
 using System.Xml.Serialization;
+using System.Diagnostics;
 
 namespace EVEPOSMon
 {
     static class Program
     {
+        public static Stopwatch stopWatch = new Stopwatch();
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
         static void Main()
         {
+            stopWatch.Start();
             Settings settings = Settings.GetInstance();
 
             Version vrs = new Version(Application.ProductVersion);
