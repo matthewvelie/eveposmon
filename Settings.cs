@@ -50,6 +50,7 @@ namespace EVEMon.Common
         public ControlTowerTypes controlTowerTypes;
         public MapData mapData;
         public MoonData moonData;
+        public StarbaseList starbaseList;
 
         public List<FuelCostEntry> fuelCosts = new List<FuelCostEntry>();
         public List<Starbase> availableStarBases = new List<Starbase>();
@@ -58,6 +59,7 @@ namespace EVEMon.Common
         public readonly string SerializedStarbasesFilename = "Starbases.xml";
         public readonly string SerializedFuelCostFilename = "FuelCost.xml";
         public readonly string SerializedAccountInfoFilename = "AccountInfo.xml";
+        public readonly string SerializeStarbaseListFilename = "StarbaseList.xml";
 
         private bool m_useCustomProxySettings = false;
         public bool UseCustomProxySettings

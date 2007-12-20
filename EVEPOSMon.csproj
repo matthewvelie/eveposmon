@@ -118,6 +118,7 @@
     <Compile Include="Settings.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="StarbaseList.cs" />
     <Compile Include="StarbaseMonitor.cs">
       <SubType>UserControl</SubType>
     </Compile>

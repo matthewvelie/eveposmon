@@ -102,7 +102,7 @@ namespace EVEPOSMon
             }
 
             settings.accountInfo = AccountInfo.LoadFrom(settings.SerializedAccountInfoFilename);
-
+            settings.starbaseList = StarbaseList.LoadStarbaseListFrom(settings.SerializeStarbaseListFilename);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainScreen());
