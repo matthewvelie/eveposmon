@@ -21,7 +21,7 @@ namespace EVEPOSMon
 
         private Starbase m_starbase;
         private Settings m_settings = Settings.GetInstance();
-        private int seconds = 10800000;
+        private int seconds = 10800;
         private readonly string strontiumTypeId = "16275";
 
         private void StarbaseMonitor_Load(object sender, EventArgs e)
@@ -58,6 +58,9 @@ namespace EVEPOSMon
                     getTimeRemainingString(f.timeRemaining)});
             }
 
+            TimeSpan timeLeft = (m_starbase.cachedUntil.ToLocalTime().Subtract(DateTime.Now));
+            seconds = timeLeft.Seconds + (timeLeft.Minutes * 60) + (timeLeft.Hours * 60 * 60);
+
             updateTotalFuelDisplay();
             updateTotalStrontiumDisplay();
 
@@ -68,6 +71,7 @@ namespace EVEPOSMon
             dgFuelList.Columns[2].DisplayIndex = 2;
             lblXmlLastDownloaded.Text = "XML Last Downloaded At: " + m_starbase.lastDownloaded.ToString();
             lblDataCachedUntil.Text = "Data Cached Until: " + m_starbase.cachedUntil.ToLocalTime().ToString();
+
             loadStationImage(m_starbase.typeId);
         }
 
@@ -121,10 +125,9 @@ namespace EVEPOSMon
             //lblTimer.Text = Convert.ToString(Convert.ToInt32(lblTimer.Text) - 1);
             seconds--;
             int s = seconds;
-            int d = s / 86400;    s = s % 66400;
             int h = s / 3600;     s = s % 3600;
             int m = s / 60;       s = s % 60;
-            lblTimer.Text = Convert.ToString(d) + ":" + Convert.ToString(h) + ":" + Convert.ToString(m) + ":" + Convert.ToString(s);
+            lblTimer.Text = Convert.ToString(h) + ":" + Convert.ToString(m) + ":" + Convert.ToString(s);
         }
 
         private void updateTotalFuelDisplay()

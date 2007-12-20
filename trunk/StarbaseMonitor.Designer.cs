@@ -70,24 +70,24 @@ namespace EVEPOSMon
             this.lblPosSustainability = new System.Windows.Forms.Label();
             this.tmrSecondTick = new System.Windows.Forms.Timer(this.components);
             this.tmrThreeHourCache = new System.Windows.Forms.Timer(this.components);
-            this.throbber1 = new EVEMon.Throbber();
             this.pbStatus = new System.Windows.Forms.PictureBox();
+            this.throbber1 = new EVEMon.Throbber();
             ((System.ComponentModel.ISupportInitialize)(this.pbStationImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgFuelList)).BeginInit();
             this.panel1.SuspendLayout();
             this.statusStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.throbber1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbStatus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.throbber1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTimer
             // 
             this.lblTimer.AutoSize = true;
-            this.lblTimer.Location = new System.Drawing.Point(462, 33);
+            this.lblTimer.Location = new System.Drawing.Point(479, 33);
             this.lblTimer.Name = "lblTimer";
-            this.lblTimer.Size = new System.Drawing.Size(70, 13);
+            this.lblTimer.Size = new System.Drawing.Size(49, 13);
             this.lblTimer.TabIndex = 1;
-            this.lblTimer.Text = "888:88:88:88";
+            this.lblTimer.Text = "88:88:88";
             // 
             // pbStationImage
             // 
@@ -414,6 +414,18 @@ namespace EVEPOSMon
             // 
             this.tmrThreeHourCache.Interval = 10800000;
             // 
+            // pbStatus
+            // 
+            this.pbStatus.BackColor = System.Drawing.Color.Transparent;
+            this.pbStatus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pbStatus.ErrorImage = null;
+            this.pbStatus.InitialImage = null;
+            this.pbStatus.Location = new System.Drawing.Point(87, 87);
+            this.pbStatus.Name = "pbStatus";
+            this.pbStatus.Size = new System.Drawing.Size(50, 50);
+            this.pbStatus.TabIndex = 30;
+            this.pbStatus.TabStop = false;
+            // 
             // throbber1
             // 
             this.throbber1.Location = new System.Drawing.Point(501, 6);
@@ -424,14 +436,6 @@ namespace EVEPOSMon
             this.throbber1.State = EVEMon.Throbber.ThrobberState.Stopped;
             this.throbber1.TabIndex = 0;
             this.throbber1.TabStop = false;
-            // 
-            // pbStatus
-            // 
-            this.pbStatus.Location = new System.Drawing.Point(87, 87);
-            this.pbStatus.Name = "pbStatus";
-            this.pbStatus.Size = new System.Drawing.Size(50, 50);
-            this.pbStatus.TabIndex = 30;
-            this.pbStatus.TabStop = false;
             // 
             // StarbaseMonitor
             // 
@@ -479,8 +483,8 @@ namespace EVEPOSMon
             this.panel1.ResumeLayout(false);
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.throbber1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbStatus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.throbber1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
