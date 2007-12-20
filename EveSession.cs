@@ -36,7 +36,7 @@ namespace EVEMon.Common
             }
         }
 
-#if USE_TEST_SERVER
+#if DEBUG
         private static string APIBASE = "http://www.exa-nation.com";
 #else
         private static string APIBASE = "http://api.eve-online.com";
