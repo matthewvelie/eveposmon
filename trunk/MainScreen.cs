@@ -142,7 +142,8 @@ namespace EVEPOSMon
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Environment.Exit(1);
+            trayIcon.Visible = false;
+            this.Close();
         }
 
         private void trayIcon_MouseClick(object sender, MouseEventArgs e)
