@@ -208,6 +208,8 @@ namespace EVEPOSMon
             // 
             this.dgFuelList.AllowUserToAddRows = false;
             this.dgFuelList.AllowUserToDeleteRows = false;
+            this.dgFuelList.AllowUserToResizeColumns = false;
+            this.dgFuelList.AllowUserToResizeRows = false;
             this.dgFuelList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgFuelList.ColumnHeadersVisible = false;
             this.dgFuelList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
