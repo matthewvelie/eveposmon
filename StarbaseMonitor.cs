@@ -26,12 +26,20 @@ namespace EVEPOSMon
 
         private void StarbaseMonitor_Load(object sender, EventArgs e)
         {
-            // Set all the stabase settings labels
-            updateOptionLabels();
-
+            loadStationImage(m_starbase.typeId);
             m_starbase.totalFuelVolume = 0;
             m_starbase.totalStrontiumVolume = 0;
 
+            updateForm();
+        }
+
+        private void updateForm()
+        {
+            // Set all the stabase settings labels
+            updateOptionLabels();
+
+            m_starbase.totalStrontiumVolume = 0;
+            m_starbase.totalFuelVolume = 0;
             foreach (Fuel f in m_starbase.FuelList)
             {
                 // The fuel name and amount used per hour come from an external xml file
@@ -64,7 +72,11 @@ namespace EVEPOSMon
             updateTotalFuelDisplay();
             updateTotalStrontiumDisplay();
 
+            updateStarbaseState();
+
             updateLowestFuelsDisplay();
+
+            lblTickAt.Text = Convert.ToString(m_starbase.stateTimestamp.Minute);
 
             dgFuelList.Columns[0].DisplayIndex = 0;
             dgFuelList.Columns[1].DisplayIndex = 1;
@@ -72,7 +84,12 @@ namespace EVEPOSMon
             lblXmlLastDownloaded.Text = "XML Last Downloaded At: " + m_starbase.lastDownloaded.ToString();
             lblDataCachedUntil.Text = "Data Cached Until: " + m_starbase.cachedUntil.ToLocalTime().ToString();
 
-            loadStationImage(m_starbase.typeId);
+        }
+
+        private void updateFuels()
+        {
+            //on the tick update fuels
+            System.Windows.Forms.MessageBox.Show("Updating fuel..");
         }
 
         private void updateLowestFuelsDisplay()
@@ -141,6 +158,20 @@ namespace EVEPOSMon
             }
             text += s;
 
+            //Time to refresh
+            if (seconds == 0)
+            {
+                System.Windows.Forms.MessageBox.Show("Time to refresh from website");
+                m_starbase.LoadStarbaseDetailsFromApi();
+                updateForm();
+            }
+
+            //check to see if the pos is ticking this second to update (and it's online)
+            if (m_starbase.stateTimestamp.Minute == DateTime.Now.Minute && m_starbase.stateTimestamp.Second == DateTime.Now.Second && Convert.ToInt16(m_starbase.state) == 4)
+            {
+                updateFuels();
+            }
+
             lblTimer.Text = text;
         }
 
@@ -163,6 +194,29 @@ namespace EVEPOSMon
             pgStrontiumBay.Value = (int)m_starbase.totalStrontiumVolume;
             lblStrontiumBayValue.Text = m_starbase.totalStrontiumVolume.ToString() + "/" + m_starbase.Tower.strontiumCapacity;
 
+        }
+
+        /// <summary>
+        /// Updates the little starbase icon that shows its state
+        /// </summary>
+        private void updateStarbaseState()
+        {
+            int state = Convert.ToInt16(m_starbase.state);
+            switch (state)
+            {
+                case 1:
+
+                    break;
+                case 3:
+
+                    break;
+                case 4:
+
+                    break;
+                default:
+
+                    break;
+            }
         }
 
         /// <summary>
@@ -266,5 +320,7 @@ namespace EVEPOSMon
             }
             return strTimeRemaining;
         }
+
+
     }
 }

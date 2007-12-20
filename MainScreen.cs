@@ -70,6 +70,7 @@ namespace EVEPOSMon
             StarbaseMonitor sm = new StarbaseMonitor(starbase);
             sm.Parent = tp;
             sm.Dock = DockStyle.Fill;
+            sm.Focus();
         }
 
         private void MainScreen_FormClosing(object sender, FormClosingEventArgs e)
