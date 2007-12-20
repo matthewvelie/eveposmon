@@ -121,7 +121,7 @@ namespace EVEPOSMon
         private void updateFuels()
         {
             //on the tick update fuels
-            System.Windows.Forms.MessageBox.Show("Updating fuel..");
+            //System.Windows.Forms.MessageBox.Show("Updating fuel..");
         }
 
         private void updateLowestFuelsDisplay()
