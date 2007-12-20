@@ -140,7 +140,10 @@ namespace EVEPOSMon
         private void timer1_Tick(object sender, EventArgs e)
         {
             //lblTimer.Text = Convert.ToString(Convert.ToInt32(lblTimer.Text) - 1);
-            seconds--;
+            if (seconds != 0)
+            {
+                seconds--;
+            }
             int s = seconds;
             int h = s / 3600;      s = s % 3600;
             int m = s / 60;        s = s % 60;
