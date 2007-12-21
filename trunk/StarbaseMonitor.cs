@@ -122,6 +122,20 @@ namespace EVEPOSMon
         {
             //on the tick update fuels
             //System.Windows.Forms.MessageBox.Show("Updating fuel..");
+            dgFuelList.Rows.Clear();
+            foreach (Fuel f in m_starbase.FuelList)
+            {
+                f.quantity = Convert.ToString( Convert.ToInt32(f.quantity) -  Convert.ToInt32(f.quantityUsedPerHour) );
+                TimeSpan oneHour = new TimeSpan(1,0,0);
+                f.timeRemaining.Subtract(oneHour);
+
+                // Add this fuel to the datagrid for display
+                dgFuelList.Rows.Add(new string[] { f.name, f.quantity, f.quantityUsedPerHour + "/hr", 
+                    getTimeRemainingString(f.timeRemaining)});
+            }
+
+            updateLowestFuelsDisplay();
+            updateTotalFuelDisplay();
         }
 
         private void updateLowestFuelsDisplay()
@@ -256,6 +270,7 @@ namespace EVEPOSMon
 
             //check to see if the pos is ticking this second to update (and it's online)
             if (m_starbase.stateTimestamp.Minute == DateTime.Now.Minute && m_starbase.stateTimestamp.Second == DateTime.Now.Second && Convert.ToInt16(m_starbase.state) == 4)
+            //if(DateTime.Now.Second % 10 == 0)  //testing
             {
                 updateFuels();
             }
