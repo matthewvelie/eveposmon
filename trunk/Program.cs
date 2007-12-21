@@ -37,17 +37,18 @@ namespace EVEPOSMon
                     int build = Convert.ToInt32(attrs["build"].InnerText);
                     int revision = Convert.ToInt32( attrs["revision"].InnerText );
                     int disable = Convert.ToInt32(attrs["disable"].InnerText);
+                    string message = attrs["message"].InnerText;
                     Version online = new Version(major, minor, build, revision);
                     
                     if( Convert.ToBoolean( online.CompareTo(vrs) ) )
                     {
                         if( Convert.ToBoolean(disable ) )
                         {
-                            System.Windows.Forms.MessageBox.Show("There is a newer version available, this is a mandatory upgrade. \nYou are running " + vrs.ToString() + ", and " + online.ToString() + " is available.  \n\nPlease visit: http://code.google.com/p/eveposmon/downloads/list for the latest downloads.");
+                            System.Windows.Forms.MessageBox.Show("There is a newer version available, this is a mandatory upgrade. \nYou are running " + vrs.ToString() + ", and " + online.ToString() + " is available.  \n\nPlease visit: http://code.google.com/p/eveposmon/downloads/list for the latest downloads.\n\nAdditional Information: " + message);
                             Environment.Exit(1);
                         }else
                         {
-                            System.Windows.Forms.MessageBox.Show("There is a newer version available.  \nYou are running " + vrs.ToString() + ", and " + online.ToString() + " is available.  \n\nPlease visit: http://code.google.com/p/eveposmon/downloads/list for the latest downloads.");
+                            System.Windows.Forms.MessageBox.Show("There is a newer version available.  \nYou are running " + vrs.ToString() + ", and " + online.ToString() + " is available.  \n\nPlease visit: http://code.google.com/p/eveposmon/downloads/list for the latest downloads.\n\nAdditional Information: " + message);
                         }
                     }
 
@@ -57,36 +58,43 @@ namespace EVEPOSMon
             {
             }
 
+            Debug.WriteLine("Update Check finished at: " + Program.stopWatch.Elapsed);
+
             using (FileStream s = new FileStream(Application.StartupPath + @"\data\controlTowers.xml.gz", FileMode.Open, FileAccess.Read))
             using (GZipStream zs = new GZipStream(s, CompressionMode.Decompress))
             {
                 settings.controlTowerTypes = ControlTowerTypes.Load(zs);
             }
 
+            Debug.WriteLine("Control Towers Finished Loading At: " + Program.stopWatch.Elapsed);
 
             using (FileStream s = new FileStream(Application.StartupPath + @"\data\invControlTowerResources.xml.gz", FileMode.Open, FileAccess.Read))
             using (GZipStream zs = new GZipStream(s, CompressionMode.Decompress))
             {
                 settings.towerResources = TowerResources.Load(zs);
             }
+            Debug.WriteLine("Control Towers Resources Finished Loading At: " + Program.stopWatch.Elapsed);
 
             using (FileStream s = new FileStream(Application.StartupPath + @"\data\controlTowers.xml.gz", FileMode.Open, FileAccess.Read))
             using (GZipStream zs = new GZipStream(s, CompressionMode.Decompress))
             {
                 settings.controlTowerTypes = ControlTowerTypes.Load(zs);
             }
+            Debug.WriteLine("Control Towers Types Finished Loading At: " + Program.stopWatch.Elapsed);
 
             using (FileStream s = new FileStream(Application.StartupPath + @"\data\mapData.xml.gz", FileMode.Open, FileAccess.Read))
             using (GZipStream zs = new GZipStream(s, CompressionMode.Decompress))
             {
                 settings.mapData = MapData.Load(zs);
             }
+            Debug.WriteLine("Map Data Finished Loading At: " + Program.stopWatch.Elapsed);
 
             using (FileStream s = new FileStream(Application.StartupPath + @"\data\moonData.xml.gz", FileMode.Open, FileAccess.Read))
             using (GZipStream zs = new GZipStream(s, CompressionMode.Decompress))
             {
                 settings.moonData = MoonData.Load(zs);
             }
+            Debug.WriteLine("Moon Data Finished Loading At: " + Program.stopWatch.Elapsed);
 
             if (File.Exists("Starbases.xml"))
             {
