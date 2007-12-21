@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.IO;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
@@ -14,7 +15,7 @@ namespace EVEPOSMon
     public partial class FuelCalculator : Form
     {
         private Settings m_settings = Settings.GetInstance();
-        public List<FuelCostEntry> fuelCosts = new List<FuelCostEntry>();
+        private FuelCosts fuelCosts = new FuelCosts();
 
         const string eveCentralWebsite = "http://eve-central.com/home/marketstat_xml.html?typeid=";
 
@@ -33,6 +34,8 @@ namespace EVEPOSMon
         {
             InitializeComponent();
             loadStarbase();
+            loadFuelCosts();
+            this.fuelCostsBindingSource.DataSource = fuelCosts;
         }
 
         public void loadStarbase()
@@ -44,6 +47,33 @@ namespace EVEPOSMon
                 row.CreateCells(dgvStations, new object[] { false, s.Moon.moonName, s });
                 row.Tag = s;
                 dgvStations.Rows.Add(row);
+            }
+        }
+
+        public void loadFuelCosts()
+        {
+            if (File.Exists(m_settings.SerializedFuelCostFilename))
+            {
+                XmlSerializer serializer = new XmlSerializer(typeof(FuelCosts));
+                using (Stream s = new FileStream(m_settings.SerializedFuelCostFilename, FileMode.Open))
+                {
+                    try
+                    {
+                        fuelCosts = serializer.Deserialize(s) as FuelCosts;
+                    }
+                    catch
+                    {
+                        //nothing yet
+                    }
+                }
+                if (fuelCosts.LastUpdated != DateTime.MinValue)
+                {
+                    toolStripLabel1.Text = fuelCosts.LastUpdated.ToString();
+                }
+                else
+                {
+                    toolStripLabel1.Text = "Never";
+                }
             }
         }
 
@@ -568,18 +598,20 @@ namespace EVEPOSMon
             txtHydrogenIsotopesPricePer.Text = downloadPriceData(17889);    //Hydrogen Isotopes
             txtStrontiumPricePer.Text = downloadPriceData(16275);           //Strontium Clatherates
 
+            /* I think this way is to complicated and clunky for what needs to get done. 
+             * Gonna do it a simpler way and see if that works -jreeder
             //save data to list
             FuelCostEntry fuelCost = new FuelCostEntry();
             fuelCost.typeId = 3689;
             fuelCost.lastUpdated = System.DateTime.Now;
             fuelCost.costPerUnit = Convert.ToDouble(txtMechanicalPartsPricePer.Text);
             fuelCosts.Add(fuelCost);
-
+            */
             tspbDownloadingData.Enabled = false;
             tspbDownloadingData.Value = 0;
 
-            //serialize and save data
-            FuelCostEntry.SerializeFuelToFile(m_settings.SerializedFuelCostFilename, fuelCosts);
+            fuelCosts.LastUpdated = System.DateTime.Now;
+            toolStripLabel1.Text = fuelCosts.LastUpdated.ToString();
             
             tsbUpdatePrices.Enabled = true;
         }
@@ -767,5 +799,9 @@ namespace EVEPOSMon
             ice.Show();
         }
 
+        private void FuelCalculator_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            FuelCosts.SerializeFuelToFile(m_settings.SerializedFuelCostFilename, this.fuelCosts);
+        }
     }
 }
