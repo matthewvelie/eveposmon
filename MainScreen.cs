@@ -98,7 +98,7 @@ namespace EVEPOSMon
 
         private void quitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Environment.Exit(1);
+            this.Close();
         }
 
         private void fuelCalculatorToolStripMenuItem_Click_1(object sender, EventArgs e)
@@ -151,6 +151,12 @@ namespace EVEPOSMon
             this.Show();
             this.Focus();
             WindowState = FormWindowState.Normal;
+        }
+
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SettingsPage settingsPage = new SettingsPage();
+            settingsPage.Show();
         }
     }
 }
