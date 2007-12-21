@@ -16,21 +16,23 @@ namespace EVEPOSMon
 
     public class MoonData
     {
-        public Hashtable Moons = new Hashtable();
+        public Hashtable Moons = new Hashtable(232767);
 
         public static MoonData Load(Stream s)
         {
-            XmlDocument doc = new XmlDocument();
-            doc.Load(s);
+            XmlReader reader = XmlReader.Create(s);
+            reader.ReadStartElement("moons");
             MoonData moonData = new MoonData();
-            XmlNodeList rowsNodeList = doc.GetElementsByTagName("moon");
-            foreach (XmlNode r in rowsNodeList)
+
+            while (reader.Read())
             {
-                MoonInfo moon = new MoonInfo();
-                XmlAttributeCollection attrs = r.Attributes;
-                moon.moonId = attrs["moonId"].InnerText;
-                moon.moonName = attrs["moonName"].InnerText;
-                moonData.Moons.Add(moon.moonId, moon);
+                if (reader.AttributeCount == 2)
+                {
+                    MoonInfo mi = new MoonInfo();
+                    mi.moonId = reader.GetAttribute("moonId");
+                    mi.moonName = reader.GetAttribute("moonName");
+                    moonData.Moons.Add(mi.moonId, mi);
+                }
             }
 
             return moonData;
