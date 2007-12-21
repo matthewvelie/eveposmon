@@ -15,9 +15,25 @@ namespace EVEPOSMon
             InitializeComponent();
         }
 
-        private void SettingsPage_Load(object sender, EventArgs e)
+        private void saveSettings()
         {
 
+        }
+
+        private void btnApply_Click(object sender, EventArgs e)
+        {
+            saveSettings();
+        }
+
+        private void btnOk_Click(object sender, EventArgs e)
+        {
+            saveSettings();
+            this.Close();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
