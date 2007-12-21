@@ -35,10 +35,7 @@ namespace EVEPOSMon
                 ms.security = systemNode.ChildNodes[2].InnerText;
                 ms.constellationName = systemNode.ChildNodes[3].InnerText;
                 ms.regionName = systemNode.ChildNodes[4].InnerText;
-                if (!md.mapSystems.ContainsKey(ms.locationID))
-                {
-                    md.mapSystems.Add(ms.locationID, ms);
-                }
+                md.mapSystems.Add(ms.locationID, ms);
             }
 
             return md;
