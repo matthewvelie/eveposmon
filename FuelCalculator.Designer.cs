@@ -28,6 +28,7 @@ namespace EVEPOSMon
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FuelCalculator));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label25 = new System.Windows.Forms.Label();
@@ -38,10 +39,12 @@ namespace EVEPOSMon
             this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.txtNitrogenIsotopesSubtotal = new System.Windows.Forms.TextBox();
             this.txtNitrogenIsotopesVolume = new System.Windows.Forms.TextBox();
             this.txtNitrogenIsotopesQuantity = new System.Windows.Forms.TextBox();
             this.txtNitrogenIsotopesPricePer = new System.Windows.Forms.TextBox();
+            this.fuelCostsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -50,6 +53,7 @@ namespace EVEPOSMon
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.txtHydrogenIsotopesSubtotal = new System.Windows.Forms.TextBox();
             this.txtHydrogenIsotopesVolume = new System.Windows.Forms.TextBox();
             this.txtHydrogenIsotopesQuantity = new System.Windows.Forms.TextBox();
@@ -62,6 +66,7 @@ namespace EVEPOSMon
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.txtOxygenIsotopesSubtotal = new System.Windows.Forms.TextBox();
             this.txtOxygenIsotopesVolume = new System.Windows.Forms.TextBox();
             this.txtOxygenIsotopesQuantity = new System.Windows.Forms.TextBox();
@@ -74,6 +79,7 @@ namespace EVEPOSMon
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtHeliumIsotopesSubtotal = new System.Windows.Forms.TextBox();
             this.txtHeliumIsotopesVolume = new System.Windows.Forms.TextBox();
             this.txtHeliumIsotopesQuantity = new System.Windows.Forms.TextBox();
@@ -87,6 +93,7 @@ namespace EVEPOSMon
             this.label54 = new System.Windows.Forms.Label();
             this.label55 = new System.Windows.Forms.Label();
             this.label56 = new System.Windows.Forms.Label();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.txtHeavyWaterSubtotal = new System.Windows.Forms.TextBox();
             this.txtHeavyWaterVolume = new System.Windows.Forms.TextBox();
             this.txtHeavyWaterQuantity = new System.Windows.Forms.TextBox();
@@ -99,6 +106,7 @@ namespace EVEPOSMon
             this.label62 = new System.Windows.Forms.Label();
             this.label63 = new System.Windows.Forms.Label();
             this.label64 = new System.Windows.Forms.Label();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.txtLiquidOzoneSubtotal = new System.Windows.Forms.TextBox();
             this.txtLiquidOzoneVolume = new System.Windows.Forms.TextBox();
             this.txtLiquidOzoneQuantity = new System.Windows.Forms.TextBox();
@@ -116,6 +124,7 @@ namespace EVEPOSMon
             this.label46 = new System.Windows.Forms.Label();
             this.label47 = new System.Windows.Forms.Label();
             this.label48 = new System.Windows.Forms.Label();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.textBox21 = new System.Windows.Forms.TextBox();
             this.textBox22 = new System.Windows.Forms.TextBox();
             this.textBox23 = new System.Windows.Forms.TextBox();
@@ -132,6 +141,7 @@ namespace EVEPOSMon
             this.label38 = new System.Windows.Forms.Label();
             this.txtStrontiumSubtotal = new System.Windows.Forms.TextBox();
             this.label39 = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label40 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label111 = new System.Windows.Forms.Label();
@@ -145,11 +155,13 @@ namespace EVEPOSMon
             this.label85 = new System.Windows.Forms.Label();
             this.label86 = new System.Windows.Forms.Label();
             this.label87 = new System.Windows.Forms.Label();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.txtOxygenSubtotal = new System.Windows.Forms.TextBox();
             this.txtOxygenVolume = new System.Windows.Forms.TextBox();
             this.txtOxygenQuantity = new System.Windows.Forms.TextBox();
             this.txtOxygenPricePer = new System.Windows.Forms.TextBox();
             this.label88 = new System.Windows.Forms.Label();
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.label89 = new System.Windows.Forms.Label();
             this.txtEnrichedUraniumPricePer = new System.Windows.Forms.TextBox();
             this.label90 = new System.Windows.Forms.Label();
@@ -167,11 +179,13 @@ namespace EVEPOSMon
             this.label77 = new System.Windows.Forms.Label();
             this.label78 = new System.Windows.Forms.Label();
             this.label79 = new System.Windows.Forms.Label();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.txtMechanicalPartsSubtotal = new System.Windows.Forms.TextBox();
             this.txtMechanicalPartsVolume = new System.Windows.Forms.TextBox();
             this.txtMechanicalPartsQuantity = new System.Windows.Forms.TextBox();
             this.txtMechanicalPartsPricePer = new System.Windows.Forms.TextBox();
             this.label66 = new System.Windows.Forms.Label();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.label67 = new System.Windows.Forms.Label();
             this.txtRoboticsPricePer = new System.Windows.Forms.TextBox();
             this.label68 = new System.Windows.Forms.Label();
@@ -186,6 +200,7 @@ namespace EVEPOSMon
             this.label95 = new System.Windows.Forms.Label();
             this.label96 = new System.Windows.Forms.Label();
             this.label97 = new System.Windows.Forms.Label();
+            this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.txtCoolantPricePer = new System.Windows.Forms.TextBox();
             this.label102 = new System.Windows.Forms.Label();
             this.label98 = new System.Windows.Forms.Label();
@@ -229,52 +244,41 @@ namespace EVEPOSMon
             this.lblAmtToSpendIsk = new System.Windows.Forms.Label();
             this.label112 = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.tsbUpdatePrices = new System.Windows.Forms.ToolStripButton();
             this.tspbDownloadingData = new System.Windows.Forms.ToolStripProgressBar();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbLockUnlock = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbHelp = new System.Windows.Forms.ToolStripButton();
             this.btnUseStarbases = new System.Windows.Forms.Button();
             this.cbEmptyStarbase = new System.Windows.Forms.CheckBox();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsbUpdatePrices = new System.Windows.Forms.ToolStripButton();
-            this.tsbLockUnlock = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.tsbHelp = new System.Windows.Forms.ToolStripButton();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.groupBox5.SuspendLayout();
-            this.groupBox6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStations)).BeginInit();
-            this.groupBox7.SuspendLayout();
-            this.groupBox8.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fuelCostsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStations)).BeginInit();
+            this.groupBox7.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -411,6 +415,15 @@ namespace EVEPOSMon
             this.label32.TabIndex = 44;
             this.label32.Text = "Nitrogen";
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::EVEPOSMon.Properties.Resources.icon51_16;
+            this.pictureBox4.Location = new System.Drawing.Point(820, 45);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(64, 64);
+            this.pictureBox4.TabIndex = 43;
+            this.pictureBox4.TabStop = false;
+            // 
             // txtNitrogenIsotopesSubtotal
             // 
             this.txtNitrogenIsotopesSubtotal.Enabled = false;
@@ -447,6 +460,7 @@ namespace EVEPOSMon
             // 
             // txtNitrogenIsotopesPricePer
             // 
+            this.txtNitrogenIsotopesPricePer.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fuelCostsBindingSource, "NitrogenIsotopesPricePer", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtNitrogenIsotopesPricePer.Location = new System.Drawing.Point(943, 19);
             this.txtNitrogenIsotopesPricePer.Name = "txtNitrogenIsotopesPricePer";
             this.txtNitrogenIsotopesPricePer.Size = new System.Drawing.Size(93, 20);
@@ -454,6 +468,10 @@ namespace EVEPOSMon
             this.txtNitrogenIsotopesPricePer.Text = "0";
             this.txtNitrogenIsotopesPricePer.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtNitrogenIsotopesPricePer.TextChanged += new System.EventHandler(this.txtNitrogenIsotopesPricePer_TextChanged);
+            // 
+            // fuelCostsBindingSource
+            // 
+            this.fuelCostsBindingSource.DataSource = typeof(EVEPOSMon.FuelCosts);
             // 
             // label17
             // 
@@ -528,6 +546,15 @@ namespace EVEPOSMon
             this.label24.TabIndex = 31;
             this.label24.Text = "Hydrogen";
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::EVEPOSMon.Properties.Resources.icon51_14;
+            this.pictureBox3.Location = new System.Drawing.Point(556, 45);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(64, 64);
+            this.pictureBox3.TabIndex = 30;
+            this.pictureBox3.TabStop = false;
+            // 
             // txtHydrogenIsotopesSubtotal
             // 
             this.txtHydrogenIsotopesSubtotal.Enabled = false;
@@ -564,6 +591,7 @@ namespace EVEPOSMon
             // 
             // txtHydrogenIsotopesPricePer
             // 
+            this.txtHydrogenIsotopesPricePer.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fuelCostsBindingSource, "HydrogenIsotopesPricePer", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtHydrogenIsotopesPricePer.Location = new System.Drawing.Point(679, 19);
             this.txtHydrogenIsotopesPricePer.Name = "txtHydrogenIsotopesPricePer";
             this.txtHydrogenIsotopesPricePer.Size = new System.Drawing.Size(93, 20);
@@ -645,6 +673,15 @@ namespace EVEPOSMon
             this.label16.TabIndex = 18;
             this.label16.Text = "Oxygen";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::EVEPOSMon.Properties.Resources.icon51_15;
+            this.pictureBox2.Location = new System.Drawing.Point(288, 45);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(64, 64);
+            this.pictureBox2.TabIndex = 17;
+            this.pictureBox2.TabStop = false;
+            // 
             // txtOxygenIsotopesSubtotal
             // 
             this.txtOxygenIsotopesSubtotal.Enabled = false;
@@ -681,6 +718,7 @@ namespace EVEPOSMon
             // 
             // txtOxygenIsotopesPricePer
             // 
+            this.txtOxygenIsotopesPricePer.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fuelCostsBindingSource, "OxygenIsotopesPricePer", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtOxygenIsotopesPricePer.Location = new System.Drawing.Point(411, 19);
             this.txtOxygenIsotopesPricePer.Name = "txtOxygenIsotopesPricePer";
             this.txtOxygenIsotopesPricePer.Size = new System.Drawing.Size(93, 20);
@@ -762,6 +800,15 @@ namespace EVEPOSMon
             this.label1.TabIndex = 5;
             this.label1.Text = "Helium";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::EVEPOSMon.Properties.Resources.icon51_13;
+            this.pictureBox1.Location = new System.Drawing.Point(18, 45);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(64, 64);
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
             // txtHeliumIsotopesSubtotal
             // 
             this.txtHeliumIsotopesSubtotal.Enabled = false;
@@ -798,6 +845,7 @@ namespace EVEPOSMon
             // 
             // txtHeliumIsotopesPricePer
             // 
+            this.txtHeliumIsotopesPricePer.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fuelCostsBindingSource, "HeliumIsotopesPricePer", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtHeliumIsotopesPricePer.Location = new System.Drawing.Point(141, 19);
             this.txtHeliumIsotopesPricePer.Name = "txtHeliumIsotopesPricePer";
             this.txtHeliumIsotopesPricePer.Size = new System.Drawing.Size(93, 20);
@@ -914,6 +962,15 @@ namespace EVEPOSMon
             this.label56.TabIndex = 18;
             this.label56.Text = "Heavy Water";
             // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = global::EVEPOSMon.Properties.Resources.icon51_12;
+            this.pictureBox7.Location = new System.Drawing.Point(288, 45);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(64, 64);
+            this.pictureBox7.TabIndex = 17;
+            this.pictureBox7.TabStop = false;
+            // 
             // txtHeavyWaterSubtotal
             // 
             this.txtHeavyWaterSubtotal.Enabled = false;
@@ -950,6 +1007,7 @@ namespace EVEPOSMon
             // 
             // txtHeavyWaterPricePer
             // 
+            this.txtHeavyWaterPricePer.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fuelCostsBindingSource, "HeavyWaterPricePer", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtHeavyWaterPricePer.Location = new System.Drawing.Point(411, 19);
             this.txtHeavyWaterPricePer.Name = "txtHeavyWaterPricePer";
             this.txtHeavyWaterPricePer.Size = new System.Drawing.Size(93, 20);
@@ -1031,6 +1089,15 @@ namespace EVEPOSMon
             this.label64.TabIndex = 5;
             this.label64.Text = "Liquid Ozone";
             // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = global::EVEPOSMon.Properties.Resources.icon51_11;
+            this.pictureBox8.Location = new System.Drawing.Point(18, 45);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(64, 64);
+            this.pictureBox8.TabIndex = 4;
+            this.pictureBox8.TabStop = false;
+            // 
             // txtLiquidOzoneSubtotal
             // 
             this.txtLiquidOzoneSubtotal.Enabled = false;
@@ -1067,6 +1134,7 @@ namespace EVEPOSMon
             // 
             // txtLiquidOzonePricePer
             // 
+            this.txtLiquidOzonePricePer.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fuelCostsBindingSource, "LiquidOzonePricePer", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtLiquidOzonePricePer.Location = new System.Drawing.Point(141, 19);
             this.txtLiquidOzonePricePer.Name = "txtLiquidOzonePricePer";
             this.txtLiquidOzonePricePer.Size = new System.Drawing.Size(93, 20);
@@ -1210,6 +1278,15 @@ namespace EVEPOSMon
             this.label48.TabIndex = 5;
             this.label48.Text = "Charters";
             // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::EVEPOSMon.Properties.Resources.icon57_07;
+            this.pictureBox6.Location = new System.Drawing.Point(10, 45);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(64, 64);
+            this.pictureBox6.TabIndex = 4;
+            this.pictureBox6.TabStop = false;
+            // 
             // textBox21
             // 
             this.textBox21.Enabled = false;
@@ -1302,6 +1379,7 @@ namespace EVEPOSMon
             // 
             // txtStrontiumPricePer
             // 
+            this.txtStrontiumPricePer.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fuelCostsBindingSource, "StrontiumPricePer", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtStrontiumPricePer.Location = new System.Drawing.Point(133, 8);
             this.txtStrontiumPricePer.Name = "txtStrontiumPricePer";
             this.txtStrontiumPricePer.Size = new System.Drawing.Size(93, 20);
@@ -1377,6 +1455,15 @@ namespace EVEPOSMon
             this.label39.Size = new System.Drawing.Size(48, 13);
             this.label39.TabIndex = 20;
             this.label39.Text = "Quanitity";
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::EVEPOSMon.Properties.Resources.icon51_10;
+            this.pictureBox5.Location = new System.Drawing.Point(10, 34);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(64, 64);
+            this.pictureBox5.TabIndex = 17;
+            this.pictureBox5.TabStop = false;
             // 
             // label40
             // 
@@ -1548,6 +1635,15 @@ namespace EVEPOSMon
             this.label87.TabIndex = 67;
             this.label87.Text = "Oxygen";
             // 
+            // pictureBox11
+            // 
+            this.pictureBox11.Image = global::EVEPOSMon.Properties.Resources.icon10_07;
+            this.pictureBox11.Location = new System.Drawing.Point(290, 39);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(64, 64);
+            this.pictureBox11.TabIndex = 66;
+            this.pictureBox11.TabStop = false;
+            // 
             // txtOxygenSubtotal
             // 
             this.txtOxygenSubtotal.Enabled = false;
@@ -1584,6 +1680,7 @@ namespace EVEPOSMon
             // 
             // txtOxygenPricePer
             // 
+            this.txtOxygenPricePer.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fuelCostsBindingSource, "OxygenPricePer", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtOxygenPricePer.Location = new System.Drawing.Point(413, 13);
             this.txtOxygenPricePer.Name = "txtOxygenPricePer";
             this.txtOxygenPricePer.Size = new System.Drawing.Size(93, 20);
@@ -1601,6 +1698,15 @@ namespace EVEPOSMon
             this.label88.TabIndex = 61;
             this.label88.Text = "M^3";
             // 
+            // pictureBox12
+            // 
+            this.pictureBox12.Image = global::EVEPOSMon.Properties.Resources.icon06_06;
+            this.pictureBox12.Location = new System.Drawing.Point(20, 39);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(64, 64);
+            this.pictureBox12.TabIndex = 54;
+            this.pictureBox12.TabStop = false;
+            // 
             // label89
             // 
             this.label89.AutoSize = true;
@@ -1612,6 +1718,7 @@ namespace EVEPOSMon
             // 
             // txtEnrichedUraniumPricePer
             // 
+            this.txtEnrichedUraniumPricePer.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fuelCostsBindingSource, "EnrichedUraniumPricePer", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtEnrichedUraniumPricePer.Location = new System.Drawing.Point(143, 13);
             this.txtEnrichedUraniumPricePer.Name = "txtEnrichedUraniumPricePer";
             this.txtEnrichedUraniumPricePer.Size = new System.Drawing.Size(93, 20);
@@ -1766,6 +1873,15 @@ namespace EVEPOSMon
             this.label79.Text = "Mechanical\r\nParts";
             this.label79.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pictureBox10
+            // 
+            this.pictureBox10.Image = global::EVEPOSMon.Properties.Resources.icon10_10;
+            this.pictureBox10.Location = new System.Drawing.Point(290, 158);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(64, 64);
+            this.pictureBox10.TabIndex = 42;
+            this.pictureBox10.TabStop = false;
+            // 
             // txtMechanicalPartsSubtotal
             // 
             this.txtMechanicalPartsSubtotal.Enabled = false;
@@ -1802,6 +1918,7 @@ namespace EVEPOSMon
             // 
             // txtMechanicalPartsPricePer
             // 
+            this.txtMechanicalPartsPricePer.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fuelCostsBindingSource, "MechanicalPartsPricePer", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtMechanicalPartsPricePer.Location = new System.Drawing.Point(413, 132);
             this.txtMechanicalPartsPricePer.Name = "txtMechanicalPartsPricePer";
             this.txtMechanicalPartsPricePer.Size = new System.Drawing.Size(93, 20);
@@ -1819,6 +1936,15 @@ namespace EVEPOSMon
             this.label66.TabIndex = 37;
             this.label66.Text = "M^3";
             // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Image = global::EVEPOSMon.Properties.Resources.icon24_14;
+            this.pictureBox9.Location = new System.Drawing.Point(20, 158);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(64, 64);
+            this.pictureBox9.TabIndex = 30;
+            this.pictureBox9.TabStop = false;
+            // 
             // label67
             // 
             this.label67.AutoSize = true;
@@ -1830,6 +1956,7 @@ namespace EVEPOSMon
             // 
             // txtRoboticsPricePer
             // 
+            this.txtRoboticsPricePer.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fuelCostsBindingSource, "RoboticsPricePer", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtRoboticsPricePer.Location = new System.Drawing.Point(143, 132);
             this.txtRoboticsPricePer.Name = "txtRoboticsPricePer";
             this.txtRoboticsPricePer.Size = new System.Drawing.Size(93, 20);
@@ -1967,8 +2094,18 @@ namespace EVEPOSMon
             this.label97.TabIndex = 37;
             this.label97.Text = "ISK";
             // 
+            // pictureBox13
+            // 
+            this.pictureBox13.Image = global::EVEPOSMon.Properties.Resources.icon24_06;
+            this.pictureBox13.Location = new System.Drawing.Point(38, 39);
+            this.pictureBox13.Name = "pictureBox13";
+            this.pictureBox13.Size = new System.Drawing.Size(64, 64);
+            this.pictureBox13.TabIndex = 30;
+            this.pictureBox13.TabStop = false;
+            // 
             // txtCoolantPricePer
             // 
+            this.txtCoolantPricePer.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fuelCostsBindingSource, "CoolantPricePer", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtCoolantPricePer.Location = new System.Drawing.Point(161, 13);
             this.txtCoolantPricePer.Name = "txtCoolantPricePer";
             this.txtCoolantPricePer.Size = new System.Drawing.Size(93, 20);
@@ -2133,7 +2270,7 @@ namespace EVEPOSMon
             this.UseStarbase.HeaderText = "Use";
             this.UseStarbase.Name = "UseStarbase";
             this.UseStarbase.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.UseStarbase.Width = 32;
+            this.UseStarbase.Width = 33;
             // 
             // Moon
             // 
@@ -2408,6 +2545,7 @@ namespace EVEPOSMon
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbUpdatePrices,
             this.tspbDownloadingData,
+            this.toolStripLabel1,
             this.toolStripSeparator1,
             this.tsbLockUnlock,
             this.toolStripSeparator3,
@@ -2420,6 +2558,16 @@ namespace EVEPOSMon
             this.toolStrip1.TabIndex = 75;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // tsbUpdatePrices
+            // 
+            this.tsbUpdatePrices.Image = global::EVEPOSMon.Properties.Resources.icon40_14;
+            this.tsbUpdatePrices.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbUpdatePrices.Name = "tsbUpdatePrices";
+            this.tsbUpdatePrices.Size = new System.Drawing.Size(93, 22);
+            this.tsbUpdatePrices.Text = "Update Prices";
+            this.tsbUpdatePrices.ToolTipText = "Update Prices from EVE-Central.com";
+            this.tsbUpdatePrices.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
             // tspbDownloadingData
             // 
             this.tspbDownloadingData.Enabled = false;
@@ -2427,15 +2575,56 @@ namespace EVEPOSMon
             this.tspbDownloadingData.Size = new System.Drawing.Size(100, 22);
             this.tspbDownloadingData.ToolTipText = "Download Status";
             // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(71, 22);
+            this.toolStripLabel1.Text = "Last Updated";
+            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
+            // tsbLockUnlock
+            // 
+            this.tsbLockUnlock.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbLockUnlock.Image = ((System.Drawing.Image)(resources.GetObject("tsbLockUnlock.Image")));
+            this.tsbLockUnlock.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbLockUnlock.Name = "tsbLockUnlock";
+            this.tsbLockUnlock.Size = new System.Drawing.Size(98, 22);
+            this.tsbLockUnlock.Text = "Lock/Unlock Prices";
+            this.tsbLockUnlock.ToolTipText = "This will unlock or lock the \"Price Per\" text boxes depending on their current st" +
+                "ate.";
+            this.tsbLockUnlock.Click += new System.EventHandler(this.toolStripLabel1_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Image = global::EVEPOSMon.Properties.Resources.icon51_05;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(93, 22);
+            this.toolStripButton1.Text = "Ice Calculator";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click_1);
+            // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // tsbHelp
+            // 
+            this.tsbHelp.ForeColor = System.Drawing.Color.Black;
+            this.tsbHelp.Image = global::EVEPOSMon.Properties.Resources.icon74_14;
+            this.tsbHelp.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbHelp.Name = "tsbHelp";
+            this.tsbHelp.Size = new System.Drawing.Size(48, 22);
+            this.tsbHelp.Text = "Help";
             // 
             // btnUseStarbases
             // 
@@ -2460,168 +2649,6 @@ namespace EVEPOSMon
             this.cbEmptyStarbase.UseVisualStyleBackColor = true;
             this.cbEmptyStarbase.Visible = false;
             this.cbEmptyStarbase.CheckedChanged += new System.EventHandler(this.cbEmptyStarbase_CheckedChanged);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
-            // 
-            // tsbUpdatePrices
-            // 
-            this.tsbUpdatePrices.Image = global::EVEPOSMon.Properties.Resources.icon40_14;
-            this.tsbUpdatePrices.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbUpdatePrices.Name = "tsbUpdatePrices";
-            this.tsbUpdatePrices.Size = new System.Drawing.Size(93, 22);
-            this.tsbUpdatePrices.Text = "Update Prices";
-            this.tsbUpdatePrices.ToolTipText = "Update Prices from EVE-Central.com";
-            this.tsbUpdatePrices.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // tsbLockUnlock
-            // 
-            this.tsbLockUnlock.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tsbLockUnlock.Image = ((System.Drawing.Image)(resources.GetObject("tsbLockUnlock.Image")));
-            this.tsbLockUnlock.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbLockUnlock.Name = "tsbLockUnlock";
-            this.tsbLockUnlock.Size = new System.Drawing.Size(98, 22);
-            this.tsbLockUnlock.Text = "Lock/Unlock Prices";
-            this.tsbLockUnlock.ToolTipText = "This will unlock or lock the \"Price Per\" text boxes depending on their current st" +
-                "ate.";
-            this.tsbLockUnlock.Click += new System.EventHandler(this.toolStripLabel1_Click);
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.Image = global::EVEPOSMon.Properties.Resources.icon51_05;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(93, 22);
-            this.toolStripButton1.Text = "Ice Calculator";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click_1);
-            // 
-            // tsbHelp
-            // 
-            this.tsbHelp.ForeColor = System.Drawing.Color.Black;
-            this.tsbHelp.Image = global::EVEPOSMon.Properties.Resources.icon74_14;
-            this.tsbHelp.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbHelp.Name = "tsbHelp";
-            this.tsbHelp.Size = new System.Drawing.Size(48, 22);
-            this.tsbHelp.Text = "Help";
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::EVEPOSMon.Properties.Resources.icon51_10;
-            this.pictureBox5.Location = new System.Drawing.Point(10, 34);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(64, 64);
-            this.pictureBox5.TabIndex = 17;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::EVEPOSMon.Properties.Resources.icon57_07;
-            this.pictureBox6.Location = new System.Drawing.Point(10, 45);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(64, 64);
-            this.pictureBox6.TabIndex = 4;
-            this.pictureBox6.TabStop = false;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = global::EVEPOSMon.Properties.Resources.icon51_12;
-            this.pictureBox7.Location = new System.Drawing.Point(288, 45);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(64, 64);
-            this.pictureBox7.TabIndex = 17;
-            this.pictureBox7.TabStop = false;
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Image = global::EVEPOSMon.Properties.Resources.icon51_11;
-            this.pictureBox8.Location = new System.Drawing.Point(18, 45);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(64, 64);
-            this.pictureBox8.TabIndex = 4;
-            this.pictureBox8.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::EVEPOSMon.Properties.Resources.icon51_16;
-            this.pictureBox4.Location = new System.Drawing.Point(820, 45);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(64, 64);
-            this.pictureBox4.TabIndex = 43;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::EVEPOSMon.Properties.Resources.icon51_14;
-            this.pictureBox3.Location = new System.Drawing.Point(556, 45);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(64, 64);
-            this.pictureBox3.TabIndex = 30;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::EVEPOSMon.Properties.Resources.icon51_15;
-            this.pictureBox2.Location = new System.Drawing.Point(288, 45);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(64, 64);
-            this.pictureBox2.TabIndex = 17;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::EVEPOSMon.Properties.Resources.icon51_13;
-            this.pictureBox1.Location = new System.Drawing.Point(18, 45);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(64, 64);
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox11
-            // 
-            this.pictureBox11.Image = global::EVEPOSMon.Properties.Resources.icon10_07;
-            this.pictureBox11.Location = new System.Drawing.Point(290, 39);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(64, 64);
-            this.pictureBox11.TabIndex = 66;
-            this.pictureBox11.TabStop = false;
-            // 
-            // pictureBox12
-            // 
-            this.pictureBox12.Image = global::EVEPOSMon.Properties.Resources.icon06_06;
-            this.pictureBox12.Location = new System.Drawing.Point(20, 39);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(64, 64);
-            this.pictureBox12.TabIndex = 54;
-            this.pictureBox12.TabStop = false;
-            // 
-            // pictureBox10
-            // 
-            this.pictureBox10.Image = global::EVEPOSMon.Properties.Resources.icon10_10;
-            this.pictureBox10.Location = new System.Drawing.Point(290, 158);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(64, 64);
-            this.pictureBox10.TabIndex = 42;
-            this.pictureBox10.TabStop = false;
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Image = global::EVEPOSMon.Properties.Resources.icon24_14;
-            this.pictureBox9.Location = new System.Drawing.Point(20, 158);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(64, 64);
-            this.pictureBox9.TabIndex = 30;
-            this.pictureBox9.TabStop = false;
-            // 
-            // pictureBox13
-            // 
-            this.pictureBox13.Image = global::EVEPOSMon.Properties.Resources.icon24_06;
-            this.pictureBox13.Location = new System.Drawing.Point(38, 39);
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(64, 64);
-            this.pictureBox13.TabIndex = 30;
-            this.pictureBox13.TabStop = false;
             // 
             // FuelCalculator
             // 
@@ -2662,37 +2689,39 @@ namespace EVEPOSMon
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "Fuel Calculator";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FuelCalculator_FormClosing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fuelCostsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStations)).EndInit();
             this.groupBox7.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2923,5 +2952,7 @@ namespace EVEPOSMon
         private System.Windows.Forms.CheckBox cbEmptyStarbase;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.BindingSource fuelCostsBindingSource;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
     }
 }

@@ -73,6 +73,7 @@
       <DependentUpon>FuelCalculator.cs</DependentUpon>
     </Compile>
     <Compile Include="FuelCostEntry.cs" />
+    <Compile Include="FuelCosts.cs" />
     <Compile Include="IceFuel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -439,6 +440,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="icons\icon57_06.png" />
+    <None Include="Properties\DataSources\FuelCosts.datasource" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo.ico" />

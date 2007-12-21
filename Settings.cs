@@ -52,7 +52,7 @@ namespace EVEMon.Common
         public MoonData moonData;
         public StarbaseList starbaseList;
 
-        public List<FuelCostEntry> fuelCosts = new List<FuelCostEntry>();
+        //public List<FuelCostEntry> fuelCosts = new List<FuelCostEntry>();
         public List<Starbase> availableStarBases = new List<Starbase>();
         public AccountInfo accountInfo;
 
