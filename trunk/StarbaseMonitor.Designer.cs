@@ -73,8 +73,8 @@ namespace EVEPOSMon
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblTickAt = new System.Windows.Forms.Label();
-            this.throbber1 = new EVEMon.Throbber();
             this.posStateIcon1 = new EVEPOSMon.PosStateIcon();
+            this.throbber1 = new EVEMon.Throbber();
             ((System.ComponentModel.ISupportInitialize)(this.pbStationImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgFuelList)).BeginInit();
             this.panel1.SuspendLayout();
@@ -441,6 +441,15 @@ namespace EVEPOSMon
             this.lblTickAt.TabIndex = 33;
             this.lblTickAt.Text = "label4";
             // 
+            // posStateIcon1
+            // 
+            this.posStateIcon1.BackColor = System.Drawing.Color.Transparent;
+            this.posStateIcon1.Location = new System.Drawing.Point(87, 87);
+            this.posStateIcon1.Name = "posStateIcon1";
+            this.posStateIcon1.Size = new System.Drawing.Size(50, 50);
+            this.posStateIcon1.State = EVEPOSMon.PosStateIcon.PosState.Reinforced;
+            this.posStateIcon1.TabIndex = 34;
+            // 
             // throbber1
             // 
             this.throbber1.Location = new System.Drawing.Point(501, 6);
@@ -451,15 +460,6 @@ namespace EVEPOSMon
             this.throbber1.State = EVEMon.Throbber.ThrobberState.Stopped;
             this.throbber1.TabIndex = 0;
             this.throbber1.TabStop = false;
-            // 
-            // posStateIcon1
-            // 
-            this.posStateIcon1.BackColor = System.Drawing.Color.Transparent;
-            this.posStateIcon1.Location = new System.Drawing.Point(94, 87);
-            this.posStateIcon1.Name = "posStateIcon1";
-            this.posStateIcon1.Size = new System.Drawing.Size(43, 50);
-            this.posStateIcon1.State = EVEPOSMon.PosStateIcon.PosState.Anchored;
-            this.posStateIcon1.TabIndex = 34;
             // 
             // StarbaseMonitor
             // 

@@ -83,15 +83,15 @@ namespace EVEPOSMon
             // 
             this.StateImages.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("StateImages.ImageStream")));
             this.StateImages.TransparentColor = System.Drawing.Color.Transparent;
-            this.StateImages.Images.SetKeyName(0, "POS-States-blue.png");
-            this.StateImages.Images.SetKeyName(1, "POS-States-green.png");
-            this.StateImages.Images.SetKeyName(2, "POS-States-grey.png");
-            this.StateImages.Images.SetKeyName(3, "POS-States-red.png");
+            this.StateImages.Images.SetKeyName(0, "POS-States-2-reinforced.png");
+            this.StateImages.Images.SetKeyName(1, "POS-States-2-online.png");
+            this.StateImages.Images.SetKeyName(2, "POS-States-2-anchored.png");
+            this.StateImages.Images.SetKeyName(3, "POS-States-2-unknown.png");
             // 
             // PosStateIcon
             // 
             this.BackColor = System.Drawing.Color.Transparent;
-            this.Size = new System.Drawing.Size(43, 50);
+            this.Size = new System.Drawing.Size(50, 50);
             this.ResumeLayout(false);
 
         }
