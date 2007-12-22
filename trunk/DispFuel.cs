@@ -86,7 +86,7 @@ namespace EVEPOSMon
 
         #region Appearance in List Box
         // Region & text padding
-        private const int IMAGE_OFFSET = 60;
+        private const int IMAGE_OFFSET = 50;
         private const int AMOUNT_OFFSET = 260;
         private const int RATE_OFFSET = 340;
         private const int TIME_OFFSET = 420;
