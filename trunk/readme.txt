@@ -5,9 +5,8 @@ Upon running the program please goto Utilities->API Keys, and enter your FULL AP
 
 II. Known Issues
 * Settings pane doesn't work.
-* Fuel doesn't actually update when the starbases tick.
-* Fuel Calcuator doesn't save prices, and certain options don't work.
-* ICe calculator doesn't work yet
+* ICe calculator doesn't work yet.
+* No code exists for anything dealing with starbase charters
 * Proxy server doesn't work.
 
 III.  Website
