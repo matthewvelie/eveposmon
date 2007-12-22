@@ -131,8 +131,8 @@ namespace EVEPOSMon
             string amountString = this.amount.ToString("###,###");
             string rateString = this.rate.ToString("#,###") + "/hr";
             int tmpTime = this.time;
-            int weeks = tmpTime / 68;
-            tmpTime = tmpTime % 68;
+            int weeks = tmpTime / 168;
+            tmpTime = tmpTime % 168;
             int days = tmpTime / 24;
             tmpTime = tmpTime % 24;
             int hours = tmpTime;
