@@ -88,9 +88,6 @@ namespace EVEPOSMon
         private void btnGetStationInfo_Click(object sender, EventArgs e)
         {
             populateTabs();
-
-            this.Visible = false;
-            mainScreen.Focus();
         }
 
         private void SelectStarbases_FormClosing(object sender, FormClosingEventArgs e)

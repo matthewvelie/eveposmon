@@ -29,7 +29,7 @@ namespace EVEPOSMon
         private void InitializeComponent()
         {
             this.btnLoadStations = new System.Windows.Forms.Button();
-            this.btnGetStationInfo = new System.Windows.Forms.Button();
+            this.btnSelectStarbases = new System.Windows.Forms.Button();
             this.dgStations = new System.Windows.Forms.DataGridView();
             this.Column0 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,16 +53,17 @@ namespace EVEPOSMon
             this.btnLoadStations.UseVisualStyleBackColor = true;
             this.btnLoadStations.Click += new System.EventHandler(this.btnLoadStations_Click);
             // 
-            // btnGetStationInfo
+            // btnSelectStarbases
             // 
-            this.btnGetStationInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGetStationInfo.Location = new System.Drawing.Point(13, 298);
-            this.btnGetStationInfo.Name = "btnGetStationInfo";
-            this.btnGetStationInfo.Size = new System.Drawing.Size(111, 23);
-            this.btnGetStationInfo.TabIndex = 2;
-            this.btnGetStationInfo.Text = "Select Starbases";
-            this.btnGetStationInfo.UseVisualStyleBackColor = true;
-            this.btnGetStationInfo.Click += new System.EventHandler(this.btnGetStationInfo_Click);
+            this.btnSelectStarbases.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnSelectStarbases.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelectStarbases.Location = new System.Drawing.Point(13, 298);
+            this.btnSelectStarbases.Name = "btnSelectStarbases";
+            this.btnSelectStarbases.Size = new System.Drawing.Size(111, 23);
+            this.btnSelectStarbases.TabIndex = 2;
+            this.btnSelectStarbases.Text = "Select Starbases";
+            this.btnSelectStarbases.UseVisualStyleBackColor = true;
+            this.btnSelectStarbases.Click += new System.EventHandler(this.btnGetStationInfo_Click);
             // 
             // dgStations
             // 
@@ -146,7 +147,7 @@ namespace EVEPOSMon
             this.ClientSize = new System.Drawing.Size(423, 358);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.dgStations);
-            this.Controls.Add(this.btnGetStationInfo);
+            this.Controls.Add(this.btnSelectStarbases);
             this.Controls.Add(this.btnLoadStations);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
@@ -168,7 +169,7 @@ namespace EVEPOSMon
         #endregion
 
         private System.Windows.Forms.Button btnLoadStations;
-        private System.Windows.Forms.Button btnGetStationInfo;
+        private System.Windows.Forms.Button btnSelectStarbases;
         private System.Windows.Forms.DataGridView dgStations;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column0;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
