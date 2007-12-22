@@ -5,7 +5,7 @@
 
 ; HM NIS Edit Wizard helper defines
 !define PRODUCT_NAME "EVEPOSMon"
-!define PRODUCT_VERSION "Beta1"
+!define PRODUCT_VERSION "Beta2"
 !define PRODUCT_PUBLISHER "EXA Nation"
 !define PRODUCT_WEB_SITE "http://code.google.com/p/eveposmon"
 !define PRODUCT_DIR_REGKEY "Software\Microsoft\Windows\CurrentVersion\App Paths\EVEPOSMon.exe"
