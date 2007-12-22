@@ -50,6 +50,7 @@ namespace EVEPOSMon
             this.lblOnStandingDropValue = new System.Windows.Forms.Label();
             this.lblCombatSettings = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.nflbFuels = new EVEMon.NoFlickerListBox();
             this.lblFuelBay = new System.Windows.Forms.Label();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.lblXmlLastDownloaded = new System.Windows.Forms.ToolStripStatusLabel();
@@ -69,7 +70,6 @@ namespace EVEPOSMon
             this.label3 = new System.Windows.Forms.Label();
             this.lblTickAt = new System.Windows.Forms.Label();
             this.posStateIcon1 = new EVEPOSMon.PosStateIcon();
-            this.nflbFuels = new EVEMon.NoFlickerListBox();
             this.throbber1 = new EVEMon.Throbber();
             ((System.ComponentModel.ISupportInitialize)(this.pbStationImage)).BeginInit();
             this.panel1.SuspendLayout();
@@ -245,10 +245,24 @@ namespace EVEPOSMon
             // panel1
             // 
             this.panel1.Controls.Add(this.nflbFuels);
-            this.panel1.Location = new System.Drawing.Point(4, 274);
+            this.panel1.Location = new System.Drawing.Point(4, 212);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(528, 311);
+            this.panel1.Size = new System.Drawing.Size(528, 379);
             this.panel1.TabIndex = 27;
+            // 
+            // nflbFuels
+            // 
+            this.nflbFuels.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.nflbFuels.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.nflbFuels.FormattingEnabled = true;
+            this.nflbFuels.IntegralHeight = false;
+            this.nflbFuels.ItemHeight = 25;
+            this.nflbFuels.Location = new System.Drawing.Point(0, 0);
+            this.nflbFuels.Name = "nflbFuels";
+            this.nflbFuels.Size = new System.Drawing.Size(528, 379);
+            this.nflbFuels.TabIndex = 12;
+            this.nflbFuels.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.nflbFuels_DrawItem);
+            this.nflbFuels.MeasureItem += new System.Windows.Forms.MeasureItemEventHandler(this.nflbFuels_MeasureItem);
             // 
             // lblFuelBay
             // 
@@ -399,20 +413,6 @@ namespace EVEPOSMon
             this.posStateIcon1.Size = new System.Drawing.Size(50, 50);
             this.posStateIcon1.State = EVEPOSMon.PosStateIcon.PosState.Reinforced;
             this.posStateIcon1.TabIndex = 34;
-            // 
-            // nflbFuels
-            // 
-            this.nflbFuels.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.nflbFuels.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.nflbFuels.FormattingEnabled = true;
-            this.nflbFuels.IntegralHeight = false;
-            this.nflbFuels.ItemHeight = 25;
-            this.nflbFuels.Location = new System.Drawing.Point(0, 0);
-            this.nflbFuels.Name = "nflbFuels";
-            this.nflbFuels.Size = new System.Drawing.Size(528, 311);
-            this.nflbFuels.TabIndex = 12;
-            this.nflbFuels.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.nflbFuels_DrawItem);
-            this.nflbFuels.MeasureItem += new System.Windows.Forms.MeasureItemEventHandler(this.nflbFuels_MeasureItem);
             // 
             // throbber1
             // 

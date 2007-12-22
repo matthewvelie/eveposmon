@@ -153,7 +153,7 @@ namespace EVEPOSMon
             {
                 g.FillRectangle(b, e.Bounds);
             }
-            using (Pen p = new Pen(Color.FromArgb(255, 100, 100)))
+            using (Pen p = new Pen(Color.FromArgb(100, 100, 100)))
             {
                 g.DrawLine(p, e.Bounds.Left, e.Bounds.Top, e.Bounds.Right + 1, e.Bounds.Top);
             }
