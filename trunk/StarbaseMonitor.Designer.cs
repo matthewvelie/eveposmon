@@ -44,11 +44,6 @@ namespace EVEPOSMon
             this.lblOnStatusDrop = new System.Windows.Forms.Label();
             this.lblOnStandingDrop = new System.Windows.Forms.Label();
             this.lblOnAggression = new System.Windows.Forms.Label();
-            this.dgFuelList = new System.Windows.Forms.DataGridView();
-            this.FuelName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FuelRequiredQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TimeRemaining = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblOnCorporationWar = new System.Windows.Forms.Label();
             this.lblOnAggressionValue = new System.Windows.Forms.Label();
             this.lblOnStatusDropValue = new System.Windows.Forms.Label();
@@ -74,9 +69,9 @@ namespace EVEPOSMon
             this.label3 = new System.Windows.Forms.Label();
             this.lblTickAt = new System.Windows.Forms.Label();
             this.posStateIcon1 = new EVEPOSMon.PosStateIcon();
+            this.nflbFuels = new EVEMon.NoFlickerListBox();
             this.throbber1 = new EVEMon.Throbber();
             ((System.ComponentModel.ISupportInitialize)(this.pbStationImage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgFuelList)).BeginInit();
             this.panel1.SuspendLayout();
             this.statusStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.throbber1)).BeginInit();
@@ -206,51 +201,6 @@ namespace EVEPOSMon
             this.lblOnAggression.TabIndex = 9;
             this.lblOnAggression.Text = "On Aggression";
             // 
-            // dgFuelList
-            // 
-            this.dgFuelList.AllowUserToAddRows = false;
-            this.dgFuelList.AllowUserToDeleteRows = false;
-            this.dgFuelList.AllowUserToResizeColumns = false;
-            this.dgFuelList.AllowUserToResizeRows = false;
-            this.dgFuelList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgFuelList.ColumnHeadersVisible = false;
-            this.dgFuelList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.FuelName,
-            this.Quantity,
-            this.FuelRequiredQuantity,
-            this.TimeRemaining});
-            this.dgFuelList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgFuelList.Location = new System.Drawing.Point(0, 0);
-            this.dgFuelList.Name = "dgFuelList";
-            this.dgFuelList.ReadOnly = true;
-            this.dgFuelList.RowHeadersVisible = false;
-            this.dgFuelList.Size = new System.Drawing.Size(546, 311);
-            this.dgFuelList.TabIndex = 21;
-            // 
-            // FuelName
-            // 
-            this.FuelName.HeaderText = "Fuel Name";
-            this.FuelName.Name = "FuelName";
-            this.FuelName.ReadOnly = true;
-            // 
-            // Quantity
-            // 
-            this.Quantity.HeaderText = "Current Quantity";
-            this.Quantity.Name = "Quantity";
-            this.Quantity.ReadOnly = true;
-            // 
-            // FuelRequiredQuantity
-            // 
-            this.FuelRequiredQuantity.HeaderText = "Required Quantity";
-            this.FuelRequiredQuantity.Name = "FuelRequiredQuantity";
-            this.FuelRequiredQuantity.ReadOnly = true;
-            // 
-            // TimeRemaining
-            // 
-            this.TimeRemaining.HeaderText = "Time Remaining";
-            this.TimeRemaining.Name = "TimeRemaining";
-            this.TimeRemaining.ReadOnly = true;
-            // 
             // lblOnCorporationWar
             // 
             this.lblOnCorporationWar.Location = new System.Drawing.Point(149, 125);
@@ -294,10 +244,10 @@ namespace EVEPOSMon
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dgFuelList);
+            this.panel1.Controls.Add(this.nflbFuels);
             this.panel1.Location = new System.Drawing.Point(4, 274);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(546, 311);
+            this.panel1.Size = new System.Drawing.Size(528, 311);
             this.panel1.TabIndex = 27;
             // 
             // lblFuelBay
@@ -450,6 +400,20 @@ namespace EVEPOSMon
             this.posStateIcon1.State = EVEPOSMon.PosStateIcon.PosState.Reinforced;
             this.posStateIcon1.TabIndex = 34;
             // 
+            // nflbFuels
+            // 
+            this.nflbFuels.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.nflbFuels.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.nflbFuels.FormattingEnabled = true;
+            this.nflbFuels.IntegralHeight = false;
+            this.nflbFuels.ItemHeight = 25;
+            this.nflbFuels.Location = new System.Drawing.Point(0, 0);
+            this.nflbFuels.Name = "nflbFuels";
+            this.nflbFuels.Size = new System.Drawing.Size(528, 311);
+            this.nflbFuels.TabIndex = 12;
+            this.nflbFuels.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.nflbFuels_DrawItem);
+            this.nflbFuels.MeasureItem += new System.Windows.Forms.MeasureItemEventHandler(this.nflbFuels_MeasureItem);
+            // 
             // throbber1
             // 
             this.throbber1.Location = new System.Drawing.Point(501, 6);
@@ -506,7 +470,6 @@ namespace EVEPOSMon
             this.Size = new System.Drawing.Size(535, 673);
             this.Load += new System.EventHandler(this.StarbaseMonitor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbStationImage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgFuelList)).EndInit();
             this.panel1.ResumeLayout(false);
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
@@ -534,11 +497,6 @@ namespace EVEPOSMon
         private System.Windows.Forms.Label lblOnStatusDrop;
         private System.Windows.Forms.Label lblOnStandingDrop;
         private System.Windows.Forms.Label lblOnAggression;
-        private System.Windows.Forms.DataGridView dgFuelList;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FuelName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FuelRequiredQuantity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TimeRemaining;
         private System.Windows.Forms.Label lblOnCorporationWar;
         private System.Windows.Forms.Label lblOnAggressionValue;
         private System.Windows.Forms.Label lblOnStatusDropValue;
@@ -564,5 +522,6 @@ namespace EVEPOSMon
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblTickAt;
         private PosStateIcon posStateIcon1;
+        private EVEMon.NoFlickerListBox nflbFuels;
     }
 }

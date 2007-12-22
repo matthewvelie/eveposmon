@@ -38,6 +38,40 @@ namespace EVEPOSMon
             // Set all the stabase settings labels
             updateOptionLabels();
 
+            m_starbase.totalStrontiumVolume = 0;
+            m_starbase.totalFuelVolume = 0;
+
+            nflbFuels.Items.Clear();
+            nflbFuels.BeginUpdate();
+            try
+            {
+                nflbFuels.Items.Add(new DispFuelGroup("Racial Isotopes"));
+                nflbFuels.Items.Add(new DispFuel("Helium Isotopes", 50000, 450, 102));
+                nflbFuels.Items.Add(new DispFuelGroup("Power"));
+                nflbFuels.Items.Add(new DispFuelGroup("CPU"));
+                nflbFuels.Items.Add(new DispFuelGroup("Reinforced Fuel"));
+                nflbFuels.Items.Add(new DispFuelGroup("Starbase Charters"));
+                nflbFuels.Items.Add(new DispFuelGroup("Online Fuel"));
+                nflbFuels.Items.Add(new DispFuel("Robotics", 30000, 430, 52));
+                nflbFuels.Items.Add(new DispFuel("Oxygen", 12345, 450, 180));
+                nflbFuels.Items.Add(new DispFuel("Mechanical Parts", 50000, 450, 102));
+
+            }
+            finally
+            {
+                nflbFuels.EndUpdate();
+            }
+           
+
+        }
+        
+        /*
+        private void updateForm()
+        {
+            // Set all the stabase settings labels
+            updateOptionLabels();
+
+            
             dgFuelList.Rows.Clear();
 
             m_starbase.totalStrontiumVolume = 0;
@@ -97,6 +131,7 @@ namespace EVEPOSMon
                 dgFuelList.Rows.Add(new string[] { f.name, f.quantity, f.quantityUsedPerHour + "/hr", 
                     getTimeRemainingString(f.timeRemaining)});
             }
+            
 
             TimeSpan timeLeft = (m_starbase.cachedUntil.ToLocalTime().Subtract(DateTime.Now));
             seconds = timeLeft.Seconds + (timeLeft.Minutes * 60) + (timeLeft.Hours * 60 * 60);
@@ -110,13 +145,14 @@ namespace EVEPOSMon
 
             lblTickAt.Text = Convert.ToString(m_starbase.stateTimestamp.Minute);
 
-            dgFuelList.Columns[0].DisplayIndex = 0;
-            dgFuelList.Columns[1].DisplayIndex = 1;
-            dgFuelList.Columns[2].DisplayIndex = 2;
+            //dgFuelList.Columns[0].DisplayIndex = 0;
+            //dgFuelList.Columns[1].DisplayIndex = 1;
+            //dgFuelList.Columns[2].DisplayIndex = 2;
             lblXmlLastDownloaded.Text = "XML Last Downloaded At: " + m_starbase.lastDownloaded.ToString();
             lblDataCachedUntil.Text = "Data Cached Until: " + m_starbase.cachedUntil.ToLocalTime().ToString();
 
         }
+         */ 
 
         private void updateFuels()
         {
@@ -424,6 +460,50 @@ namespace EVEPOSMon
             return strTimeRemaining;
         }
 
+        /// <summary>
+        /// Handles the DrawItem event of the nflbFuels control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.Windows.Forms.DrawItemEventArgs"/> instance containing the event data.</param>
+        private void nflbFuels_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            if (e.Index < 0)
+            {
+                return;
+            }
+            object item = nflbFuels.Items[e.Index];
+
+            if (item is DispFuelGroup)
+            {
+                ((DispFuelGroup)item).Draw(e);
+            }
+            else if (item is DispFuel)
+            {
+                ((DispFuel)item).Draw(e);
+            }
+        }
+
+        /// <summary>
+        /// Handles the MeasureItem event of the lbSkills control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.Windows.Forms.MeasureItemEventArgs"/> instance containing the event data.</param>
+        private void nflbFuels_MeasureItem(object sender, MeasureItemEventArgs e)
+        {
+            if (e.Index < 0)
+            {
+                return;
+            }
+            object item = nflbFuels.Items[e.Index];
+            if (item is DispFuelGroup)
+            {
+                e.ItemHeight = DispFuelGroup.Height;
+            }
+            else if (item is DispFuel)
+            {
+                e.ItemHeight = DispFuel.Height;
+            }
+        }
 
     }
 }
