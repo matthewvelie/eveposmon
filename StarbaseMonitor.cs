@@ -41,47 +41,31 @@ namespace EVEPOSMon
             m_starbase.totalStrontiumVolume = 0;
             m_starbase.totalFuelVolume = 0;
 
-            nflbFuels.Items.Clear();
-            nflbFuels.BeginUpdate();
-            try
-            {
-                nflbFuels.Items.Add(new DispFuelGroup("Racial Isotopes"));
-                nflbFuels.Items.Add(new DispFuel("Helium Isotopes", 50000, 450, 102));
-                nflbFuels.Items.Add(new DispFuelGroup("Power"));
-                nflbFuels.Items.Add(new DispFuelGroup("CPU"));
-                nflbFuels.Items.Add(new DispFuelGroup("Reinforced Fuel"));
-                nflbFuels.Items.Add(new DispFuelGroup("Starbase Charters"));
-                nflbFuels.Items.Add(new DispFuelGroup("Online Fuel"));
-                nflbFuels.Items.Add(new DispFuel("Robotics", 30000, 430, 52));
-                nflbFuels.Items.Add(new DispFuel("Oxygen", 12345, 450, 180));
-                nflbFuels.Items.Add(new DispFuel("Mechanical Parts", 50000, 450, 102));
+            updateFuelConsumption();
+            updateFuels();          //updates all the fuel info
+            updateOptionLabels();   //updates the starbase settings (war, agression, etc)
+            updateStarbaseState();  //updates the state picture (online, anchored, etc)
 
-            }
-            finally
-            {
-                nflbFuels.EndUpdate();
-            }
-           
+            lblTickAt.Text = Convert.ToString(m_starbase.stateTimestamp.Minute);
+
+            lblXmlLastDownloaded.Text = "XML Last Downloaded At: " + m_starbase.lastDownloaded.ToString();
+            lblDataCachedUntil.Text = "Data Cached Until: " + m_starbase.cachedUntil.ToLocalTime().ToString();
+
+            TimeSpan timeLeft = (m_starbase.cachedUntil.ToLocalTime().Subtract(DateTime.Now));
+            seconds = timeLeft.Seconds + (timeLeft.Minutes * 60) + (timeLeft.Hours * 60 * 60);
 
         }
         
-        /*
-        private void updateForm()
+        private void updateFuelConsumption()
         {
             // Set all the stabase settings labels
-            updateOptionLabels();
 
-            
-            dgFuelList.Rows.Clear();
-
-            m_starbase.totalStrontiumVolume = 0;
-            m_starbase.totalFuelVolume = 0;
             foreach (Fuel f in m_starbase.FuelList)
             {
                 // The fuel name and amount used per hour come from an external xml file
                 ResourceEntry fuelInfo = m_settings.towerResources.GetFuelInfo(m_starbase.typeId, f.typeId);
                 f.name = fuelInfo.name;
-                
+
                 f.volume = fuelInfo.volume;
 
                 // water
@@ -118,60 +102,62 @@ namespace EVEPOSMon
                 {
                     m_starbase.totalStrontiumVolume += Convert.ToInt32(f.quantity) * Convert.ToDouble(f.volume);
                 }
-                
+
                 else
                 {
                     m_starbase.totalFuelVolume += Convert.ToInt32(f.quantity) * Convert.ToDouble(f.volume);
                 }
-                
+
                 // Figure out how long till we run out of this fuel
                 f.timeRemaining = TimeSpan.FromHours(Convert.ToInt32(f.quantity) / Convert.ToInt32(f.quantityUsedPerHour));
-
-                // Add this fuel to the datagrid for display
-                dgFuelList.Rows.Add(new string[] { f.name, f.quantity, f.quantityUsedPerHour + "/hr", 
-                    getTimeRemainingString(f.timeRemaining)});
             }
-            
-
-            TimeSpan timeLeft = (m_starbase.cachedUntil.ToLocalTime().Subtract(DateTime.Now));
-            seconds = timeLeft.Seconds + (timeLeft.Minutes * 60) + (timeLeft.Hours * 60 * 60);
-
-            updateTotalFuelDisplay();
-            updateTotalStrontiumDisplay();
-
-            updateStarbaseState();
-
-            updateLowestFuelsDisplay();
-
-            lblTickAt.Text = Convert.ToString(m_starbase.stateTimestamp.Minute);
-
-            //dgFuelList.Columns[0].DisplayIndex = 0;
-            //dgFuelList.Columns[1].DisplayIndex = 1;
-            //dgFuelList.Columns[2].DisplayIndex = 2;
-            lblXmlLastDownloaded.Text = "XML Last Downloaded At: " + m_starbase.lastDownloaded.ToString();
-            lblDataCachedUntil.Text = "Data Cached Until: " + m_starbase.cachedUntil.ToLocalTime().ToString();
-
         }
-         */ 
 
         private void updateFuels()
         {
             //on the tick update fuels
             //System.Windows.Forms.MessageBox.Show("Updating fuel..");
-            dgFuelList.Rows.Clear();
+
+            Dictionary<string, Fuel> dfuel = new Dictionary<string, Fuel>();
+
             foreach (Fuel f in m_starbase.FuelList)
             {
-                f.quantity = Convert.ToString( Convert.ToInt32(f.quantity) -  Convert.ToInt32(f.quantityUsedPerHour) );
-                TimeSpan oneHour = new TimeSpan(1,0,0);
-                f.timeRemaining.Subtract(oneHour);
+                dfuel[f.name] = f;
+            }
 
-                // Add this fuel to the datagrid for display
-                dgFuelList.Rows.Add(new string[] { f.name, f.quantity, f.quantityUsedPerHour + "/hr", 
-                    getTimeRemainingString(f.timeRemaining)});
+            nflbFuels.Items.Clear();
+            nflbFuels.BeginUpdate();
+            try
+            {
+                nflbFuels.Items.Add(new DispFuelGroup("Racial Isotopes"));
+                if (dfuel.ContainsKey("Helium Isotopes")) { nflbFuels.Items.Add(new DispFuel(dfuel["Helium Isotopes"].name, dfuel["Helium Isotopes"].quantity, dfuel["Helium Isotopes"].quantityUsedPerHour, dfuel["Helium Isotopes"].timeRemaining)); }
+                if (dfuel.ContainsKey("Hydrogen Isotopes")) { nflbFuels.Items.Add(new DispFuel(dfuel["Hydrogen Isotopes"].name, dfuel["Hydrogen Isotopes"].quantity, dfuel["Hydrogen Isotopes"].quantityUsedPerHour, dfuel["Hydrogen Isotopes"].timeRemaining)); }
+                if (dfuel.ContainsKey("Oxygen Isotopes")) { nflbFuels.Items.Add(new DispFuel(dfuel["Oxygen Isotopes"].name, dfuel["Oxygen Isotopes"].quantity, dfuel["Oxygen Isotopes"].quantityUsedPerHour, dfuel["Oxygen Isotopes"].timeRemaining)); }
+                if (dfuel.ContainsKey("Nitrogen Isotopes")) { nflbFuels.Items.Add(new DispFuel(dfuel["Nitrogen Isotopes"].name, dfuel["Nitrogen Isotopes"].quantity, dfuel["Nitrogen Isotopes"].quantityUsedPerHour, dfuel["Nitrogen Isotopes"].timeRemaining)); }
+                nflbFuels.Items.Add(new DispFuelGroup("Power"));
+                if (dfuel.ContainsKey("Heavy Water")) { nflbFuels.Items.Add(new DispFuel(dfuel["Heavy Water"].name, dfuel["Heavy Water"].quantity, dfuel["Heavy Water"].quantityUsedPerHour, dfuel["Heavy Water"].timeRemaining)); }
+                nflbFuels.Items.Add(new DispFuelGroup("CPU"));
+                if (dfuel.ContainsKey("Liquid Ozone")) { nflbFuels.Items.Add(new DispFuel(dfuel["Liquid Ozone"].name, dfuel["Liquid Ozone"].quantity, dfuel["Liquid Ozone"].quantityUsedPerHour, dfuel["Liquid Ozone"].timeRemaining)); }
+                nflbFuels.Items.Add(new DispFuelGroup("Reinforced Fuel"));
+                if (dfuel.ContainsKey("Strontium Clathrates")) { nflbFuels.Items.Add(new DispFuel(dfuel["Strontium Clathrates"].name, dfuel["Strontium Clathrates"].quantity, dfuel["Strontium Clathrates"].quantityUsedPerHour, dfuel["Strontium Clathrates"].timeRemaining)); }
+                nflbFuels.Items.Add(new DispFuelGroup("Starbase Charters"));
+                nflbFuels.Items.Add(new DispFuelGroup("Online Fuel"));
+                if (dfuel.ContainsKey("Robotics")) { nflbFuels.Items.Add(new DispFuel(dfuel["Robotics"].name, dfuel["Robotics"].quantity, dfuel["Robotics"].quantityUsedPerHour, dfuel["Robotics"].timeRemaining)); }
+                if (dfuel.ContainsKey("Oxygen")) { nflbFuels.Items.Add(new DispFuel(dfuel["Oxygen"].name, dfuel["Oxygen"].quantity, dfuel["Oxygen"].quantityUsedPerHour, dfuel["Oxygen"].timeRemaining)); }
+                if (dfuel.ContainsKey("Coolant")) { nflbFuels.Items.Add(new DispFuel(dfuel["Coolant"].name, dfuel["Coolant"].quantity, dfuel["Coolant"].quantityUsedPerHour, dfuel["Coolant"].timeRemaining)); }
+                if (dfuel.ContainsKey("Enriched Uranium")) { nflbFuels.Items.Add(new DispFuel(dfuel["Enriched Uranium"].name, dfuel["Enriched Uranium"].quantity, dfuel["Enriched Uranium"].quantityUsedPerHour, dfuel["Enriched Uranium"].timeRemaining)); }
+                if (dfuel.ContainsKey("Mechanical Parts")) { nflbFuels.Items.Add(new DispFuel(dfuel["Mechanical Parts"].name, dfuel["Mechanical Parts"].quantity, dfuel["Mechanical Parts"].quantityUsedPerHour, dfuel["Mechanical Parts"].timeRemaining)); }
+                
+            }
+            finally
+            {
+                nflbFuels.EndUpdate();
             }
 
             updateLowestFuelsDisplay();
+
             updateTotalFuelDisplay();
+            updateTotalStrontiumDisplay();
         }
 
         private void updateLowestFuelsDisplay()
@@ -308,6 +294,13 @@ namespace EVEPOSMon
             if (m_starbase.stateTimestamp.Minute == DateTime.Now.Minute && m_starbase.stateTimestamp.Second == DateTime.Now.Second && Convert.ToInt16(m_starbase.state) == 4)
             //if(DateTime.Now.Second % 10 == 0)  //testing
             {
+                foreach (Fuel f in m_starbase.FuelList)
+                {
+                    f.quantity = Convert.ToString(Convert.ToInt32(f.quantity) - Convert.ToInt32(f.quantityUsedPerHour));
+                    TimeSpan oneHour = new TimeSpan(1, 0, 0);
+                    f.timeRemaining.Subtract(oneHour);
+
+                }
                 updateFuels();
             }
 

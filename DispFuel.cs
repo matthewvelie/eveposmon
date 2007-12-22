@@ -32,12 +32,25 @@ namespace EVEPOSMon
 
             icons["Liquid Ozone"] = "icon51_11.png";
             icons["Heavy Water"] = "icon51_12.png";
-            icons["Strontium Clatherates"] = "icon51_10.png";
+            icons["Strontium Clathrates"] = "icon51_10.png";
             icons["Robotics"] = "icon24_14.png";
             icons["Oxygen"] = "icon10_07.png";
             icons["Mechanical Parts"] = "icon10_10.png";
             icons["Enriched Uranium"] = "icon06_06.png";
             icons["Coolant"] = "icon24_06.png";
+        }
+
+        public DispFuel(string n, string a, string r, TimeSpan t)
+        {
+            int hours = Convert.ToInt32(t.TotalHours);
+
+            name = n;
+            amount = Convert.ToInt32(a);
+            rate = Convert.ToInt32(r);
+            time = hours;
+            string basePath = Path.Combine(Application.StartupPath, "icons");
+            string fileName = Path.Combine(basePath, icons[name]);
+            image = Image.FromFile(fileName);
         }
 
         public DispFuel(string n, int a, int r, int t)
