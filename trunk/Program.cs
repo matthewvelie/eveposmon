@@ -44,11 +44,11 @@ namespace EVEPOSMon
                     {
                         if( Convert.ToBoolean(disable ) )
                         {
-                            System.Windows.Forms.MessageBox.Show("There is a newer version available, this is a mandatory upgrade. \nYou are running " + vrs.ToString() + ", and " + online.ToString() + " is available.  \n\nPlease visit: http://code.google.com/p/eveposmon/downloads/list for the latest downloads.\n\nAdditional Information: " + message);
+                            System.Windows.Forms.MessageBox.Show("There is a newer version available, this is a mandatory upgrade. \nYou are running " + vrs.ToString() + ", and " + online.ToString() + " is available.  \n\nPlease visit: http://code.google.com/p/eveposmon/ for the latest downloads.\n\nAdditional Information: " + message);
                             Environment.Exit(1);
                         }else
                         {
-                            System.Windows.Forms.MessageBox.Show("There is a newer version available.  \nYou are running " + vrs.ToString() + ", and " + online.ToString() + " is available.  \n\nPlease visit: http://code.google.com/p/eveposmon/downloads/list for the latest downloads.\n\nAdditional Information: " + message);
+                            System.Windows.Forms.MessageBox.Show("There is a newer version available.  \nYou are running " + vrs.ToString() + ", and " + online.ToString() + " is available.  \n\nPlease visit: http://code.google.com/p/eveposmon/ for the latest downloads.\n\nAdditional Information: " + message);
                         }
                     }
 
