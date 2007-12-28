@@ -122,6 +122,10 @@ namespace EVEPOSMon
 
             foreach (Fuel f in m_starbase.FuelList)
             {
+                ResourceEntry fuelInfo = m_settings.towerResources.GetFuelInfo(m_starbase.typeId, f.typeId);
+                f.name = fuelInfo.name;
+                f.volume = fuelInfo.volume;
+
                 dfuel[f.name] = f;
             }
 
@@ -291,8 +295,8 @@ namespace EVEPOSMon
             }
 
             //check to see if the pos is ticking this second to update (and it's online)
-            if (m_starbase.stateTimestamp.Minute == DateTime.Now.Minute && m_starbase.stateTimestamp.Second == DateTime.Now.Second && Convert.ToInt16(m_starbase.state) == 4)
-            //if(DateTime.Now.Second % 10 == 0)  //testing
+            //if (m_starbase.stateTimestamp.Minute == DateTime.Now.Minute && m_starbase.stateTimestamp.Second == DateTime.Now.Second && Convert.ToInt16(m_starbase.state) == 4)
+            if(DateTime.Now.Second % 10 == 0)  //testing
             {
                 foreach (Fuel f in m_starbase.FuelList)
                 {
