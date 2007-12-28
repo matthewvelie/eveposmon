@@ -393,6 +393,7 @@ namespace EVEPOSMon
                 Fuel fuel = new Fuel();
                 fuel.typeId = atts["typeID"].InnerText;
                 fuel.quantity = atts["quantity"].InnerText;
+
                 this.FuelList.Add(fuel);
             }
         }
