@@ -65,7 +65,6 @@ namespace EVEPOSMon
                 // The fuel name and amount used per hour come from an external xml file
                 ResourceEntry fuelInfo = m_settings.towerResources.GetFuelInfo(m_starbase.typeId, f.typeId);
                 f.name = fuelInfo.name;
-
                 f.volume = fuelInfo.volume;
 
                 // water
@@ -302,8 +301,8 @@ namespace EVEPOSMon
                 {
                     f.quantity = Convert.ToString(Convert.ToInt32(f.quantity) - Convert.ToInt32(f.quantityUsedPerHour));
                     TimeSpan oneHour = new TimeSpan(1, 0, 0);
-                    f.timeRemaining.Subtract(oneHour);
-
+                    f.timeRemaining = f.timeRemaining.Subtract(oneHour);
+                    int b = 10;
                 }
                 updateFuels();
             }
