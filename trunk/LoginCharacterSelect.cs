@@ -106,7 +106,11 @@ namespace EVEPOSMon
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start("http://myeve.eve-online.com/api/default.asp");
+            try
+            {
+                System.Diagnostics.Process.Start("http://myeve.eve-online.com/api/default.asp");
+            }
+            catch { }
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
