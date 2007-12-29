@@ -304,7 +304,14 @@ namespace EVEPOSMon
                     f.quantity = Convert.ToString(Convert.ToInt32(f.quantity) - Convert.ToInt32(f.quantityUsedPerHour));
                     TimeSpan oneHour = new TimeSpan(1, 0, 0);
                     f.timeRemaining = f.timeRemaining.Subtract(oneHour);
-                    m_starbase.totalFuelVolume = Convert.ToDouble(m_starbase.totalFuelVolume - (Convert.ToDouble(f.volume) * Convert.ToDouble(f.quantityUsedPerHour)));
+                    if (f.typeId == strontiumTypeId)
+                    {
+                        m_starbase.totalStrontiumVolume = Convert.ToDouble(m_starbase.totalStrontiumVolume - (Convert.ToDouble(f.volume) * Convert.ToDouble(f.quantityUsedPerHour)));
+                    }
+                    else
+                    {
+                        m_starbase.totalFuelVolume = Convert.ToDouble(m_starbase.totalFuelVolume - (Convert.ToDouble(f.volume) * Convert.ToDouble(f.quantityUsedPerHour)));
+                    }
                     int b = 10;
                 }
                 updateFuels();
