@@ -299,11 +299,12 @@ namespace EVEPOSMon
             {
                 foreach (Fuel f in m_starbase.FuelList)
                 {
-                    if (f.typeId == strontiumTypeId && m_starbase.state != 3)
+                    if (f.typeId == strontiumTypeId && m_starbase.state != "3")
                         continue;
                     f.quantity = Convert.ToString(Convert.ToInt32(f.quantity) - Convert.ToInt32(f.quantityUsedPerHour));
                     TimeSpan oneHour = new TimeSpan(1, 0, 0);
                     f.timeRemaining = f.timeRemaining.Subtract(oneHour);
+                    m_starbase.totalFuelVolume = Convert.ToDouble(m_starbase.totalFuelVolume - (Convert.ToDouble(f.volume) * Convert.ToDouble(f.quantityUsedPerHour)));
                     int b = 10;
                 }
                 updateFuels();
