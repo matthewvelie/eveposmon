@@ -99,5 +99,26 @@ namespace UnitTests
             Assert.AreEqual(8000, tower.Volume);
             Assert.IsTrue(tower.Description.StartsWith("The Amarr have always been fond of"));
         }
+
+        [Test]
+        public void FuelsTest()
+        {
+            Fuels.LoadFromFile(@"..\..\..\data\invFuelTypes.xml.gz");
+
+            Assert.AreEqual(null, Fuels.GetFuelByTypeId(0));
+
+            Fuels.Fuel fuel = Fuels.GetFuelByTypeId(44);
+            Assert.AreEqual(44, fuel.TypeId);
+            Assert.AreEqual(282, fuel.GroupId);
+            Assert.AreEqual("Radioactive", fuel.GroupName);
+            Assert.AreEqual(17, fuel.CategoryId);
+            Assert.AreEqual("Commodity", fuel.CategoryName);
+            Assert.AreEqual("Enriched Uranium", fuel.TypeName);
+            Assert.AreEqual("icon06_06.png", fuel.Icon);
+            Assert.AreEqual(2000, fuel.Mass);
+            Assert.AreEqual(1, fuel.Volume);
+            Assert.AreEqual(0, fuel.Capacity);
+            Assert.IsTrue(fuel.Description.StartsWith("Enriched Uranium is used in many"));
+        }
     }
 }
