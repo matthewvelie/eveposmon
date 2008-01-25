@@ -19,13 +19,24 @@ namespace eveposmon.StaticData
             {
                 XmlDocument doc = new XmlDocument();
                 doc.Load(gz);
+
+                foreach (XmlNode node in doc.SelectNodes("factions/faction"))
+                {
+                    Faction faction = new Faction();
+                    faction.Id = Convert.ToInt32(node.Attributes["factionID"].InnerText);
+                    faction.Name = node.Attributes["factionName"].InnerText;
+
+                    table.Add(faction.Id, faction);
+                }
             }
         }
 
+        
+
         public class Faction
         {
-            int FactionId;
-            string FactionName;
+            public int Id;
+            public string Name;
         }
     }
 }

@@ -76,7 +76,7 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>mkdir $(TargetDir)data
-copy $(SolutionDir)data\*.gz $(TargetDir)data</PostBuildEvent>
+    <PostBuildEvent>mkdir "$(TargetDir)data"
+copy "$(SolutionDir)data\*.gz" "$(TargetDir)data"</PostBuildEvent>
   </PropertyGroup>
 </Project>
