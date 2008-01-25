@@ -25,6 +25,15 @@ namespace UnitTests
         {
             Constellations.LoadFromFile(@"..\..\..\data\Constellations.xml.gz");
             Assert.AreEqual(null, Constellations.GetConstellationById(0));
+
+            Constellations.Constellation constellation = Constellations.GetConstellationById(20000001);
+            Assert.AreEqual(20000001, constellation.Id);
+            Assert.AreEqual(10000001, constellation.RegionId);
+            Assert.AreEqual("San Matar", constellation.Name);
+            Assert.AreEqual(-9.40465597009913e016, constellation.X);
+            Assert.AreEqual(4.95201531537988e016, constellation.Y);
+            Assert.AreEqual(4.2738731818402e016, constellation.Z);
+            Assert.AreEqual(1.43352027114803e016, constellation.Radius);
         }
 
         [Test]
