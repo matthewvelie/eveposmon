@@ -16,6 +16,7 @@ namespace UnitTests
             Stations.LoadFromFile(@"..\..\..\data\staStations.xml.gz");
 
             Stations.Station station = Stations.GetStationById(60000007);
+            Assert.AreEqual(60000007, station.Id);
             Assert.AreEqual("Ono V - Moon 9 - CBD Corporation Storage", station.Name);
             Assert.AreEqual(null, Stations.GetStationById(1));
         }
@@ -125,6 +126,7 @@ namespace UnitTests
             Assert.AreEqual(null, Factions.GetFactionById(0));
 
             Factions.Faction faction = Factions.GetFactionById(500001);
+            Assert.AreEqual(500001, faction.Id);
             Assert.AreEqual("Caldari State", faction.Name);
         }
 
@@ -175,6 +177,18 @@ namespace UnitTests
             Moons.Moon moon = Moons.GetMoonById(40000004);
             Assert.AreEqual(moon.Id, 40000004);
             Assert.AreEqual(moon.Name, "Tanoo I - Moon 1");
+        }
+
+        [Test]
+        public void SystemFactionsTest()
+        {
+            SystemFactions.LoadFromFile(@"..\..\..\data\solarSystemFactions.xml.gz");
+
+            Assert.AreEqual(null, SystemFactions.GetBySolarSystemId(0));
+
+            SystemFactions.SolarSystem solarSystem = SystemFactions.GetBySolarSystemId(30023410);
+            Assert.AreEqual(30023410, solarSystem.Id);
+            Assert.AreEqual(500002, solarSystem.FactionId);
         }
     }
 }
