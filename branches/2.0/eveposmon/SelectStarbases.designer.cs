@@ -35,12 +35,12 @@ namespace eveposmon
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsslCachedUntil = new System.Windows.Forms.ToolStripStatusLabel();
             this.Monitor = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Region = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Constellation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MapRegion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MapConstellation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Moon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StarbaseStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StarbaseType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Owner = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StarbaseOwner = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgStations)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -77,12 +77,12 @@ namespace eveposmon
             this.dgStations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgStations.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Monitor,
-            this.Region,
-            this.Constellation,
+            this.MapRegion,
+            this.MapConstellation,
             this.Moon,
-            this.Status,
+            this.StarbaseStatus,
             this.StarbaseType,
-            this.Owner});
+            this.StarbaseOwner});
             this.dgStations.Location = new System.Drawing.Point(7, 40);
             this.dgStations.MultiSelect = false;
             this.dgStations.Name = "dgStations";
@@ -124,37 +124,37 @@ namespace eveposmon
             this.Monitor.TrueValue = "true";
             this.Monitor.Width = 50;
             // 
-            // Region
+            // MapRegion
             // 
-            this.Region.HeaderText = "Region";
-            this.Region.Name = "Region";
-            this.Region.ReadOnly = true;
+            this.MapRegion.HeaderText = "Region";
+            this.MapRegion.Name = "MapRegion";
+            this.MapRegion.ReadOnly = true;
             // 
-            // Constellation
+            // MapConstellation
             // 
-            this.Constellation.HeaderText = "Constellation";
-            this.Constellation.Name = "Constellation";
-            this.Constellation.ReadOnly = true;
+            this.MapConstellation.HeaderText = "Constellation";
+            this.MapConstellation.Name = "MapConstellation";
+            this.MapConstellation.ReadOnly = true;
             // 
             // Moon
             // 
             this.Moon.HeaderText = "Moon";
             this.Moon.Name = "Moon";
             // 
-            // Status
+            // StarbaseStatus
             // 
-            this.Status.HeaderText = "Status";
-            this.Status.Name = "Status";
+            this.StarbaseStatus.HeaderText = "Status";
+            this.StarbaseStatus.Name = "StarbaseStatus";
             // 
             // StarbaseType
             // 
             this.StarbaseType.HeaderText = "Starbase Type";
             this.StarbaseType.Name = "StarbaseType";
             // 
-            // Owner
+            // StarbaseOwner
             // 
-            this.Owner.HeaderText = "Owner";
-            this.Owner.Name = "Owner";
+            this.StarbaseOwner.HeaderText = "Owner";
+            this.StarbaseOwner.Name = "StarbaseOwner";
             // 
             // SelectStarbases
             // 
@@ -189,12 +189,12 @@ namespace eveposmon
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
         private System.Windows.Forms.ToolStripStatusLabel tsslCachedUntil;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Monitor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Region;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Constellation;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MapRegion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MapConstellation;
         private System.Windows.Forms.DataGridViewTextBoxColumn Moon;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StarbaseStatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn StarbaseType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Owner;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StarbaseOwner;
     }
 }
 
