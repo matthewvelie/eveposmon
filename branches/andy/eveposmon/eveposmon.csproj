@@ -65,6 +65,7 @@
     <Compile Include="StaticData\Constellations.cs" />
     <Compile Include="StaticData\Factions.cs" />
     <Compile Include="StaticData\Fuels.cs" />
+    <Compile Include="StaticData\Moons.cs" />
     <Compile Include="StaticData\Stations.cs" />
     <Compile Include="StaticData\TowerResources.cs" />
     <Compile Include="StaticData\Towers.cs" />

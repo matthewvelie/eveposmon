@@ -120,5 +120,17 @@ namespace UnitTests
             Assert.AreEqual(0, fuel.Capacity);
             Assert.IsTrue(fuel.Description.StartsWith("Enriched Uranium is used in many"));
         }
+
+        [Test]
+        public void MoonsTest()
+        {
+            Moons.LoadFromFile(@"..\..\..\data\moonData.xml.gz");
+
+            Assert.AreEqual(null, Moons.GetMoonById(0));
+
+            Moons.Moon moon = Moons.GetMoonById(40000004);
+            Assert.AreEqual(moon.Id, 40000004);
+            Assert.AreEqual(moon.Name, "Tanoo I - Moon 1");
+        }
     }
 }
