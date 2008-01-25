@@ -28,6 +28,13 @@ namespace UnitTests
         }
 
         [Test]
+        public void RegionTest()
+        {
+            Regions.LoadFromFile(@"..\..\..\data\Constellations.xml.gz");
+            Assert.AreEqual(null, Regions.GetRegionById(0));
+        }
+
+        [Test]
         public void TowerResourcesTest()
         {
             TowerResources.LoadFromFile(@"..\..\..\data\controlTowerResources.xml.gz");
