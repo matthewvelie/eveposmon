@@ -29,7 +29,14 @@ namespace eveposmon.StaticData
                     region.Y = Convert.ToDouble(node.Attributes["y"].InnerText);
                     region.Z = Convert.ToDouble(node.Attributes["z"].InnerText);
                     region.Radius = Convert.ToDouble(node.Attributes["radius"].InnerText);
-                    region.FactionId = Convert.ToInt32(node.Attributes["factionID"].InnerText);
+                    if (node.Attributes["factionID"].InnerText != String.Empty)
+                    {
+                        region.FactionId = Convert.ToInt32(node.Attributes["factionID"].InnerText);
+                    }
+                    else
+                    {
+                        region.FactionId = -1;
+                    }
 
                     table.Add(region.RegionId, region);
                 }
