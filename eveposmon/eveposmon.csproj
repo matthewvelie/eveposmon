@@ -69,6 +69,7 @@
     <Compile Include="StaticData\Regions.cs" />
     <Compile Include="StaticData\SolarSystems.cs" />
     <Compile Include="StaticData\Stations.cs" />
+    <Compile Include="StaticData\SystemFactions.cs" />
     <Compile Include="StaticData\TowerResources.cs" />
     <Compile Include="StaticData\Towers.cs" />
   </ItemGroup>
