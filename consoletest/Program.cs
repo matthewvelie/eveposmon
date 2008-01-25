@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-
+using System.Diagnostics;
 using eveposmon.StaticData;
 
 namespace consoletest
@@ -10,9 +10,12 @@ namespace consoletest
     {
         static void Main(string[] args)
         {
-            Towers.LoadFromFile(@"..\..\..\data\invControlTowers.xml.gz");
-            Towers.Tower tower = Towers.GetTowerByTypeId(12235);
-            Console.WriteLine(tower.Description);
+            Stopwatch sw = new Stopwatch();
+
+            sw.Start();
+            Moons.LoadFromFile(@"..\..\..\data\moonData.xml.gz");
+            sw.Stop();
+            Console.WriteLine(sw.Elapsed);
         }
     }
 }
