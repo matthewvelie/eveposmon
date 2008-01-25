@@ -31,13 +31,17 @@ namespace eveposmon
             this.btnLoadStations = new System.Windows.Forms.Button();
             this.btnSelectStarbases = new System.Windows.Forms.Button();
             this.dgStations = new System.Windows.Forms.DataGridView();
-            this.Column0 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsslCachedUntil = new System.Windows.Forms.ToolStripStatusLabel();
+            this.Column0 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Display = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Moon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StarbaseType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Owner = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgStations)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -74,45 +78,21 @@ namespace eveposmon
             this.dgStations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgStations.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column0,
+            this.Display,
             this.Column1,
             this.Column2,
-            this.Column3});
+            this.Moon,
+            this.Status,
+            this.StarbaseType,
+            this.Owner});
             this.dgStations.Location = new System.Drawing.Point(7, 40);
             this.dgStations.MultiSelect = false;
             this.dgStations.Name = "dgStations";
             this.dgStations.RowHeadersVisible = false;
             this.dgStations.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgStations.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgStations.Size = new System.Drawing.Size(404, 249);
+            this.dgStations.Size = new System.Drawing.Size(712, 249);
             this.dgStations.TabIndex = 3;
-            // 
-            // Column0
-            // 
-            this.Column0.FalseValue = "false";
-            this.Column0.HeaderText = "Load";
-            this.Column0.Name = "Column0";
-            this.Column0.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column0.TrueValue = "true";
-            this.Column0.Width = 50;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Region";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Constellation";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "System/Planet/Moon";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 150;
             // 
             // statusStrip1
             // 
@@ -121,7 +101,7 @@ namespace eveposmon
             this.tsslCachedUntil});
             this.statusStrip1.Location = new System.Drawing.Point(0, 336);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(423, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(731, 22);
             this.statusStrip1.TabIndex = 5;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -137,11 +117,58 @@ namespace eveposmon
             this.tsslCachedUntil.Size = new System.Drawing.Size(71, 17);
             this.tsslCachedUntil.Text = "CacheTillTime";
             // 
+            // Column0
+            // 
+            this.Column0.FalseValue = "false";
+            this.Column0.HeaderText = "Monitor";
+            this.Column0.Name = "Column0";
+            this.Column0.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column0.TrueValue = "true";
+            this.Column0.Width = 50;
+            // 
+            // Display
+            // 
+            this.Display.HeaderText = "Display";
+            this.Display.Name = "Display";
+            this.Display.Width = 50;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Region";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Constellation";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Moon
+            // 
+            this.Moon.HeaderText = "Moon";
+            this.Moon.Name = "Moon";
+            // 
+            // Status
+            // 
+            this.Status.HeaderText = "Status";
+            this.Status.Name = "Status";
+            // 
+            // StarbaseType
+            // 
+            this.StarbaseType.HeaderText = "Starbase Type";
+            this.StarbaseType.Name = "StarbaseType";
+            // 
+            // Owner
+            // 
+            this.Owner.HeaderText = "Owner";
+            this.Owner.Name = "Owner";
+            // 
             // SelectStarbases
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(423, 358);
+            this.ClientSize = new System.Drawing.Size(731, 358);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.dgStations);
             this.Controls.Add(this.btnSelectStarbases);
@@ -166,13 +193,17 @@ namespace eveposmon
         private System.Windows.Forms.Button btnLoadStations;
         private System.Windows.Forms.Button btnSelectStarbases;
         private System.Windows.Forms.DataGridView dgStations;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column0;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
         private System.Windows.Forms.ToolStripStatusLabel tsslCachedUntil;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Column0;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Display;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Moon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StarbaseType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Owner;
     }
 }
 
