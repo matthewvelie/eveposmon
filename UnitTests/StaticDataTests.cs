@@ -83,5 +83,21 @@ namespace UnitTests
             Factions.Faction faction = Factions.GetFactionById(500001);
             Assert.AreEqual("Caldari State", faction.Name);
         }
+
+        [Test]
+        public void TowersTest()
+        {
+            Towers.LoadFromFile(@"..\..\..\data\invControlTowers.xml.gz");
+
+            Assert.AreEqual(null, Towers.GetTowerByTypeId(0));
+
+            Towers.Tower tower = Towers.GetTowerByTypeId(12235);
+            Assert.AreEqual(12235, tower.TypeId);
+            Assert.AreEqual("Amarr Control Tower", tower.TypeName);
+            Assert.AreEqual(110000, tower.Capacity);
+            Assert.AreEqual(Towers.RaceType.Amarr, tower.Race);
+            Assert.AreEqual(8000, tower.Volume);
+            Assert.IsTrue(tower.Description.StartsWith("The Amarr have always been fond of"));
+        }
     }
 }
