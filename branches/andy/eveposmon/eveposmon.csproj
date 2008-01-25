@@ -63,7 +63,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="StaticData\Constellations.cs" />
-    <Compile Include="StaticData\Factons.cs" />
+    <Compile Include="StaticData\Factions.cs" />
     <Compile Include="StaticData\Stations.cs" />
     <Compile Include="StaticData\TowerResources.cs" />
   </ItemGroup>
