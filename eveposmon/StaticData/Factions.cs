@@ -8,7 +8,7 @@ using System.Xml;
 
 namespace eveposmon.StaticData
 {
-    class Factions
+    public class Factions
     {
         private static Hashtable table = new Hashtable();
 
@@ -31,7 +31,15 @@ namespace eveposmon.StaticData
             }
         }
 
-        
+        public static Faction GetFactionById(int factionId)
+        {
+            if (table.Contains(factionId))
+            {
+                return table[factionId] as Faction;
+            }
+
+            return null;
+        }
 
         public class Faction
         {

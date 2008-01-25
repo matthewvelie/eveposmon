@@ -72,5 +72,16 @@ namespace UnitTests
             // faction doesn't match so not required
             Assert.IsFalse(tower.RequiresFuel(24592, 0.1, 500002));
         }
+
+        [Test]
+        public void FactionTest()
+        {
+            Factions.LoadFromFile(@"..\..\..\data\factions.xml.gz");
+
+            Assert.AreEqual(null, Factions.GetFactionById(0));
+
+            Factions.Faction faction = Factions.GetFactionById(500001);
+            Assert.AreEqual("Caldari State", faction.Name);
+        }
     }
 }
