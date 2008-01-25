@@ -8,7 +8,7 @@ using System.Xml;
 
 namespace eveposmon.StaticData
 {
-    public class StationList
+    public class Stations
     {
         private static Hashtable stationTable = new Hashtable();
 
@@ -32,21 +32,6 @@ namespace eveposmon.StaticData
                     stationTable.Add(station.Id, station);
                 }
             }
-        }
-
-        /// <summary>
-        /// Get the name of a station by that station's Id
-        /// </summary>
-        /// <param name="stationId"></param>
-        /// <returns></returns>
-        public static string GetStationNameById(int stationId)
-        {
-            if (stationTable.Contains(stationId))
-            {
-                return (stationTable[stationId] as Station).Name;
-            }
-
-            return null;
         }
 
         /// <summary>

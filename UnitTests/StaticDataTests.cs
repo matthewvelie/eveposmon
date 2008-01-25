@@ -11,16 +11,20 @@ namespace UnitTests
     public class StaticDataTests
     {
         [Test]
-        public void StationListTest()
+        public void StationsTest()
         {
-            StationList.LoadFromFile(@"..\..\..\data\staStations.xml.gz");
+            Stations.LoadFromFile(@"..\..\..\data\staStations.xml.gz");
 
-            Assert.AreEqual("Muvolailen X - Moon 3 - CBD Corporation Storage", StationList.GetStationNameById(60000004));
-            Assert.AreEqual(null, StationList.GetStationNameById(1));
-
-            StationList.Station station = StationList.GetStationById(60000007);
+            Stations.Station station = Stations.GetStationById(60000007);
             Assert.AreEqual("Ono V - Moon 9 - CBD Corporation Storage", station.Name);
-            Assert.AreEqual(null, StationList.GetStationById(1));
+            Assert.AreEqual(null, Stations.GetStationById(1));
+        }
+
+        [Test]
+        public void ConstellationsTest()
+        {
+            Constellations.LoadFromFile(@"..\..\..\data\Constellations.xml.gz");
+            Assert.AreEqual(null, Constellations.GetConstellationById(0));
         }
     }
 }
