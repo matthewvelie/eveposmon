@@ -23,7 +23,7 @@ namespace UnitTests
         [Test]
         public void ConstellationsTest()
         {
-            Constellations.LoadFromFile(@"..\..\..\data\Constellations.xml.gz");
+            Constellations.LoadFromFile(@"..\..\..\data\constellations.xml.gz");
             Assert.AreEqual(null, Constellations.GetConstellationById(0));
 
             Constellations.Constellation constellation = Constellations.GetConstellationById(20000001);
@@ -39,8 +39,17 @@ namespace UnitTests
         [Test]
         public void RegionTest()
         {
-            Regions.LoadFromFile(@"..\..\..\data\Constellations.xml.gz");
+            Regions.LoadFromFile(@"..\..\..\data\regions.xml.gz");
             Assert.AreEqual(null, Regions.GetRegionById(0));
+            Assert.AreEqual("Derelik", Regions.GetRegionById(10000001).Name);
+        }
+
+        [Test]
+        public void SolarSytemTest()
+        {
+            SolarSystems.LoadFromFile(@"..\..\..\data\solarSystem.xml.gz");
+            Assert.AreEqual(null, SolarSystems.GetSolarSystemById(0));
+            Assert.AreEqual("Tanoo", SolarSystems.GetSolarSystemById(30000001).Name);
         }
 
         [Test]
