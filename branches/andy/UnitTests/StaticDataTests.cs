@@ -41,7 +41,15 @@ namespace UnitTests
         {
             Regions.LoadFromFile(@"..\..\..\data\regions.xml.gz");
             Assert.AreEqual(null, Regions.GetRegionById(0));
-            Assert.AreEqual("Derelik", Regions.GetRegionById(10000001).Name);
+            Regions.Region region = Regions.GetRegionById(10000001);
+
+            Assert.AreEqual(10000001, region.RegionId);
+            Assert.AreEqual("Derelik", region.Name);
+            Assert.AreEqual(-7.73619519227769e016, region.X);
+            Assert.AreEqual(5.08780326643019e016, region.Y);
+            Assert.AreEqual(6.44331012661154e016, region.Z);
+            Assert.AreEqual(500007, region.FactionId);
+            Assert.AreEqual(3.80097407550867e016, region.Radius);
         }
 
         [Test]
@@ -49,7 +57,18 @@ namespace UnitTests
         {
             SolarSystems.LoadFromFile(@"..\..\..\data\solarSystem.xml.gz");
             Assert.AreEqual(null, SolarSystems.GetSolarSystemById(0));
-            Assert.AreEqual("Tanoo", SolarSystems.GetSolarSystemById(30000001).Name);
+
+            SolarSystems.SolarSystem system = SolarSystems.GetSolarSystemById(30000001);
+
+            Assert.AreEqual(30000001, system.Id);
+            Assert.AreEqual(20000001, system.ConstellationId);
+            Assert.AreEqual(10000001, system.RegionId);
+            Assert.AreEqual("Tanoo", system.Name);
+            Assert.AreEqual(-8.85107925999806e016, system.X);
+            Assert.AreEqual(4.23694439668789e016, system.Y);
+            Assert.AreEqual(4.45135253464797e016, system.Z);
+            Assert.AreEqual(1323338364984, system.Radius);
+            Assert.AreEqual(0.858324068848468, system.Security);
         }
 
         [Test]
