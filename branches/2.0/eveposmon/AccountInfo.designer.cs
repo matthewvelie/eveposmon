@@ -52,7 +52,7 @@ namespace eveposmon
             // lblUserId
             // 
             this.lblUserId.AutoSize = true;
-            this.lblUserId.Location = new System.Drawing.Point(8, 50);
+            this.lblUserId.Location = new System.Drawing.Point(6, 46);
             this.lblUserId.Name = "lblUserId";
             this.lblUserId.Size = new System.Drawing.Size(46, 13);
             this.lblUserId.TabIndex = 0;
