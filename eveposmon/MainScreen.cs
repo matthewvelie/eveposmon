@@ -15,5 +15,14 @@ namespace eveposmon
         {
             InitializeComponent();
         }
+
+        private void apiKeysToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AccountInfo accountInfo = new AccountInfo();
+            if (accountInfo.ShowDialog() == DialogResult.OK)
+            {
+                
+            }
+        }
     }
 }

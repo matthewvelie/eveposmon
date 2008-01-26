@@ -33,7 +33,7 @@ namespace eveposmon
             this.tbUserId = new System.Windows.Forms.TextBox();
             this.tbApiKey = new System.Windows.Forms.TextBox();
             this.lblCharacter = new System.Windows.Forms.Label();
-            this.tbCharacter = new System.Windows.Forms.TextBox();
+            this.tbCharacterName = new System.Windows.Forms.TextBox();
             this.btnGetCharacters = new System.Windows.Forms.Button();
             this.btnOk = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -82,13 +82,14 @@ namespace eveposmon
             this.lblCharacter.TabIndex = 0;
             this.lblCharacter.Text = "Character:";
             // 
-            // tbCharacter
+            // tbCharacterName
             // 
-            this.tbCharacter.Enabled = false;
-            this.tbCharacter.Location = new System.Drawing.Point(70, 97);
-            this.tbCharacter.Name = "tbCharacter";
-            this.tbCharacter.Size = new System.Drawing.Size(145, 20);
-            this.tbCharacter.TabIndex = 2;
+            this.tbCharacterName.Enabled = false;
+            this.tbCharacterName.Location = new System.Drawing.Point(70, 97);
+            this.tbCharacterName.Name = "tbCharacterName";
+            this.tbCharacterName.ReadOnly = true;
+            this.tbCharacterName.Size = new System.Drawing.Size(145, 20);
+            this.tbCharacterName.TabIndex = 2;
             // 
             // btnGetCharacters
             // 
@@ -98,6 +99,7 @@ namespace eveposmon
             this.btnGetCharacters.TabIndex = 2;
             this.btnGetCharacters.Text = "...";
             this.btnGetCharacters.UseVisualStyleBackColor = true;
+            this.btnGetCharacters.Click += new System.EventHandler(this.btnGetCharacters_Click);
             // 
             // btnOk
             // 
@@ -148,7 +150,7 @@ namespace eveposmon
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.btnGetCharacters);
-            this.Controls.Add(this.tbCharacter);
+            this.Controls.Add(this.tbCharacterName);
             this.Controls.Add(this.tbApiKey);
             this.Controls.Add(this.tbUserId);
             this.Controls.Add(this.lblCharacter);
@@ -174,7 +176,7 @@ namespace eveposmon
         private System.Windows.Forms.TextBox tbUserId;
         private System.Windows.Forms.TextBox tbApiKey;
         private System.Windows.Forms.Label lblCharacter;
-        private System.Windows.Forms.TextBox tbCharacter;
+        private System.Windows.Forms.TextBox tbCharacterName;
         private System.Windows.Forms.Button btnGetCharacters;
         private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.Button btnCancel;

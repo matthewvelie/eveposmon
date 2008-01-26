@@ -1,6 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Windows.Forms;
+
+using libeveapi;
 
 namespace eveposmon
 {
@@ -30,6 +33,24 @@ namespace eveposmon
                 MessageBox.Show("Error loading static data, exiting");
                 return;
             }
+
+            try
+            {
+                if (File.Exists("ResponseCache.xml"))
+                {
+                    ResponseCache.Load("ResponseCache.xml");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Error loading response cache, exiting");
+                return;
+            }
+
+            #if DEBUG
+            Constants.ApiPrefix = "http://localhost/eveposmon/";
+            Constants.CharacterList = "Characters.xml.aspx";
+            #endif
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

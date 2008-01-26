@@ -39,6 +39,7 @@ namespace eveposmon
             this.lbCharacters.Name = "lbCharacters";
             this.lbCharacters.Size = new System.Drawing.Size(203, 69);
             this.lbCharacters.TabIndex = 0;
+            this.lbCharacters.DoubleClick += new System.EventHandler(this.lbCharacters_DoubleClick);
             // 
             // btnSelect
             // 
@@ -49,6 +50,7 @@ namespace eveposmon
             this.btnSelect.TabIndex = 1;
             this.btnSelect.Text = "Select";
             this.btnSelect.UseVisualStyleBackColor = true;
+            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
             // CharacterSelect
             // 
