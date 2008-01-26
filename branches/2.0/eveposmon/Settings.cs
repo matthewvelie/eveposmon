@@ -71,6 +71,7 @@ namespace eveposmon
         public void DeleteAccount(object sender, AccountInfo.AccountDeletedEventArgs e)
         {
             AccountList.Remove(e.Account);
+            Settings.Save(Settings.SettingsFile);
         }
 
         /// <summary>
