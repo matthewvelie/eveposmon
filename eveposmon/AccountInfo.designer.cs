@@ -98,13 +98,13 @@ namespace eveposmon
             this.tbCharacterName.Location = new System.Drawing.Point(69, 98);
             this.tbCharacterName.Name = "tbCharacterName";
             this.tbCharacterName.ReadOnly = true;
-            this.tbCharacterName.Size = new System.Drawing.Size(145, 20);
+            this.tbCharacterName.Size = new System.Drawing.Size(155, 20);
             this.tbCharacterName.TabIndex = 2;
             // 
             // btnGetCharacters
             // 
             this.btnGetCharacters.Enabled = false;
-            this.btnGetCharacters.Location = new System.Drawing.Point(219, 98);
+            this.btnGetCharacters.Location = new System.Drawing.Point(231, 98);
             this.btnGetCharacters.Name = "btnGetCharacters";
             this.btnGetCharacters.Size = new System.Drawing.Size(31, 20);
             this.btnGetCharacters.TabIndex = 2;
