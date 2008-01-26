@@ -11,6 +11,8 @@ namespace eveposmon
 {
     public partial class MainScreen : Form
     {
+        Settings settings = Settings.Instance;
+
         public MainScreen()
         {
             InitializeComponent();
@@ -18,9 +20,9 @@ namespace eveposmon
 
         private void apiKeysToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AccountInfo accountInfo = new AccountInfo(Settings.AccountList);
-            accountInfo.AccountAdded += new AccountAddedEventHandler(Settings.AddAccount);
-            accountInfo.AccountDeleted += new AccountDeletedEventHandler(Settings.DeleteAccount);
+            AccountInfo accountInfo = new AccountInfo(settings.AccountList);
+            accountInfo.AccountAdded += new AccountAddedEventHandler(settings.AddAccount);
+            accountInfo.AccountDeleted += new AccountDeletedEventHandler(settings.DeleteAccount);
             accountInfo.ShowDialog();
         }
     }
