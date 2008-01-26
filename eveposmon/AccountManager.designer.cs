@@ -1,6 +1,6 @@
 namespace eveposmon
 {
-    partial class AccountInfo
+    partial class AccountManager
     {
         /// <summary>
         /// Required designer variable.
