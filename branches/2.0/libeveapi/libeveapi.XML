@@ -4,11 +4,6 @@
         <name>libeveapi</name>
     </assembly>
     <members>
-        <member name="T:libeveapi.SkillInTraining">
-            <summary>
-            Contains the Current Skill in Training
-            </summary>
-        </member>
         <member name="F:libeveapi.ApiResponse.HashedUrl">
             <summary>
             This is a hashed version of the url that is sent to CCP to request the file
@@ -56,124 +51,397 @@
             <param name="xmlDoc"></param>
             <returns></returns>
         </member>
-        <member name="F:libeveapi.SkillInTraining.SkillCurrentlyInTraining">
+        <member name="F:libeveapi.SkillTree.Skill.TypeName">
             <summary>
-            True if a skill is currently training, false is no skill is training
+            Name of the skill
             </summary>
         </member>
-        <member name="F:libeveapi.SkillInTraining.TrainingEndTime">
+        <member name="F:libeveapi.SkillTree.Skill.GroupId">
             <summary>
-            Server time when skill training completes in ccp time
-            Minvalue - when no skill training
+            Unique identifier for the group this skill belongs to
             </summary>
         </member>
-        <member name="F:libeveapi.SkillInTraining.TrainingStartTime">
+        <member name="F:libeveapi.SkillTree.Skill.TypeId">
             <summary>
-            Server time when skill training started in ccp time
-            Minvalue - when no skill training
+            Unique identifier for this skill type
             </summary>
         </member>
-        <member name="F:libeveapi.SkillInTraining.TrainingEndTimeLocal">
+        <member name="F:libeveapi.SkillTree.Skill.Description">
             <summary>
-            Server time when skill training completes in local time
-            Minvalue - when no skill training
+            information about the skill
             </summary>
         </member>
-        <member name="F:libeveapi.SkillInTraining.TrainingStartTimeLocal">
+        <member name="F:libeveapi.SkillTree.Skill.Rank">
             <summary>
-            Server time when skill training started in local time
-            Minvalue - when no skill training
+            The training time multiplier of the skill
             </summary>
         </member>
-        <member name="F:libeveapi.SkillInTraining.TrainingTypeId">
+        <member name="F:libeveapi.SkillTree.Skill.RequiredSkills">
             <summary>
-            Id of skill in training
-            0 - when no skill training
+            The skills required to train this skill
             </summary>
         </member>
-        <member name="F:libeveapi.SkillInTraining.TrainingStartSP">
+        <member name="F:libeveapi.SkillTree.Skill.PrimaryAttribute">
             <summary>
-            Skill Points at training start
-            0 - when no skill training
+            The attrbute that has the most effect on the amount of time required to train this skill.
             </summary>
         </member>
-        <member name="F:libeveapi.SkillInTraining.TrainingDestinationSP">
+        <member name="F:libeveapi.SkillTree.Skill.SecondaryAttribute">
             <summary>
-            Skill Points after training end
-            0 - when no skill training
+            The attribute that has the second most effect of the amount of time required to train this skill.
             </summary>
         </member>
-        <member name="F:libeveapi.SkillInTraining.TrainingToLevel">
+        <member name="F:libeveapi.SkillTree.Skill.SkillBonuses">
             <summary>
-            Skill level being trained
-            0 - when no skill training
+            The bonuses gained from training this skill.
             </summary>
         </member>
-        <member name="M:libeveapi.SkillInTraining.FromXmlDocument(System.Xml.XmlDocument)">
+        <member name="T:libeveapi.SkillTree.RequiredSkill">
             <summary>
-            Create a SkillIntTraining Object by parsing an XmlDocument
-            response for the eveapi
-            </summary>
-            <param name="xmlDoc">XmlDocument containing the skill in training xml</param>
-            <returns></returns>
-        </member>
-        <member name="T:libeveapi.ConquerableStationList">
-            <summary>
-            Holds the full list of Conquerable stations and outposts
+            A skill required to train the parent skill
             </summary>
         </member>
-        <member name="F:libeveapi.ConquerableStationList.ConquerableStations">
+        <member name="F:libeveapi.SkillTree.RequiredSkill.TypeId">
+            <summary>
+            The unique identifier of this skill type.
+            </summary>
+        </member>
+        <member name="F:libeveapi.SkillTree.RequiredSkill.SkillLevel">
+            <summary>
+            This skill level is required to train the parent skill.
+            </summary>
+        </member>
+        <member name="T:libeveapi.SkillTree.SkillGroup">
+            <summary>
+            A group of related skills
+            </summary>
+        </member>
+        <member name="F:libeveapi.SkillTree.SkillGroup.GroupName">
+            <summary>
+            The name of this skill group.
+            </summary>
+        </member>
+        <member name="F:libeveapi.SkillTree.SkillGroup.GroupId">
+            <summary>
+            The unique identifier for this skill group.
+            </summary>
+        </member>
+        <member name="T:libeveapi.SkillTree.SkillBonus">
+            <summary>
+            A bonus gained from training the parent skill
+            </summary>
+        </member>
+        <member name="F:libeveapi.SkillTree.SkillBonus.BonusType">
+            <summary>
+            Description of the bonus
+            </summary>
+        </member>
+        <member name="F:libeveapi.SkillTree.SkillBonus.BonusValue">
+            <summary>
+            The amount of bonus gained from each level of the skill trained.
+            </summary>
+        </member>
+        <member name="T:libeveapi.Roles">
             <summary>
             
             </summary>
         </member>
-        <member name="M:libeveapi.ConquerableStationList.FromXmlDocument(System.Xml.XmlDocument)">
+        <member name="F:libeveapi.Roles.rolesTable">
             <summary>
-            Create an Conquerable Station list by parsing an XmlDocument response from the eveapi
+            
             </summary>
-            <param name="xmlDoc"></param>
+        </member>
+        <member name="M:libeveapi.Roles.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:libeveapi.Roles.#ctor(System.UInt64)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:libeveapi.Roles.decodeRoles(System.UInt64)">
+            <summary>
+            This loops through each role and checks to see if it has been assigned
+            </summary>
+            <param name="mask"></param>
             <returns></returns>
         </member>
-        <member name="M:libeveapi.ConquerableStationList.ParseStationRow(System.Xml.XmlNode)">
+        <member name="M:libeveapi.Roles.HasRole(libeveapi.RoleTypes)">
             <summary>
-            Create an ConquerableStationItem by parsing a single row
+            Return true if the specified role is present
             </summary>
-            <param name="stationRow"></param>
+            <param name="roleType"></param>
             <returns></returns>
         </member>
-        <member name="T:libeveapi.ConquerableStationList.ConquerableStation">
+        <member name="M:libeveapi.Roles.GetRoleName(libeveapi.RoleTypes)">
             <summary>
-            Represents one conquerable station / outpost
+            Get the name of a role
+            </summary>
+            <param name="en"></param>
+            <returns></returns>
+        </member>
+        <member name="M:libeveapi.Roles.GetRoleDescription(libeveapi.RoleTypes)">
+            <summary>
+            Get the description of a role
+            </summary>
+            <param name="en"></param>
+            <returns></returns>
+        </member>
+        <member name="T:libeveapi.Name">
+            <summary>
+            The name of a role
             </summary>
         </member>
-        <member name="F:libeveapi.ConquerableStationList.ConquerableStation.StationId">
+        <member name="T:libeveapi.Description">
             <summary>
-            The unique station Id
+            The description of a role
             </summary>
         </member>
-        <member name="F:libeveapi.ConquerableStationList.ConquerableStation.StationName">
+        <member name="T:libeveapi.RoleTypes">
             <summary>
-            The name of the station (corp gets to name it)
+            Character Roles
             </summary>
         </member>
-        <member name="F:libeveapi.ConquerableStationList.ConquerableStation.StationTypeId">
+        <member name="F:libeveapi.RoleTypes.Director">
             <summary>
-            The typeId of the station / outpost
+            
             </summary>
         </member>
-        <member name="F:libeveapi.ConquerableStationList.ConquerableStation.SolarSystemId">
+        <member name="F:libeveapi.RoleTypes.ConfigEquipment">
             <summary>
-            The solarSystemId that the station / outpost is located in
+            
             </summary>
         </member>
-        <member name="F:libeveapi.ConquerableStationList.ConquerableStation.CorporationId">
+        <member name="F:libeveapi.RoleTypes.ConfigStarbase">
             <summary>
-            The id of the corporation that owns teh station / outpost
+            
             </summary>
         </member>
-        <member name="F:libeveapi.ConquerableStationList.ConquerableStation.CorporationName">
+        <member name="F:libeveapi.RoleTypes.JuniorAccountant">
             <summary>
-            The name of the corporation that owns the station / outpost
+            
+            </summary>
+        </member>
+        <member name="F:libeveapi.RoleTypes.RentFactory">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:libeveapi.RoleTypes.RentOffice">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:libeveapi.RoleTypes.RentResearchFacility">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:libeveapi.RoleTypes.PersonnelManager">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:libeveapi.RoleTypes.Accountant">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:libeveapi.RoleTypes.SecurityManager">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:libeveapi.RoleTypes.FactoryManager">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:libeveapi.RoleTypes.StationManager">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:libeveapi.RoleTypes.Auditor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:libeveapi.RoleTypes.TakeFromDivision1Hangar">
+            <summary>
+            This allows a person to take from the Division 1 Hanger
+            </summary>
+        </member>
+        <member name="F:libeveapi.RoleTypes.TakeFromDivision2Hangar">
+            <summary>
+            This allows a person to take from the Division 2 Hanger
+            </summary>
+        </member>
+        <member name="F:libeveapi.RoleTypes.TakeFromDivision3Hangar">
+            <summary>
+            This allows a person to take from the Division 3 Hanger
+            </summary>
+        </member>
+        <member name="F:libeveapi.RoleTypes.TakeFromDivision4Hangar">
+            <summary>
+            This allows a person to take from the Division 4 Hanger
+            </summary>
+        </member>
+        <member name="F:libeveapi.RoleTypes.TakeFromDivision5Hangar">
+            <summary>
+            This allows a person to take from the Division 5 Hanger
+            </summary>
+        </member>
+        <member name="F:libeveapi.RoleTypes.TakeFromDivision6Hangar">
+            <summary>
+            This allows a person to take from the Division 6 Hanger
+            </summary>
+        </member>
+        <member name="F:libeveapi.RoleTypes.TakeFromDivision7Hangar">
+            <summary>
+            This allows a person to take from the Division 7 Hanger
+            </summary>
+        </member>
+        <member name="F:libeveapi.RoleTypes.QueryDivision1Hangar">
+            <summary>
+            This allows a person to query from the Division 1 Hanger
+            </summary>
+        </member>
+        <member name="F:libeveapi.RoleTypes.QueryDivision2Hangar">
+            <summary>
+            This allows a person to query from the Division 2 Hanger
+            </summary>
+        </member>
+        <member name="F:libeveapi.RoleTypes.QueryDivision3Hangar">
+            <summary>
+            This allows a person to query from the Division 3 Hanger
+            </summary>
+        </member>
+        <member name="F:libeveapi.RoleTypes.QueryDivision4Hangar">
+            <summary>
+            This allows a person to query from the Division 4 Hanger
+            </summary>
+        </member>
+        <member name="F:libeveapi.RoleTypes.QueryDivision5Hangar">
+            <summary>
+            This allows a person to query from the Division 5 Hanger
+            </summary>
+        </member>
+        <member name="F:libeveapi.RoleTypes.QueryDivision6Hangar">
+            <summary>
+            This allows a person to query from the Division 6 Hanger
+            </summary>
+        </member>
+        <member name="F:libeveapi.RoleTypes.QueryDivision7Hangar">
+            <summary>
+            This allows a person to query from the Division 7 Hanger
+            </summary>
+        </member>
+        <member name="F:libeveapi.RoleTypes.TakeFromDivision1Accounts">
+            <summary>
+            This allows a person to take ISK from the Division 1 Account
+            </summary>
+        </member>
+        <member name="F:libeveapi.RoleTypes.TakeFromDivision2Accounts">
+            <summary>
+            This allows a person to take ISK from the Division 2 Account
+            </summary>
+        </member>
+        <member name="F:libeveapi.RoleTypes.TakeFromDivision3Accounts">
+            <summary>
+            This allows a person to take ISK from the Division 3 Account
+            </summary>
+        </member>
+        <member name="F:libeveapi.RoleTypes.TakeFromDivision4Accounts">
+            <summary>
+            This allows a person to take ISK from the Division 4 Account
+            </summary>
+        </member>
+        <member name="F:libeveapi.RoleTypes.TakeFromDivision5Accounts">
+            <summary>
+            This allows a person to take ISK from the Division 5 Account
+            </summary>
+        </member>
+        <member name="F:libeveapi.RoleTypes.TakeFromDivision6Accounts">
+            <summary>
+            This allows a person to take ISK from the Division 6 Account
+            </summary>
+        </member>
+        <member name="F:libeveapi.RoleTypes.TakeFromDivision7Accounts">
+            <summary>
+            This allows a person to take ISK from the Division 7 Account
+            </summary>
+        </member>
+        <member name="F:libeveapi.RoleTypes.QueryDivision1Accounts">
+            <summary>
+            This allows a person to look at how much ISK is in Division 1 Account
+            </summary>
+        </member>
+        <member name="F:libeveapi.RoleTypes.QueryDivision2Accounts">
+            <summary>
+            This allows a person to look at how much ISK is in Division 2 Account
+            </summary>
+        </member>
+        <member name="F:libeveapi.RoleTypes.QueryDivision3Accounts">
+            <summary>
+            This allows a person to look at how much ISK is in Division 3 Account
+            </summary>
+        </member>
+        <member name="F:libeveapi.RoleTypes.QueryDivision4Accounts">
+            <summary>
+            This allows a person to look at how much ISK is in Division 4 Account
+            </summary>
+        </member>
+        <member name="F:libeveapi.RoleTypes.QueryDivision5Accounts">
+            <summary>
+            This allows a person to look at how much ISK is in Division 5 Account
+            </summary>
+        </member>
+        <member name="F:libeveapi.RoleTypes.QueryDivision6Accounts">
+            <summary>
+            This allows a person to look at how much ISK is in Division 6 Account
+            </summary>
+        </member>
+        <member name="F:libeveapi.RoleTypes.QueryDivision7Accounts">
+            <summary>
+            This allows a person to look at how much ISK is in Division 7 Account
+            </summary>
+        </member>
+        <member name="F:libeveapi.RoleTypes.ContainerCanTakeDivision1">
+            <summary>
+            This allows a person to take a container from the Division 1 Hanger
+            </summary>
+        </member>
+        <member name="F:libeveapi.RoleTypes.ContainerCanTakeDivision2">
+            <summary>
+            This allows a person to take a container from the Division 2 Hanger
+            </summary>
+        </member>
+        <member name="F:libeveapi.RoleTypes.ContainerCanTakeDivision3">
+            <summary>
+            This allows a person to take a container from the Division 3 Hanger
+            </summary>
+        </member>
+        <member name="F:libeveapi.RoleTypes.ContainerCanTakeDivision4">
+            <summary>
+            This allows a person to take a container from the Division 4 Hanger
+            </summary>
+        </member>
+        <member name="F:libeveapi.RoleTypes.ContainerCanTakeDivision5">
+            <summary>
+            This allows a person to take a container from the Division 5 Hanger
+            </summary>
+        </member>
+        <member name="F:libeveapi.RoleTypes.ContainerCanTakeDivision6">
+            <summary>
+            This allows a person to take a container from the Division 6 Hanger
+            </summary>
+        </member>
+        <member name="F:libeveapi.RoleTypes.ContainerCanTakeDivision7">
+            <summary>
+            This allows a person to take a container from the Division 7 Hanger
             </summary>
         </member>
         <member name="T:libeveapi.MemberTracking">
@@ -296,6 +564,627 @@
         <member name="P:libeveapi.MemberTracking.Member.Roles">
             <summary>
             This pilot's roles in the corporation
+            </summary>
+        </member>
+        <member name="T:libeveapi.ErrorList">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:libeveapi.ErrorList.ErrorTable">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:libeveapi.ErrorList.FromXmlDocument(System.Xml.XmlDocument)">
+            <summary>
+            Create an ErrorList by parsing an XmlDocument response from the eveapi
+            </summary>
+            <param name="xmlDoc">An XML Document Containing error list information</param>
+            <returns><see cref="T:libeveapi.ErrorList"/></returns>
+        </member>
+        <member name="M:libeveapi.ErrorList.GetMessageForErrorCode(System.String)">
+            <summary>
+            Returns the description for the specified error code
+            </summary>
+            <param name="errorCode"></param>
+            <returns></returns>
+        </member>
+        <member name="T:libeveapi.KillLog">
+            <summary>
+            Log of 25 most recent kills for a character or 100 most recent for corporation
+            </summary>
+        </member>
+        <member name="F:libeveapi.KillLog.Kills">
+            <summary>
+            Array containing all the kills returned from the api call 
+            </summary>
+        </member>
+        <member name="M:libeveapi.KillLog.FromXmlDocument(System.Xml.XmlDocument)">
+            <summary>
+            Creates a KillLog object from the xml api response
+            </summary>
+            <param name="xmlDoc">XmlDocument Containing the api response</param>
+            <returns></returns>
+        </member>
+        <member name="M:libeveapi.KillLog.ParseItemRow(System.Xml.XmlNode)">
+            <summary>
+            This function allows you to recursively build the items list. 
+            This is needed because the items can be infinitely nested in the killmail
+            </summary>
+            <param name="ItemNode">The XmlNode containing the item row you want to parse</param>
+            <returns>The item with it's child items in it's ContainedItems array</returns>
+        </member>
+        <member name="T:libeveapi.KillLog.Kill">
+            <summary>
+            A Kill contains a victim, list of attackers, and items lost
+            </summary>
+        </member>
+        <member name="F:libeveapi.KillLog.Kill.KillId">
+            <summary>
+            Unique kill ID for this kill. This is to be used as the input for 
+            beforeKillID if you need to scroll back. This is globally unique 
+            and can be used for uniquely identifying a kill to other killboards.
+            </summary>
+        </member>
+        <member name="F:libeveapi.KillLog.Kill.SolarSystemId">
+            <summary>
+            The ID of the solar system this kill occurred in.
+            </summary>
+        </member>
+        <member name="F:libeveapi.KillLog.Kill.KillTime">
+            <summary>
+            What time the event occurred.
+            </summary>
+        </member>
+        <member name="F:libeveapi.KillLog.Kill.KillTimeLocal">
+            <summary>
+            What time the event occurred in local time.
+            </summary>
+        </member>
+        <member name="F:libeveapi.KillLog.Kill.MoonId">
+            <summary>
+            In some situations, this is present to define what moon a 
+            kill occurred at. Note that this is generally only present 
+            in situations where the loss is a POS structure. It is not
+            guaranteed to be populated.
+            </summary>
+        </member>
+        <member name="F:libeveapi.KillLog.Kill.Victim">
+            <summary>
+            The victim of the attack
+            </summary>
+        </member>
+        <member name="F:libeveapi.KillLog.Kill.Attackers">
+            <summary>
+            The attacking pilots
+            </summary>
+        </member>
+        <member name="F:libeveapi.KillLog.Kill.Items">
+            <summary>
+            The items lost / dropped in the attack
+            </summary>
+        </member>
+        <member name="T:libeveapi.KillLog.Pilot">
+            <summary>
+            A pilot base class
+            </summary>
+        </member>
+        <member name="F:libeveapi.KillLog.Pilot.CharacterId">
+            <summary>
+            Character's ID. Fairly self-explanatory. Can be 0 in which 
+            case this kill was not done by a character and instead 
+            was done by a corporation. In the victim case, this implies 
+            it is a structure loss.
+            </summary>
+        </member>
+        <member name="F:libeveapi.KillLog.Pilot.CharacterName">
+            <summary>
+            If present, the name of the above characterID.
+            </summary>
+        </member>
+        <member name="F:libeveapi.KillLog.Pilot.CorporationId">
+            <summary>
+            The ID of the corporation. This will always be present, 
+            as there is always a corporation behind the victim, 
+            whether it is the corporation itself or simply someone 
+            in that corporation.
+            </summary>
+        </member>
+        <member name="F:libeveapi.KillLog.Pilot.CorporationName">
+            <summary>
+            The name of the corporation associated with the kill.
+            </summary>
+        </member>
+        <member name="F:libeveapi.KillLog.Pilot.AllianceId">
+            <summary>
+            If not 0, this is the ID of the alliance the corporation belongs to.
+            </summary>
+        </member>
+        <member name="F:libeveapi.KillLog.Pilot.AllianceName">
+            <summary>
+            The name of the alliance associated with the kill.
+            </summary>
+        </member>
+        <member name="F:libeveapi.KillLog.Pilot.ShipTypeId">
+            <summary>
+            The item lost. This could be a ship as suggested by the name 
+            but can potentially be anything that generates a kill event.
+            </summary>
+        </member>
+        <member name="T:libeveapi.KillLog.VictimPilot">
+            <summary>
+            The victim pilot
+            </summary>
+        </member>
+        <member name="F:libeveapi.KillLog.VictimPilot.DamageTaken">
+            <summary>
+            How much damage the victim took before 
+            succumbing to fiery defeat and humiliation.
+            Please note that this damage is calculated after resists. 
+            It does give you a decent idea of how much 
+            they were tanking, however.
+            </summary>
+        </member>
+        <member name="T:libeveapi.KillLog.Attacker">
+            <summary>
+            An Attacking pilot
+            </summary>
+        </member>
+        <member name="F:libeveapi.KillLog.Attacker.SecurityStatus">
+            <summary>
+            The security status of the aggressor at the time of this kill.
+            </summary>
+        </member>
+        <member name="F:libeveapi.KillLog.Attacker.DamageDone">
+            <summary>
+            The amount of damage done to the victim. This is post-resists damage done.
+            </summary>
+        </member>
+        <member name="F:libeveapi.KillLog.Attacker.FinalBlow">
+            <summary>
+            Whether or not this aggressor is attributed with the so-called "final blow."
+            </summary>
+        </member>
+        <member name="F:libeveapi.KillLog.Attacker.WeaponTypeId">
+            <summary>
+            What weapon we decided to show this person as using. Often a weapon, 
+            sometimes a ship or missile, rarely a fish
+            </summary>
+        </member>
+        <member name="T:libeveapi.KillLog.Item">
+            <summary>
+            An Item from the killmail
+            </summary>
+        </member>
+        <member name="F:libeveapi.KillLog.Item.TypeId">
+            <summary>
+            The typeID of this item, references the invTypes table
+            </summary>
+        </member>
+        <member name="F:libeveapi.KillLog.Item.Flag">
+            <summary>
+            See <see cref="T:libeveapi.InventoryFlagType"/> for full details.
+            </summary>
+        </member>
+        <member name="F:libeveapi.KillLog.Item.QtyDropped">
+            <summary>
+            How many of this item were dropped. 
+            If the user had multiple stacks, we compress the total number of 
+            dropped items to just one stack for space purposes
+            </summary>
+        </member>
+        <member name="F:libeveapi.KillLog.Item.QtyDestroyed">
+            <summary>
+            How many of this item fell victim to atomic
+            dispersal and other sad little ends that such 
+            things can meet.
+            </summary>
+        </member>
+        <member name="F:libeveapi.KillLog.Item.Container">
+            <summary>
+            True if the destroyed item contained other items.
+            </summary>
+        </member>
+        <member name="F:libeveapi.KillLog.Item.ContainedItems">
+            <summary>
+            List of contained items.
+            </summary>
+        </member>
+        <member name="T:libeveapi.KillLogType">
+            <summary>
+            Enum choice for Kill Log type
+            </summary>
+        </member>
+        <member name="F:libeveapi.KillLogType.Corporation">
+            <summary>
+            Corporation Kill Log
+            </summary>
+        </member>
+        <member name="F:libeveapi.KillLogType.Character">
+            <summary>
+            Character Kill Log
+            </summary>
+        </member>
+        <member name="T:libeveapi.SkillInTraining">
+            <summary>
+            Contains the Current Skill in Training
+            </summary>
+        </member>
+        <member name="F:libeveapi.SkillInTraining.SkillCurrentlyInTraining">
+            <summary>
+            True if a skill is currently training, false is no skill is training
+            </summary>
+        </member>
+        <member name="F:libeveapi.SkillInTraining.TrainingEndTime">
+            <summary>
+            Server time when skill training completes in ccp time
+            Minvalue - when no skill training
+            </summary>
+        </member>
+        <member name="F:libeveapi.SkillInTraining.TrainingStartTime">
+            <summary>
+            Server time when skill training started in ccp time
+            Minvalue - when no skill training
+            </summary>
+        </member>
+        <member name="F:libeveapi.SkillInTraining.TrainingEndTimeLocal">
+            <summary>
+            Server time when skill training completes in local time
+            Minvalue - when no skill training
+            </summary>
+        </member>
+        <member name="F:libeveapi.SkillInTraining.TrainingStartTimeLocal">
+            <summary>
+            Server time when skill training started in local time
+            Minvalue - when no skill training
+            </summary>
+        </member>
+        <member name="F:libeveapi.SkillInTraining.TrainingTypeId">
+            <summary>
+            Id of skill in training
+            0 - when no skill training
+            </summary>
+        </member>
+        <member name="F:libeveapi.SkillInTraining.TrainingStartSP">
+            <summary>
+            Skill Points at training start
+            0 - when no skill training
+            </summary>
+        </member>
+        <member name="F:libeveapi.SkillInTraining.TrainingDestinationSP">
+            <summary>
+            Skill Points after training end
+            0 - when no skill training
+            </summary>
+        </member>
+        <member name="F:libeveapi.SkillInTraining.TrainingToLevel">
+            <summary>
+            Skill level being trained
+            0 - when no skill training
+            </summary>
+        </member>
+        <member name="M:libeveapi.SkillInTraining.FromXmlDocument(System.Xml.XmlDocument)">
+            <summary>
+            Create a SkillIntTraining Object by parsing an XmlDocument
+            response for the eveapi
+            </summary>
+            <param name="xmlDoc">XmlDocument containing the skill in training xml</param>
+            <returns></returns>
+        </member>
+        <member name="T:libeveapi.CorporationSheet">
+            <summary>
+            Detailed information about a corporation
+            </summary>
+        </member>
+        <member name="F:libeveapi.CorporationSheet.CorporationId">
+            <summary>
+            Unique identifier for the corporation
+            </summary>
+        </member>
+        <member name="F:libeveapi.CorporationSheet.CorporationName">
+            <summary>
+            Name of the corporation
+            </summary>
+        </member>
+        <member name="F:libeveapi.CorporationSheet.Ticker">
+            <summary>
+            Stock ticker symbol for the corporation
+            </summary>
+        </member>
+        <member name="F:libeveapi.CorporationSheet.CeoId">
+            <summary>
+            The characterId of the character that is CEO of the corporation
+            </summary>
+        </member>
+        <member name="F:libeveapi.CorporationSheet.CeoName">
+            <summary>
+            The name of the character that is CEO of the corporation
+            </summary>
+        </member>
+        <member name="F:libeveapi.CorporationSheet.StationId">
+            <summary>
+            The unique id of the station where the corporation is based
+            </summary>
+        </member>
+        <member name="F:libeveapi.CorporationSheet.StationName">
+            <summary>
+            The name of the station where the corporation is based
+            </summary>
+        </member>
+        <member name="F:libeveapi.CorporationSheet.Description">
+            <summary>
+            A description of the corporation as set by the corporation
+            </summary>
+        </member>
+        <member name="F:libeveapi.CorporationSheet.Url">
+            <summary>
+            A url to the corporation's web site
+            </summary>
+        </member>
+        <member name="F:libeveapi.CorporationSheet.AllianceId">
+            <summary>
+             	 The unique identifier of this corporation's alliance
+            </summary>
+        </member>
+        <member name="F:libeveapi.CorporationSheet.AllianceName">
+            <summary>
+            The name of this corporation's alliance
+            </summary>
+        </member>
+        <member name="F:libeveapi.CorporationSheet.TaxRate">
+            <summary>
+            The tax rate of the corporation
+            </summary>
+        </member>
+        <member name="F:libeveapi.CorporationSheet.MemberCount">
+            <summary>
+            The current number of pilots in the corporation
+            </summary>
+        </member>
+        <member name="F:libeveapi.CorporationSheet.MemberLimit">
+            <summary>
+            The current maximum number of pilots the corporation can contain
+            </summary>
+        </member>
+        <member name="F:libeveapi.CorporationSheet.Shares">
+            <summary>
+            The current number of outstanding shares of the corporation
+            </summary>
+        </member>
+        <member name="F:libeveapi.CorporationSheet.Divisions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:libeveapi.CorporationSheet.WalletDivisions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:libeveapi.CorporationSheet.Logo">
+            <summary>
+            An object describing the corporation logo
+            </summary>
+        </member>
+        <member name="F:libeveapi.AllianceList.AllianceListItems">
+            <summary>
+            List of alliances
+            </summary>
+        </member>
+        <member name="F:libeveapi.AllianceList.AllianceListItem.Name">
+            <summary>
+            full name of the alliance
+            </summary>
+        </member>
+        <member name="F:libeveapi.AllianceList.AllianceListItem.ShortName">
+            <summary>
+            ticker name of the alliance
+            </summary>
+        </member>
+        <member name="F:libeveapi.AllianceList.AllianceListItem.AllianceId">
+            <summary>
+            unique identifier for this alliance
+            </summary>
+        </member>
+        <member name="F:libeveapi.AllianceList.AllianceListItem.ExecutorCorpId">
+            <summary>
+            unique identifier of executor corporation
+            </summary>
+        </member>
+        <member name="F:libeveapi.AllianceList.AllianceListItem.MemberCount">
+            <summary>
+            Current number of pilots in the alliance
+            </summary>
+        </member>
+        <member name="F:libeveapi.AllianceList.AllianceListItem.StartDate">
+            <summary>
+            Date the alliance was created in CCP time
+            </summary>
+        </member>
+        <member name="F:libeveapi.AllianceList.AllianceListItem.StartDateLocal">
+            <summary>
+            Date the alliance was created in local time
+            </summary>
+        </member>
+        <member name="F:libeveapi.AllianceList.AllianceListItem.CorporationListItems">
+            <summary>
+            List of member corporations
+            </summary>
+        </member>
+        <member name="F:libeveapi.AllianceList.CorporationListItem.CorporationId">
+            <summary>
+            unique identifier for the corporation
+            </summary>
+        </member>
+        <member name="F:libeveapi.AllianceList.CorporationListItem.StartDate">
+            <summary>
+            date the corporation joined the alliance in CCP time
+            </summary>
+        </member>
+        <member name="F:libeveapi.AllianceList.CorporationListItem.StartDateLocal">
+            <summary>
+            date the corporation joined the alliance in local time
+            </summary>
+        </member>
+        <member name="T:libeveapi.RefTypes">
+            <summary>
+            This represents the different refence types used in the journal entries
+            </summary>
+        </member>
+        <member name="F:libeveapi.RefTypes.ReferenceTypes">
+            <summary>
+            A reference type is made up of an int, which is the referenceId, and then a string
+            which is the name of the reference.  They are stored in a serializable dictionary
+            for easy searching and saving.
+            </summary>
+        </member>
+        <member name="M:libeveapi.RefTypes.FromXmlDocument(System.Xml.XmlDocument)">
+            <summary>
+            Create an ErrorList by parsing an XmlDocument response from the eveapi
+            </summary>
+            <param name="xmlDoc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:libeveapi.RefTypes.GetReferenceTypeNameForId(System.Int32)">
+            <summary>
+            Returns the description for the specified reference type id
+            </summary>
+            <param name="referenceTypeId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:libeveapi.ResponseCache">
+            <summary>
+            The response cache is responsible for holding all of the responses when they are
+            retrieved from the server, and then caching then, and serving them out instead
+            of requesting a new reponse from the server, while the item is supposed to be
+            cached.
+            </summary>
+        </member>
+        <member name="M:libeveapi.ResponseCache.Set(System.String,libeveapi.ApiResponse)">
+            <summary>
+            Store an ApiResponse in the cache
+            </summary>
+            <param name="url"></param>
+            <param name="apiResponse"></param>
+        </member>
+        <member name="M:libeveapi.ResponseCache.Get(System.String)">
+            <summary>
+            Get an ApiResponse from the cache
+            </summary>
+            <param name="url"></param>
+            <returns>ApiResponse if cached ApiResponse is valid, null if it is expired</returns>
+        </member>
+        <member name="M:libeveapi.ResponseCache.Clear">
+            <summary>
+            Remove all saved items from the cache
+            </summary>
+        </member>
+        <member name="M:libeveapi.ResponseCache.Save(System.String)">
+            <summary>
+            Save all currently cached items to the specified file
+            </summary>
+            <param name="filePath"></param>
+        </member>
+        <member name="M:libeveapi.ResponseCache.Save(System.IO.Stream)">
+            <summary>
+            Serialize the ResposeCache to a stream
+            </summary>
+            <param name="s"></param>
+        </member>
+        <member name="M:libeveapi.ResponseCache.Load(System.String)">
+            <summary>
+            Load cached items from the specified file
+            </summary>
+            <param name="filePath"></param>
+        </member>
+        <member name="M:libeveapi.ResponseCache.Load(System.IO.Stream)">
+            <summary>
+            Load the ResponseCache from a stream
+            </summary>
+            <param name="s"></param>
+        </member>
+        <member name="T:libeveapi.StarbaseDetail">
+            <summary>
+            Shows the settings and fuel status of a starbase
+            </summary>
+        </member>
+        <member name="F:libeveapi.StarbaseDetail.UsageFlags">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:libeveapi.StarbaseDetail.DeployFlags">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:libeveapi.StarbaseDetail.AllowCorporationMembers">
+            <summary>
+            Allow corporation members inside the force field
+            </summary>
+        </member>
+        <member name="F:libeveapi.StarbaseDetail.AllowAllianceMembers">
+            <summary>
+            Allow alliance members inside the force field
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:libeveapi.StarbaseDetail.ClaimSovereignty" -->
+        <member name="F:libeveapi.StarbaseDetail.OnStandingDropEnabled">
+            <summary>
+            Shoot on standing drop
+            </summary>
+        </member>
+        <member name="F:libeveapi.StarbaseDetail.OnStandingDropStanding">
+            <summary>
+            What target standing makes them a valid target
+            </summary>
+        </member>
+        <member name="F:libeveapi.StarbaseDetail.OnStatusDropEnabled">
+            <summary>
+            Shoot on status drop
+            </summary>
+        </member>
+        <member name="F:libeveapi.StarbaseDetail.OnStatusDropStanding">
+            <summary>
+            What target security make them a valid target
+            </summary>
+        </member>
+        <member name="F:libeveapi.StarbaseDetail.OnAgressionEnabled">
+            <summary>
+            Shoot on target agression
+            </summary>
+        </member>
+        <member name="F:libeveapi.StarbaseDetail.OnCorporationWarEnabled">
+            <summary>
+            Shoot if at war with target
+            </summary>
+        </member>
+        <member name="F:libeveapi.StarbaseDetail.FuelList">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:libeveapi.StarbaseDetail.FromXmlDocument(System.Xml.XmlDocument)">
+            <summary>
+            Create a StarbaseDetail by parsing an XmlDocument response from the eveapi
+            </summary>
+            <param name="xmlDoc"></param>
+            <returns></returns>
+        </member>
+        <member name="T:libeveapi.StarbaseDetail.FuelListItem">
+            <summary>
+            Represents a type of fuel present in the starbase
+            </summary>
+        </member>
+        <member name="F:libeveapi.StarbaseDetail.FuelListItem.TypeId">
+            <summary>
+            Type Id of the fuel
+            </summary>
+        </member>
+        <member name="F:libeveapi.StarbaseDetail.FuelListItem.Quantity">
+            <summary>
+            Number of units of the fuel remaining
             </summary>
         </member>
         <member name="T:libeveapi.IndustryJobList">
@@ -620,422 +1509,485 @@
             Unknown type of job
             </summary>
         </member>
-        <member name="T:libeveapi.ResponseCache">
+        <member name="T:libeveapi.MapKills">
             <summary>
-            The response cache is responsible for holding all of the responses when they are
-            retrieved from the server, and then caching then, and serving them out instead
-            of requesting a new reponse from the server, while the item is supposed to be
-            cached.
+            Represents the number of kills per system from the eve api
+            http://wiki.eve-dev.net/APIv2_Map_Kills_XML
             </summary>
         </member>
-        <member name="M:libeveapi.ResponseCache.Set(System.String,libeveapi.ApiResponse)">
-            <summary>
-            Store an ApiResponse in the cache
-            </summary>
-            <param name="url"></param>
-            <param name="apiResponse"></param>
-        </member>
-        <member name="M:libeveapi.ResponseCache.Get(System.String)">
-            <summary>
-            Get an ApiResponse from the cache
-            </summary>
-            <param name="url"></param>
-            <returns>ApiResponse if cached ApiResponse is valid, null if it is expired</returns>
-        </member>
-        <member name="M:libeveapi.ResponseCache.Clear">
-            <summary>
-            Remove all saved items from the cache
-            </summary>
-        </member>
-        <member name="M:libeveapi.ResponseCache.Save(System.String)">
-            <summary>
-            Save all currently cached items to the specified file
-            </summary>
-            <param name="filePath"></param>
-        </member>
-        <member name="M:libeveapi.ResponseCache.Save(System.IO.Stream)">
-            <summary>
-            Serialize the ResposeCache to a stream
-            </summary>
-            <param name="s"></param>
-        </member>
-        <member name="M:libeveapi.ResponseCache.Load(System.String)">
-            <summary>
-            Load cached items from the specified file
-            </summary>
-            <param name="filePath"></param>
-        </member>
-        <member name="M:libeveapi.ResponseCache.Load(System.IO.Stream)">
-            <summary>
-            Load the ResponseCache from a stream
-            </summary>
-            <param name="s"></param>
-        </member>
-        <member name="T:libeveapi.SerializableDictionary`2">
-            <summary>
-            Shamelessly "borrowed" from the EveMon project.
-            http://evemon.battleclinic.com/
-            </summary>
-        </member>
-        <member name="M:libeveapi.SerializableDictionary`2.GetSchema">
+        <member name="F:libeveapi.MapKills.MapSystemKills">
             <summary>
             
             </summary>
         </member>
-        <member name="M:libeveapi.SerializableDictionary`2.ReadXml(System.Xml.XmlReader)">
+        <member name="M:libeveapi.MapKills.FromXmlDocument(System.Xml.XmlDocument)">
+            <summary>
+            Create an Mapkills object by parsing an XmlDocument response from the eve api
+            </summary>
+            <param name="xmlDoc">An XML Document containing kill information on the map</param>
+            <returns><see cref="T:libeveapi.MapKills"/></returns>
+        </member>
+        <member name="T:libeveapi.MapKills.MapKillsItem">
+            <summary>
+            The information for a system with one jump or more
+            </summary>
+        </member>
+        <member name="F:libeveapi.MapKills.MapKillsItem.SolarSystemId">
+            <summary>
+            The Id of the solarsystem
+            </summary>
+        </member>
+        <member name="F:libeveapi.MapKills.MapKillsItem.ShipKills">
+            <summary>
+            The number of kills
+            </summary>
+        </member>
+        <member name="F:libeveapi.MapKills.MapKillsItem.FactionKills">
+            <summary>
+            The number of kills
+            </summary>
+        </member>
+        <member name="F:libeveapi.MapKills.MapKillsItem.PodKills">
+            <summary>
+            The number of kills
+            </summary>
+        </member>
+        <member name="T:libeveapi.CharacterList">
+            <summary>
+            A list of characters on the account
+            </summary>
+        </member>
+        <member name="F:libeveapi.CharacterList.CharacterListItems">
+            <summary>
+            List of characters associated with an account
+            </summary>
+        </member>
+        <member name="M:libeveapi.CharacterList.FromXmlDocument(System.Xml.XmlDocument)">
+            <summary>
+            Create a CharacterList by parsing an XmlDocument response from the eveapi
+            </summary>
+            <param name="xmlDoc">An XML Document containing information about the Character List</param>
+            <returns><see cref="T:libeveapi.CharacterList"/></returns>
+        </member>
+        <member name="T:libeveapi.CharacterList.CharacterListItem">
+            <summary>
+            Represents a character from the account character list
+            </summary>
+        </member>
+        <member name="P:libeveapi.CharacterList.CharacterListItem.Name">
+            <summary>
+            Name of the character
+            </summary>
+        </member>
+        <member name="P:libeveapi.CharacterList.CharacterListItem.CharacterId">
+            <summary>
+            Id of the character
+            </summary>
+        </member>
+        <member name="P:libeveapi.CharacterList.CharacterListItem.CorporationName">
+            <summary>
+            Name of the corporation the character is a member of
+            </summary>
+        </member>
+        <member name="P:libeveapi.CharacterList.CharacterListItem.CorporationId">
+            <summary>
+            Id of the corporation the character is a member of
+            </summary>
+        </member>
+        <member name="T:libeveapi.JournalEntries">
+            <summary>
+            Represents a character or corporation journal entry from the eve api
+            http://wiki.eve-dev.net/APIv2_Char_JournalEntries_XML
+            </summary>
+        </member>
+        <member name="F:libeveapi.JournalEntries.JournalEntryItems">
             <summary>
             
             </summary>
         </member>
-        <member name="M:libeveapi.SerializableDictionary`2.WriteXml(System.Xml.XmlWriter)">
+        <member name="M:libeveapi.JournalEntries.FromXmlDocument(System.Xml.XmlDocument)">
             <summary>
-            
+            Create an JournalEntryItemList by parsing an XmlDocument response from the eveapi
             </summary>
+            <param name="xmlDoc">An XML Document containing the JournalEntries List</param>
+            <returns><see cref="T:libeveapi.JournalEntries"/></returns>
         </member>
-        <member name="T:libeveapi.Network">
+        <member name="M:libeveapi.JournalEntries.ParseTransactionRow(System.Xml.XmlNode)">
             <summary>
-            
+            Create an JournalEntryItem by parsing a single row
             </summary>
-        </member>
-        <member name="M:libeveapi.Network.GetXml(System.String)">
-            <summary>
-            This function takes in a url, and will download the data from that
-            URL and create an xml document from it
-            </summary>
-            <param name="url">The url of the XML file to retrieve</param>
+            <param name="journalTransactionRow"></param>
             <returns></returns>
         </member>
-        <member name="M:libeveapi.Network.GetImage(System.String)">
+        <member name="T:libeveapi.JournalEntries.JournalEntryItem">
             <summary>
-            This function takes in a url of an image and then returns the image
-            </summary>
-            <param name="url">The url of the image file to retrieve</param>
-            <returns>An image object containing the image from the url</returns>
-        </member>
-        <member name="M:libeveapi.Network.openUrl(System.String)">
-            <summary>
-            This function takes in a url and will return a stream of data from that url
-            Also takes into account the user-agent settings and any proxy settings
-            </summary>
-            <param name="url">The url of the image file to retrieve</param>
-            <returns>A stream of data</returns>
-        </member>
-        <member name="T:libeveapi.Network.eveNetworkClientSettings">
-            <summary>
-            All advanced network settings go here
+            Contains the data for one journal entry item
             </summary>
         </member>
-        <member name="F:libeveapi.Network.eveNetworkClientSettings.proxy">
+        <member name="F:libeveapi.JournalEntries.JournalEntryItem.Date">
             <summary>
-            The default proxy is null, meaning no proxy in use
+            The date / time of the entry
             </summary>
         </member>
-        <member name="F:libeveapi.Network.eveNetworkClientSettings.userAgent">
+        <member name="F:libeveapi.JournalEntries.JournalEntryItem.DateLocal">
             <summary>
-            The base userAgent string to be used by the program
+            The date / time of the entry in local time
             </summary>
         </member>
-        <member name="T:libeveapi.Roles">
+        <member name="F:libeveapi.JournalEntries.JournalEntryItem.RefId">
             <summary>
-            
+            A unique referenceId for each transaction
             </summary>
         </member>
-        <member name="F:libeveapi.Roles.rolesTable">
+        <member name="F:libeveapi.JournalEntries.JournalEntryItem.RefTypeId">
             <summary>
-            
+            The typeId of the item that is referenced in the entry
             </summary>
         </member>
-        <member name="M:libeveapi.Roles.#ctor(System.String)">
+        <member name="F:libeveapi.JournalEntries.JournalEntryItem.OwnerName1">
             <summary>
-            
+            Name of the person/corp giving money
             </summary>
         </member>
-        <member name="M:libeveapi.Roles.#ctor(System.UInt64)">
+        <member name="F:libeveapi.JournalEntries.JournalEntryItem.OwnerId1">
             <summary>
-            
+            TypeId/CharId of the person/corp giving money
             </summary>
         </member>
-        <member name="M:libeveapi.Roles.decodeRoles(System.UInt64)">
+        <member name="F:libeveapi.JournalEntries.JournalEntryItem.OwnerName2">
             <summary>
-            This loops through each role and checks to see if it has been assigned
+            Name of the person/corp recieving money
             </summary>
-            <param name="mask"></param>
+        </member>
+        <member name="F:libeveapi.JournalEntries.JournalEntryItem.OwnerId2">
+            <summary>
+            TypeId/CharId of the person/corp recieving money
+            </summary>
+        </member>
+        <member name="F:libeveapi.JournalEntries.JournalEntryItem.ArgName1">
+            <summary>
+            This is either the system where the transaction took place
+            For example when recieving bounties, or "EVE System" if used
+            for other items like buying and selling
+            </summary>
+        </member>
+        <member name="F:libeveapi.JournalEntries.JournalEntryItem.ArgId1">
+            <summary>
+            This is an argument Id that goes with the argument
+            Use the data from: http://wiki.eve-dev.net/APIv2_Eve_RefTypes_XML
+            to determine what this is used for
+            </summary>
+        </member>
+        <member name="F:libeveapi.JournalEntries.JournalEntryItem.Amount">
+            <summary>
+            The amount of the transaction
+            </summary>
+        </member>
+        <member name="F:libeveapi.JournalEntries.JournalEntryItem.Balance">
+            <summary>
+            The balance left in the account after the transaction
+            </summary>
+        </member>
+        <member name="F:libeveapi.JournalEntries.JournalEntryItem.Reason">
+            <summary>
+            This is the note attached to the transaction if any
+            If exists for bounties this is the list of people killed and how many
+            Ex: TypeId:Number;TypeId:Number
+            </summary>
+        </member>
+        <member name="T:libeveapi.JournalEntryType">
+            <summary>
+            Represents what type of journal entry, corporation or character
+            </summary>
+        </member>
+        <member name="F:libeveapi.JournalEntryType.Corporation">
+            <summary>
+            Corporation journal entry
+            </summary>
+        </member>
+        <member name="F:libeveapi.JournalEntryType.Character">
+            <summary>
+            Character journal entry
+            </summary>
+        </member>
+        <member name="T:libeveapi.CharacterSheet">
+            <summary>
+            Detailed information about a character
+            </summary>
+        </member>
+        <member name="F:libeveapi.CharacterSheet.CharacterId">
+            <summary>
+            The eve assigned characterId
+            </summary>
+        </member>
+        <member name="F:libeveapi.CharacterSheet.Name">
+            <summary>
+            The name of the character
+            </summary>
+        </member>
+        <member name="F:libeveapi.CharacterSheet.Race">
+            <summary>
+            The race of the character
+            </summary>
+        </member>
+        <member name="F:libeveapi.CharacterSheet.BloodLine">
+            <summary>
+            The bloodline of the character
+            </summary>
+        </member>
+        <member name="F:libeveapi.CharacterSheet.Gender">
+            <summary>
+            The gender of the character (currently male/female)
+            </summary>
+        </member>
+        <member name="F:libeveapi.CharacterSheet.CorporationName">
+            <summary>
+            The name of the corporation that the character is in
+            </summary>
+        </member>
+        <member name="F:libeveapi.CharacterSheet.CorporationId">
+            <summary>
+            The eve generated Id of the corporation
+            </summary>
+        </member>
+        <member name="F:libeveapi.CharacterSheet.Balance">
+            <summary>
+            The character's current wallet balance
+            </summary>
+        </member>
+        <member name="F:libeveapi.CharacterSheet.Intelligence">
+            <summary>
+            The character's intelligence attribute
+            </summary>
+        </member>
+        <member name="F:libeveapi.CharacterSheet.Memory">
+            <summary>
+            The character's memory attribute
+            </summary>
+        </member>
+        <member name="F:libeveapi.CharacterSheet.Charisma">
+            <summary>
+            The character's charisma attribute
+            </summary>
+        </member>
+        <member name="F:libeveapi.CharacterSheet.Perception">
+            <summary>
+            The character's perception attribute
+            </summary>
+        </member>
+        <member name="F:libeveapi.CharacterSheet.Willpower">
+            <summary>
+            The character's willpower attribute
+            </summary>
+        </member>
+        <member name="F:libeveapi.CharacterSheet.MemoryBonus">
+            <summary>
+            Memory Implant
+            </summary>
+        </member>
+        <member name="F:libeveapi.CharacterSheet.WillpowerBonus">
+            <summary>
+            Willpower Implant
+            </summary>
+        </member>
+        <member name="F:libeveapi.CharacterSheet.PerceptionBonus">
+            <summary>
+            Perception Implant
+            </summary>
+        </member>
+        <member name="F:libeveapi.CharacterSheet.IntelligenceBonus">
+            <summary>
+            Intelligence Implant
+            </summary>
+        </member>
+        <member name="F:libeveapi.CharacterSheet.CharismaBonus">
+            <summary>
+            Charisma Implant
+            </summary>
+        </member>
+        <member name="F:libeveapi.CharacterSheet.SkillItemList">
+            <summary>
+            The list of retrieved skills
+            </summary>
+        </member>
+        <member name="M:libeveapi.CharacterSheet.FromXmlDocument(System.Xml.XmlDocument)">
+            <summary>
+            Create an CharacterSheet by parsing an XmlDocument response from the eveapi
+            </summary>
+            <param name="xmlDoc">An XML Document containing the CharacterSheet</param>
+            <returns><see cref="T:libeveapi.CharacterSheet"/></returns>
+        </member>
+        <member name="M:libeveapi.CharacterSheet.parseAugmentator(System.String,System.Xml.XmlDocument,libeveapi.CharacterSheet.AttributeEnhancer)">
+            <summary>
+            Parses out each implant that the character has in
+            </summary>
+            <param name="xpath">The xpath location of the implant in the xml</param>
+            <param name="xmlDoc">The xml document</param>
+            <param name="ae">The correct attribute enhancer to modify</param>
             <returns></returns>
         </member>
-        <member name="M:libeveapi.Roles.HasRole(libeveapi.RoleTypes)">
+        <member name="T:libeveapi.CharacterSheet.SkillItem">
             <summary>
-            Return true if the specified role is present
+            Stores valid information about each skill in the character sheet
             </summary>
-            <param name="roleType"></param>
+        </member>
+        <member name="F:libeveapi.CharacterSheet.SkillItem.TypeId">
+            <summary>
+            TypeId of the skill
+            </summary>
+        </member>
+        <member name="F:libeveapi.CharacterSheet.SkillItem.Skillpoints">
+            <summary>
+            Current number of skillpoints the character has in the skill
+            </summary>
+        </member>
+        <member name="F:libeveapi.CharacterSheet.SkillItem.Level">
+            <summary>
+            The highest completed level of the skill
+            </summary>
+        </member>
+        <member name="F:libeveapi.CharacterSheet.SkillItem.Unpublished">
+            <summary>
+            Flag if the skill is an unpublished skill
+            </summary>
+        </member>
+        <member name="T:libeveapi.CharacterSheet.AttributeEnhancer">
+            <summary>
+            Contains information about each attributeEnhancer (implant)
+            </summary>
+        </member>
+        <member name="F:libeveapi.CharacterSheet.AttributeEnhancer.Name">
+            <summary>
+            The name of the implant
+            </summary>
+        </member>
+        <member name="F:libeveapi.CharacterSheet.AttributeEnhancer.Value">
+            <summary>
+            The implant's effect on that attribute
+            </summary>
+        </member>
+        <member name="T:libeveapi.WalletTransactions">
+            <summary>
+            Returns market transactions for a character.
+            http://wiki.eve-dev.net/APIv2_Char_MarketTransactions_XML
+            </summary>
+        </member>
+        <member name="F:libeveapi.WalletTransactions.WalletTransactionItems">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:libeveapi.WalletTransactions.FromXmlDocument(System.Xml.XmlDocument)">
+            <summary>
+            Create an WalletTransaction by parsing an XmlDocument response from the eveapi
+            </summary>
+            <param name="xmlDoc">An XML Document Containing Wallet Transaction Data</param>
             <returns></returns>
         </member>
-        <member name="M:libeveapi.Roles.GetRoleName(libeveapi.RoleTypes)">
+        <member name="M:libeveapi.WalletTransactions.ParseTransactionRow(System.Xml.XmlNode)">
             <summary>
-            Get the name of a role
+            Create an WalletTransactionItem by parsing a single row
             </summary>
-            <param name="en"></param>
+            <param name="walletTransactionRow"></param>
             <returns></returns>
         </member>
-        <member name="M:libeveapi.Roles.GetRoleDescription(libeveapi.RoleTypes)">
+        <member name="T:libeveapi.WalletTransactions.WalletTransactionItem">
             <summary>
-            Get the description of a role
-            </summary>
-            <param name="en"></param>
-            <returns></returns>
-        </member>
-        <member name="T:libeveapi.Name">
-            <summary>
-            The name of a role
+            Contains information about one wallet transaction
             </summary>
         </member>
-        <member name="T:libeveapi.Description">
+        <member name="F:libeveapi.WalletTransactions.WalletTransactionItem.TransactionDateTime">
             <summary>
-            The description of a role
+            This is the date and time when the transaction took place in ccp time
             </summary>
         </member>
-        <member name="T:libeveapi.RoleTypes">
+        <member name="F:libeveapi.WalletTransactions.WalletTransactionItem.TransactionDateTimeLocal">
             <summary>
-            Character Roles
+            This is the date and time when the transaction took place in local time
             </summary>
         </member>
-        <member name="F:libeveapi.RoleTypes.Director">
+        <member name="F:libeveapi.WalletTransactions.WalletTransactionItem.TransactionId">
             <summary>
-            
+            This is the transactionId that is assigned to the transaction
             </summary>
         </member>
-        <member name="F:libeveapi.RoleTypes.ConfigEquipment">
+        <member name="F:libeveapi.WalletTransactions.WalletTransactionItem.Quantity">
             <summary>
-            
+            This is the quantity of the item
             </summary>
         </member>
-        <member name="F:libeveapi.RoleTypes.ConfigStarbase">
+        <member name="F:libeveapi.WalletTransactions.WalletTransactionItem.TypeName">
             <summary>
-            
+            This is the name of the item in the transaction
             </summary>
         </member>
-        <member name="F:libeveapi.RoleTypes.JuniorAccountant">
+        <member name="F:libeveapi.WalletTransactions.WalletTransactionItem.TypeId">
             <summary>
-            
+            This is the typeId of the item referenced in the transaction
             </summary>
         </member>
-        <member name="F:libeveapi.RoleTypes.RentFactory">
+        <member name="F:libeveapi.WalletTransactions.WalletTransactionItem.Price">
             <summary>
-            
+            This is the price of the item in the transaction
             </summary>
         </member>
-        <member name="F:libeveapi.RoleTypes.RentOffice">
+        <member name="F:libeveapi.WalletTransactions.WalletTransactionItem.ClientId">
             <summary>
-            
+            The client's Id
             </summary>
         </member>
-        <member name="F:libeveapi.RoleTypes.RentResearchFacility">
+        <member name="F:libeveapi.WalletTransactions.WalletTransactionItem.ClientName">
             <summary>
-            
+            The client's name
             </summary>
         </member>
-        <member name="F:libeveapi.RoleTypes.PersonnelManager">
+        <member name="F:libeveapi.WalletTransactions.WalletTransactionItem.CharacterId">
             <summary>
-            
+            The character who initiated the transaction's id 
+            This is only present when viewing corp transactions, otherwise
+            it is assumed to be the character accessing the data
             </summary>
         </member>
-        <member name="F:libeveapi.RoleTypes.Accountant">
+        <member name="F:libeveapi.WalletTransactions.WalletTransactionItem.CharacterName">
             <summary>
-            
+            The character who initiated the transaction's name 
+            This is only present when viewing corp transactions, otherwise
+            it is assumed to be the character accessing the data
             </summary>
         </member>
-        <member name="F:libeveapi.RoleTypes.SecurityManager">
+        <member name="F:libeveapi.WalletTransactions.WalletTransactionItem.StationId">
             <summary>
-            
+            The Id of the station where the transaction took place
             </summary>
         </member>
-        <member name="F:libeveapi.RoleTypes.FactoryManager">
+        <member name="F:libeveapi.WalletTransactions.WalletTransactionItem.StationName">
             <summary>
-            
+            The name of the station where the transaction took place
             </summary>
         </member>
-        <member name="F:libeveapi.RoleTypes.StationManager">
+        <member name="F:libeveapi.WalletTransactions.WalletTransactionItem.TransactionType">
             <summary>
-            
+            This is the type of transaction type, sell or buy
             </summary>
         </member>
-        <member name="F:libeveapi.RoleTypes.Auditor">
+        <member name="F:libeveapi.WalletTransactions.WalletTransactionItem.TransactionFor">
             <summary>
-            
+            This is who the transaction was for (personal or corporation)
             </summary>
         </member>
-        <member name="F:libeveapi.RoleTypes.TakeFromDivision1Hangar">
+        <member name="T:libeveapi.WalletTransactionListType">
             <summary>
-            This allows a person to take from the Division 1 Hanger
+            If the transaction is a corporation or character transaction
             </summary>
         </member>
-        <member name="F:libeveapi.RoleTypes.TakeFromDivision2Hangar">
+        <member name="F:libeveapi.WalletTransactionListType.Corporation">
             <summary>
-            This allows a person to take from the Division 2 Hanger
+            A corporation transaction
             </summary>
         </member>
-        <member name="F:libeveapi.RoleTypes.TakeFromDivision3Hangar">
+        <member name="F:libeveapi.WalletTransactionListType.Character">
             <summary>
-            This allows a person to take from the Division 3 Hanger
-            </summary>
-        </member>
-        <member name="F:libeveapi.RoleTypes.TakeFromDivision4Hangar">
-            <summary>
-            This allows a person to take from the Division 4 Hanger
-            </summary>
-        </member>
-        <member name="F:libeveapi.RoleTypes.TakeFromDivision5Hangar">
-            <summary>
-            This allows a person to take from the Division 5 Hanger
-            </summary>
-        </member>
-        <member name="F:libeveapi.RoleTypes.TakeFromDivision6Hangar">
-            <summary>
-            This allows a person to take from the Division 6 Hanger
-            </summary>
-        </member>
-        <member name="F:libeveapi.RoleTypes.TakeFromDivision7Hangar">
-            <summary>
-            This allows a person to take from the Division 7 Hanger
-            </summary>
-        </member>
-        <member name="F:libeveapi.RoleTypes.QueryDivision1Hangar">
-            <summary>
-            This allows a person to query from the Division 1 Hanger
-            </summary>
-        </member>
-        <member name="F:libeveapi.RoleTypes.QueryDivision2Hangar">
-            <summary>
-            This allows a person to query from the Division 2 Hanger
-            </summary>
-        </member>
-        <member name="F:libeveapi.RoleTypes.QueryDivision3Hangar">
-            <summary>
-            This allows a person to query from the Division 3 Hanger
-            </summary>
-        </member>
-        <member name="F:libeveapi.RoleTypes.QueryDivision4Hangar">
-            <summary>
-            This allows a person to query from the Division 4 Hanger
-            </summary>
-        </member>
-        <member name="F:libeveapi.RoleTypes.QueryDivision5Hangar">
-            <summary>
-            This allows a person to query from the Division 5 Hanger
-            </summary>
-        </member>
-        <member name="F:libeveapi.RoleTypes.QueryDivision6Hangar">
-            <summary>
-            This allows a person to query from the Division 6 Hanger
-            </summary>
-        </member>
-        <member name="F:libeveapi.RoleTypes.QueryDivision7Hangar">
-            <summary>
-            This allows a person to query from the Division 7 Hanger
-            </summary>
-        </member>
-        <member name="F:libeveapi.RoleTypes.TakeFromDivision1Accounts">
-            <summary>
-            This allows a person to take ISK from the Division 1 Account
-            </summary>
-        </member>
-        <member name="F:libeveapi.RoleTypes.TakeFromDivision2Accounts">
-            <summary>
-            This allows a person to take ISK from the Division 2 Account
-            </summary>
-        </member>
-        <member name="F:libeveapi.RoleTypes.TakeFromDivision3Accounts">
-            <summary>
-            This allows a person to take ISK from the Division 3 Account
-            </summary>
-        </member>
-        <member name="F:libeveapi.RoleTypes.TakeFromDivision4Accounts">
-            <summary>
-            This allows a person to take ISK from the Division 4 Account
-            </summary>
-        </member>
-        <member name="F:libeveapi.RoleTypes.TakeFromDivision5Accounts">
-            <summary>
-            This allows a person to take ISK from the Division 5 Account
-            </summary>
-        </member>
-        <member name="F:libeveapi.RoleTypes.TakeFromDivision6Accounts">
-            <summary>
-            This allows a person to take ISK from the Division 6 Account
-            </summary>
-        </member>
-        <member name="F:libeveapi.RoleTypes.TakeFromDivision7Accounts">
-            <summary>
-            This allows a person to take ISK from the Division 7 Account
-            </summary>
-        </member>
-        <member name="F:libeveapi.RoleTypes.QueryDivision1Accounts">
-            <summary>
-            This allows a person to look at how much ISK is in Division 1 Account
-            </summary>
-        </member>
-        <member name="F:libeveapi.RoleTypes.QueryDivision2Accounts">
-            <summary>
-            This allows a person to look at how much ISK is in Division 2 Account
-            </summary>
-        </member>
-        <member name="F:libeveapi.RoleTypes.QueryDivision3Accounts">
-            <summary>
-            This allows a person to look at how much ISK is in Division 3 Account
-            </summary>
-        </member>
-        <member name="F:libeveapi.RoleTypes.QueryDivision4Accounts">
-            <summary>
-            This allows a person to look at how much ISK is in Division 4 Account
-            </summary>
-        </member>
-        <member name="F:libeveapi.RoleTypes.QueryDivision5Accounts">
-            <summary>
-            This allows a person to look at how much ISK is in Division 5 Account
-            </summary>
-        </member>
-        <member name="F:libeveapi.RoleTypes.QueryDivision6Accounts">
-            <summary>
-            This allows a person to look at how much ISK is in Division 6 Account
-            </summary>
-        </member>
-        <member name="F:libeveapi.RoleTypes.QueryDivision7Accounts">
-            <summary>
-            This allows a person to look at how much ISK is in Division 7 Account
-            </summary>
-        </member>
-        <member name="F:libeveapi.RoleTypes.ContainerCanTakeDivision1">
-            <summary>
-            This allows a person to take a container from the Division 1 Hanger
-            </summary>
-        </member>
-        <member name="F:libeveapi.RoleTypes.ContainerCanTakeDivision2">
-            <summary>
-            This allows a person to take a container from the Division 2 Hanger
-            </summary>
-        </member>
-        <member name="F:libeveapi.RoleTypes.ContainerCanTakeDivision3">
-            <summary>
-            This allows a person to take a container from the Division 3 Hanger
-            </summary>
-        </member>
-        <member name="F:libeveapi.RoleTypes.ContainerCanTakeDivision4">
-            <summary>
-            This allows a person to take a container from the Division 4 Hanger
-            </summary>
-        </member>
-        <member name="F:libeveapi.RoleTypes.ContainerCanTakeDivision5">
-            <summary>
-            This allows a person to take a container from the Division 5 Hanger
-            </summary>
-        </member>
-        <member name="F:libeveapi.RoleTypes.ContainerCanTakeDivision6">
-            <summary>
-            This allows a person to take a container from the Division 6 Hanger
-            </summary>
-        </member>
-        <member name="F:libeveapi.RoleTypes.ContainerCanTakeDivision7">
-            <summary>
-            This allows a person to take a container from the Division 7 Hanger
+            A character transaction
             </summary>
         </member>
         <member name="T:libeveapi.MarketOrders">
@@ -1219,522 +2171,6 @@
         <member name="F:libeveapi.MarketOrdersListType.Character">
             <summary>
             A personal market order
-            </summary>
-        </member>
-        <member name="T:libeveapi.RefTypes">
-            <summary>
-            This represents the different refence types used in the journal entries
-            </summary>
-        </member>
-        <member name="F:libeveapi.RefTypes.ReferenceTypes">
-            <summary>
-            A reference type is made up of an int, which is the referenceId, and then a string
-            which is the name of the reference.  They are stored in a serializable dictionary
-            for easy searching and saving.
-            </summary>
-        </member>
-        <member name="M:libeveapi.RefTypes.FromXmlDocument(System.Xml.XmlDocument)">
-            <summary>
-            Create an ErrorList by parsing an XmlDocument response from the eveapi
-            </summary>
-            <param name="xmlDoc"></param>
-            <returns></returns>
-        </member>
-        <member name="M:libeveapi.RefTypes.GetReferenceTypeNameForId(System.Int32)">
-            <summary>
-            Returns the description for the specified reference type id
-            </summary>
-            <param name="referenceTypeId"></param>
-            <returns></returns>
-        </member>
-        <member name="T:libeveapi.StarbaseList">
-            <summary>
-            Represents a list of all the starbases owned by the specified corporation
-            </summary>
-        </member>
-        <member name="F:libeveapi.StarbaseList.StarbaseListItems">
-            <summary>
-            List of all the starbases owned by this corporation
-            </summary>
-        </member>
-        <member name="M:libeveapi.StarbaseList.FromXmlDocument(System.Xml.XmlDocument)">
-            <summary>
-            Create a StarbaseList by parsing an XmlDocument response from the eveapi
-            </summary>
-            <param name="xmlDoc"></param>
-            <returns></returns>
-        </member>
-        <member name="T:libeveapi.StarbaseList.StarbaseListItem">
-            <summary>
-            Represents a single starbase in the starbase list
-            </summary>
-        </member>
-        <member name="F:libeveapi.StarbaseList.StarbaseListItem.ItemId">
-            <summary>
-            Unique identifier for this starbase
-            </summary>
-        </member>
-        <member name="F:libeveapi.StarbaseList.StarbaseListItem.TypeId">
-            <summary>
-            Control tower type id
-            </summary>
-        </member>
-        <member name="F:libeveapi.StarbaseList.StarbaseListItem.LocationId">
-            <summary>
-            The id of the system where the starbase is located
-            </summary>
-        </member>
-        <member name="F:libeveapi.StarbaseList.StarbaseListItem.MoonId">
-            <summary>
-            The id of the moon where the starbase is located
-            </summary>
-        </member>
-        <member name="F:libeveapi.StarbaseList.StarbaseListItem.State">
-            <summary>
-            See <see cref="T:libeveapi.StarbaseList.StarbaseState"/> for full descriptions of each starbase state
-            </summary>
-        </member>
-        <member name="F:libeveapi.StarbaseList.StarbaseListItem.StateTimestamp">
-            <summary>
-            See <see cref="T:libeveapi.StarbaseList.StarbaseState"/> for the potential meanings of StateTimestamp
-            </summary>
-        </member>
-        <member name="F:libeveapi.StarbaseList.StarbaseListItem.OnlineTimestamp">
-            <summary>
-            See <see cref="T:libeveapi.StarbaseList.StarbaseState"/> for the potential meanings of OnlineTimestamp
-            </summary>
-        </member>
-        <member name="F:libeveapi.StarbaseList.StarbaseListItem.StateTimestampLocal">
-            <summary>
-            StateTimestamp in local time
-            </summary>
-        </member>
-        <member name="F:libeveapi.StarbaseList.StarbaseListItem.OnlineTimestampLocal">
-            <summary>
-            OnlineTimestamp in local time
-            </summary>
-        </member>
-        <member name="T:libeveapi.StarbaseList.StarbaseState">
-            <summary>
-            This represents the current state of the starbase, of which there are
-            four different valid states.
-            </summary>
-        </member>
-        <member name="F:libeveapi.StarbaseList.StarbaseState.AnchoredOrOffline">
-            <summary>
-            Starbase is anchored or offline
-            if offline then it went offline at StateTimestamp
-            </summary>
-        </member>
-        <member name="F:libeveapi.StarbaseList.StarbaseState.Onlining">
-            <summary>
-            Starbase is in the process of coming online
-            Will be online at time OnlineTimestamp
-            </summary>
-        </member>
-        <member name="F:libeveapi.StarbaseList.StarbaseState.Reinforced">
-            <summary>
-            Starbase in in reinforced mode
-            Until time StateTimestamp
-            </summary>
-        </member>
-        <member name="F:libeveapi.StarbaseList.StarbaseState.Online">
-            <summary>
-            Starbase is online
-            Continuously since time OnlineTimestamp
-            </summary>
-        </member>
-        <member name="T:libeveapi.CorporationSheet">
-            <summary>
-            Detailed information about a corporation
-            </summary>
-        </member>
-        <member name="F:libeveapi.CorporationSheet.CorporationId">
-            <summary>
-            Unique identifier for the corporation
-            </summary>
-        </member>
-        <member name="F:libeveapi.CorporationSheet.CorporationName">
-            <summary>
-            Name of the corporation
-            </summary>
-        </member>
-        <member name="F:libeveapi.CorporationSheet.Ticker">
-            <summary>
-            Stock ticker symbol for the corporation
-            </summary>
-        </member>
-        <member name="F:libeveapi.CorporationSheet.CeoId">
-            <summary>
-            The characterId of the character that is CEO of the corporation
-            </summary>
-        </member>
-        <member name="F:libeveapi.CorporationSheet.CeoName">
-            <summary>
-            The name of the character that is CEO of the corporation
-            </summary>
-        </member>
-        <member name="F:libeveapi.CorporationSheet.StationId">
-            <summary>
-            The unique id of the station where the corporation is based
-            </summary>
-        </member>
-        <member name="F:libeveapi.CorporationSheet.StationName">
-            <summary>
-            The name of the station where the corporation is based
-            </summary>
-        </member>
-        <member name="F:libeveapi.CorporationSheet.Description">
-            <summary>
-            A description of the corporation as set by the corporation
-            </summary>
-        </member>
-        <member name="F:libeveapi.CorporationSheet.Url">
-            <summary>
-            A url to the corporation's web site
-            </summary>
-        </member>
-        <member name="F:libeveapi.CorporationSheet.AllianceId">
-            <summary>
-             	 The unique identifier of this corporation's alliance
-            </summary>
-        </member>
-        <member name="F:libeveapi.CorporationSheet.AllianceName">
-            <summary>
-            The name of this corporation's alliance
-            </summary>
-        </member>
-        <member name="F:libeveapi.CorporationSheet.TaxRate">
-            <summary>
-            The tax rate of the corporation
-            </summary>
-        </member>
-        <member name="F:libeveapi.CorporationSheet.MemberCount">
-            <summary>
-            The current number of pilots in the corporation
-            </summary>
-        </member>
-        <member name="F:libeveapi.CorporationSheet.MemberLimit">
-            <summary>
-            The current maximum number of pilots the corporation can contain
-            </summary>
-        </member>
-        <member name="F:libeveapi.CorporationSheet.Shares">
-            <summary>
-            The current number of outstanding shares of the corporation
-            </summary>
-        </member>
-        <member name="F:libeveapi.CorporationSheet.Divisions">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:libeveapi.CorporationSheet.WalletDivisions">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:libeveapi.CorporationSheet.Logo">
-            <summary>
-            An object describing the corporation logo
-            </summary>
-        </member>
-        <member name="T:libeveapi.Constants">
-            <summary>
-            These are the different contants needed throughout the program
-            </summary>
-        </member>
-        <member name="F:libeveapi.Constants.ApiPrefix">
-            <summary>
-            This is the main domain name that is the prefix for all requests.
-            To change what server is being used for testing, this URL would be
-            changed to a test server.
-            </summary>
-        </member>
-        <member name="F:libeveapi.Constants.CharacterAccountBalance">
-            <summary>
-            The location of the character account balance xml file
-            </summary>
-        </member>
-        <member name="F:libeveapi.Constants.CorpAccountBalance">
-            <summary>
-            The location of the corporation account balance xml file
-            </summary>
-        </member>
-        <member name="F:libeveapi.Constants.CharacterList">
-            <summary>
-            The location of the character list xml file
-            </summary>
-        </member>
-        <member name="F:libeveapi.Constants.StarbaseDetails">
-            <summary>
-            The location of the corporation's starbase details xml file
-            </summary>
-        </member>
-        <member name="F:libeveapi.Constants.StarbaseList">
-            <summary>
-            The location of the corporation's starbase list xml file
-            </summary>
-        </member>
-        <member name="F:libeveapi.Constants.ErrorList">
-            <summary>
-            The location of the error list
-            </summary>
-        </member>
-        <member name="F:libeveapi.Constants.CharAssetList">
-            <summary>
-            The location of the character's asset list xml file
-            </summary>
-        </member>
-        <member name="F:libeveapi.Constants.CorpAssetList">
-            <summary>
-            The location of the corporation asset list xml file
-            </summary>
-        </member>
-        <member name="F:libeveapi.Constants.CharIndustryJobs">
-            <summary>
-            The location of the character's industrial jobs xml file
-            </summary>
-        </member>
-        <member name="F:libeveapi.Constants.CorpIndustryJobs">
-            <summary>
-            The location of the corporation's industrial jobs xml file
-            </summary>
-        </member>
-        <member name="F:libeveapi.Constants.CharJournalEntries">
-            <summary>
-            The location of the character's journal entries xml file
-            </summary>
-        </member>
-        <member name="F:libeveapi.Constants.CorpJournalEntries">
-            <summary>
-            The location of the corporation's journal entries xml file
-            </summary>
-        </member>
-        <member name="F:libeveapi.Constants.CharWalletTransactions">
-            <summary>
-            The location of the character's wallet transaction xml file
-            </summary>
-        </member>
-        <member name="F:libeveapi.Constants.CorpWalletTransactions">
-            <summary>
-            The location of the corporation's wallet transactions xml file
-            </summary>
-        </member>
-        <member name="F:libeveapi.Constants.CharMarketOrders">
-            <summary>
-            The location of the character's market order xml file
-            </summary>
-        </member>
-        <member name="F:libeveapi.Constants.CorpMarketOrders">
-            <summary>
-            The location of the corporation's market order xml file
-            </summary>
-        </member>
-        <member name="F:libeveapi.Constants.RefTypesList">
-            <summary>
-            The location of the reference type list xml file
-            </summary>
-        </member>
-        <member name="F:libeveapi.Constants.MemberTracking">
-            <summary>
-            The location of the member tracking xml file
-            </summary>
-        </member>
-        <member name="F:libeveapi.Constants.CharacterIdName">
-            <summary>
-            The location of the characterid and name conversion xml file
-            </summary>
-        </member>
-        <member name="F:libeveapi.Constants.CharacterSheet">
-            <summary>
-            The location of the character sheet xml file
-            </summary>
-        </member>
-        <member name="F:libeveapi.Constants.AllianceList">
-            <summary>
-            The location of the alliance list xml file
-            </summary>
-        </member>
-        <member name="F:libeveapi.Constants.MapJumps">
-            <summary>
-            The location of the map jump statistics xml file
-            </summary>
-        </member>
-        <member name="F:libeveapi.Constants.MapKills">
-            <summary>
-            The location of the map kills statistics xml file
-            </summary>
-        </member>
-        <member name="F:libeveapi.Constants.MapSoveignty">
-            <summary>
-            The location of the map sovernty statistics xml file
-            </summary>
-        </member>
-        <member name="F:libeveapi.Constants.ConquerableStationOutpost">
-            <summary>
-            The location of the conquerable stations and outpost statistics xml file
-            </summary>
-        </member>
-        <member name="F:libeveapi.Constants.CorporationSheet">
-            <summary>
-            The location of the coporation sheet xml file
-            </summary>
-        </member>
-        <member name="F:libeveapi.Constants.CharKillLog">
-            <summary>
-            The location of the characters killlog xml file
-            </summary>
-        </member>
-        <member name="F:libeveapi.Constants.CorpKillLog">
-            <summary>
-            The location of the corporation killlog xml file
-            </summary>
-        </member>
-        <member name="F:libeveapi.Constants.SkillInTraining">
-            <summary>
-            The location of the characters current skill in training xml file
-            </summary>
-        </member>
-        <member name="F:libeveapi.Constants.SkillTree">
-            <summary>
-            The location of the current eve skill tree xml file
-            </summary>
-        </member>
-        <member name="F:libeveapi.Constants.ImageFullURL">
-            <summary>
-            The FULL PATH to the image generator
-            </summary>
-        </member>
-        <member name="F:libeveapi.Constants.ExampleError">
-            <summary>
-            Not part of the eve-api - used for unit tests
-            </summary>
-        </member>
-        <member name="T:libeveapi.StarbaseDetail">
-            <summary>
-            Shows the settings and fuel status of a starbase
-            </summary>
-        </member>
-        <member name="F:libeveapi.StarbaseDetail.UsageFlags">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:libeveapi.StarbaseDetail.DeployFlags">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:libeveapi.StarbaseDetail.AllowCorporationMembers">
-            <summary>
-            Allow corporation members inside the force field
-            </summary>
-        </member>
-        <member name="F:libeveapi.StarbaseDetail.AllowAllianceMembers">
-            <summary>
-            Allow alliance members inside the force field
-            </summary>
-        </member>
-        <!-- Badly formed XML comment ignored for member "F:libeveapi.StarbaseDetail.ClaimSovereignty" -->
-        <member name="F:libeveapi.StarbaseDetail.OnStandingDropEnabled">
-            <summary>
-            Shoot on standing drop
-            </summary>
-        </member>
-        <member name="F:libeveapi.StarbaseDetail.OnStandingDropStanding">
-            <summary>
-            What target standing makes them a valid target
-            </summary>
-        </member>
-        <member name="F:libeveapi.StarbaseDetail.OnStatusDropEnabled">
-            <summary>
-            Shoot on status drop
-            </summary>
-        </member>
-        <member name="F:libeveapi.StarbaseDetail.OnStatusDropStanding">
-            <summary>
-            What target security make them a valid target
-            </summary>
-        </member>
-        <member name="F:libeveapi.StarbaseDetail.OnAgressionEnabled">
-            <summary>
-            Shoot on target agression
-            </summary>
-        </member>
-        <member name="F:libeveapi.StarbaseDetail.OnCorporationWarEnabled">
-            <summary>
-            Shoot if at war with target
-            </summary>
-        </member>
-        <member name="F:libeveapi.StarbaseDetail.FuelList">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:libeveapi.StarbaseDetail.FromXmlDocument(System.Xml.XmlDocument)">
-            <summary>
-            Create a StarbaseDetail by parsing an XmlDocument response from the eveapi
-            </summary>
-            <param name="xmlDoc"></param>
-            <returns></returns>
-        </member>
-        <member name="T:libeveapi.StarbaseDetail.FuelListItem">
-            <summary>
-            Represents a type of fuel present in the starbase
-            </summary>
-        </member>
-        <member name="F:libeveapi.StarbaseDetail.FuelListItem.TypeId">
-            <summary>
-            Type Id of the fuel
-            </summary>
-        </member>
-        <member name="F:libeveapi.StarbaseDetail.FuelListItem.Quantity">
-            <summary>
-            Number of units of the fuel remaining
-            </summary>
-        </member>
-        <member name="T:libeveapi.MapKills">
-            <summary>
-            Represents the number of kills per system from the eve api
-            http://wiki.eve-dev.net/APIv2_Map_Kills_XML
-            </summary>
-        </member>
-        <member name="F:libeveapi.MapKills.MapSystemKills">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:libeveapi.MapKills.FromXmlDocument(System.Xml.XmlDocument)">
-            <summary>
-            Create an Mapkills object by parsing an XmlDocument response from the eve api
-            </summary>
-            <param name="xmlDoc">An XML Document containing kill information on the map</param>
-            <returns><see cref="T:libeveapi.MapKills"/></returns>
-        </member>
-        <member name="T:libeveapi.MapKills.MapKillsItem">
-            <summary>
-            The information for a system with one jump or more
-            </summary>
-        </member>
-        <member name="F:libeveapi.MapKills.MapKillsItem.SolarSystemId">
-            <summary>
-            The Id of the solarsystem
-            </summary>
-        </member>
-        <member name="F:libeveapi.MapKills.MapKillsItem.ShipKills">
-            <summary>
-            The number of kills
-            </summary>
-        </member>
-        <member name="F:libeveapi.MapKills.MapKillsItem.FactionKills">
-            <summary>
-            The number of kills
-            </summary>
-        </member>
-        <member name="F:libeveapi.MapKills.MapKillsItem.PodKills">
-            <summary>
-            The number of kills
             </summary>
         </member>
         <member name="T:libeveapi.AssetList">
@@ -2250,434 +2686,6 @@
             It is a character asset
             </summary>
         </member>
-        <member name="M:libeveapi.TimeUtilities.ConvertCCPTimeStringToDateTimeUTC(System.String)">
-            <summary>
-            Converts a CCP API date/time string to a UTC DateTime
-            </summary>
-            <param name="timeUTC"></param>
-            <returns></returns>
-        </member>
-        <member name="T:libeveapi.JournalEntries">
-            <summary>
-            Represents a character or corporation journal entry from the eve api
-            http://wiki.eve-dev.net/APIv2_Char_JournalEntries_XML
-            </summary>
-        </member>
-        <member name="F:libeveapi.JournalEntries.JournalEntryItems">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:libeveapi.JournalEntries.FromXmlDocument(System.Xml.XmlDocument)">
-            <summary>
-            Create an JournalEntryItemList by parsing an XmlDocument response from the eveapi
-            </summary>
-            <param name="xmlDoc">An XML Document containing the JournalEntries List</param>
-            <returns><see cref="T:libeveapi.JournalEntries"/></returns>
-        </member>
-        <member name="M:libeveapi.JournalEntries.ParseTransactionRow(System.Xml.XmlNode)">
-            <summary>
-            Create an JournalEntryItem by parsing a single row
-            </summary>
-            <param name="journalTransactionRow"></param>
-            <returns></returns>
-        </member>
-        <member name="T:libeveapi.JournalEntries.JournalEntryItem">
-            <summary>
-            Contains the data for one journal entry item
-            </summary>
-        </member>
-        <member name="F:libeveapi.JournalEntries.JournalEntryItem.Date">
-            <summary>
-            The date / time of the entry
-            </summary>
-        </member>
-        <member name="F:libeveapi.JournalEntries.JournalEntryItem.DateLocal">
-            <summary>
-            The date / time of the entry in local time
-            </summary>
-        </member>
-        <member name="F:libeveapi.JournalEntries.JournalEntryItem.RefId">
-            <summary>
-            A unique referenceId for each transaction
-            </summary>
-        </member>
-        <member name="F:libeveapi.JournalEntries.JournalEntryItem.RefTypeId">
-            <summary>
-            The typeId of the item that is referenced in the entry
-            </summary>
-        </member>
-        <member name="F:libeveapi.JournalEntries.JournalEntryItem.OwnerName1">
-            <summary>
-            Name of the person/corp giving money
-            </summary>
-        </member>
-        <member name="F:libeveapi.JournalEntries.JournalEntryItem.OwnerId1">
-            <summary>
-            TypeId/CharId of the person/corp giving money
-            </summary>
-        </member>
-        <member name="F:libeveapi.JournalEntries.JournalEntryItem.OwnerName2">
-            <summary>
-            Name of the person/corp recieving money
-            </summary>
-        </member>
-        <member name="F:libeveapi.JournalEntries.JournalEntryItem.OwnerId2">
-            <summary>
-            TypeId/CharId of the person/corp recieving money
-            </summary>
-        </member>
-        <member name="F:libeveapi.JournalEntries.JournalEntryItem.ArgName1">
-            <summary>
-            This is either the system where the transaction took place
-            For example when recieving bounties, or "EVE System" if used
-            for other items like buying and selling
-            </summary>
-        </member>
-        <member name="F:libeveapi.JournalEntries.JournalEntryItem.ArgId1">
-            <summary>
-            This is an argument Id that goes with the argument
-            Use the data from: http://wiki.eve-dev.net/APIv2_Eve_RefTypes_XML
-            to determine what this is used for
-            </summary>
-        </member>
-        <member name="F:libeveapi.JournalEntries.JournalEntryItem.Amount">
-            <summary>
-            The amount of the transaction
-            </summary>
-        </member>
-        <member name="F:libeveapi.JournalEntries.JournalEntryItem.Balance">
-            <summary>
-            The balance left in the account after the transaction
-            </summary>
-        </member>
-        <member name="F:libeveapi.JournalEntries.JournalEntryItem.Reason">
-            <summary>
-            This is the note attached to the transaction if any
-            If exists for bounties this is the list of people killed and how many
-            Ex: TypeId:Number;TypeId:Number
-            </summary>
-        </member>
-        <member name="T:libeveapi.JournalEntryType">
-            <summary>
-            Represents what type of journal entry, corporation or character
-            </summary>
-        </member>
-        <member name="F:libeveapi.JournalEntryType.Corporation">
-            <summary>
-            Corporation journal entry
-            </summary>
-        </member>
-        <member name="F:libeveapi.JournalEntryType.Character">
-            <summary>
-            Character journal entry
-            </summary>
-        </member>
-        <member name="T:libeveapi.CharacterSheet">
-            <summary>
-            Detailed information about a character
-            </summary>
-        </member>
-        <member name="F:libeveapi.CharacterSheet.CharacterId">
-            <summary>
-            The eve assigned characterId
-            </summary>
-        </member>
-        <member name="F:libeveapi.CharacterSheet.Name">
-            <summary>
-            The name of the character
-            </summary>
-        </member>
-        <member name="F:libeveapi.CharacterSheet.Race">
-            <summary>
-            The race of the character
-            </summary>
-        </member>
-        <member name="F:libeveapi.CharacterSheet.BloodLine">
-            <summary>
-            The bloodline of the character
-            </summary>
-        </member>
-        <member name="F:libeveapi.CharacterSheet.Gender">
-            <summary>
-            The gender of the character (currently male/female)
-            </summary>
-        </member>
-        <member name="F:libeveapi.CharacterSheet.CorporationName">
-            <summary>
-            The name of the corporation that the character is in
-            </summary>
-        </member>
-        <member name="F:libeveapi.CharacterSheet.CorporationId">
-            <summary>
-            The eve generated Id of the corporation
-            </summary>
-        </member>
-        <member name="F:libeveapi.CharacterSheet.Balance">
-            <summary>
-            The character's current wallet balance
-            </summary>
-        </member>
-        <member name="F:libeveapi.CharacterSheet.Intelligence">
-            <summary>
-            The character's intelligence attribute
-            </summary>
-        </member>
-        <member name="F:libeveapi.CharacterSheet.Memory">
-            <summary>
-            The character's memory attribute
-            </summary>
-        </member>
-        <member name="F:libeveapi.CharacterSheet.Charisma">
-            <summary>
-            The character's charisma attribute
-            </summary>
-        </member>
-        <member name="F:libeveapi.CharacterSheet.Perception">
-            <summary>
-            The character's perception attribute
-            </summary>
-        </member>
-        <member name="F:libeveapi.CharacterSheet.Willpower">
-            <summary>
-            The character's willpower attribute
-            </summary>
-        </member>
-        <member name="F:libeveapi.CharacterSheet.MemoryBonus">
-            <summary>
-            Memory Implant
-            </summary>
-        </member>
-        <member name="F:libeveapi.CharacterSheet.WillpowerBonus">
-            <summary>
-            Willpower Implant
-            </summary>
-        </member>
-        <member name="F:libeveapi.CharacterSheet.PerceptionBonus">
-            <summary>
-            Perception Implant
-            </summary>
-        </member>
-        <member name="F:libeveapi.CharacterSheet.IntelligenceBonus">
-            <summary>
-            Intelligence Implant
-            </summary>
-        </member>
-        <member name="F:libeveapi.CharacterSheet.CharismaBonus">
-            <summary>
-            Charisma Implant
-            </summary>
-        </member>
-        <member name="F:libeveapi.CharacterSheet.SkillItemList">
-            <summary>
-            The list of retrieved skills
-            </summary>
-        </member>
-        <member name="M:libeveapi.CharacterSheet.FromXmlDocument(System.Xml.XmlDocument)">
-            <summary>
-            Create an CharacterSheet by parsing an XmlDocument response from the eveapi
-            </summary>
-            <param name="xmlDoc">An XML Document containing the CharacterSheet</param>
-            <returns><see cref="T:libeveapi.CharacterSheet"/></returns>
-        </member>
-        <member name="M:libeveapi.CharacterSheet.parseAugmentator(System.String,System.Xml.XmlDocument,libeveapi.CharacterSheet.AttributeEnhancer)">
-            <summary>
-            Parses out each implant that the character has in
-            </summary>
-            <param name="xpath">The xpath location of the implant in the xml</param>
-            <param name="xmlDoc">The xml document</param>
-            <param name="ae">The correct attribute enhancer to modify</param>
-            <returns></returns>
-        </member>
-        <member name="T:libeveapi.CharacterSheet.SkillItem">
-            <summary>
-            Stores valid information about each skill in the character sheet
-            </summary>
-        </member>
-        <member name="F:libeveapi.CharacterSheet.SkillItem.TypeId">
-            <summary>
-            TypeId of the skill
-            </summary>
-        </member>
-        <member name="F:libeveapi.CharacterSheet.SkillItem.Skillpoints">
-            <summary>
-            Current number of skillpoints the character has in the skill
-            </summary>
-        </member>
-        <member name="F:libeveapi.CharacterSheet.SkillItem.Level">
-            <summary>
-            The highest completed level of the skill
-            </summary>
-        </member>
-        <member name="F:libeveapi.CharacterSheet.SkillItem.Unpublished">
-            <summary>
-            Flag if the skill is an unpublished skill
-            </summary>
-        </member>
-        <member name="T:libeveapi.CharacterSheet.AttributeEnhancer">
-            <summary>
-            Contains information about each attributeEnhancer (implant)
-            </summary>
-        </member>
-        <member name="F:libeveapi.CharacterSheet.AttributeEnhancer.Name">
-            <summary>
-            The name of the implant
-            </summary>
-        </member>
-        <member name="F:libeveapi.CharacterSheet.AttributeEnhancer.Value">
-            <summary>
-            The implant's effect on that attribute
-            </summary>
-        </member>
-        <member name="F:libeveapi.AllianceList.AllianceListItems">
-            <summary>
-            List of alliances
-            </summary>
-        </member>
-        <member name="F:libeveapi.AllianceList.AllianceListItem.Name">
-            <summary>
-            full name of the alliance
-            </summary>
-        </member>
-        <member name="F:libeveapi.AllianceList.AllianceListItem.ShortName">
-            <summary>
-            ticker name of the alliance
-            </summary>
-        </member>
-        <member name="F:libeveapi.AllianceList.AllianceListItem.AllianceId">
-            <summary>
-            unique identifier for this alliance
-            </summary>
-        </member>
-        <member name="F:libeveapi.AllianceList.AllianceListItem.ExecutorCorpId">
-            <summary>
-            unique identifier of executor corporation
-            </summary>
-        </member>
-        <member name="F:libeveapi.AllianceList.AllianceListItem.MemberCount">
-            <summary>
-            Current number of pilots in the alliance
-            </summary>
-        </member>
-        <member name="F:libeveapi.AllianceList.AllianceListItem.StartDate">
-            <summary>
-            Date the alliance was created in CCP time
-            </summary>
-        </member>
-        <member name="F:libeveapi.AllianceList.AllianceListItem.StartDateLocal">
-            <summary>
-            Date the alliance was created in local time
-            </summary>
-        </member>
-        <member name="F:libeveapi.AllianceList.AllianceListItem.CorporationListItems">
-            <summary>
-            List of member corporations
-            </summary>
-        </member>
-        <member name="F:libeveapi.AllianceList.CorporationListItem.CorporationId">
-            <summary>
-            unique identifier for the corporation
-            </summary>
-        </member>
-        <member name="F:libeveapi.AllianceList.CorporationListItem.StartDate">
-            <summary>
-            date the corporation joined the alliance in CCP time
-            </summary>
-        </member>
-        <member name="F:libeveapi.AllianceList.CorporationListItem.StartDateLocal">
-            <summary>
-            date the corporation joined the alliance in local time
-            </summary>
-        </member>
-        <member name="T:libeveapi.CharacterIdName">
-            <summary>
-            Represents a character name and  CharacterId response from the eve api
-            http://wiki.eve-dev.net/APIv2_Eve_CharacterID_XML
-            </summary>
-        </member>
-        <member name="F:libeveapi.CharacterIdName.CharacterIdItems">
-            <summary>
-            The character name and character id that are associated with eachother
-            </summary>
-        </member>
-        <member name="M:libeveapi.CharacterIdName.FromXmlDocument(System.Xml.XmlDocument)">
-            <summary>
-            Returns the characterId and character name that are associated with eachother
-            </summary>
-            <param name="xmlDoc">An XML Document containing characterId and character name information</param>
-            <returns><see cref="!:CharacterId"/></returns>
-        </member>
-        <member name="T:libeveapi.CharacterIdName.CharacterIdNameItem">
-            <summary>
-            An charIdItem associated with a character or corporation
-            </summary>
-        </member>
-        <member name="F:libeveapi.CharacterIdName.CharacterIdNameItem.Name">
-            <summary>
-            The character's name
-            </summary>
-        </member>
-        <member name="F:libeveapi.CharacterIdName.CharacterIdNameItem.CharacterId">
-            <summary>
-            The characterId for the character name
-            </summary>
-        </member>
-        <member name="T:libeveapi.AccountBalance">
-            <summary>
-            Represents a character or corporation AccountBalance response from the eve api
-            http://wiki.eve-dev.net/APIv2_Char_AccountBalance_XML
-            http://wiki.eve-dev.net/APIv2_Corp_AccountBalance_XML
-            </summary>
-        </member>
-        <member name="F:libeveapi.AccountBalance.AccountBalanceItems">
-            <summary>
-            The accounts associated with this character or corporation
-            </summary>
-        </member>
-        <member name="M:libeveapi.AccountBalance.FromXmlDocument(System.Xml.XmlDocument)">
-            <summary>
-            Create an AccountBalance object by parsing an XmlDocument response from the eve api
-            </summary>
-            <param name="xmlDoc">An XML Document containing Account Balance Information</param>
-            <returns><see cref="T:libeveapi.AccountBalance"/>Returns an AccountBlance Object</returns>
-        </member>
-        <member name="T:libeveapi.AccountBalance.AccountBalanceItem">
-            <summary>
-            An account associated with a character or corporation
-            </summary>
-        </member>
-        <member name="F:libeveapi.AccountBalance.AccountBalanceItem.AccountId">
-            <summary>
-            ID number of the account
-            </summary>
-        </member>
-        <member name="F:libeveapi.AccountBalance.AccountBalanceItem.AccountKey">
-            <summary>
-            Account Identifier
-            For character: always 1000
-            For corporation: the corp wallet division
-            </summary>
-        </member>
-        <member name="F:libeveapi.AccountBalance.AccountBalanceItem.Balance">
-            <summary>
-            Amount of isk in the account
-            </summary>
-        </member>
-        <member name="T:libeveapi.AccountBalanceType">
-            <summary>
-            The api allows retrieving the account balances for a character or a corporation
-            </summary>
-        </member>
-        <member name="F:libeveapi.AccountBalanceType.Character">
-            <summary>
-            A character account
-            </summary>
-        </member>
-        <member name="F:libeveapi.AccountBalanceType.Corporation">
-            <summary>
-            A corporation account
-            </summary>
-        </member>
         <member name="T:libeveapi.EveApi">
             <summary>
             
@@ -2986,352 +2994,67 @@
             Character portrait size
             </summary>
         </member>
-        <member name="F:libeveapi.SkillTree.Skill.TypeName">
+        <member name="M:libeveapi.TimeUtilities.ConvertCCPTimeStringToDateTimeUTC(System.String)">
             <summary>
-            Name of the skill
+            Converts a CCP API date/time string to a UTC DateTime
             </summary>
-        </member>
-        <member name="F:libeveapi.SkillTree.Skill.GroupId">
-            <summary>
-            Unique identifier for the group this skill belongs to
-            </summary>
-        </member>
-        <member name="F:libeveapi.SkillTree.Skill.TypeId">
-            <summary>
-            Unique identifier for this skill type
-            </summary>
-        </member>
-        <member name="F:libeveapi.SkillTree.Skill.Description">
-            <summary>
-            information about the skill
-            </summary>
-        </member>
-        <member name="F:libeveapi.SkillTree.Skill.Rank">
-            <summary>
-            The training time multiplier of the skill
-            </summary>
-        </member>
-        <member name="F:libeveapi.SkillTree.Skill.RequiredSkills">
-            <summary>
-            The skills required to train this skill
-            </summary>
-        </member>
-        <member name="F:libeveapi.SkillTree.Skill.PrimaryAttribute">
-            <summary>
-            The attrbute that has the most effect on the amount of time required to train this skill.
-            </summary>
-        </member>
-        <member name="F:libeveapi.SkillTree.Skill.SecondaryAttribute">
-            <summary>
-            The attribute that has the second most effect of the amount of time required to train this skill.
-            </summary>
-        </member>
-        <member name="F:libeveapi.SkillTree.Skill.SkillBonuses">
-            <summary>
-            The bonuses gained from training this skill.
-            </summary>
-        </member>
-        <member name="T:libeveapi.SkillTree.RequiredSkill">
-            <summary>
-            A skill required to train the parent skill
-            </summary>
-        </member>
-        <member name="F:libeveapi.SkillTree.RequiredSkill.TypeId">
-            <summary>
-            The unique identifier of this skill type.
-            </summary>
-        </member>
-        <member name="F:libeveapi.SkillTree.RequiredSkill.SkillLevel">
-            <summary>
-            This skill level is required to train the parent skill.
-            </summary>
-        </member>
-        <member name="T:libeveapi.SkillTree.SkillGroup">
-            <summary>
-            A group of related skills
-            </summary>
-        </member>
-        <member name="F:libeveapi.SkillTree.SkillGroup.GroupName">
-            <summary>
-            The name of this skill group.
-            </summary>
-        </member>
-        <member name="F:libeveapi.SkillTree.SkillGroup.GroupId">
-            <summary>
-            The unique identifier for this skill group.
-            </summary>
-        </member>
-        <member name="T:libeveapi.SkillTree.SkillBonus">
-            <summary>
-            A bonus gained from training the parent skill
-            </summary>
-        </member>
-        <member name="F:libeveapi.SkillTree.SkillBonus.BonusType">
-            <summary>
-            Description of the bonus
-            </summary>
-        </member>
-        <member name="F:libeveapi.SkillTree.SkillBonus.BonusValue">
-            <summary>
-            The amount of bonus gained from each level of the skill trained.
-            </summary>
-        </member>
-        <member name="T:libeveapi.KillLog">
-            <summary>
-            Log of 25 most recent kills for a character or 100 most recent for corporation
-            </summary>
-        </member>
-        <member name="F:libeveapi.KillLog.Kills">
-            <summary>
-            Array containing all the kills returned from the api call 
-            </summary>
-        </member>
-        <member name="M:libeveapi.KillLog.FromXmlDocument(System.Xml.XmlDocument)">
-            <summary>
-            Creates a KillLog object from the xml api response
-            </summary>
-            <param name="xmlDoc">XmlDocument Containing the api response</param>
+            <param name="timeUTC"></param>
             <returns></returns>
         </member>
-        <member name="M:libeveapi.KillLog.ParseItemRow(System.Xml.XmlNode)">
+        <member name="T:libeveapi.AccountBalance">
             <summary>
-            This function allows you to recursively build the items list. 
-            This is needed because the items can be infinitely nested in the killmail
-            </summary>
-            <param name="ItemNode">The XmlNode containing the item row you want to parse</param>
-            <returns>The item with it's child items in it's ContainedItems array</returns>
-        </member>
-        <member name="T:libeveapi.KillLog.Kill">
-            <summary>
-            A Kill contains a victim, list of attackers, and items lost
+            Represents a character or corporation AccountBalance response from the eve api
+            http://wiki.eve-dev.net/APIv2_Char_AccountBalance_XML
+            http://wiki.eve-dev.net/APIv2_Corp_AccountBalance_XML
             </summary>
         </member>
-        <member name="F:libeveapi.KillLog.Kill.KillId">
+        <member name="F:libeveapi.AccountBalance.AccountBalanceItems">
             <summary>
-            Unique kill ID for this kill. This is to be used as the input for 
-            beforeKillID if you need to scroll back. This is globally unique 
-            and can be used for uniquely identifying a kill to other killboards.
+            The accounts associated with this character or corporation
             </summary>
         </member>
-        <member name="F:libeveapi.KillLog.Kill.SolarSystemId">
+        <member name="M:libeveapi.AccountBalance.FromXmlDocument(System.Xml.XmlDocument)">
             <summary>
-            The ID of the solar system this kill occurred in.
+            Create an AccountBalance object by parsing an XmlDocument response from the eve api
+            </summary>
+            <param name="xmlDoc">An XML Document containing Account Balance Information</param>
+            <returns><see cref="T:libeveapi.AccountBalance"/>Returns an AccountBlance Object</returns>
+        </member>
+        <member name="T:libeveapi.AccountBalance.AccountBalanceItem">
+            <summary>
+            An account associated with a character or corporation
             </summary>
         </member>
-        <member name="F:libeveapi.KillLog.Kill.KillTime">
+        <member name="F:libeveapi.AccountBalance.AccountBalanceItem.AccountId">
             <summary>
-            What time the event occurred.
+            ID number of the account
             </summary>
         </member>
-        <member name="F:libeveapi.KillLog.Kill.KillTimeLocal">
+        <member name="F:libeveapi.AccountBalance.AccountBalanceItem.AccountKey">
             <summary>
-            What time the event occurred in local time.
+            Account Identifier
+            For character: always 1000
+            For corporation: the corp wallet division
             </summary>
         </member>
-        <member name="F:libeveapi.KillLog.Kill.MoonId">
+        <member name="F:libeveapi.AccountBalance.AccountBalanceItem.Balance">
             <summary>
-            In some situations, this is present to define what moon a 
-            kill occurred at. Note that this is generally only present 
-            in situations where the loss is a POS structure. It is not
-            guaranteed to be populated.
+            Amount of isk in the account
             </summary>
         </member>
-        <member name="F:libeveapi.KillLog.Kill.Victim">
+        <member name="T:libeveapi.AccountBalanceType">
             <summary>
-            The victim of the attack
+            The api allows retrieving the account balances for a character or a corporation
             </summary>
         </member>
-        <member name="F:libeveapi.KillLog.Kill.Attackers">
+        <member name="F:libeveapi.AccountBalanceType.Character">
             <summary>
-            The attacking pilots
+            A character account
             </summary>
         </member>
-        <member name="F:libeveapi.KillLog.Kill.Items">
+        <member name="F:libeveapi.AccountBalanceType.Corporation">
             <summary>
-            The items lost / dropped in the attack
-            </summary>
-        </member>
-        <member name="T:libeveapi.KillLog.Pilot">
-            <summary>
-            A pilot base class
-            </summary>
-        </member>
-        <member name="F:libeveapi.KillLog.Pilot.CharacterId">
-            <summary>
-            Character's ID. Fairly self-explanatory. Can be 0 in which 
-            case this kill was not done by a character and instead 
-            was done by a corporation. In the victim case, this implies 
-            it is a structure loss.
-            </summary>
-        </member>
-        <member name="F:libeveapi.KillLog.Pilot.CharacterName">
-            <summary>
-            If present, the name of the above characterID.
-            </summary>
-        </member>
-        <member name="F:libeveapi.KillLog.Pilot.CorporationId">
-            <summary>
-            The ID of the corporation. This will always be present, 
-            as there is always a corporation behind the victim, 
-            whether it is the corporation itself or simply someone 
-            in that corporation.
-            </summary>
-        </member>
-        <member name="F:libeveapi.KillLog.Pilot.CorporationName">
-            <summary>
-            The name of the corporation associated with the kill.
-            </summary>
-        </member>
-        <member name="F:libeveapi.KillLog.Pilot.AllianceId">
-            <summary>
-            If not 0, this is the ID of the alliance the corporation belongs to.
-            </summary>
-        </member>
-        <member name="F:libeveapi.KillLog.Pilot.AllianceName">
-            <summary>
-            The name of the alliance associated with the kill.
-            </summary>
-        </member>
-        <member name="F:libeveapi.KillLog.Pilot.ShipTypeId">
-            <summary>
-            The item lost. This could be a ship as suggested by the name 
-            but can potentially be anything that generates a kill event.
-            </summary>
-        </member>
-        <member name="T:libeveapi.KillLog.VictimPilot">
-            <summary>
-            The victim pilot
-            </summary>
-        </member>
-        <member name="F:libeveapi.KillLog.VictimPilot.DamageTaken">
-            <summary>
-            How much damage the victim took before 
-            succumbing to fiery defeat and humiliation.
-            Please note that this damage is calculated after resists. 
-            It does give you a decent idea of how much 
-            they were tanking, however.
-            </summary>
-        </member>
-        <member name="T:libeveapi.KillLog.Attacker">
-            <summary>
-            An Attacking pilot
-            </summary>
-        </member>
-        <member name="F:libeveapi.KillLog.Attacker.SecurityStatus">
-            <summary>
-            The security status of the aggressor at the time of this kill.
-            </summary>
-        </member>
-        <member name="F:libeveapi.KillLog.Attacker.DamageDone">
-            <summary>
-            The amount of damage done to the victim. This is post-resists damage done.
-            </summary>
-        </member>
-        <member name="F:libeveapi.KillLog.Attacker.FinalBlow">
-            <summary>
-            Whether or not this aggressor is attributed with the so-called "final blow."
-            </summary>
-        </member>
-        <member name="F:libeveapi.KillLog.Attacker.WeaponTypeId">
-            <summary>
-            What weapon we decided to show this person as using. Often a weapon, 
-            sometimes a ship or missile, rarely a fish
-            </summary>
-        </member>
-        <member name="T:libeveapi.KillLog.Item">
-            <summary>
-            An Item from the killmail
-            </summary>
-        </member>
-        <member name="F:libeveapi.KillLog.Item.TypeId">
-            <summary>
-            The typeID of this item, references the invTypes table
-            </summary>
-        </member>
-        <member name="F:libeveapi.KillLog.Item.Flag">
-            <summary>
-            See <see cref="T:libeveapi.InventoryFlagType"/> for full details.
-            </summary>
-        </member>
-        <member name="F:libeveapi.KillLog.Item.QtyDropped">
-            <summary>
-            How many of this item were dropped. 
-            If the user had multiple stacks, we compress the total number of 
-            dropped items to just one stack for space purposes
-            </summary>
-        </member>
-        <member name="F:libeveapi.KillLog.Item.QtyDestroyed">
-            <summary>
-            How many of this item fell victim to atomic
-            dispersal and other sad little ends that such 
-            things can meet.
-            </summary>
-        </member>
-        <member name="F:libeveapi.KillLog.Item.Container">
-            <summary>
-            True if the destroyed item contained other items.
-            </summary>
-        </member>
-        <member name="F:libeveapi.KillLog.Item.ContainedItems">
-            <summary>
-            List of contained items.
-            </summary>
-        </member>
-        <member name="T:libeveapi.KillLogType">
-            <summary>
-            Enum choice for Kill Log type
-            </summary>
-        </member>
-        <member name="F:libeveapi.KillLogType.Corporation">
-            <summary>
-            Corporation Kill Log
-            </summary>
-        </member>
-        <member name="F:libeveapi.KillLogType.Character">
-            <summary>
-            Character Kill Log
-            </summary>
-        </member>
-        <member name="T:libeveapi.CharacterList">
-            <summary>
-            A list of characters on the account
-            </summary>
-        </member>
-        <member name="F:libeveapi.CharacterList.CharacterListItems">
-            <summary>
-            List of characters associated with an account
-            </summary>
-        </member>
-        <member name="M:libeveapi.CharacterList.FromXmlDocument(System.Xml.XmlDocument)">
-            <summary>
-            Create a CharacterList by parsing an XmlDocument response from the eveapi
-            </summary>
-            <param name="xmlDoc">An XML Document containing information about the Character List</param>
-            <returns><see cref="T:libeveapi.CharacterList"/></returns>
-        </member>
-        <member name="T:libeveapi.CharacterList.CharacterListItem">
-            <summary>
-            Represents a character from the account character list
-            </summary>
-        </member>
-        <member name="F:libeveapi.CharacterList.CharacterListItem.Name">
-            <summary>
-            Name of the character
-            </summary>
-        </member>
-        <member name="F:libeveapi.CharacterList.CharacterListItem.CharacterId">
-            <summary>
-            Id of the character
-            </summary>
-        </member>
-        <member name="F:libeveapi.CharacterList.CharacterListItem.CorporationName">
-            <summary>
-            Name of the corporation the character is a member of
-            </summary>
-        </member>
-        <member name="F:libeveapi.CharacterList.CharacterListItem.CorporationId">
-            <summary>
-            Id of the corporation the character is a member of
+            A corporation account
             </summary>
         </member>
         <member name="T:libeveapi.MapJumps">
@@ -3367,153 +3090,204 @@
             The number of jumps
             </summary>
         </member>
-        <member name="T:libeveapi.WalletTransactions">
+        <member name="T:libeveapi.ConquerableStationList">
             <summary>
-            Returns market transactions for a character.
-            http://wiki.eve-dev.net/APIv2_Char_MarketTransactions_XML
+            Holds the full list of Conquerable stations and outposts
             </summary>
         </member>
-        <member name="F:libeveapi.WalletTransactions.WalletTransactionItems">
+        <member name="F:libeveapi.ConquerableStationList.ConquerableStations">
             <summary>
             
             </summary>
         </member>
-        <member name="M:libeveapi.WalletTransactions.FromXmlDocument(System.Xml.XmlDocument)">
+        <member name="M:libeveapi.ConquerableStationList.FromXmlDocument(System.Xml.XmlDocument)">
             <summary>
-            Create an WalletTransaction by parsing an XmlDocument response from the eveapi
+            Create an Conquerable Station list by parsing an XmlDocument response from the eveapi
             </summary>
-            <param name="xmlDoc">An XML Document Containing Wallet Transaction Data</param>
+            <param name="xmlDoc"></param>
             <returns></returns>
         </member>
-        <member name="M:libeveapi.WalletTransactions.ParseTransactionRow(System.Xml.XmlNode)">
+        <member name="M:libeveapi.ConquerableStationList.ParseStationRow(System.Xml.XmlNode)">
             <summary>
-            Create an WalletTransactionItem by parsing a single row
+            Create an ConquerableStationItem by parsing a single row
             </summary>
-            <param name="walletTransactionRow"></param>
+            <param name="stationRow"></param>
             <returns></returns>
         </member>
-        <member name="T:libeveapi.WalletTransactions.WalletTransactionItem">
+        <member name="T:libeveapi.ConquerableStationList.ConquerableStation">
             <summary>
-            Contains information about one wallet transaction
+            Represents one conquerable station / outpost
             </summary>
         </member>
-        <member name="F:libeveapi.WalletTransactions.WalletTransactionItem.TransactionDateTime">
+        <member name="F:libeveapi.ConquerableStationList.ConquerableStation.StationId">
             <summary>
-            This is the date and time when the transaction took place in ccp time
+            The unique station Id
             </summary>
         </member>
-        <member name="F:libeveapi.WalletTransactions.WalletTransactionItem.TransactionDateTimeLocal">
+        <member name="F:libeveapi.ConquerableStationList.ConquerableStation.StationName">
             <summary>
-            This is the date and time when the transaction took place in local time
+            The name of the station (corp gets to name it)
             </summary>
         </member>
-        <member name="F:libeveapi.WalletTransactions.WalletTransactionItem.TransactionId">
+        <member name="F:libeveapi.ConquerableStationList.ConquerableStation.StationTypeId">
             <summary>
-            This is the transactionId that is assigned to the transaction
+            The typeId of the station / outpost
             </summary>
         </member>
-        <member name="F:libeveapi.WalletTransactions.WalletTransactionItem.Quantity">
+        <member name="F:libeveapi.ConquerableStationList.ConquerableStation.SolarSystemId">
             <summary>
-            This is the quantity of the item
+            The solarSystemId that the station / outpost is located in
             </summary>
         </member>
-        <member name="F:libeveapi.WalletTransactions.WalletTransactionItem.TypeName">
+        <member name="F:libeveapi.ConquerableStationList.ConquerableStation.CorporationId">
             <summary>
-            This is the name of the item in the transaction
+            The id of the corporation that owns teh station / outpost
             </summary>
         </member>
-        <member name="F:libeveapi.WalletTransactions.WalletTransactionItem.TypeId">
+        <member name="F:libeveapi.ConquerableStationList.ConquerableStation.CorporationName">
             <summary>
-            This is the typeId of the item referenced in the transaction
+            The name of the corporation that owns the station / outpost
             </summary>
         </member>
-        <member name="F:libeveapi.WalletTransactions.WalletTransactionItem.Price">
+        <member name="T:libeveapi.StarbaseList">
             <summary>
-            This is the price of the item in the transaction
+            Represents a list of all the starbases owned by the specified corporation
             </summary>
         </member>
-        <member name="F:libeveapi.WalletTransactions.WalletTransactionItem.ClientId">
+        <member name="F:libeveapi.StarbaseList.StarbaseListItems">
             <summary>
-            The client's Id
+            List of all the starbases owned by this corporation
             </summary>
         </member>
-        <member name="F:libeveapi.WalletTransactions.WalletTransactionItem.ClientName">
+        <member name="M:libeveapi.StarbaseList.FromXmlDocument(System.Xml.XmlDocument)">
             <summary>
-            The client's name
+            Create a StarbaseList by parsing an XmlDocument response from the eveapi
+            </summary>
+            <param name="xmlDoc"></param>
+            <returns></returns>
+        </member>
+        <member name="T:libeveapi.StarbaseList.StarbaseListItem">
+            <summary>
+            Represents a single starbase in the starbase list
             </summary>
         </member>
-        <member name="F:libeveapi.WalletTransactions.WalletTransactionItem.CharacterId">
+        <member name="F:libeveapi.StarbaseList.StarbaseListItem.ItemId">
             <summary>
-            The character who initiated the transaction's id 
-            This is only present when viewing corp transactions, otherwise
-            it is assumed to be the character accessing the data
+            Unique identifier for this starbase
             </summary>
         </member>
-        <member name="F:libeveapi.WalletTransactions.WalletTransactionItem.CharacterName">
+        <member name="F:libeveapi.StarbaseList.StarbaseListItem.TypeId">
             <summary>
-            The character who initiated the transaction's name 
-            This is only present when viewing corp transactions, otherwise
-            it is assumed to be the character accessing the data
+            Control tower type id
             </summary>
         </member>
-        <member name="F:libeveapi.WalletTransactions.WalletTransactionItem.StationId">
+        <member name="F:libeveapi.StarbaseList.StarbaseListItem.LocationId">
             <summary>
-            The Id of the station where the transaction took place
+            The id of the system where the starbase is located
             </summary>
         </member>
-        <member name="F:libeveapi.WalletTransactions.WalletTransactionItem.StationName">
+        <member name="F:libeveapi.StarbaseList.StarbaseListItem.MoonId">
             <summary>
-            The name of the station where the transaction took place
+            The id of the moon where the starbase is located
             </summary>
         </member>
-        <member name="F:libeveapi.WalletTransactions.WalletTransactionItem.TransactionType">
+        <member name="F:libeveapi.StarbaseList.StarbaseListItem.State">
             <summary>
-            This is the type of transaction type, sell or buy
+            See <see cref="T:libeveapi.StarbaseList.StarbaseState"/> for full descriptions of each starbase state
             </summary>
         </member>
-        <member name="F:libeveapi.WalletTransactions.WalletTransactionItem.TransactionFor">
+        <member name="F:libeveapi.StarbaseList.StarbaseListItem.StateTimestamp">
             <summary>
-            This is who the transaction was for (personal or corporation)
+            See <see cref="T:libeveapi.StarbaseList.StarbaseState"/> for the potential meanings of StateTimestamp
             </summary>
         </member>
-        <member name="T:libeveapi.WalletTransactionListType">
+        <member name="F:libeveapi.StarbaseList.StarbaseListItem.OnlineTimestamp">
             <summary>
-            If the transaction is a corporation or character transaction
+            See <see cref="T:libeveapi.StarbaseList.StarbaseState"/> for the potential meanings of OnlineTimestamp
             </summary>
         </member>
-        <member name="F:libeveapi.WalletTransactionListType.Corporation">
+        <member name="F:libeveapi.StarbaseList.StarbaseListItem.StateTimestampLocal">
             <summary>
-            A corporation transaction
+            StateTimestamp in local time
             </summary>
         </member>
-        <member name="F:libeveapi.WalletTransactionListType.Character">
+        <member name="F:libeveapi.StarbaseList.StarbaseListItem.OnlineTimestampLocal">
             <summary>
-            A character transaction
+            OnlineTimestamp in local time
             </summary>
         </member>
-        <member name="T:libeveapi.ErrorList">
+        <member name="T:libeveapi.StarbaseList.StarbaseState">
+            <summary>
+            This represents the current state of the starbase, of which there are
+            four different valid states.
+            </summary>
+        </member>
+        <member name="F:libeveapi.StarbaseList.StarbaseState.AnchoredOrOffline">
+            <summary>
+            Starbase is anchored or offline
+            if offline then it went offline at StateTimestamp
+            </summary>
+        </member>
+        <member name="F:libeveapi.StarbaseList.StarbaseState.Onlining">
+            <summary>
+            Starbase is in the process of coming online
+            Will be online at time OnlineTimestamp
+            </summary>
+        </member>
+        <member name="F:libeveapi.StarbaseList.StarbaseState.Reinforced">
+            <summary>
+            Starbase in in reinforced mode
+            Until time StateTimestamp
+            </summary>
+        </member>
+        <member name="F:libeveapi.StarbaseList.StarbaseState.Online">
+            <summary>
+            Starbase is online
+            Continuously since time OnlineTimestamp
+            </summary>
+        </member>
+        <member name="T:libeveapi.Network">
             <summary>
             
             </summary>
         </member>
-        <member name="F:libeveapi.ErrorList.ErrorTable">
+        <member name="M:libeveapi.Network.GetXml(System.String)">
             <summary>
-            
+            This function takes in a url, and will download the data from that
+            URL and create an xml document from it
             </summary>
-        </member>
-        <member name="M:libeveapi.ErrorList.FromXmlDocument(System.Xml.XmlDocument)">
-            <summary>
-            Create an ErrorList by parsing an XmlDocument response from the eveapi
-            </summary>
-            <param name="xmlDoc">An XML Document Containing error list information</param>
-            <returns><see cref="T:libeveapi.ErrorList"/></returns>
-        </member>
-        <member name="M:libeveapi.ErrorList.GetMessageForErrorCode(System.String)">
-            <summary>
-            Returns the description for the specified error code
-            </summary>
-            <param name="errorCode"></param>
+            <param name="url">The url of the XML file to retrieve</param>
             <returns></returns>
+        </member>
+        <member name="M:libeveapi.Network.GetImage(System.String)">
+            <summary>
+            This function takes in a url of an image and then returns the image
+            </summary>
+            <param name="url">The url of the image file to retrieve</param>
+            <returns>An image object containing the image from the url</returns>
+        </member>
+        <member name="M:libeveapi.Network.openUrl(System.String)">
+            <summary>
+            This function takes in a url and will return a stream of data from that url
+            Also takes into account the user-agent settings and any proxy settings
+            </summary>
+            <param name="url">The url of the image file to retrieve</param>
+            <returns>A stream of data</returns>
+        </member>
+        <member name="T:libeveapi.Network.eveNetworkClientSettings">
+            <summary>
+            All advanced network settings go here
+            </summary>
+        </member>
+        <member name="F:libeveapi.Network.eveNetworkClientSettings.proxy">
+            <summary>
+            The default proxy is null, meaning no proxy in use
+            </summary>
+        </member>
+        <member name="F:libeveapi.Network.eveNetworkClientSettings.userAgent">
+            <summary>
+            The base userAgent string to be used by the program
+            </summary>
         </member>
         <member name="T:libeveapi.MapSovereignty">
             <summary>
@@ -3562,6 +3336,232 @@
         <member name="F:libeveapi.MapSovereignty.MapSovereigntyItem.SolarSystemName">
             <summary>
             Name of the solar system
+            </summary>
+        </member>
+        <member name="T:libeveapi.SerializableDictionary`2">
+            <summary>
+            Shamelessly "borrowed" from the EveMon project.
+            http://evemon.battleclinic.com/
+            </summary>
+        </member>
+        <member name="M:libeveapi.SerializableDictionary`2.GetSchema">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:libeveapi.SerializableDictionary`2.ReadXml(System.Xml.XmlReader)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:libeveapi.SerializableDictionary`2.WriteXml(System.Xml.XmlWriter)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:libeveapi.CharacterIdName">
+            <summary>
+            Represents a character name and  CharacterId response from the eve api
+            http://wiki.eve-dev.net/APIv2_Eve_CharacterID_XML
+            </summary>
+        </member>
+        <member name="F:libeveapi.CharacterIdName.CharacterIdItems">
+            <summary>
+            The character name and character id that are associated with eachother
+            </summary>
+        </member>
+        <member name="M:libeveapi.CharacterIdName.FromXmlDocument(System.Xml.XmlDocument)">
+            <summary>
+            Returns the characterId and character name that are associated with eachother
+            </summary>
+            <param name="xmlDoc">An XML Document containing characterId and character name information</param>
+            <returns><see cref="!:CharacterId"/></returns>
+        </member>
+        <member name="T:libeveapi.CharacterIdName.CharacterIdNameItem">
+            <summary>
+            An charIdItem associated with a character or corporation
+            </summary>
+        </member>
+        <member name="F:libeveapi.CharacterIdName.CharacterIdNameItem.Name">
+            <summary>
+            The character's name
+            </summary>
+        </member>
+        <member name="F:libeveapi.CharacterIdName.CharacterIdNameItem.CharacterId">
+            <summary>
+            The characterId for the character name
+            </summary>
+        </member>
+        <member name="T:libeveapi.Constants">
+            <summary>
+            These are the different contants needed throughout the program
+            </summary>
+        </member>
+        <member name="F:libeveapi.Constants.ApiPrefix">
+            <summary>
+            This is the main domain name that is the prefix for all requests.
+            To change what server is being used for testing, this URL would be
+            changed to a test server.
+            </summary>
+        </member>
+        <member name="F:libeveapi.Constants.CharacterAccountBalance">
+            <summary>
+            The location of the character account balance xml file
+            </summary>
+        </member>
+        <member name="F:libeveapi.Constants.CorpAccountBalance">
+            <summary>
+            The location of the corporation account balance xml file
+            </summary>
+        </member>
+        <member name="F:libeveapi.Constants.CharacterList">
+            <summary>
+            The location of the character list xml file
+            </summary>
+        </member>
+        <member name="F:libeveapi.Constants.StarbaseDetails">
+            <summary>
+            The location of the corporation's starbase details xml file
+            </summary>
+        </member>
+        <member name="F:libeveapi.Constants.StarbaseList">
+            <summary>
+            The location of the corporation's starbase list xml file
+            </summary>
+        </member>
+        <member name="F:libeveapi.Constants.ErrorList">
+            <summary>
+            The location of the error list
+            </summary>
+        </member>
+        <member name="F:libeveapi.Constants.CharAssetList">
+            <summary>
+            The location of the character's asset list xml file
+            </summary>
+        </member>
+        <member name="F:libeveapi.Constants.CorpAssetList">
+            <summary>
+            The location of the corporation asset list xml file
+            </summary>
+        </member>
+        <member name="F:libeveapi.Constants.CharIndustryJobs">
+            <summary>
+            The location of the character's industrial jobs xml file
+            </summary>
+        </member>
+        <member name="F:libeveapi.Constants.CorpIndustryJobs">
+            <summary>
+            The location of the corporation's industrial jobs xml file
+            </summary>
+        </member>
+        <member name="F:libeveapi.Constants.CharJournalEntries">
+            <summary>
+            The location of the character's journal entries xml file
+            </summary>
+        </member>
+        <member name="F:libeveapi.Constants.CorpJournalEntries">
+            <summary>
+            The location of the corporation's journal entries xml file
+            </summary>
+        </member>
+        <member name="F:libeveapi.Constants.CharWalletTransactions">
+            <summary>
+            The location of the character's wallet transaction xml file
+            </summary>
+        </member>
+        <member name="F:libeveapi.Constants.CorpWalletTransactions">
+            <summary>
+            The location of the corporation's wallet transactions xml file
+            </summary>
+        </member>
+        <member name="F:libeveapi.Constants.CharMarketOrders">
+            <summary>
+            The location of the character's market order xml file
+            </summary>
+        </member>
+        <member name="F:libeveapi.Constants.CorpMarketOrders">
+            <summary>
+            The location of the corporation's market order xml file
+            </summary>
+        </member>
+        <member name="F:libeveapi.Constants.RefTypesList">
+            <summary>
+            The location of the reference type list xml file
+            </summary>
+        </member>
+        <member name="F:libeveapi.Constants.MemberTracking">
+            <summary>
+            The location of the member tracking xml file
+            </summary>
+        </member>
+        <member name="F:libeveapi.Constants.CharacterIdName">
+            <summary>
+            The location of the characterid and name conversion xml file
+            </summary>
+        </member>
+        <member name="F:libeveapi.Constants.CharacterSheet">
+            <summary>
+            The location of the character sheet xml file
+            </summary>
+        </member>
+        <member name="F:libeveapi.Constants.AllianceList">
+            <summary>
+            The location of the alliance list xml file
+            </summary>
+        </member>
+        <member name="F:libeveapi.Constants.MapJumps">
+            <summary>
+            The location of the map jump statistics xml file
+            </summary>
+        </member>
+        <member name="F:libeveapi.Constants.MapKills">
+            <summary>
+            The location of the map kills statistics xml file
+            </summary>
+        </member>
+        <member name="F:libeveapi.Constants.MapSoveignty">
+            <summary>
+            The location of the map sovernty statistics xml file
+            </summary>
+        </member>
+        <member name="F:libeveapi.Constants.ConquerableStationOutpost">
+            <summary>
+            The location of the conquerable stations and outpost statistics xml file
+            </summary>
+        </member>
+        <member name="F:libeveapi.Constants.CorporationSheet">
+            <summary>
+            The location of the coporation sheet xml file
+            </summary>
+        </member>
+        <member name="F:libeveapi.Constants.CharKillLog">
+            <summary>
+            The location of the characters killlog xml file
+            </summary>
+        </member>
+        <member name="F:libeveapi.Constants.CorpKillLog">
+            <summary>
+            The location of the corporation killlog xml file
+            </summary>
+        </member>
+        <member name="F:libeveapi.Constants.SkillInTraining">
+            <summary>
+            The location of the characters current skill in training xml file
+            </summary>
+        </member>
+        <member name="F:libeveapi.Constants.SkillTree">
+            <summary>
+            The location of the current eve skill tree xml file
+            </summary>
+        </member>
+        <member name="F:libeveapi.Constants.ImageFullURL">
+            <summary>
+            The FULL PATH to the image generator
+            </summary>
+        </member>
+        <member name="F:libeveapi.Constants.ExampleError">
+            <summary>
+            Not part of the eve-api - used for unit tests
             </summary>
         </member>
     </members>

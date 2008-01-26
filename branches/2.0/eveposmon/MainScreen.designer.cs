@@ -82,7 +82,7 @@ namespace eveposmon
             // 
             this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
             this.quitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
-            this.quitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.quitToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.quitToolStripMenuItem.Text = "&Quit";
             // 
             // utilitiesToolStripMenuItem
@@ -101,6 +101,7 @@ namespace eveposmon
             this.apiKeysToolStripMenuItem.Name = "apiKeysToolStripMenuItem";
             this.apiKeysToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.apiKeysToolStripMenuItem.Text = "API Keys";
+            this.apiKeysToolStripMenuItem.Click += new System.EventHandler(this.apiKeysToolStripMenuItem_Click);
             // 
             // starbaseSelectionToolStripMenuItem
             // 
