@@ -7,19 +7,22 @@ using libeveapi;
 
 namespace eveposmon
 {
-    public class AccountList
+    public delegate void AccountAddedEventHandler(object sender, Accounts.AccountEventArgs e);
+    public delegate void AccountDeletedEventHandler(object sender, Accounts.AccountEventArgs e);
+
+    public class Accounts
     {
-        public BindingList<Account> Accounts = new BindingList<Account>();
+        public BindingList<Account> AccountList = new BindingList<Account>();
 
         public void AddAccount(object sender, AccountEventArgs e)
         {
-            Accounts.Add(e.Account);
+            AccountList.Add(e.Account);
             Settings.Save(Settings.SettingsFile);
         }
 
         public void DeleteAccount(object sender, AccountEventArgs e)
         {
-            Accounts.Remove(e.Account);
+            AccountList.Remove(e.Account);
             Settings.Save(Settings.SettingsFile);
         }
 

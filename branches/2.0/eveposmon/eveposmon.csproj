@@ -52,7 +52,7 @@
     <Compile Include="AccountInfo.designer.cs">
       <DependentUpon>AccountInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="AccountList.cs" />
+    <Compile Include="Accounts.cs" />
     <Compile Include="CharacterSelect.cs">
       <SubType>Form</SubType>
     </Compile>
