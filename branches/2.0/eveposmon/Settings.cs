@@ -19,6 +19,11 @@ namespace eveposmon
             AccountList.Add(account);
         }
 
+        public static void DeleteAccount(object sender, AccountInfo.AccountDeletedEventArgs e)
+        {
+            AccountList.Remove(e.Account);
+        }
+
         /// <summary>
         /// Information about an account that can be used to monitor
         /// starbases.

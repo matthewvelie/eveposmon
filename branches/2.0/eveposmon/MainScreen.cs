@@ -20,6 +20,7 @@ namespace eveposmon
         {
             AccountInfo accountInfo = new AccountInfo();
             accountInfo.AccountAdded += new AccountAddedEventHandler(Settings.AddAccount);
+            accountInfo.AccountDeleted += new AccountDeletedEventHandler(Settings.DeleteAccount);
             accountInfo.ShowDialog();
         }
     }

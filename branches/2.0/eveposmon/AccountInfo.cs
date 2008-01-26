@@ -13,10 +13,12 @@ using libeveapi;
 namespace eveposmon
 {
     public delegate void AccountAddedEventHandler(object sender, AccountInfo.AccountAddedEventArgs e);
+    public delegate void AccountDeletedEventHandler(object sender, AccountInfo.AccountDeletedEventArgs e);
 
     public partial class AccountInfo : Form
     {
         public event AccountAddedEventHandler AccountAdded;
+        public event AccountDeletedEventHandler AccountDeleted;
 
         public AccountInfo()
         {
@@ -103,11 +105,29 @@ namespace eveposmon
             }
         }
 
+        public class AccountDeletedEventArgs : EventArgs
+        {
+            public Settings.Account Account;
+
+            public AccountDeletedEventArgs(Settings.Account account)
+            {
+                this.Account = account;
+            }
+        }
+
         protected virtual void OnAccountAdded(AccountAddedEventArgs e)
         {
             if (this.AccountAdded != null)
             {
                 AccountAdded(this, e);
+            }
+        }
+
+        protected virtual void OnAccountDeleted(AccountDeletedEventArgs e)
+        {
+            if (this.AccountDeleted != null)
+            {
+                AccountDeleted(this, e);
             }
         }
     }
