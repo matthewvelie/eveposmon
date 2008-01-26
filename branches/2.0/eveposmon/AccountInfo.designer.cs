@@ -39,12 +39,21 @@ namespace eveposmon
             this.btnCancel = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
+            this.dgStations = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dgvCharaterName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvCharacterId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvUserId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvDelete = new System.Windows.Forms.DataGridViewButtonColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgStations)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblUserId
             // 
             this.lblUserId.AutoSize = true;
-            this.lblUserId.Location = new System.Drawing.Point(18, 38);
+            this.lblUserId.Location = new System.Drawing.Point(17, 50);
             this.lblUserId.Name = "lblUserId";
             this.lblUserId.Size = new System.Drawing.Size(46, 13);
             this.lblUserId.TabIndex = 0;
@@ -53,7 +62,7 @@ namespace eveposmon
             // lblApiKey
             // 
             this.lblApiKey.AutoSize = true;
-            this.lblApiKey.Location = new System.Drawing.Point(16, 71);
+            this.lblApiKey.Location = new System.Drawing.Point(15, 83);
             this.lblApiKey.Name = "lblApiKey";
             this.lblApiKey.Size = new System.Drawing.Size(48, 13);
             this.lblApiKey.TabIndex = 0;
@@ -61,22 +70,22 @@ namespace eveposmon
             // 
             // tbUserId
             // 
-            this.tbUserId.Location = new System.Drawing.Point(70, 31);
+            this.tbUserId.Location = new System.Drawing.Point(69, 43);
             this.tbUserId.Name = "tbUserId";
             this.tbUserId.Size = new System.Drawing.Size(155, 20);
             this.tbUserId.TabIndex = 0;
             // 
             // tbApiKey
             // 
-            this.tbApiKey.Location = new System.Drawing.Point(70, 64);
+            this.tbApiKey.Location = new System.Drawing.Point(69, 76);
             this.tbApiKey.Name = "tbApiKey";
-            this.tbApiKey.Size = new System.Drawing.Size(397, 20);
+            this.tbApiKey.Size = new System.Drawing.Size(351, 20);
             this.tbApiKey.TabIndex = 1;
             // 
             // lblCharacter
             // 
             this.lblCharacter.AutoSize = true;
-            this.lblCharacter.Location = new System.Drawing.Point(7, 104);
+            this.lblCharacter.Location = new System.Drawing.Point(6, 116);
             this.lblCharacter.Name = "lblCharacter";
             this.lblCharacter.Size = new System.Drawing.Size(56, 13);
             this.lblCharacter.TabIndex = 0;
@@ -85,7 +94,7 @@ namespace eveposmon
             // tbCharacterName
             // 
             this.tbCharacterName.Enabled = false;
-            this.tbCharacterName.Location = new System.Drawing.Point(70, 97);
+            this.tbCharacterName.Location = new System.Drawing.Point(69, 109);
             this.tbCharacterName.Name = "tbCharacterName";
             this.tbCharacterName.ReadOnly = true;
             this.tbCharacterName.Size = new System.Drawing.Size(145, 20);
@@ -93,7 +102,7 @@ namespace eveposmon
             // 
             // btnGetCharacters
             // 
-            this.btnGetCharacters.Location = new System.Drawing.Point(221, 97);
+            this.btnGetCharacters.Location = new System.Drawing.Point(220, 109);
             this.btnGetCharacters.Name = "btnGetCharacters";
             this.btnGetCharacters.Size = new System.Drawing.Size(31, 20);
             this.btnGetCharacters.TabIndex = 2;
@@ -104,7 +113,7 @@ namespace eveposmon
             // btnOk
             // 
             this.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnOk.Location = new System.Drawing.Point(307, 95);
+            this.btnOk.Location = new System.Drawing.Point(312, 374);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(73, 24);
             this.btnOk.TabIndex = 5;
@@ -114,7 +123,7 @@ namespace eveposmon
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(386, 95);
+            this.btnCancel.Location = new System.Drawing.Point(391, 374);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(73, 24);
             this.btnCancel.TabIndex = 6;
@@ -124,7 +133,7 @@ namespace eveposmon
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(160, 11);
+            this.linkLabel1.Location = new System.Drawing.Point(159, 23);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(220, 13);
             this.linkLabel1.TabIndex = 10;
@@ -134,28 +143,94 @@ namespace eveposmon
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 11);
+            this.label2.Location = new System.Drawing.Point(6, 23);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(147, 13);
             this.label2.TabIndex = 7;
             this.label2.Text = "Your keys can be found here:";
             // 
+            // dgStations
+            // 
+            this.dgStations.AllowUserToAddRows = false;
+            this.dgStations.AllowUserToDeleteRows = false;
+            this.dgStations.AllowUserToOrderColumns = true;
+            this.dgStations.AllowUserToResizeColumns = false;
+            this.dgStations.AllowUserToResizeRows = false;
+            this.dgStations.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgStations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgStations.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvCharaterName,
+            this.dgvCharacterId,
+            this.dgvUserId,
+            this.dgvDelete});
+            this.dgStations.Location = new System.Drawing.Point(12, 11);
+            this.dgStations.MultiSelect = false;
+            this.dgStations.Name = "dgStations";
+            this.dgStations.RowHeadersVisible = false;
+            this.dgStations.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgStations.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgStations.Size = new System.Drawing.Size(453, 188);
+            this.dgStations.TabIndex = 11;
+            // 
+            // button1
+            // 
+            this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.button1.Location = new System.Drawing.Point(347, 105);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(73, 24);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Save";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.lblUserId);
+            this.groupBox1.Controls.Add(this.lblApiKey);
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.lblCharacter);
+            this.groupBox1.Controls.Add(this.tbUserId);
+            this.groupBox1.Controls.Add(this.tbApiKey);
+            this.groupBox1.Controls.Add(this.linkLabel1);
+            this.groupBox1.Controls.Add(this.tbCharacterName);
+            this.groupBox1.Controls.Add(this.btnGetCharacters);
+            this.groupBox1.Location = new System.Drawing.Point(11, 216);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(453, 143);
+            this.groupBox1.TabIndex = 15;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Add New Account";
+            // 
+            // dgvCharaterName
+            // 
+            this.dgvCharaterName.HeaderText = "Character Name";
+            this.dgvCharaterName.Name = "dgvCharaterName";
+            this.dgvCharaterName.Width = 150;
+            // 
+            // dgvCharacterId
+            // 
+            this.dgvCharacterId.HeaderText = "Character ID";
+            this.dgvCharacterId.Name = "dgvCharacterId";
+            // 
+            // dgvUserId
+            // 
+            this.dgvUserId.HeaderText = "User ID";
+            this.dgvUserId.Name = "dgvUserId";
+            // 
+            // dgvDelete
+            // 
+            this.dgvDelete.HeaderText = "Delete";
+            this.dgvDelete.Name = "dgvDelete";
+            // 
             // AccountInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(476, 140);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.linkLabel1);
+            this.ClientSize = new System.Drawing.Size(483, 406);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.dgStations);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOk);
-            this.Controls.Add(this.btnGetCharacters);
-            this.Controls.Add(this.tbCharacterName);
-            this.Controls.Add(this.tbApiKey);
-            this.Controls.Add(this.tbUserId);
-            this.Controls.Add(this.lblCharacter);
-            this.Controls.Add(this.lblApiKey);
-            this.Controls.Add(this.lblUserId);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AccountInfo";
@@ -163,9 +238,11 @@ namespace eveposmon
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "LoginCharacterSelect";
+            this.Text = "Account Data";
+            ((System.ComponentModel.ISupportInitialize)(this.dgStations)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -182,5 +259,12 @@ namespace eveposmon
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dgStations;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvCharaterName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvCharacterId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvUserId;
+        private System.Windows.Forms.DataGridViewButtonColumn dgvDelete;
     }
 }
