@@ -30,13 +30,13 @@ namespace eveposmon
         {
             this.btnSelectStarbases = new System.Windows.Forms.Button();
             this.dgStations = new System.Windows.Forms.DataGridView();
-            this.Monitor = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.MapRegion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MapConstellation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Moon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StarbaseStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StarbaseType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StarbaseOwner = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvMonitor = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dgvMapRegion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvMapConstellation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvMoon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvStarbaseStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvStarbaseType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvAPIAccount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgStations)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,13 +61,13 @@ namespace eveposmon
             this.dgStations.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dgStations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgStations.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Monitor,
-            this.MapRegion,
-            this.MapConstellation,
-            this.Moon,
-            this.StarbaseStatus,
-            this.StarbaseType,
-            this.StarbaseOwner});
+            this.dgvMonitor,
+            this.dgvMapRegion,
+            this.dgvMapConstellation,
+            this.dgvMoon,
+            this.dgvStarbaseStatus,
+            this.dgvStarbaseType,
+            this.dgvAPIAccount});
             this.dgStations.Location = new System.Drawing.Point(7, 12);
             this.dgStations.MultiSelect = false;
             this.dgStations.Name = "dgStations";
@@ -77,46 +77,46 @@ namespace eveposmon
             this.dgStations.Size = new System.Drawing.Size(654, 275);
             this.dgStations.TabIndex = 3;
             // 
-            // Monitor
+            // dgvMonitor
             // 
-            this.Monitor.FalseValue = "false";
-            this.Monitor.HeaderText = "Monitor";
-            this.Monitor.Name = "Monitor";
-            this.Monitor.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Monitor.TrueValue = "true";
-            this.Monitor.Width = 50;
+            this.dgvMonitor.FalseValue = "false";
+            this.dgvMonitor.HeaderText = "Monitor";
+            this.dgvMonitor.Name = "dgvMonitor";
+            this.dgvMonitor.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMonitor.TrueValue = "true";
+            this.dgvMonitor.Width = 50;
             // 
-            // MapRegion
+            // dgvMapRegion
             // 
-            this.MapRegion.HeaderText = "Region";
-            this.MapRegion.Name = "MapRegion";
-            this.MapRegion.ReadOnly = true;
+            this.dgvMapRegion.HeaderText = "Region";
+            this.dgvMapRegion.Name = "dgvMapRegion";
+            this.dgvMapRegion.ReadOnly = true;
             // 
-            // MapConstellation
+            // dgvMapConstellation
             // 
-            this.MapConstellation.HeaderText = "Constellation";
-            this.MapConstellation.Name = "MapConstellation";
-            this.MapConstellation.ReadOnly = true;
+            this.dgvMapConstellation.HeaderText = "Constellation";
+            this.dgvMapConstellation.Name = "dgvMapConstellation";
+            this.dgvMapConstellation.ReadOnly = true;
             // 
-            // Moon
+            // dgvMoon
             // 
-            this.Moon.HeaderText = "Moon";
-            this.Moon.Name = "Moon";
+            this.dgvMoon.HeaderText = "Moon";
+            this.dgvMoon.Name = "dgvMoon";
             // 
-            // StarbaseStatus
+            // dgvStarbaseStatus
             // 
-            this.StarbaseStatus.HeaderText = "Status";
-            this.StarbaseStatus.Name = "StarbaseStatus";
+            this.dgvStarbaseStatus.HeaderText = "Status";
+            this.dgvStarbaseStatus.Name = "dgvStarbaseStatus";
             // 
-            // StarbaseType
+            // dgvStarbaseType
             // 
-            this.StarbaseType.HeaderText = "Starbase Type";
-            this.StarbaseType.Name = "StarbaseType";
+            this.dgvStarbaseType.HeaderText = "Starbase Type";
+            this.dgvStarbaseType.Name = "dgvStarbaseType";
             // 
-            // StarbaseOwner
+            // dgvAPIAccount
             // 
-            this.StarbaseOwner.HeaderText = "Owner";
-            this.StarbaseOwner.Name = "StarbaseOwner";
+            this.dgvAPIAccount.HeaderText = "Account";
+            this.dgvAPIAccount.Name = "dgvAPIAccount";
             // 
             // SelectStarbases
             // 
@@ -141,13 +141,13 @@ namespace eveposmon
 
         private System.Windows.Forms.Button btnSelectStarbases;
         private System.Windows.Forms.DataGridView dgStations;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Monitor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MapRegion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MapConstellation;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Moon;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StarbaseStatus;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StarbaseType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StarbaseOwner;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dgvMonitor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvMapRegion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvMapConstellation;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvMoon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvStarbaseStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvStarbaseType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvAPIAccount;
     }
 }
 
