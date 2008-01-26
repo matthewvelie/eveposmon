@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 using libeveapi;
@@ -8,7 +9,7 @@ namespace eveposmon
 {
     public class Settings
     {
-        public static List<Account> AccountList = new List<Account>();
+        public static BindingList<Account> AccountList = new BindingList<Account>();
 
         public static void AddAccount(object sender, AccountInfo.AccountAddedEventArgs e)
         {
@@ -44,6 +45,16 @@ namespace eveposmon
             {
                 get { return this.apiKey; }
                 set { this.apiKey = value; }
+            }
+
+            public string CharacterName
+            {
+                get { return characterListItem.Name; }
+            }
+
+            public int CharacterId
+            {
+                get { return characterListItem.CharacterId; }
             }
 
             public CharacterList.CharacterListItem CharacterListItem

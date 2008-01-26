@@ -20,9 +20,13 @@ namespace eveposmon
         public event AccountAddedEventHandler AccountAdded;
         public event AccountDeletedEventHandler AccountDeleted;
 
-        public AccountInfo()
+        public AccountInfo(BindingList<Settings.Account> accountList)
         {
             InitializeComponent();
+            dgAccounts.AutoGenerateColumns = false;
+            BindingSource bindingSource = new BindingSource();
+            bindingSource.DataSource = accountList;
+            dgAccounts.DataSource = bindingSource;
         }
 
         private void btnGetCharacters_Click(object sender, EventArgs e)
