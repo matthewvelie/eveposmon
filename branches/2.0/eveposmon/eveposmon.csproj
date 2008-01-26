@@ -128,6 +128,7 @@
     <Compile Include="SelectStarbases.designer.cs">
       <DependentUpon>SelectStarbases.cs</DependentUpon>
     </Compile>
+    <Compile Include="Settings.cs" />
     <Compile Include="SettingsScreen.cs">
       <SubType>Form</SubType>
     </Compile>
