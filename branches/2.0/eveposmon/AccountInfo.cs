@@ -47,6 +47,7 @@ namespace eveposmon
                 tbCharacterName.Text = characterSelect.SelectedCharacterListItem.Name;
                 this.apiKey = tbApiKey.Text;
                 this.characterListItem = characterSelect.SelectedCharacterListItem;
+                btnAddAccount.Enabled = true;
             }
         }
 
@@ -64,5 +65,36 @@ namespace eveposmon
         {
             get { return characterListItem; }
         }
+
+        private void tbUserId_TextChanged(object sender, EventArgs e)
+        {
+            if(tbUserId.Text.Length >= 6 && tbApiKey.Text.Length == 64)
+            {
+                btnGetCharacters.Enabled = true;
+            }else
+            {
+                btnGetCharacters.Enabled = false;
+            }
+
+        }
+
+        private void tbApiKey_TextChanged(object sender, EventArgs e)
+        {
+            if (tbUserId.Text.Length >= 6 && tbApiKey.Text.Length == 64)
+            {
+                btnGetCharacters.Enabled = true;
+            }
+            else
+            {
+                btnGetCharacters.Enabled = false;
+            }
+        }
+
+        private void btnAddAccount_Click(object sender, EventArgs e)
+        {
+
+            btnAddAccount.Enabled = false;
+        }
+
     }
 }
