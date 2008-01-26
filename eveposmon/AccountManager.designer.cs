@@ -39,12 +39,12 @@ namespace eveposmon
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
             this.dgAccounts = new System.Windows.Forms.DataGridView();
+            this.btnAddAccount = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvCharaterName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvCharacterId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvUserId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvDelete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btnAddAccount = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgAccounts)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -166,34 +166,6 @@ namespace eveposmon
             this.dgAccounts.TabIndex = 11;
             this.dgAccounts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgAccounts_CellContentClick);
             // 
-            // dgvCharaterName
-            // 
-            this.dgvCharaterName.DataPropertyName = "CharacterName";
-            this.dgvCharaterName.HeaderText = "Character Name";
-            this.dgvCharaterName.Name = "dgvCharaterName";
-            this.dgvCharaterName.ReadOnly = true;
-            this.dgvCharaterName.Width = 150;
-            // 
-            // dgvCharacterId
-            // 
-            this.dgvCharacterId.DataPropertyName = "CharacterId";
-            this.dgvCharacterId.HeaderText = "Character ID";
-            this.dgvCharacterId.Name = "dgvCharacterId";
-            this.dgvCharacterId.ReadOnly = true;
-            // 
-            // dgvUserId
-            // 
-            this.dgvUserId.DataPropertyName = "UserId";
-            this.dgvUserId.HeaderText = "User ID";
-            this.dgvUserId.Name = "dgvUserId";
-            this.dgvUserId.ReadOnly = true;
-            // 
-            // dgvDelete
-            // 
-            this.dgvDelete.HeaderText = "Delete";
-            this.dgvDelete.Name = "dgvDelete";
-            this.dgvDelete.ReadOnly = true;
-            // 
             // btnAddAccount
             // 
             this.btnAddAccount.Enabled = false;
@@ -224,7 +196,37 @@ namespace eveposmon
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add New Account";
             // 
-            // AccountInfo
+            // dgvCharaterName
+            // 
+            this.dgvCharaterName.DataPropertyName = "CharacterName";
+            this.dgvCharaterName.HeaderText = "Character Name";
+            this.dgvCharaterName.Name = "dgvCharaterName";
+            this.dgvCharaterName.ReadOnly = true;
+            this.dgvCharaterName.Width = 150;
+            // 
+            // dgvCharacterId
+            // 
+            this.dgvCharacterId.DataPropertyName = "CharacterId";
+            this.dgvCharacterId.HeaderText = "Character ID";
+            this.dgvCharacterId.Name = "dgvCharacterId";
+            this.dgvCharacterId.ReadOnly = true;
+            // 
+            // dgvUserId
+            // 
+            this.dgvUserId.DataPropertyName = "UserId";
+            this.dgvUserId.HeaderText = "User ID";
+            this.dgvUserId.Name = "dgvUserId";
+            this.dgvUserId.ReadOnly = true;
+            // 
+            // dgvDelete
+            // 
+            this.dgvDelete.HeaderText = "Delete";
+            this.dgvDelete.Name = "dgvDelete";
+            this.dgvDelete.ReadOnly = true;
+            this.dgvDelete.Text = "Delete";
+            this.dgvDelete.UseColumnTextForButtonValue = true;
+            // 
+            // AccountManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -234,7 +236,7 @@ namespace eveposmon
             this.Controls.Add(this.btnOk);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "AccountInfo";
+            this.Name = "AccountManager";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
