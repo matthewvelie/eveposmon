@@ -47,6 +47,8 @@ namespace eveposmon
                 return;
             }
 
+            Settings.Load(Settings.SettingsFile);
+
             #if DEBUG
             Constants.ApiPrefix = "http://localhost/eveposmon/";
             Constants.CharacterList = "Characters.xml.aspx";
