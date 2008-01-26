@@ -38,14 +38,14 @@ namespace eveposmon
             this.btnOk = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
-            this.dgStations = new System.Windows.Forms.DataGridView();
+            this.dgAccounts = new System.Windows.Forms.DataGridView();
+            this.btnAddAccount = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvCharaterName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvCharacterId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvUserId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvDelete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btnAddAccount = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgStations)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgAccounts)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -141,53 +141,32 @@ namespace eveposmon
             this.label2.TabIndex = 7;
             this.label2.Text = "Your keys can be found here:";
             // 
-            // dgStations
+            // dgAccounts
             // 
-            this.dgStations.AllowUserToAddRows = false;
-            this.dgStations.AllowUserToDeleteRows = false;
-            this.dgStations.AllowUserToOrderColumns = true;
-            this.dgStations.AllowUserToResizeColumns = false;
-            this.dgStations.AllowUserToResizeRows = false;
-            this.dgStations.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgStations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgStations.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgAccounts.AllowUserToAddRows = false;
+            this.dgAccounts.AllowUserToDeleteRows = false;
+            this.dgAccounts.AllowUserToOrderColumns = true;
+            this.dgAccounts.AllowUserToResizeColumns = false;
+            this.dgAccounts.AllowUserToResizeRows = false;
+            this.dgAccounts.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgAccounts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgAccounts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgvCharaterName,
             this.dgvCharacterId,
             this.dgvUserId,
             this.dgvDelete});
-            this.dgStations.Location = new System.Drawing.Point(12, 15);
-            this.dgStations.MultiSelect = false;
-            this.dgStations.Name = "dgStations";
-            this.dgStations.RowHeadersVisible = false;
-            this.dgStations.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgStations.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgStations.Size = new System.Drawing.Size(478, 188);
-            this.dgStations.TabIndex = 11;
-            // 
-            // dgvCharaterName
-            // 
-            this.dgvCharaterName.HeaderText = "Character Name";
-            this.dgvCharaterName.Name = "dgvCharaterName";
-            this.dgvCharaterName.Width = 150;
-            // 
-            // dgvCharacterId
-            // 
-            this.dgvCharacterId.HeaderText = "Character ID";
-            this.dgvCharacterId.Name = "dgvCharacterId";
-            // 
-            // dgvUserId
-            // 
-            this.dgvUserId.HeaderText = "User ID";
-            this.dgvUserId.Name = "dgvUserId";
-            // 
-            // dgvDelete
-            // 
-            this.dgvDelete.HeaderText = "Delete";
-            this.dgvDelete.Name = "dgvDelete";
+            this.dgAccounts.Location = new System.Drawing.Point(12, 15);
+            this.dgAccounts.MultiSelect = false;
+            this.dgAccounts.Name = "dgAccounts";
+            this.dgAccounts.ReadOnly = true;
+            this.dgAccounts.RowHeadersVisible = false;
+            this.dgAccounts.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgAccounts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgAccounts.Size = new System.Drawing.Size(478, 188);
+            this.dgAccounts.TabIndex = 11;
             // 
             // btnAddAccount
             // 
-            this.btnAddAccount.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnAddAccount.Enabled = false;
             this.btnAddAccount.Location = new System.Drawing.Point(354, 96);
             this.btnAddAccount.Name = "btnAddAccount";
@@ -216,13 +195,41 @@ namespace eveposmon
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add New Account";
             // 
+            // dgvCharaterName
+            // 
+            this.dgvCharaterName.DataPropertyName = "CharacterName";
+            this.dgvCharaterName.HeaderText = "Character Name";
+            this.dgvCharaterName.Name = "dgvCharaterName";
+            this.dgvCharaterName.ReadOnly = true;
+            this.dgvCharaterName.Width = 150;
+            // 
+            // dgvCharacterId
+            // 
+            this.dgvCharacterId.DataPropertyName = "CharacterId";
+            this.dgvCharacterId.HeaderText = "Character ID";
+            this.dgvCharacterId.Name = "dgvCharacterId";
+            this.dgvCharacterId.ReadOnly = true;
+            // 
+            // dgvUserId
+            // 
+            this.dgvUserId.DataPropertyName = "UserId";
+            this.dgvUserId.HeaderText = "User ID";
+            this.dgvUserId.Name = "dgvUserId";
+            this.dgvUserId.ReadOnly = true;
+            // 
+            // dgvDelete
+            // 
+            this.dgvDelete.HeaderText = "Delete";
+            this.dgvDelete.Name = "dgvDelete";
+            this.dgvDelete.ReadOnly = true;
+            // 
             // AccountInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(503, 385);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dgStations);
+            this.Controls.Add(this.dgAccounts);
             this.Controls.Add(this.btnOk);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -232,7 +239,7 @@ namespace eveposmon
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Account Data";
-            ((System.ComponentModel.ISupportInitialize)(this.dgStations)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgAccounts)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -251,7 +258,7 @@ namespace eveposmon
         private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dgStations;
+        private System.Windows.Forms.DataGridView dgAccounts;
         private System.Windows.Forms.Button btnAddAccount;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvCharaterName;

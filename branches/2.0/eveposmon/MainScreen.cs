@@ -18,7 +18,7 @@ namespace eveposmon
 
         private void apiKeysToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AccountInfo accountInfo = new AccountInfo();
+            AccountInfo accountInfo = new AccountInfo(Settings.AccountList);
             accountInfo.AccountAdded += new AccountAddedEventHandler(Settings.AddAccount);
             accountInfo.AccountDeleted += new AccountDeletedEventHandler(Settings.DeleteAccount);
             accountInfo.ShowDialog();
