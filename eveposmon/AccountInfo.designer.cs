@@ -36,7 +36,6 @@ namespace eveposmon
             this.tbCharacterName = new System.Windows.Forms.TextBox();
             this.btnGetCharacters = new System.Windows.Forms.Button();
             this.btnOk = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
             this.dgStations = new System.Windows.Forms.DataGridView();
@@ -79,7 +78,7 @@ namespace eveposmon
             // 
             this.tbApiKey.Location = new System.Drawing.Point(69, 76);
             this.tbApiKey.Name = "tbApiKey";
-            this.tbApiKey.Size = new System.Drawing.Size(351, 20);
+            this.tbApiKey.Size = new System.Drawing.Size(393, 20);
             this.tbApiKey.TabIndex = 1;
             // 
             // lblCharacter
@@ -113,22 +112,12 @@ namespace eveposmon
             // btnOk
             // 
             this.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnOk.Location = new System.Drawing.Point(312, 374);
+            this.btnOk.Location = new System.Drawing.Point(218, 370);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(73, 24);
             this.btnOk.TabIndex = 5;
-            this.btnOk.Text = "OK";
+            this.btnOk.Text = "Close";
             this.btnOk.UseVisualStyleBackColor = true;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(391, 374);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(73, 24);
-            this.btnCancel.TabIndex = 6;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // linkLabel1
             // 
@@ -169,17 +158,18 @@ namespace eveposmon
             this.dgStations.RowHeadersVisible = false;
             this.dgStations.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgStations.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgStations.Size = new System.Drawing.Size(453, 188);
+            this.dgStations.Size = new System.Drawing.Size(478, 188);
             this.dgStations.TabIndex = 11;
             // 
             // button1
             // 
             this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button1.Location = new System.Drawing.Point(347, 105);
+            this.button1.Enabled = false;
+            this.button1.Location = new System.Drawing.Point(354, 105);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(73, 24);
+            this.button1.Size = new System.Drawing.Size(108, 24);
             this.button1.TabIndex = 12;
-            this.button1.Text = "Save";
+            this.button1.Text = "Add Account";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // groupBox1
@@ -196,7 +186,7 @@ namespace eveposmon
             this.groupBox1.Controls.Add(this.btnGetCharacters);
             this.groupBox1.Location = new System.Drawing.Point(11, 216);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(453, 143);
+            this.groupBox1.Size = new System.Drawing.Size(479, 143);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add New Account";
@@ -226,10 +216,9 @@ namespace eveposmon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(483, 406);
+            this.ClientSize = new System.Drawing.Size(508, 406);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgStations);
-            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOk);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -256,7 +245,6 @@ namespace eveposmon
         private System.Windows.Forms.TextBox tbCharacterName;
         private System.Windows.Forms.Button btnGetCharacters;
         private System.Windows.Forms.Button btnOk;
-        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgStations;
