@@ -20,9 +20,9 @@ namespace eveposmon
 
         private void apiKeysToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AccountInfo accountInfo = new AccountInfo(settings.AccountList.Accounts);
-            accountInfo.AccountAdded += new AccountAddedEventHandler(settings.AccountList.AddAccount);
-            accountInfo.AccountDeleted += new AccountDeletedEventHandler(settings.AccountList.DeleteAccount);
+            AccountInfo accountInfo = new AccountInfo(settings.Accounts.AccountList);
+            accountInfo.AccountAdded += new AccountAddedEventHandler(settings.Accounts.AddAccount);
+            accountInfo.AccountDeleted += new AccountDeletedEventHandler(settings.Accounts.DeleteAccount);
             accountInfo.ShowDialog();
         }
     }

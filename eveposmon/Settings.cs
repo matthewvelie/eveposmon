@@ -56,7 +56,7 @@ namespace eveposmon
         #endregion
 
         #region Accounts
-        public AccountList AccountList = new AccountList();
+        public Accounts Accounts = new Accounts();
         #endregion
     }
 

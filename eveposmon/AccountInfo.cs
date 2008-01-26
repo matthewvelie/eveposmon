@@ -12,15 +12,12 @@ using libeveapi;
 
 namespace eveposmon
 {
-    public delegate void AccountAddedEventHandler(object sender, AccountList.AccountEventArgs e);
-    public delegate void AccountDeletedEventHandler(object sender, AccountList.AccountEventArgs e);
-
     public partial class AccountInfo : Form
     {
         public event AccountAddedEventHandler AccountAdded;
         public event AccountDeletedEventHandler AccountDeleted;
 
-        public AccountInfo(BindingList<AccountList.Account> accountList)
+        public AccountInfo(BindingList<Accounts.Account> accountList)
         {
             InitializeComponent();
             dgAccounts.AutoGenerateColumns = false;
@@ -84,7 +81,7 @@ namespace eveposmon
                 int userId = Convert.ToInt32(tbUserId.Text);
                 string apiKey = tbApiKey.Text;
                 CharacterList.CharacterListItem characterListItem = tbCharacterName.Tag as CharacterList.CharacterListItem;
-                OnAccountAdded(new AccountList.AccountEventArgs(userId, apiKey, characterListItem));
+                OnAccountAdded(new Accounts.AccountEventArgs(userId, apiKey, characterListItem));
                 btnAddAccount.Enabled = false;
             }
             catch (System.FormatException)
@@ -93,7 +90,7 @@ namespace eveposmon
             }
         }
 
-        protected virtual void OnAccountAdded(AccountList.AccountEventArgs e)
+        protected virtual void OnAccountAdded(Accounts.AccountEventArgs e)
         {
             if (this.AccountAdded != null)
             {
@@ -101,7 +98,7 @@ namespace eveposmon
             }
         }
 
-        protected virtual void OnAccountDeleted(AccountList.AccountEventArgs e)
+        protected virtual void OnAccountDeleted(Accounts.AccountEventArgs e)
         {
             if (this.AccountDeleted != null)
             {
@@ -113,8 +110,8 @@ namespace eveposmon
         {
             if (dgAccounts.Columns[e.ColumnIndex].HeaderText == "Delete")
             {
-                AccountList.Account account = (dgAccounts.DataSource as BindingList<AccountList.Account>)[e.RowIndex];
-                OnAccountDeleted(new AccountList.AccountEventArgs(account));
+                Accounts.Account account = (dgAccounts.DataSource as BindingList<Accounts.Account>)[e.RowIndex];
+                OnAccountDeleted(new Accounts.AccountEventArgs(account));
             }
         }
     }
