@@ -91,14 +91,15 @@ namespace eveposmon
 
         public class AccountAddedEventArgs : EventArgs
         {
-            public Settings.Account Account;
+            public int UserId;
+            public string ApiKey;
+            public CharacterList.CharacterListItem CharacterListItem;
 
             public AccountAddedEventArgs(int userId, string apiKey, CharacterList.CharacterListItem characterListItem)
             {
-                this.Account = new Settings.Account();
-                Account.UserId = userId;
-                Account.ApiKey = apiKey;
-                Account.CharacterListItem = characterListItem;
+                this.UserId = userId;
+                this.ApiKey = apiKey;
+                this.CharacterListItem = characterListItem;
             }
         }
 
