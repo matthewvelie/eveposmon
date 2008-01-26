@@ -12,15 +12,15 @@ using libeveapi;
 
 namespace eveposmon
 {
-    public delegate void AccountAddedEventHandler(object sender, AccountInfo.AccountAddedEventArgs e);
-    public delegate void AccountDeletedEventHandler(object sender, AccountInfo.AccountDeletedEventArgs e);
+    public delegate void AccountAddedEventHandler(object sender, AccountList.AccountEventArgs e);
+    public delegate void AccountDeletedEventHandler(object sender, AccountList.AccountEventArgs e);
 
     public partial class AccountInfo : Form
     {
         public event AccountAddedEventHandler AccountAdded;
         public event AccountDeletedEventHandler AccountDeleted;
 
-        public AccountInfo(BindingList<Settings.Account> accountList)
+        public AccountInfo(BindingList<AccountList.Account> accountList)
         {
             InitializeComponent();
             dgAccounts.AutoGenerateColumns = false;
@@ -84,7 +84,7 @@ namespace eveposmon
                 int userId = Convert.ToInt32(tbUserId.Text);
                 string apiKey = tbApiKey.Text;
                 CharacterList.CharacterListItem characterListItem = tbCharacterName.Tag as CharacterList.CharacterListItem;
-                OnAccountAdded(new AccountAddedEventArgs(userId, apiKey, characterListItem));
+                OnAccountAdded(new AccountList.AccountEventArgs(userId, apiKey, characterListItem));
                 btnAddAccount.Enabled = false;
             }
             catch (System.FormatException)
@@ -93,31 +93,7 @@ namespace eveposmon
             }
         }
 
-        public class AccountAddedEventArgs : EventArgs
-        {
-            public int UserId;
-            public string ApiKey;
-            public CharacterList.CharacterListItem CharacterListItem;
-
-            public AccountAddedEventArgs(int userId, string apiKey, CharacterList.CharacterListItem characterListItem)
-            {
-                this.UserId = userId;
-                this.ApiKey = apiKey;
-                this.CharacterListItem = characterListItem;
-            }
-        }
-
-        public class AccountDeletedEventArgs : EventArgs
-        {
-            public Settings.Account Account;
-
-            public AccountDeletedEventArgs(Settings.Account account)
-            {
-                this.Account = account;
-            }
-        }
-
-        protected virtual void OnAccountAdded(AccountAddedEventArgs e)
+        protected virtual void OnAccountAdded(AccountList.AccountEventArgs e)
         {
             if (this.AccountAdded != null)
             {
@@ -125,7 +101,7 @@ namespace eveposmon
             }
         }
 
-        protected virtual void OnAccountDeleted(AccountDeletedEventArgs e)
+        protected virtual void OnAccountDeleted(AccountList.AccountEventArgs e)
         {
             if (this.AccountDeleted != null)
             {
@@ -137,8 +113,8 @@ namespace eveposmon
         {
             if (dgAccounts.Columns[e.ColumnIndex].HeaderText == "Delete")
             {
-                Settings.Account account = (dgAccounts.DataSource as BindingList<Settings.Account>)[e.RowIndex];
-                OnAccountDeleted(new AccountDeletedEventArgs(account));
+                AccountList.Account account = (dgAccounts.DataSource as BindingList<AccountList.Account>)[e.RowIndex];
+                OnAccountDeleted(new AccountList.AccountEventArgs(account));
             }
         }
     }
