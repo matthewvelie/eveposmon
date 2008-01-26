@@ -10,6 +10,15 @@ namespace eveposmon
     {
         public static List<Account> AccountList = new List<Account>();
 
+        public static void AddAccount(object sender, AccountInfo.AccountAddedEventArgs e)
+        {
+            Account account = new Account();
+            account.UserId = e.UserId;
+            account.ApiKey = e.ApiKey;
+            account.CharacterListItem = e.CharacterListItem;
+            AccountList.Add(account);
+        }
+
         /// <summary>
         /// Information about an account that can be used to monitor
         /// starbases.
