@@ -12,12 +12,12 @@ using libeveapi;
 
 namespace eveposmon
 {
-    public partial class AccountInfo : Form
+    public partial class AccountManager : Form
     {
         public event AccountAddedEventHandler AccountAdded;
         public event AccountDeletedEventHandler AccountDeleted;
 
-        public AccountInfo(BindingList<Accounts.Account> accountList)
+        public AccountManager(BindingList<Accounts.Account> accountList)
         {
             InitializeComponent();
             dgAccounts.AutoGenerateColumns = false;
