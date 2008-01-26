@@ -39,12 +39,12 @@ namespace eveposmon
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
             this.dgAccounts = new System.Windows.Forms.DataGridView();
-            this.btnAddAccount = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvCharaterName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvCharacterId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvUserId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvDelete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnAddAccount = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgAccounts)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -164,6 +164,35 @@ namespace eveposmon
             this.dgAccounts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgAccounts.Size = new System.Drawing.Size(478, 188);
             this.dgAccounts.TabIndex = 11;
+            this.dgAccounts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgAccounts_CellContentClick);
+            // 
+            // dgvCharaterName
+            // 
+            this.dgvCharaterName.DataPropertyName = "CharacterName";
+            this.dgvCharaterName.HeaderText = "Character Name";
+            this.dgvCharaterName.Name = "dgvCharaterName";
+            this.dgvCharaterName.ReadOnly = true;
+            this.dgvCharaterName.Width = 150;
+            // 
+            // dgvCharacterId
+            // 
+            this.dgvCharacterId.DataPropertyName = "CharacterId";
+            this.dgvCharacterId.HeaderText = "Character ID";
+            this.dgvCharacterId.Name = "dgvCharacterId";
+            this.dgvCharacterId.ReadOnly = true;
+            // 
+            // dgvUserId
+            // 
+            this.dgvUserId.DataPropertyName = "UserId";
+            this.dgvUserId.HeaderText = "User ID";
+            this.dgvUserId.Name = "dgvUserId";
+            this.dgvUserId.ReadOnly = true;
+            // 
+            // dgvDelete
+            // 
+            this.dgvDelete.HeaderText = "Delete";
+            this.dgvDelete.Name = "dgvDelete";
+            this.dgvDelete.ReadOnly = true;
             // 
             // btnAddAccount
             // 
@@ -194,34 +223,6 @@ namespace eveposmon
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add New Account";
-            // 
-            // dgvCharaterName
-            // 
-            this.dgvCharaterName.DataPropertyName = "CharacterName";
-            this.dgvCharaterName.HeaderText = "Character Name";
-            this.dgvCharaterName.Name = "dgvCharaterName";
-            this.dgvCharaterName.ReadOnly = true;
-            this.dgvCharaterName.Width = 150;
-            // 
-            // dgvCharacterId
-            // 
-            this.dgvCharacterId.DataPropertyName = "CharacterId";
-            this.dgvCharacterId.HeaderText = "Character ID";
-            this.dgvCharacterId.Name = "dgvCharacterId";
-            this.dgvCharacterId.ReadOnly = true;
-            // 
-            // dgvUserId
-            // 
-            this.dgvUserId.DataPropertyName = "UserId";
-            this.dgvUserId.HeaderText = "User ID";
-            this.dgvUserId.Name = "dgvUserId";
-            this.dgvUserId.ReadOnly = true;
-            // 
-            // dgvDelete
-            // 
-            this.dgvDelete.HeaderText = "Delete";
-            this.dgvDelete.Name = "dgvDelete";
-            this.dgvDelete.ReadOnly = true;
             // 
             // AccountInfo
             // 

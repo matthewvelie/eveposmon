@@ -132,5 +132,14 @@ namespace eveposmon
                 AccountDeleted(this, e);
             }
         }
+
+        private void dgAccounts_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgAccounts.Columns[e.ColumnIndex].HeaderText == "Delete")
+            {
+                Settings.Account account = (dgAccounts.DataSource as BindingList<Settings.Account>)[e.RowIndex];
+                OnAccountDeleted(new AccountDeletedEventArgs(account));
+            }
+        }
     }
 }
