@@ -25,5 +25,11 @@ namespace eveposmon
             accountInfo.AccountDeleted += new AccountDeletedEventHandler(settings.Accounts.DeleteAccount);
             accountInfo.ShowDialog();
         }
+
+        private void starbaseSelectionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SelectStarbases selectStarbases = new SelectStarbases();
+            selectStarbases.ShowDialog();
+        }
     }
 }

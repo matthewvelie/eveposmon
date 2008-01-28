@@ -108,6 +108,7 @@ namespace eveposmon
             this.starbaseSelectionToolStripMenuItem.Name = "starbaseSelectionToolStripMenuItem";
             this.starbaseSelectionToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.starbaseSelectionToolStripMenuItem.Text = "Starbase Selection";
+            this.starbaseSelectionToolStripMenuItem.Click += new System.EventHandler(this.starbaseSelectionToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 

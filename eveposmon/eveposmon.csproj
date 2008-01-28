@@ -59,6 +59,7 @@
     <Compile Include="CharacterSelect.designer.cs">
       <DependentUpon>CharacterSelect.cs</DependentUpon>
     </Compile>
+    <Compile Include="DisplayStarbaseListItem.cs" />
     <Compile Include="MainScreen.cs">
       <SubType>Form</SubType>
     </Compile>
