@@ -12,18 +12,39 @@ namespace eveposmon
 
     public class Accounts
     {
+        public event AccountAddedEventHandler AccountAdded;
+        public event AccountDeletedEventHandler AccountDeleted;
+
         public BindingList<Account> AccountList = new BindingList<Account>();
 
         public void AddAccount(object sender, AccountEventArgs e)
         {
             AccountList.Add(e.Account);
+            OnAccountAdded(new AccountEventArgs(e.Account));
             Settings.Save(Settings.SettingsFile);
         }
 
         public void DeleteAccount(object sender, AccountEventArgs e)
         {
             AccountList.Remove(e.Account);
+            OnAccountDeleted(new AccountEventArgs(e.Account));
             Settings.Save(Settings.SettingsFile);
+        }
+
+        protected virtual void OnAccountAdded(AccountEventArgs e)
+        {
+            if (this.AccountAdded != null)
+            {
+                this.AccountAdded(this, e);
+            }
+        }
+
+        protected virtual void OnAccountDeleted(AccountEventArgs e)
+        {
+            if (this.AccountDeleted != null)
+            {
+                this.AccountDeleted(this, e);
+            }
         }
 
         /// <summary>
