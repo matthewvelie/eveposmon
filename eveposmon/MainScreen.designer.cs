@@ -55,7 +55,7 @@ namespace eveposmon
             this.monitoredStarbaseTabs.Location = new System.Drawing.Point(0, 24);
             this.monitoredStarbaseTabs.Name = "monitoredStarbaseTabs";
             this.monitoredStarbaseTabs.SelectedIndex = 0;
-            this.monitoredStarbaseTabs.Size = new System.Drawing.Size(542, 703);
+            this.monitoredStarbaseTabs.Size = new System.Drawing.Size(550, 703);
             this.monitoredStarbaseTabs.TabIndex = 0;
             // 
             // menuStrip1
@@ -66,7 +66,7 @@ namespace eveposmon
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(542, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(550, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -167,7 +167,7 @@ namespace eveposmon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(542, 727);
+            this.ClientSize = new System.Drawing.Size(550, 727);
             this.Controls.Add(this.monitoredStarbaseTabs);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;

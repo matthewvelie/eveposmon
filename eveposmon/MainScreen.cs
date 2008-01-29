@@ -51,7 +51,7 @@ namespace eveposmon
 
         private void addStarbaseTab(object sender, Starbases.StarbaseEventArgs e)
         {
-            TabPage tabPage = new TabPage(e.Starbase.TypeName);
+            TabPage tabPage = new TabPage(e.Starbase.MoonName);
             tabPage.Tag = e.Starbase;
             monitoredStarbaseTabs.TabPages.Add(tabPage);
             StarbaseMonitor starbaseMonitor = new StarbaseMonitor(e.Starbase);
