@@ -10,9 +10,9 @@ namespace eveposmon
 {
     public partial class StarbaseMonitor : UserControl
     {
-        private Starbases.Starbase starbase;
+        private Starbases.MonitoredStarbase starbase;
 
-        public StarbaseMonitor(Starbases.Starbase starbase)
+        public StarbaseMonitor(Starbases.MonitoredStarbase starbase)
         {
             InitializeComponent();
             this.starbase = starbase;

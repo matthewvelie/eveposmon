@@ -51,7 +51,7 @@ namespace eveposmon
         {
             foreach (TabPage tabPage in monitoredStarbaseTabs.TabPages)
             {
-                Starbases.Starbase starbase = tabPage.Tag as Starbases.Starbase;
+                Starbases.MonitoredStarbase starbase = tabPage.Tag as Starbases.MonitoredStarbase;
                 if (starbase.ItemId == e.Starbase.ItemId)
                 {
                     monitoredStarbaseTabs.TabPages.Remove(tabPage);
