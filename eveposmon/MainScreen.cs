@@ -21,6 +21,11 @@ namespace eveposmon
             Settings.Instance.Starbases.RemovedStarbase += new RemovedStarbaseEventHandler(removeStarbaseTab);
         }
 
+        private void MainScreen_Load(object sender, EventArgs e)
+        {
+            addMonitoredStarbases();
+        }
+
         private void apiKeysToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AccountManager accountInfo = new AccountManager(settings.Accounts.AccountList);
@@ -34,6 +39,14 @@ namespace eveposmon
             SelectStarbases selectStarbases = new SelectStarbases();
             selectStarbases.SelectedStarbases += new SelectStarbasesEventHandler(settings.Starbases.SelectStarbases);
             selectStarbases.ShowDialog();
+        }
+
+        private void addMonitoredStarbases()
+        {
+            foreach (Starbases.MonitoredStarbase monitoredStarbase in settings.Starbases.MonitoredStarbaseList)
+            {
+                addStarbaseTab(this, new Starbases.StarbaseEventArgs(monitoredStarbase));
+            }
         }
 
         private void addStarbaseTab(object sender, Starbases.StarbaseEventArgs e)

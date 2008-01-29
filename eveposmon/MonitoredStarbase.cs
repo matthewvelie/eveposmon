@@ -11,8 +11,8 @@ namespace eveposmon
     {
         public class MonitoredStarbase
         {
-            private StarbaseList.StarbaseListItem starbaseListItem;
-            private StarbaseDetail starbaseDetail;
+            public StarbaseList.StarbaseListItem StarbaseListItem;
+            public StarbaseDetail StarbaseDetail;
 
             public MonitoredStarbase()
             {
@@ -21,20 +21,20 @@ namespace eveposmon
 
             public MonitoredStarbase(StarbaseList.StarbaseListItem starbaseListItem, StarbaseDetail starbaseDetail)
             {
-                this.starbaseListItem = starbaseListItem;
-                this.starbaseDetail = starbaseDetail;
+                this.StarbaseListItem = starbaseListItem;
+                this.StarbaseDetail = starbaseDetail;
             }
 
             public int ItemId
             {
-                get { return starbaseListItem.ItemId; }
+                get { return StarbaseListItem.ItemId; }
             }
 
             public string TypeName
             {
                 get
                 {
-                    Towers.Tower tower = Towers.GetTowerByTypeId(starbaseListItem.TypeId);
+                    Towers.Tower tower = Towers.GetTowerByTypeId(StarbaseListItem.TypeId);
                     return tower.TypeName;
                 }
             }

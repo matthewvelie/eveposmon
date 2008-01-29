@@ -177,6 +177,7 @@ namespace eveposmon
             this.Name = "MainScreen";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "EVE Starbase Monitor";
+            this.Load += new System.EventHandler(this.MainScreen_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.trayIconMenuStrip.ResumeLayout(false);
