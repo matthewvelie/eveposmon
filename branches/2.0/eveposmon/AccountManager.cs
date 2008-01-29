@@ -114,5 +114,10 @@ namespace eveposmon
                 OnAccountDeleted(new Accounts.AccountEventArgs(account));
             }
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start(linkLabel1.Text);
+        }
     }
 }

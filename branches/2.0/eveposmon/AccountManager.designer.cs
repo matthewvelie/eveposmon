@@ -39,12 +39,12 @@ namespace eveposmon
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
             this.dgAccounts = new System.Windows.Forms.DataGridView();
-            this.btnAddAccount = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvCharaterName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvCharacterId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvUserId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvDelete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnAddAccount = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgAccounts)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -131,6 +131,7 @@ namespace eveposmon
             this.linkLabel1.TabIndex = 10;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "http://myeve.eve-online.com/api/default.asp";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // label2
             // 
@@ -166,36 +167,6 @@ namespace eveposmon
             this.dgAccounts.TabIndex = 11;
             this.dgAccounts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgAccounts_CellContentClick);
             // 
-            // btnAddAccount
-            // 
-            this.btnAddAccount.Enabled = false;
-            this.btnAddAccount.Location = new System.Drawing.Point(354, 96);
-            this.btnAddAccount.Name = "btnAddAccount";
-            this.btnAddAccount.Size = new System.Drawing.Size(108, 24);
-            this.btnAddAccount.TabIndex = 12;
-            this.btnAddAccount.Text = "Add Account";
-            this.btnAddAccount.UseVisualStyleBackColor = true;
-            this.btnAddAccount.Click += new System.EventHandler(this.btnAddAccount_Click);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.lblUserId);
-            this.groupBox1.Controls.Add(this.lblApiKey);
-            this.groupBox1.Controls.Add(this.btnAddAccount);
-            this.groupBox1.Controls.Add(this.lblCharacter);
-            this.groupBox1.Controls.Add(this.tbUserId);
-            this.groupBox1.Controls.Add(this.tbApiKey);
-            this.groupBox1.Controls.Add(this.linkLabel1);
-            this.groupBox1.Controls.Add(this.tbCharacterName);
-            this.groupBox1.Controls.Add(this.btnGetCharacters);
-            this.groupBox1.Location = new System.Drawing.Point(11, 216);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(479, 129);
-            this.groupBox1.TabIndex = 15;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Add New Account";
-            // 
             // dgvCharaterName
             // 
             this.dgvCharaterName.DataPropertyName = "CharacterName";
@@ -225,6 +196,36 @@ namespace eveposmon
             this.dgvDelete.ReadOnly = true;
             this.dgvDelete.Text = "Delete";
             this.dgvDelete.UseColumnTextForButtonValue = true;
+            // 
+            // btnAddAccount
+            // 
+            this.btnAddAccount.Enabled = false;
+            this.btnAddAccount.Location = new System.Drawing.Point(354, 96);
+            this.btnAddAccount.Name = "btnAddAccount";
+            this.btnAddAccount.Size = new System.Drawing.Size(108, 24);
+            this.btnAddAccount.TabIndex = 12;
+            this.btnAddAccount.Text = "Add Account";
+            this.btnAddAccount.UseVisualStyleBackColor = true;
+            this.btnAddAccount.Click += new System.EventHandler(this.btnAddAccount_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.lblUserId);
+            this.groupBox1.Controls.Add(this.lblApiKey);
+            this.groupBox1.Controls.Add(this.btnAddAccount);
+            this.groupBox1.Controls.Add(this.lblCharacter);
+            this.groupBox1.Controls.Add(this.tbUserId);
+            this.groupBox1.Controls.Add(this.tbApiKey);
+            this.groupBox1.Controls.Add(this.linkLabel1);
+            this.groupBox1.Controls.Add(this.tbCharacterName);
+            this.groupBox1.Controls.Add(this.btnGetCharacters);
+            this.groupBox1.Location = new System.Drawing.Point(11, 216);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(479, 129);
+            this.groupBox1.TabIndex = 15;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Add New Account";
             // 
             // AccountManager
             // 
