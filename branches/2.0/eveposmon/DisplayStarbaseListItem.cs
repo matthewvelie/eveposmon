@@ -21,6 +21,11 @@ namespace eveposmon
             this.starbaseListItem = starbaseListItem;
         }
 
+        public int ItemId
+        {
+            get { return starbaseListItem.ItemId; }
+        }
+
         public bool Monitored
         {
             get { return monitored; }
@@ -73,9 +78,20 @@ namespace eveposmon
             }
         }
 
-        public string Account
+        public Accounts.Account Account
+        {
+            get { return account; }
+        }
+
+        public string AccountName
         {
             get { return account.CharacterName; }
+        }
+
+        public StarbaseList.StarbaseListItem StarbaseListItem
+        {
+            get { return starbaseListItem; }
+
         }
     }
 }

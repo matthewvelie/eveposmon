@@ -143,6 +143,7 @@
     <Compile Include="StarbaseMonitor.designer.cs">
       <DependentUpon>StarbaseMonitor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Starbases.cs" />
     <Compile Include="StaticData\Constellations.cs" />
     <Compile Include="StaticData\Factions.cs" />
     <Compile Include="StaticData\Fuels.cs" />

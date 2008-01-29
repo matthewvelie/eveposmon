@@ -17,6 +17,8 @@ namespace eveposmon
 {
     public partial class SelectStarbases : Form
     {
+        public event SelectStarbasesEventHandler SelectedStarbases;
+
         BindingList<DisplayStarbaseListItem> displayStarbaseListItems = new BindingList<DisplayStarbaseListItem>();
 
         public SelectStarbases()
@@ -36,7 +38,13 @@ namespace eveposmon
                 StarbaseList starbaseList = EveApi.GetStarbaseList(account.UserId, account.CharacterId, account.ApiKey);
                 foreach (StarbaseList.StarbaseListItem starbaseListItem in starbaseList.StarbaseListItems)
                 {
-                    displayStarbaseListItems.Add(new DisplayStarbaseListItem(false, account, starbaseListItem));
+                    bool monitored = false;
+                    Starbases.Starbase monitoredStarbase = Settings.Instance.Starbases.GetMonitoredStarbaseById(starbaseListItem.ItemId);
+                    if (monitoredStarbase != null)
+                    {
+                        monitored = true;
+                    }
+                    displayStarbaseListItems.Add(new DisplayStarbaseListItem(monitored, account, starbaseListItem));
                 }
             }
         }
@@ -49,9 +57,17 @@ namespace eveposmon
             }
         }
 
-        public BindingList<DisplayStarbaseListItem> DisplayStarbaseListItems
+        protected virtual void OnSelectStarbases(Starbases.SelectStarbasesEventArgs e)
         {
-            get { return displayStarbaseListItems; }
+            if (SelectedStarbases != null)
+            {
+                SelectedStarbases(this, new Starbases.SelectStarbasesEventArgs(displayStarbaseListItems));
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            OnSelectStarbases(new Starbases.SelectStarbasesEventArgs(displayStarbaseListItems));
         }
     }
 }

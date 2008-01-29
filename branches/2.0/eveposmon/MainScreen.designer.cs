@@ -30,7 +30,7 @@ namespace eveposmon
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainScreen));
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.monitoredStarbaseTabs = new System.Windows.Forms.TabControl();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,14 +49,14 @@ namespace eveposmon
             this.trayIconMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // monitoredStarbaseTabs
             // 
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 24);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(542, 703);
-            this.tabControl1.TabIndex = 0;
+            this.monitoredStarbaseTabs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.monitoredStarbaseTabs.Location = new System.Drawing.Point(0, 24);
+            this.monitoredStarbaseTabs.Name = "monitoredStarbaseTabs";
+            this.monitoredStarbaseTabs.SelectedIndex = 0;
+            this.monitoredStarbaseTabs.Size = new System.Drawing.Size(542, 703);
+            this.monitoredStarbaseTabs.TabIndex = 0;
             // 
             // menuStrip1
             // 
@@ -168,7 +168,7 @@ namespace eveposmon
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(542, 727);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.monitoredStarbaseTabs);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -187,7 +187,7 @@ namespace eveposmon
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl monitoredStarbaseTabs;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quitToolStripMenuItem;

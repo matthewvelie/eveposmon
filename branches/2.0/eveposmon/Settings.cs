@@ -58,6 +58,10 @@ namespace eveposmon
         #region Accounts
         public Accounts Accounts = new Accounts();
         #endregion
+
+        #region Starbases
+        public Starbases Starbases = new Starbases();
+        #endregion
     }
 
     [Serializable]
