@@ -26,6 +26,17 @@ namespace eveposmon
         private void updateDisplay()
         {
             lblStarbaseName.Text = starbase.TypeName;
+
+            pgFuelBay.Minimum = 0;
+            pgFuelBay.Maximum = starbase.FuelCapacity;
+            pgFuelBay.Value = Convert.ToInt32(starbase.TotalFuelVolume);
+
+            pgStrontiumBay.Minimum = 0;
+            pgStrontiumBay.Maximum = starbase.StrontiumCapacity;
+            pgStrontiumBay.Value = Convert.ToInt32(starbase.TotalStrontiumVolume);
+
+            lblFuelBayValue.Text = starbase.TotalFuelVolume.ToString() + " / " + starbase.FuelCapacity.ToString();
+            lblStrontiumBayValue.Text = starbase.TotalStrontiumVolume.ToString() + " / " + starbase.StrontiumCapacity.ToString();
         }
     }
 }
