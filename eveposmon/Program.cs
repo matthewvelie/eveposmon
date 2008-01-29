@@ -53,6 +53,7 @@ namespace eveposmon
             Constants.ApiPrefix = "http://localhost/eveposmon/";
             Constants.CharacterList = "Characters.xml.aspx";
             Constants.StarbaseList = "StarbaseList-Example.xml.aspx";
+            Constants.StarbaseDetails = "StarbaseDetail-358844802.xml.aspx";
             #endif
 
             Application.EnableVisualStyles();

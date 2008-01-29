@@ -29,8 +29,6 @@ namespace eveposmon
         private void InitializeComponent()
         {
             this.dgvStarbaseList = new System.Windows.Forms.DataGridView();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.dgvMonitor = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dgvRegion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvConstellation = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,6 +36,8 @@ namespace eveposmon
             this.dgvStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvStarbaseType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvAccount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStarbaseList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,26 +68,6 @@ namespace eveposmon
             this.dgvStarbaseList.Size = new System.Drawing.Size(654, 275);
             this.dgvStarbaseList.TabIndex = 3;
             this.dgvStarbaseList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStarbaseList_CellContentClick);
-            // 
-            // btnSave
-            // 
-            this.btnSave.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnSave.Location = new System.Drawing.Point(505, 297);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 4;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(586, 297);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 5;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // dgvMonitor
             // 
@@ -137,10 +117,31 @@ namespace eveposmon
             // 
             // dgvAccount
             // 
-            this.dgvAccount.DataPropertyName = "Account";
+            this.dgvAccount.DataPropertyName = "AccountName";
             this.dgvAccount.HeaderText = "Account";
             this.dgvAccount.Name = "dgvAccount";
             this.dgvAccount.ReadOnly = true;
+            // 
+            // btnSave
+            // 
+            this.btnSave.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnSave.Location = new System.Drawing.Point(505, 297);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 4;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancel.Location = new System.Drawing.Point(586, 297);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 5;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // SelectStarbases
             // 

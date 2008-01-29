@@ -10,9 +10,22 @@ namespace eveposmon
 {
     public partial class StarbaseMonitor : UserControl
     {
-        public StarbaseMonitor()
+        private Starbases.Starbase starbase;
+
+        public StarbaseMonitor(Starbases.Starbase starbase)
         {
             InitializeComponent();
+            this.starbase = starbase;
+        }
+
+        private void StarbaseMonitor_Load(object sender, EventArgs e)
+        {
+            updateDisplay();
+        }
+
+        private void updateDisplay()
+        {
+            lblStarbaseName.Text = starbase.TypeName;
         }
     }
 }

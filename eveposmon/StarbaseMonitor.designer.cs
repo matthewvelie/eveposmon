@@ -50,7 +50,6 @@ namespace eveposmon
             this.lblOnStandingDropValue = new System.Windows.Forms.Label();
             this.lblCombatSettings = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.nflbFuels = new NoFlickerListBox();
             this.lblFuelBay = new System.Windows.Forms.Label();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.lblXmlLastDownloaded = new System.Windows.Forms.ToolStripStatusLabel();
@@ -69,7 +68,8 @@ namespace eveposmon
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblTickAt = new System.Windows.Forms.Label();
-            this.posStateIcon1 = new PosStateIcon();
+            this.posStateIcon1 = new eveposmon.PosStateIcon();
+            this.nflbFuels = new eveposmon.NoFlickerListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbStationImage)).BeginInit();
             this.panel1.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -248,18 +248,6 @@ namespace eveposmon
             this.panel1.Size = new System.Drawing.Size(528, 379);
             this.panel1.TabIndex = 27;
             // 
-            // nflbFuels
-            // 
-            this.nflbFuels.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.nflbFuels.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.nflbFuels.FormattingEnabled = true;
-            this.nflbFuels.IntegralHeight = false;
-            this.nflbFuels.ItemHeight = 25;
-            this.nflbFuels.Location = new System.Drawing.Point(0, 0);
-            this.nflbFuels.Name = "nflbFuels";
-            this.nflbFuels.Size = new System.Drawing.Size(528, 379);
-            this.nflbFuels.TabIndex = 12;
-            // 
             // lblFuelBay
             // 
             this.lblFuelBay.AutoSize = true;
@@ -406,8 +394,20 @@ namespace eveposmon
             this.posStateIcon1.Location = new System.Drawing.Point(87, 87);
             this.posStateIcon1.Name = "posStateIcon1";
             this.posStateIcon1.Size = new System.Drawing.Size(50, 50);
-            this.posStateIcon1.State = PosStateIcon.PosState.Reinforced;
+            this.posStateIcon1.State = eveposmon.PosStateIcon.PosState.Reinforced;
             this.posStateIcon1.TabIndex = 34;
+            // 
+            // nflbFuels
+            // 
+            this.nflbFuels.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.nflbFuels.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.nflbFuels.FormattingEnabled = true;
+            this.nflbFuels.IntegralHeight = false;
+            this.nflbFuels.ItemHeight = 25;
+            this.nflbFuels.Location = new System.Drawing.Point(0, 0);
+            this.nflbFuels.Name = "nflbFuels";
+            this.nflbFuels.Size = new System.Drawing.Size(528, 379);
+            this.nflbFuels.TabIndex = 12;
             // 
             // StarbaseMonitor
             // 
@@ -451,6 +451,7 @@ namespace eveposmon
             this.Controls.Add(this.lblTimer);
             this.Name = "StarbaseMonitor";
             this.Size = new System.Drawing.Size(535, 673);
+            this.Load += new System.EventHandler(this.StarbaseMonitor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbStationImage)).EndInit();
             this.panel1.ResumeLayout(false);
             this.statusStrip.ResumeLayout(false);
