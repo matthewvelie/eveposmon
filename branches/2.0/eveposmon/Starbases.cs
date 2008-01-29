@@ -70,6 +70,7 @@ namespace eveposmon
         public void SelectStarbases(object sender, SelectStarbasesEventArgs e)
         {
             UpdateStarbaseList(e.DisplayStarbaseListItems);
+            Settings.Save(Settings.SettingsFile);
         }
 
         public void AddStarbase(MonitoredStarbase starbase)
