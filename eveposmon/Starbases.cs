@@ -12,12 +12,12 @@ namespace eveposmon
     public delegate void RemovedStarbaseEventHandler(object sender, Starbases.StarbaseEventArgs e);
     public delegate void SelectStarbasesEventHandler(object sender, Starbases.SelectStarbasesEventArgs e);
 
-    public class Starbases
+    public partial class Starbases
     {
         public event AddedStarbaseEventHandler AddedStarbase;
         public event RemovedStarbaseEventHandler RemovedStarbase;
 
-        public List<Starbase> MonitoredStarbaseList = new List<Starbase>();
+        public List<MonitoredStarbase> MonitoredStarbaseList = new List<MonitoredStarbase>();
 
         /// <summary>
         /// Go through all the possible starbases we could monitor
@@ -30,14 +30,14 @@ namespace eveposmon
             foreach (DisplayStarbaseListItem displayStarbaseListItem in displayStarbaseListItems)
             {
                 // Search the list of monitored starbases for the current starbase
-                Starbase starbase = GetMonitoredStarbaseById(displayStarbaseListItem.ItemId);
+                MonitoredStarbase starbase = GetMonitoredStarbaseById(displayStarbaseListItem.ItemId);
 
                 // Starbase is not currently monitored and user has checked "monitor" so add it
                 if (starbase == null && displayStarbaseListItem.Monitored == true)
                 {
                     Accounts.Account account = displayStarbaseListItem.Account;
                     StarbaseDetail starbaseDetail = EveApi.GetStarbaseDetail(account.UserId, account.CharacterId, account.ApiKey, displayStarbaseListItem.ItemId);
-                    AddStarbase(new Starbase(displayStarbaseListItem.StarbaseListItem, starbaseDetail));
+                    AddStarbase(new MonitoredStarbase(displayStarbaseListItem.StarbaseListItem, starbaseDetail));
                 }
 
                 // Starbase is currently monitored and user unchecked "monitor" so remove it
@@ -54,9 +54,9 @@ namespace eveposmon
         /// </summary>
         /// <param name="itemId"></param>
         /// <returns></returns>
-        public Starbase GetMonitoredStarbaseById(int itemId)
+        public MonitoredStarbase GetMonitoredStarbaseById(int itemId)
         {
-            foreach (Starbase starbase in MonitoredStarbaseList)
+            foreach (MonitoredStarbase starbase in MonitoredStarbaseList)
             {
                 if (itemId == starbase.ItemId)
                 {
@@ -72,13 +72,13 @@ namespace eveposmon
             UpdateStarbaseList(e.DisplayStarbaseListItems);
         }
 
-        public void AddStarbase(Starbase starbase)
+        public void AddStarbase(MonitoredStarbase starbase)
         {
             MonitoredStarbaseList.Add(starbase);
             OnAddedStarbase(new StarbaseEventArgs(starbase));
         }
 
-        public void RemoveStarbase(Starbase starbase)
+        public void RemoveStarbase(MonitoredStarbase starbase)
         {
             MonitoredStarbaseList.Remove(starbase);
             OnRemovedStarbase(new StarbaseEventArgs(starbase));
@@ -100,42 +100,11 @@ namespace eveposmon
             }
         }
 
-        public class Starbase
-        {
-            private StarbaseList.StarbaseListItem starbaseListItem;
-            private StarbaseDetail starbaseDetail;
-
-            public Starbase()
-            {
-
-            }
-
-            public Starbase(StarbaseList.StarbaseListItem starbaseListItem, StarbaseDetail starbaseDetail)
-            {
-                this.starbaseListItem = starbaseListItem;
-                this.starbaseDetail = starbaseDetail;
-            }
-
-            public int ItemId
-            {
-                get { return starbaseListItem.ItemId; }
-            }
-
-            public string TypeName
-            {
-                get
-                {
-                    Towers.Tower tower = Towers.GetTowerByTypeId(starbaseListItem.TypeId);
-                    return tower.TypeName;
-                }
-            }
-        }
-
         public class StarbaseEventArgs : EventArgs
         {
-            public Starbase Starbase;
+            public MonitoredStarbase Starbase;
 
-            public StarbaseEventArgs(Starbase starbase)
+            public StarbaseEventArgs(MonitoredStarbase starbase)
             {
                 this.Starbase = starbase;
             }

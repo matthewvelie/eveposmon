@@ -32,14 +32,13 @@ namespace eveposmon
 
         private void createDisplayStarbaseItemsList()
         {
-            
             foreach (Accounts.Account account in Settings.Instance.Accounts.AccountList)
             {
                 StarbaseList starbaseList = EveApi.GetStarbaseList(account.UserId, account.CharacterId, account.ApiKey);
                 foreach (StarbaseList.StarbaseListItem starbaseListItem in starbaseList.StarbaseListItems)
                 {
                     bool monitored = false;
-                    Starbases.Starbase monitoredStarbase = Settings.Instance.Starbases.GetMonitoredStarbaseById(starbaseListItem.ItemId);
+                    Starbases.MonitoredStarbase monitoredStarbase = Settings.Instance.Starbases.GetMonitoredStarbaseById(starbaseListItem.ItemId);
                     if (monitoredStarbase != null)
                     {
                         monitored = true;

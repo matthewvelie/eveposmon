@@ -66,6 +66,7 @@
     <Compile Include="MainScreen.designer.cs">
       <DependentUpon>MainScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="MonitoredStarbase.cs" />
     <Compile Include="NoFlickerListBox.cs">
       <SubType>Component</SubType>
     </Compile>
